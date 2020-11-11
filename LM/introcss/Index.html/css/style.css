@@ -1,5 +1,36 @@
-/*selector de */
+/*selector de etiqueta*/
 h1{
     color: tomato;
+    background-color: blueviolet;
 }
 /*Esto no se usa*/
+/*SELECTOR DE CLASE */
+.rojo{
+    color: teal;
+}
+/*IMAGENES*/
+.Otro{
+    display: inline-block;/*con esto esta en linea pero se ve la imagen, no sale cortada*/
+    background-image: url();
+    width: 20rem;
+    height: 20rem;
+}
+/*Para que no salga en linea se pondria display: block, Y para que salga centrado se pondrá fles*/
+/*RESETEO DE ESTILO*/
+a  {
+    /*Quitar estilo de URL*/
+    text-decoration: none;
+    color: #F1C40F;
+}
+.menu{
+    /*quitar margem*/
+    margin: 0;
+    /*borde*/
+    padding: 0;
+}
+.menuItem{
+    /*Quitar la lista y ponerle en linea*/
+    display: inline;
+    /*poner margen*/
+    margin-left: 1rem;
+}
