@@ -1,0 +1,13 @@
+.caja{
+    background-color: blueviolet;
+    height: 20px;
+    width: 50%;
+    /*poner el % se adapta y usa la medida*/
+    display:inline-block;
+}
+.otro{
+    background-color: rgb(43, 226, 89);
+    height: 20px;
+    width: 48%;
+    display:inline-block;  
+}
