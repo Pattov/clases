@@ -7,7 +7,11 @@
 }
 .otro{
     background-color: rgb(43, 226, 89);
+    /*display:inline*/
+    /*si pongo esto los div estan vacios ya que estan en linea*/
+    display:inline-block;
     height: 20px;
-    width: 48%;
-    display:inline-block;  
+    width: 50%;
+    min-width: ;
 }
+/*Hay que tener en cuenta siempre los espacios, hasta lo que estan vacios*/
