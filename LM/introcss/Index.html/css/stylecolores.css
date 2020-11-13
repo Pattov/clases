@@ -1,0 +1,57 @@
+:root{
+    --ancho:16rem;
+    --alto:12rem ;}
+
+.españa{
+    display: inline-block;
+    width: var(--ancho);
+    height: var(--alto);
+}
+.flanjas{
+    display: inline-block;
+    height: 100%;
+    width: 85%;
+}
+.bandera{
+    display: inline-block;
+    width: var(--ancho);
+    height: var(--alto);
+}
+.rojo {
+  height: 3rem;
+  width: 8rem;
+  display: block;
+  background-color: hsl(0, 100%, 50%);
+}
+.amarillo{
+    height: 3rem;
+    width: 8rem;
+    display: block;
+    background-color: hsl(60, 100%, 50%);
+}
+
+.rosa {
+    height: var(--alto);
+    width: 15%;
+    background-color: hsl(0, 45%, 50%);
+    display: inline-block;
+}
+.verde {
+    height: 3rem;
+    width: 8rem;
+    display: block;
+    background-color: hsl(129, 100%, 16%);
+  }
+  .blanco{
+      height: 3rem;
+      width: 8rem;
+      display: block;
+      background-color: hsl(60, 100%, 100%);
+  }
+  .negro{
+    height: 3rem;
+    width: 8rem;
+    display: block;
+    background-color: hsl(0, 0%, 0%);
+  }
+  
