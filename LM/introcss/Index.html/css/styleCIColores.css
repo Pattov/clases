@@ -1,0 +1,72 @@
+:root{
+    --ancho: 16rem;
+    --alto:calc((var(--ancho)*3)/4)
+}
+h1{
+    color: hsl(60, 50%, 50%);
+    font-size: 7rem;
+}
+body{
+    margin-top: 5rem;
+    text-align:center;
+    background-color: hsl(228, 29%, 10%) ;
+}
+.banderaespaña{
+    height: var(--alto);
+    width: var(--ancho);
+    display: inline-block;
+    background-color: hsl(0, 16%, 40%);
+}
+.linearoja{
+    height: 33.33%;
+    width: var(--ancho);
+    display: block;
+    background-color: hsl(0, 100%, 50%);
+}
+.lineaamarilla{
+    height: 33.33%;
+    width: var(--ancho);
+    display: block;
+    background-color: hsl(60, 100%, 50%);
+}
+.banderaarabe{
+    height: var(--alto);
+    width: var(--ancho);
+    display: inline-block;
+    background-color: hsl(133, 10%, 50%);
+}
+.linearosa{
+    height: var(--alto);
+    width: 15%;
+    display: inline-block;
+    background-color: hsl(0, 79%, 55%);
+}
+
+.franjas{
+    height: var(--alto);
+    width: 85%;
+    display: inline-block;
+}
+.lineaverde{
+    height: 33.33%;
+    width: 100%;
+    display: block;
+    background-color: hsl(120, 40%, 36%);
+}
+.lineablanco{
+    height: 33.33%;
+    width: 100%;
+    display: block;
+    background-color: hsl(120, 40%, 100%);
+}
+.lineanegro{
+    height: 33.33%;
+    width: 100%;
+    display: block;
+    background-color: hsl(120, 40%, 0%);
+} 
+.imagen{
+    display: inline-block;
+    width: var(--alto);
+    height: var(--alto);
+}

@@ -1,6 +1,7 @@
 :root{
     --ancho:16rem;
-    --alto:12rem ;}
+    --alto:12rem ;
+}
 
 .españa{
     display: inline-block;
