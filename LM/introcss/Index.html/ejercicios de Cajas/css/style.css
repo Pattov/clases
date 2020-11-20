@@ -1,0 +1,33 @@
+:root{
+    --ancho: 30rem; /*si pongo % seria el del padre aunque sea div hay que especificar*/
+    --alto:calc((var(--ancho)*3)/4);
+}
+
+
+
+.cuerpo{
+    width: var(--ancho);
+    height: var(--alto);
+
+
+}
+
+.linea{
+    width: 100%;
+    height: 50%;
+    
+    }
+
+.cuadrado{
+    background-color: yellow;
+    width: 33.33%;
+    height: 100%;
+    display: inline-block;
+
+}
+.cuadradotransparente{
+    width: 33.33%;
+    height: 100%;
+    display: inline-block;
+}
+
