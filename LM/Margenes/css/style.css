@@ -1,9 +1,32 @@
 p{
     margin: 2px;;
 }
+/*
+No aparece las cajas por...
 .caja{
-    margin: 3px;
+    margin:5px;
+    background-color: rgb(153, 0, 255);
 }
 .subcaja{
+    margin:5px;
+    background-color: rgb(0, 153, 255);
 
 }
+*/
+/*al ponerle ancho y alto aparece*/
+.caja{
+    margin:5px;
+    background-color: rgb(153, 0, 255);
+    height: 60px;
+    width: 80px;
+    padding: 0.01px;/*PARA QUE ES ESTO!!*/
+}
+.subcaja{
+    /*margin:5px;*/
+    margin-top:15px;
+    /*se quita el espacio*/
+    background-color: rgb(0, 153, 255);
+    height: 10px;
+    width: 40px;
+}
+/*CON EL MARGIN TOP Y EL PADDIN --> colapsado padre hijo*/
