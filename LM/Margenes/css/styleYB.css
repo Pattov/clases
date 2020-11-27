@@ -1,0 +1,23 @@
+.cuadrado{
+    background-color: red;
+    width: 20em;
+    height: 15em;
+    border-radius: 15%;
+}
+.triangulo{
+    margin: 15% 40%;
+    border: 5em solid transparent;
+    border-left-color: #fff;
+    display: inline-block;
+    transform: scaleY(0.7);
+} 
+.cuadrado:hover{
+    width: 15em;
+    height: 10em;
+    overflow: hidden;
+}
+.triangulo:hover{
+    width: em;
+    height: 5em;
+    overflow: hidden;
+}

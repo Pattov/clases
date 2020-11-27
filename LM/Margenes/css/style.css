@@ -1,12 +1,23 @@
-/*espacio fuera de las cajas pero al ser en bloque colapsan entre ellos
+/*1-espacio fuera de las cajas pero al ser en bloque colapsan entre ellos
 *Para verlo en el navegador con el f12(Inspecionar)
 */
+
 p {
   margin: 2px;
+  background-color: pink;
+  color: blueviolet;
+  border: 5em solid black;
+  border-color: brown rebeccapurple gold olive;
+  padding: 0.25em 2.5em;
+}
+.triangulo{
+    border: 65px solid transparent;
+    /*Le dio que los bordes son transparentes pero por cascada le digo que sea naranja*/
+    border-left-color: orangered;
 }
 
 /*
-No aparece las cajas por...
+2-No aparece las cajas por...
 .caja{
     margin:5px;
     background-color: rgb(153, 0, 255);
@@ -17,19 +28,20 @@ No aparece las cajas por...
 
 }
 */
-/*al ponerle ancho y alto aparece*/
+/*3-al ponerle ancho y alto aparece*/
 .caja {
   margin: 5px;
   background-color: rgb(153, 0, 255);
   height: 60px;
   width: 80px;
-  padding: 0.01px; /*asi se quita el colapsado a un padre,
+  *padding: 0.01px; /*6-
+  asi se quita el colapsado a un padre,
     *RECORDAR DAR ZOOM AL NAVEGADOR*/
 }
 .subcaja {
-  /*margin:5px;*/
+  /*4-margin:5px;*/
   margin-top: 15px;
-  /*se sigue colapsando pero si se pone en el padre el Padding*/
+  /*5-se sigue colapsando pero si se pone en el padre el Padding*/
   background-color: rgb(0, 153, 255);
   height: 10px;
   width: 40px;
