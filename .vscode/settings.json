@@ -25,6 +25,19 @@
             "name": "patricia",
             "database": "taller",
             "username": "patricia"
+        },
+        {
+            "mysqlOptions": {
+                "authProtocol": "default"
+            },
+            "previewLimit": 50,
+            "server": "192.168.1.65",
+            "port": 3306,
+            "askForPassword": true,
+            "driver": "MariaDB",
+            "name": "yeray",
+            "database": "taller",
+            "username": "yeray"
         }
     ]
 }
