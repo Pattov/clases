@@ -1,8 +1,23 @@
 En la fase de análisis de un proyecto para la implantacion de un sistema de gestión de la contratación pública, se ha determinado la necesidad de almacenar la información relativa a los proveedores de obras, servicios y suministros.
 Cada proveedor tendrá una razon social de hasta 100 caracteres, un NIF de 10 caracteres, una dirección de contacto de hasta 200 caracteres y una dirrecion de email de hasta 80 caracteres.
-
-el número de inicial de proveedores es 10.590 y se espera un crecimiento de 200 proveedores cada año.
+El número de inicial de proveedores es 10.590 y se espera un crecimiento de 200 proveedores cada año.
 Sabiendo que utilizaremos codificacion UTF-8 y suponiendo que cada carater español, en promedio, se codifica en UTF-8 Con 1.2 Bytes:
+/*si en lugar de esto aquí ponemos que de promedio se codifica con un UTF como minimo de 1B, en promedio con 1.2 Bytes y como máximo con 4:*/
 
 Calcula el espacio neceario para almacenar la informacion inicial.
-Si tienes un disco de 128 GB exclusivamente dedicado al almacenamiento de la tabla de proveedores, obviando metadaros,¿cuanto tiempo tardaria en llenarse?.
+Si tienes un disco de 128 GB exclusivamente dedicado al almacenamiento de la tabla de proveedores, obviando metadaros,¿cuánto tiempo tardaría en llenarse?.
+Asumimos un enfoque pesimista.
+
+Proveedor(Razón, NIF, dir, email)
+
+100+10+200+80 ==> Esto es el número de Bytes que ocupa una sóla tupla (o fila)
+
+Como tenemos 10.590 tuplas de inicio, teniendo en cuenta que cada caracter en promedio será 1.2B:
+    Espacio necesario para almacenar la informacion inicial es:(390*1.2)*10.590
+    Aqui lo más pesimista sería hacer (390*4)*10.590
+
+
+    A tener en cuenta:
+    1 GB = 1000 MB
+    1 MB = 1000 KB
+    1 KB = 1000 B
