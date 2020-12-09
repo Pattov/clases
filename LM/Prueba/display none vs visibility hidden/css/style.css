@@ -1,0 +1,34 @@
+div{
+    width: 100px;
+    height: 100px;
+    border: 1PX solid #000;
+    margin: 5px;
+}
+/*Lo quita y tambien desaparece en cambio*/
+.caja2{
+    display:none
+}
+.caja3{
+    /*Este sin embargo deja el hueco de la caja*/
+    visibility: hidden;
+    /*otra propiedad que nos hace la misma que visibility:hidden es:*/
+    /*opacity: 0;*/
+}
+.menu>li {
+    /*Para ponerlas en bloque*/
+    display: inline-block;
+    position: relative;
+}
+.submenu {
+    /*Para que desaparezcan*/
+    display: none;
+    position: absolute;
+    top:15px;
+    left: 0;
+    width: 100px;
+}
+/*Cuando pongamos el raton por el menu hacer en el submenu:*/
+.menu>li:hover .submenu{
+    /*Le hacemos block*/
+    display: block;
+}
