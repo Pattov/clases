@@ -1,0 +1,11 @@
+:root{
+    --medidas:5rem;
+}
+.tablero{
+    width: calc(--medidas*5);
+    height: calc(--medidas*5);
+    
+}
+.color{
+
+}

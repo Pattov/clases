@@ -17,7 +17,7 @@
     overflow: hidden;
 }
 .triangulo:hover{
-    width: em;
+    width: 10em;
     height: 5em;
     overflow: hidden;
 }
