@@ -2,9 +2,11 @@
   --colorMenu: #ecf0f1;
   --colornoticias: #f5f5ff;
 }
+
 /*-------------------------------*/
 /*cabecera pagina con flex*/
 /*-------------------------------*/
+
 /*
 .cabeceralogo{
     background-color: #3598DB;
@@ -32,9 +34,11 @@ h1{
     margin-left: 3em;
 }
 */
+
 /*-------------------------------*/
 /*cabecera pagina sin flex*/
 /*-------------------------------*/
+
 .cabeceralogo {
   background-color: #3598db;
   display: flex;
@@ -65,30 +69,92 @@ h1 {
   margin: 0;
   margin-left: 3em;
 }
+
 /*-------------------------------*/
 /*cuerpo noticia*/
 /*-------------------------------*/
+
 main {
   background-color: var(--colorMenu);
-/*con un padding en el padre*/
-    padding: 0.1rem;
+  /*con un padding en el padre y quitar la franja sin color*/
+  padding: 0.1rem;
 }
-.noticia{
-    /*poner los*/
-    background-color: var(--colornoticias);
-    width: 70%;
-    /**/
-    margin:1em;
-    margin-left: auto;
-    margin-right: auto;
+.noticia {
+  /*dar formato a las noticias*/
+  background-color: var(--colornoticias);
+  width: 70%;
+  /*poner un margen para que se separe de la cabezera*/
+  /*Para quitar el trazo sin pintar y quitar el colapsado poner padding en el padre*/
+  margin: 1em;
+  margin-left: auto;
+  margin-right: auto;
+  /*Le ponemos sombra a la caja*/
+  box-shadow: 3px 3px 3px 1.5px rgba(100, 100, 100, 0.7);
+  border-radius: 8px;
 }
-h2{
-    margin: 0;
-    /*u asi se le da aire con el otro*/
-    margin-bottom: 1em;
+h2 {
+  margin: 0;
+  /*u asi se le da aire con el otro*/
+  margin-bottom: 1em;
 }
-.noticiahead{
-    padding: 0.5em 1em/*tener en cuenta el h2*/;
-    border-left: 5px solid tomato;
-    border-radius: 3px;
+.noticiahead {
+  padding: 0.5em 1em /*tener en cuenta el h2*/;
+  border-left: 5px solid tomato;
+  border-radius: 3px;
+}
+.noticiabody{
+  /*Para darle aire darle padding*/
+  /*Si se le pongo a las ps hace el doble de espacio y hay una distancia enorme*/
+  /*por lo que se pone .noticiabody y no .noticiabody.p*/
+  padding:0.5em 1em;
+}
+
+/*-------------------------------*/
+/*Imagenes en el cuerpo de la noticia*/
+/*-------------------------------*/
+
+.fotonoticia{
+  width: 70%;
+  /*para que se centre la imagen*/
+  margin-left: auto;
+  margin-right: auto;
+  /*No funciona!!
+  *Recordar que es porque es inline se soluciona con:
+  */
+  display: block;
+}
+
+
+/*-------------------------------*/
+/*comentarios*/
+/*-------------------------------*/
+.cuerpocomentario{
+  display: inline-block;
+  width: 70%;
+  background-color: white;
+  border-radius: 5px;
+  padding: 1em;
+}
+.comentario{
+  display: flex;
+  align-items: center;
+  padding: 0.5em;
+  margin-left: 2em;
+  color: gray;
+}
+/*-------------------------------*/
+/*Imagenes en los comentarios*/
+/*-------------------------------*/
+
+.fotocomentario{
+  /* El ancho y el alto debe ser el mismo para hacer un cuadrado*/
+  /* sino cuando apliquemos el border radius va a ser un ovalo y no un circulo*/
+  /*Tener en cuenta que en una imagen rectangular se va a perder el Aspect Ratio*/
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  margin-left: 2em;
+}
+.tab{
+  padding-left: 2em;
 }
