@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- media web -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ejemplos de encabezados y etiquetas semanticas</title>
+  </head>
+  <body> 
+    <header>
+      <!-- imagen con un fichero -->
+      <img
+        src="img/ordenador-portatil-aislado-sobre-fondo-blanco_8130-156.jpg"
+        alt="logo AMS"
+      />
+      <!-- imagen con url -->
+      <img
+    
+      src="https://media-exp1.licdn.com/dms/image/C560BAQFkH35-0h0ZDg/company-logo_200_200/0?e=2159024400&v=beta&t=c2zhsRoRUAhwz-QjZVmUHhQSVhs-vWQc5CVqxUE_ptY"
+      />
+      <h1 style="display: inline; background-color: coral;">¡Bienvenido a mi web de ordenadores!</h1>
+            <!-- coloquialismo -->
+      <!-- no poner más de un h1 -->
+      <nav>
+        <ul>
+          <li>Inicio</li>
+          <li>Sobre Nosotros</li>
+          <li>Noticias</li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>&lt;h1&gt; cami&oacute;n</h2>
+      <!-- truco -->
+      <!-- cuando queramos meter carateres que puede dar a error a la maquina hay que buscar su "caracter de escape" -->
+      <p style="border: dashed rgb(30, 141, 30) 0.1rem">
+        Principales caracteristicas del Ryzen 5
+      </p>
+      <!-- hay tres tipos de lista:ordenada, desordenada y de Definición -->
+      <!-- Lista desordenada -->
+      <ul>
+        <li>
+          Esto va a ser un submenu
+          <ul>
+            <li>Velocidad de hasta 5GHz</li>
+            <li>Hasta 192 cores</li>
+            <li>Aumenta la productividad</li>
+            <li>Ahorra en la factura de la luz mensual</li>
+          </ul>
+        </li>
+      </ul>
+      <p style="border: solid blue 0.2rem">
+        Principales activos para pasarse a AMD
+      </p>
+      <!-- el rem conseguirá que la línea se adapte al tamaño de la letra -->
+      <!-- Lista ordenada -->
+      <ol>
+        <li>Es más barato</li>
+        <li>Es más rapido</li>
+        <li>Consume mucho menos</li>
+        <li>Atencion al cliente 24/7</li>
+        <li>Bilingüe</li>
+      </ol>
+      <!-- lista definida -->
+      <di>
+        <dt>Glosario</dt>
+        <dd>Definición</dd>
+        <dt>Glosario</dt>
+        <dd>Definición</dd>
+      </di>
+    </main>
+    <article>
+      <h2>Noticias</h2>
+      <section class="1"> 
+        <!-- class se puede repetir -->
+        <h3>Nuevo micropocesador de AMD anunciado</h3>
+        <!-- para hacer listas lo que hay que tener en cuenta si es importante el orden o no para hacerla ordenada o desordenada -->
+        <p>El <strong>Nuevo</strong> hahsdjkah</p>
+        <!-- El strong sirve para resaltar "REFORZAR" pero no solo en texto sino tambien para los crawlers-->
+        <p>
+          Lorem ipsum <em>menos</em> sit amet consectetur, adipisicing elit.
+          Illo, cumque, rerum libero odit excepturi ab repellendus doloribus
+          quas eius magni aliquid molestiae ipsam at perferendis, ratione a id
+          minima. Maxime?Lorem ipsum dolor sit amet consectetur adipisicing
+          elit. Dolor, ab. Perferendis, dolore porro repellat veniam quas quam
+          possimus architecto laboriosam alias totam, tempore ipsum. Aut
+          molestiae exercitationem sed eius mollitia?
+        </p>
+      </section>
+      <section class="2">
+        <h3>Intel se desespera con la nueva publicación</h3>
+        <p>Los inversores estan pensando en vender sus acciones</p>
+      </section>
+    </article>
+    <article>
+      <h2>Sobre Nosotros</h2>
+      <section>
+        <h3>Empresa AMS</h3>
+        <p>
+          Nuestra Empresa <strong>AMS</strong> con un montón de años en el
+          sector laboral de los ordenadores.
+        </p>
+        <p>
+          Nuestra misión es ponerte a ti, querido lector actualizado de las
+          ultimas noticias sobre ordenadores.
+        </p>
+      </section>
+    </article>
+    <footer>Empresa AMD</footer>
+  </body>
+</html>
