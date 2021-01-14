@@ -16,6 +16,9 @@
    
 }
 .div-4{
+    background-color: violet;
+}
+.div-5{
     background-color: peru;
    
 }
@@ -24,11 +27,13 @@ Flex eje XY
 ----------------------------------*/
 /*
 body{
-    display: flex;/*Lo pone en el eje Main Axis(eje maestro)*/
+    display: flex;
+    /*Lo pone en el eje Main Axis(eje maestro)*/
+    /*flex-direction: column;*/
+    /*Se ve en el eje de la Y*/
     /*
-    flex-direction: row; *//* todo en columna*/
+    flex-direction: row; *//* todo en fila*/
     /*
-    flex-direction: column;*//*Se ve en el eje de la Y*/
     /*Por otra forma de dar orden es poner en el div que queramos el "orden" en nuestro caso en div-2*/
 /*}*/
 /*
@@ -111,6 +116,19 @@ position: static | relative | absolute | fixed | sticky
     transform: translate(-50%) rotate(45deg);/*ajustando el left sobre el ancho del propio elemento*/
     /*translate(x,y)*/
 }
+.container-1{
+    position:relative;
+    height: 300px;
+    background-color: tomato;
+}
+.div-4{
+    position:absolute;
+    top:0;
+    left:50%;
+    transform: translateY(-50%);
+    opacity: 0.5;
+}
+
 .div-3{
     position: absolute;
     /*para que lo suba arriba pones top 0*/
