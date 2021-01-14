@@ -1,0 +1,126 @@
+.caja {
+    height: 150px;
+    width: 150px;
+}
+.div-1{
+    background-color: lightcoral;
+}
+/*
+.div-2{
+    background-color: turquoise;
+    
+}
+*/
+.div-3{
+    background-color: tomato;
+   
+}
+.div-4{
+    background-color: peru;
+   
+}
+/*--------------------------------
+Flex eje XY
+----------------------------------*/
+/*
+body{
+    display: flex;/*Lo pone en el eje Main Axis(eje maestro)*/
+    /*
+    flex-direction: row; *//* todo en columna*/
+    /*
+    flex-direction: column;*//*Se ve en el eje de la Y*/
+    /*Por otra forma de dar orden es poner en el div que queramos el "orden" en nuestro caso en div-2*/
+/*}*/
+/*
+.div-2{
+    background-color:turquoise;
+    order: -1;
+}
+*/
+
+
+/*
+--------------------------------------------------
+Propiedad position CSS
+--------------------------------------------------
+*/
+/*
+
+position: static | relative | absolute | fixed | sticky
+    
+    --------------------------------
+    Generalidades
+    ------------------------------------
+    /*para que este posicionado tiene que estar distinto de static
+    podiendo utilizar el offsets 
+    Offsets => solo tienen sentido para elemento posicionados
+    un elemento esta posicionado solo si tiene posi
+    
+    top:15px;/*no es lo mismo en relative q en absolute*//*
+    bottom:-2rem;
+    left: 50%;
+    right:2em;
+    
+    referencia:?
+    
+    mantiene flujo: si o no (respeta el espacio reservado o no)
+    
+    ------------------------------------
+    en el relativo
+    ------------------------------------
+    la referencia para los offsets es la posicion original del elemento(donde estaba antes).
+    Mantiene el flujo -> respeta el espacio original
+    
+    El display:none y el visibility:hidden no se pueden animar
+    por lo que es mejor usar el opacity porque si q lo permite
+    en un fijo se comporta al absoluto, saliendo el flujo(Dejar el espacio)
+    ------------------------------------
+    en el absoluto
+    ------------------------------------
+        la referencia para los offsets es el primer ancestro posicionado (que no sea static) que encuentre.
+        en caso de no tenerlo, toma el body.
+    ------------------------------------
+    en el fixed
+    ------------------------------------
+        en un fijo se comporta al absoluto, saliendo el flujo(Dejar el espacio), pero a diferencia del absolut se toma el viewport
+    ------------------------------------
+    en el sticky
+    ------------------------------------
+    hibrido entre el relativo, comportandose ocmo este, pero cuando se comporta como un stick
+
+        */
+    /*ver ejemplos aqui -> https://developer.mozilla.org/es/docs/Web/CSS/position */
+
+.div-2{
+    background-color: turquoise;
+    position: relative;
+    opacity: 0.5;
+    /*-----------------------
+    Movimiento Horizontal
+    -----------------------------*/
+    top: 20;
+    /*top: -20px;/*sube hacia arriba*/
+    /*el top: -20px es igual que si pongo el:*/
+    /*bottom: -20px;*/
+    /*-----------------------
+    Movimiento vertical
+    -----------------------------*/
+    /*Para centrarlo uso:*/
+    left: 50%;
+    /*Pero ojo lo hace respecto a la derecha del ancho de su padre, sin tener en cuenta el otro lado, el lado izquiedo es menor, no es le 50%*/
+    transform: translate(-50%) rotate(45deg);/*ajustando el left sobre el ancho del propio elemento*/
+    /*translate(x,y)*/
+}
+.div-3{
+    position: absolute;
+    /*para que lo suba arriba pones top 0*/
+    top: 0;
+    left: 50%;
+    transform: translate(-50%);
+
+    /*Para hacerlo en flex*/
+    /*
+    justify-content: center; /* Alinea en el eje principal*/
+    /*align-items: center;
+    flex-direction: row;*/
+}

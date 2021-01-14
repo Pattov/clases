@@ -1,0 +1,7 @@
+.cajatexto{
+    display: inline-block;
+    width: 45px;
+    height: 50px;
+ background-color: black;
+ opacity: 0.5;
+}
