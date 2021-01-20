@@ -16,7 +16,7 @@
    
 }
 .div-4{
-    background-color: violet;
+    background-color: rgb(33, 15, 190);
 }
 .div-5{
     background-color: peru;
@@ -27,12 +27,11 @@ Flex eje XY
 ----------------------------------*/
 /*
 body{
-    display: flex;
+    display: flex;*/
     /*Lo pone en el eje Main Axis(eje maestro)*/
     /*flex-direction: column;*/
     /*Se ve en el eje de la Y*/
-    /*
-    flex-direction: row; *//* todo en fila*/
+    /*flex-direction: row; *//* todo en fila*/
     /*
     /*Por otra forma de dar orden es poner en el div que queramos el "orden" en nuestro caso en div-2*/
 /*}*/
@@ -59,7 +58,7 @@ position: static | relative | absolute | fixed | sticky
     /*para que este posicionado tiene que estar distinto de static
     podiendo utilizar el offsets 
     Offsets => solo tienen sentido para elemento posicionados
-    un elemento esta posicionado solo si tiene posi
+    un elemento esta posicionado si no se usa Static
     
     top:15px;/*no es lo mismo en relative q en absolute*//*
     bottom:-2rem;
@@ -105,8 +104,8 @@ position: static | relative | absolute | fixed | sticky
     -----------------------------*/
     top: 20;
     /*top: -20px;/*sube hacia arriba*/
-    /*el top: -20px es igual que si pongo el:*/
-    /*bottom: -20px;*/
+    /*el top: 20px da el mismo efecto si pongo el:*/
+    /*bottom: -20px;*//*Pero ojo no es lo mismo*/
     /*-----------------------
     Movimiento vertical
     -----------------------------*/
@@ -125,8 +124,7 @@ position: static | relative | absolute | fixed | sticky
     position:absolute;
     top:0;
     left:50%;
-    transform: translateY(-50%);
-    opacity: 0.5;
+    transform: translateY(50%);
 }
 
 .div-3{
