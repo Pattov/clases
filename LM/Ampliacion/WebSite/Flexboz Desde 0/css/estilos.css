@@ -8,6 +8,7 @@
     height: 600px;
     outline: 5px solid #000;
     margin: 20px auto;
+    display: flex;
 }
 .container__item{
     width: 100px;
@@ -15,5 +16,16 @@
     font-size: 2rem;
     color:white;
     text-align: center;
-    
+}
+.container :nth-child(1){
+    background: steelblue;
+}
+.container :nth-child(2){
+    background: tomato;
+}
+.container :nth-child(3){
+    background: slateblue;
+}
+.container :nth-child(4){
+    background: orangered;
 }
