@@ -1,0 +1,44 @@
+*, ::after, *::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+}
+:root{
+    --azul:#2d4059;
+    --amarillo: #FFB400;
+    --rojo:#EA5455;
+}
+.menu{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    background-color: var(--azul);
+    color: #FFB400;    
+}
+.submenu{
+    /*queremos sacarlo del flujo*/
+    position: absolute;
+    flex-direction: column;
+    margin-top: -15rem;
+    transition: margin-top .5s ease;
+    display: none;
+}
+.menu>.menu-item:hover >.submenu{
+    margin-top: 0;
+    display: flex;
+}
+.menu a{
+    padding: .25rem 1rem;
+    display: inline-block;
+    width: 100%;
+}
+.submenu > .menu-item{
+    width: 100%;
+    
+}
+.menu-item:hover >a{
+    background-color: var(--amarillo);
+    color: var(--azul);
+}
