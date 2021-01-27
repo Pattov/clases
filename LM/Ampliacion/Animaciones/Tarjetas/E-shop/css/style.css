@@ -1,0 +1,98 @@
+body{
+    background: #26242e;
+}
+*{
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    position: absolute;
+    top: 50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+    width: 280px;
+    height: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 2px;
+    overflow: hidden;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /*Imagen*/
+    background: url(https://i.pinimg.com/originals/7d/4d/7b/7d4d7bf729a4beeb7903b79cb7560459.jpg) center/cover;
+    z-index: -1;
+    transition: .5s ease;
+}
+.container:hover::before{
+    transform: scale(1.1);
+}
+.container:hover .size{
+    transform: translate(0);
+    opacity: 1;
+}
+.btn{
+    width: 260px;
+    height: 45px;
+    background: #ffffff;
+    border-radius: 3px;
+    display: flex;
+    overflow: hidden;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .1);
+}
+.price{
+    width: 160px;
+    height: 45px;
+    font-weight: bolder;
+}
+.cart{
+    width: 100px;
+    height: 45px;
+    background: #26242e;
+    color: #ffffff;
+}
+.text{
+    line-height: 45px;
+    text-align: center;
+    font-family: sans-serif;
+    transition: .2s;
+}
+.btn:hover .price{
+    width: 0;
+}
+.btn:hover .cart{
+width: 260px;
+}
+.content{
+    width: 260px;
+    height: 270px;
+    border-radius: 2px;
+    text-align: center;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.name{
+    font-size: 1.5rem;
+}
+.size{
+    font-size: .9rem;
+    height: 70px;
+    transition: .5s ease;
+    transform: translateY(40px);
+    opacity: 0;
+}
+.size span{
+    padding: 5px 10px;
+    transition: .3s ease;
+    margin: 5px;
+}
+.size span:hover{
+    border-bottom: 1px solid #fff;
+}

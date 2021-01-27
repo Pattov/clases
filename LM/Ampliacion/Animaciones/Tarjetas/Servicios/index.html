@@ -1,0 +1,143 @@
+<style>
+    body {
+        background-color: #111;
+    }
+
+    h1 {
+        text-align: center;
+        margin: 50px auto 120px;
+        color: #fff;
+        text-transform: uppercase;
+    }
+
+    .main {
+        width: 100%;
+        min-height: 380px;
+        text-align: center;
+        position: relative;
+        cursor: pointer;
+    }
+
+    .service {
+        background: #111;
+        padding: 30px;
+        border-radius: 10px;
+        position: absolute;
+        bottom: 0;
+        z-index: 1;
+        box-shadow: 0 0 25px -5px rgb(253, 253, 253);
+        transition: transform .8s;
+        height: 372px;
+        margin: 50px;
+        margin-bottom: 20px;
+        color: #fff;
+    }
+
+    .service-logo {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        margin: -90px auto 0;
+        background: #111;
+        border: 18px solid rgb(240, 240, 20);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .service h4 {
+        height: 35px;
+        width: 80%;
+        margin: 50px auto;
+        background: #111;
+        position: relative;
+    }
+
+    .service h4::after,
+    .service h4::before {
+        content: '';
+        width: 40px;
+        height: 30px;
+        position: absolute;
+        z-index: -1;
+    }
+
+    .service h4::after {
+        background: linear-gradient(to right, #fff, rgb(240, 240, 20));
+        right: -5px;
+        top: -5px;
+    }
+
+    .service h4::before {
+        background: linear-gradient(to right, rgb(240, 240, 20), #fff);
+        left: -5px;
+        bottom: -5px;
+    }
+
+    .main:hover .service {
+        transform: translateY(-40px);
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 180px;
+    }
+
+    .service-colum {
+        flex: 3;
+        background: #111;
+    }
+
+    i {
+        font-size: 50px;
+    }
+</style>
+
+<section id="services">
+    <h1>What We Do?</h1>
+    <div class="container">
+        <div class="row">
+
+            <div class="service-colum">
+                <div class="main">
+                    <div class="service">
+                        <div class="service-logo"><i class="fas fa-paint-brush"></i></div>
+                        <h4>Web Design</h4>
+                        <p>⚡ Designing highly attractive user interface for mobile and web applications
+                            ⚡ Customizing logo designs and building logos from scratch
+                            ⚡ Creating the flow of application functionalities to optimize user experience</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-colum">
+                <div class="main">
+                    <div class="service">
+                        <div class="service-logo"><i class="fas fa-code"></i></div>
+                        <h4>Development</h4>
+                        <p>⚡ Building resposive website front end using React-Redux
+                            ⚡ Developing mobile applications using Flutter, React Native and solo android apps using
+                            Kotlin
+                            ⚡ Creating application backend in Node, Express & Flask</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-colum">
+                <div class="main">
+                    <div class="service">
+                        <div class="service-logo"><i class="fas fa-palette"></i></div>
+                        <h4>Graphic Designer</h4>
+                        <p>⚡ Designing highly attractive illustrations, logos, layouts and photos.
+                            ⚡ Customizing logo designs and building logos from scratch
+                            ⚡ visual aspects of websites, books, magazines, product packaging,</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="https://kit.fontawesome.com/dd8c49730d.js" crossorigin="anonymous"></script>
