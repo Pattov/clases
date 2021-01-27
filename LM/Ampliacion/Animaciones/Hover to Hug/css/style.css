@@ -1,0 +1,67 @@
+/*-------------------------------------------------------*/
+/*                    Fuentes - Style                    */
+/*-------------------------------------------------------*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #000;
+    overflow: hidden;
+}
+button{
+    position: relative;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 40px;
+    font-weight: 800;
+    color: #ff00a5;
+    text-shadow: 1px 3px 15px #000;
+    -webkit-text-stroke: 3px #000;
+    text-transform: uppercase;
+    transition: .5s all;
+    cursor: pointer;
+}
+/*-------------------------------------------------------*/
+/*  Dos Pseudo-Elementos de los dos rombos de colores    */
+/*-------------------------------------------------------*/
+button::after, button::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 205px;
+    height: 70px;
+    transform: skew(-35deg);
+    transition: .5s all;
+}
+button::before{
+    top: -35px;
+    left: -120px;
+    background: #00ffee;
+    box-shadow: 1px 4px 25px #01ada2;
+}
+button::after{
+    bottom: -35px;
+    right: -120px;
+    background: #fbff00;
+    box-shadow: 1px 4px 25px #fbff00;
+}
+/*-------------------------------------------------------*/
+/*                     HOVER Animacion                   */
+/*-------------------------------------------------------*/
+button:hover{
+    color:#000;
+    text-shadow: none;
+    -webkit-text-stroke:0;
+}
+button:hover::before{
+    top:-5px;
+    left: -26px;
+    transform: skew(0);
+}
+button:hover::after{
+    top:-5px;
+    left: 179px;
+    transform: skew(0); 
+}
