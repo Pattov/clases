@@ -1,0 +1,37 @@
+@font-face{
+    font-family: roboto;
+    src: url(robot.ttf);
+}
+body{
+    font-family: roboto;
+    background: #fff;
+    margin: 0;    
+}
+nav{
+    background: #fff;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 5px 5px rgba(0, 0, 0, .25), 0 1px 2px rgba(0, 0, 0, .25);
+}
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 3vh;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #232323;
+}
+/*CONTENT*/
+header{
+    width: 100%;
+    height: 100vh;
+}
+.bg{
+    width: 100%;
+    height: 100vh;
+    background: url(LM\Ampliacion\WebSite\Spa);
+}
