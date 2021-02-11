@@ -1,0 +1,36 @@
+body{
+    background: rgb(86, 105, 141);
+    color: white;
+}
+th,td{
+
+    padding: 5px;
+}
+.tooltip{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    opacity: 0;
+    transition: 0.5s;
+}
+div:hover>.tooltip{
+    opacity: 1;
+}
+.usuario{
+    position: absolute;
+    right: 0;
+    top: 30px;
+    padding: 10px;
+  
+}
+.encabezado{
+    background-color: rgb(151, 13, 13);
+    color: seashell;
+}
+table{
+    background-color: rgb(54, 152, 218);
+    border-collapse: collapse;
+}
+.primera{
+    background-color: blue;
+}
