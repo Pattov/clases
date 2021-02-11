@@ -32,7 +32,7 @@ p{
     /*Con el margin hago que desaparezca*/
     margin-top: -15rem;
     transition: margin-top .5s ease;
-    display: none;
+    /*display: none;*/
 }
 .menu>.menu-item:hover >.submenu{
     margin-top: 0;

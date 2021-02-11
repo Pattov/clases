@@ -1,0 +1,15 @@
+.menu{
+    position: fixed;
+    /*Lo quiero arriba del todo*/
+    top: 0;
+    /*centrarlo en el medio con fixed*/
+    min-width: 100%;
+}
+.submenu{
+    top: 4.5%;
+
+}
+/*Para que no me pise el texto*/
+main{
+    margin-top: 1.5rem;
+}

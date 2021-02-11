@@ -7,50 +7,64 @@
     <style>
       table {
         border: 1px solid tomato;
+        /*Por fuera del contenido*/
         outline: 1px;
       }
       td,
       th {
         border: 1px solid tomato;
       }
+      /* caption{
+        /*Lo pone por debajo de la tabla*/
+        /* caption-side: bottom; */
+      /*}*/
+      .producto{
+        background-color: tomato;
+        color: thistle;
+      }
     </style>
   </head>
   <body>
     <table>
-        <caption>Historico de ventas por trimestre en 2020</caption>
-        <!-- Para poner el caption abajo se pondrá en Style caption-side y lo mandara abajo -->
-      <thead>
-        <tr>
-          <th></th>
-          <th>Q1</th>
-          <th>Q2</th>
-          <th>Q3</th>
-          <th>Q4</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Pepinillos</td>
-          <td>232</td>
-          <td>221</td>
-          <td>247</td>
-          <td>288</td>
-        </tr>
-        <tr>
-          <td>Tomato</td>
-          <td>65</td>
-          <td>34</td>
-          <td>46</td>
-          <td>34</td>
-        </tr>
-        <tr>
-          <td>Naranjo</td>
-          <td>6545</td>
-          <td>9723</td>
-          <td>3244</td>
-          <td>4534563</td>
-        </tr>
-      </tbody>
-    </table>
+      <colgroup>
+      <col span=4>
+      <col class="producto">
+      <col>
+    </colgroup>
+      <caption>Historico de ventas por trimestre en 2020</caption>
+      <!-- Para poner el caption abajo se pondrá en Style caption-side y lo mandara abajo -->
+    <thead>
+      <tr>
+        <th></th>
+        <th>Q1</th>
+        <th>Q2</th>
+        <th>Q3</th>
+        <th>Q4</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Pepinillos</td>
+        <td>232</td>
+        <td>221</td>
+        <td>247</td>
+        <td>288</td>
+      </tr>
+      <tr>
+        <td>Tomato</td>
+        <td>65</td>
+        <td>34</td>
+        <td>46</td>
+        <td>34</td>
+      </tr>
+      <tr>
+        <td>Naranjo</td>
+        <td>6545</td>
+        <td>9723</td>
+        <td>3244</td>
+        <td>4534563</td>
+      </tr>
+    </tbody>
+  </table>
   </body>
 </html>
