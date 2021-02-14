@@ -6,33 +6,93 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        div{
-            margin-bottom: 0.5rem;
-        }
-        label{
-            display: inline-block;
-            width: 20ch;
-            text-align: right;
-        }
+      div {
+        margin-bottom: 0.5rem;
+      }
+      .etiqueta {
+        display: inline-block;
+        width: 20ch;
+        text-align: right;
+      }
     </style>
   </head>
   <body>
     <form action="processform.php" method="GET">
-        <!-- si hay muchos campos laforma de agrupar campos es con fieldset, y si no ponemos nada lo unico que hace es poner un borde -->
-        <fieldset>
-          <legend>Datos de Inicio</legend>
+      <!-- si hay muchos campos la forma de agrupar campos es con fieldset, y si no ponemos nada lo unico que hace es poner un borde -->
+      <fieldset>
+        <legend>Datos de Inicio</legend>
         <div>
-        <!-- en el for hace referencia al campo en este caso a la id -->
-        <label for="usuario">Nombre de usuario</label>
-        <input id="usuario" type="text" name="usuario_name" />
-      </div>
-      <div>
-        <label for="contraseña">Contraseña</label>
-        <input id="contraseña" type="password" name="password_name" />
-      </div>
-      <!-- <button>Enviar</button> esta es una opcion otra es-->
-      <input type="submit" value="Iniciar">
-    </fieldset>
+          <!-- en el for hace referencia al campo en este caso a la id -->
+          <label class="hermanos" for="usuario">Nombre de usuario</label>
+          <input id="usuario" type="text" name="usuario_name" />
+        </div>
+        <div class="email">
+          <!-- no es necesario usar el for ya que label es padre de input -->
+          <label>
+            Email <input type="email" name="email_name" id="email" />
+          </label>
+        </div>
+        <div>
+          <label class="hermanos" for="contraseña">Contraseña</label>
+          <input id="contraseña" type="password" name="password_name" />
+        </div>
+        <div class="colorPicker">
+          <label>
+            Elija un color <input type="color" name="color" id="colorPicker" />
+          </label>
+        </div>
+        <!-- <button>Enviar</button> esta es una opcion otra es-->
+      </fieldset>
+      <input type="range" min="0" max="100" step="10" />
+      <fieldset>
+        <legend>Datos</legend>
+        <!-- no todos los navegadores tienen el mismo diseño de fecha -->
+        Fecha de nacimiento<input
+          type="date"
+          name="fechaNacimiento"
+          id="fecha_nacimiento"
+        />
+        Hora de nacimiento<input
+          type="time"
+          name="horanacimiento"
+          id="hora_nacimiento"
+        />
+        Número de hijos <input type="number" name="numHijos" id="num_hijos" />
+        <!-- informacion visual si no queremos que vaya a la BD  -->
+        <input type="checkbox" name="residencia" id="res" />
+        <label for="res">Residente en Valladolid</label>
+        <!-- aunque solo ponga radio sera -> radio button  -->
+        <div>
+          <input type="radio" name="gen" id="gen-hombre" />Hombre
+          <input type="radio" name="gen" id="gen-mujer" /> Mujer
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Estado civil</legend>
+        <div>
+          <input type="radio" name="es" id="es-sol" />
+          <label for="es-sol">Soltero</label>
+        </div>
+        <div>
+          <input type="radio" name="es" id="es-cas" />
+          <label for="es-cas">Casado</label>
+        </div>
+        <div>
+          <input type="radio" name="es" id="es-vi" />
+          <label for="es-vi">Viudo</label>
+        </div>
+        <div>
+          <input type="radio" name="es" id="es-na" />
+          <label for="es-na">N/A</label>
+        </div>
+      </fieldset>
+      <input type="submit" value="Iniciar" />
+      <textarea
+        placeholder="Escriba su mensaje"
+        id=""
+        cols="30"
+        rows="10"
+      ></textarea>
     </form>
   </body>
 </html>
