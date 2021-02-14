@@ -5,14 +5,34 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+        div{
+            margin-bottom: 0.5rem;
+        }
+        label{
+            display: inline-block;
+            width: 20ch;
+            text-align: right;
+        }
+    </style>
   </head>
   <body>
     <form action="processform.php" method="GET">
-      <!-- en el for hace referencia al campo en este caso a la id -->
-      <label for="usuario">Nombre de usuario</label>
-      <input id="usuario" type="text" name="usuario" />
-      <input type="text" name="rol" />
-      <button>Enviar</button>
+        <!-- si hay muchos campos laforma de agrupar campos es con fieldset, y si no ponemos nada lo unico que hace es poner un borde -->
+        <fieldset>
+          <legend>Datos de Inicio</legend>
+        <div>
+        <!-- en el for hace referencia al campo en este caso a la id -->
+        <label for="usuario">Nombre de usuario</label>
+        <input id="usuario" type="text" name="usuario_name" />
+      </div>
+      <div>
+        <label for="contraseña">Contraseña</label>
+        <input id="contraseña" type="password" name="password_name" />
+      </div>
+      <!-- <button>Enviar</button> esta es una opcion otra es-->
+      <input type="submit" value="Iniciar">
+    </fieldset>
     </form>
   </body>
 </html>
