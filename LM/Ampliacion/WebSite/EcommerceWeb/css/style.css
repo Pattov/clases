@@ -14,7 +14,7 @@ body{
 }
 nav{
     flex: 1;
-    text-align: right;
+    text-align: left;
 }
 nav ul{
     display: inline-block;
@@ -253,7 +253,7 @@ ul{
     nav ul{
         position: absolute;
         top: 70px;
-        left 0;
+        left: 0;
         background: #333;
         width: 100%;
         overflow: hidden;
