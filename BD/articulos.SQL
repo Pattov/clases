@@ -19,6 +19,8 @@ INSERT INTO articulos VALUE
 ('Mens', 'Otro más', 213, b'110110')
 ;
 
+ALTER TABLE articulos ADD COLUMN lecturas INT;
+
 SELECT cod from articulos;
 
 SELECT bin (perm) from articulos;
@@ -27,3 +29,5 @@ SELECT oct (perm) from articulos;
 SELECT tit,bin (perm) from articulos;
 SELECT cod, tit, texto, bin (perm) from articulos;
 SELECT perm&b'010000' from articulos;
+-- esto es una proyeccion
+SELECT cod, tit, texto, prop, bin(perm), lecturas from articulos;
