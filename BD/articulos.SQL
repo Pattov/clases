@@ -55,7 +55,8 @@ SELECT cod AS 'Identificador del usuario' from usuarios;
 
 
 
+
 Partiendo de la situacion actual, se pretende añadir una restriccion de FK entre la tabla de articulos y la tabla de usuarios, de forma que el campo propietario se mapee con los usuarios existentes del siguiente modo:
     Los articulos con prop entre 0 y 1000 -> deben pertenecer al usuario 1.
     Los articulos con 1000 < prop < 3000 -> Deben pertenecer al usuario 2.
-    Los articulos con prop>3000 -> deben pertenecer al usuario 3.
+    Los articulos con prop > 3000 -> deben pertenecer al usuario 3.
