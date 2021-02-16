@@ -1,0 +1,45 @@
+Relación Actores (nombre, fecha_nac)
+A1 - Carrie Fisher,    09/09/1234
+     Harrison Ford,    19/10/1231
+A2 - Carrie Fisher,    09/09/1234
+     Jhonny Deep,      07/02/2367
+     Carrie Fisher,    08/03/323
+
+A1 U A2
+    Carrie Fisher, 09/09/1234
+    Harrison Ford, 19/10/1231
+    Jhonny Deep, 07/02/2367
+    Carrie Fisher 08/03/323
+
+A2 U A1 (= A1 U A2)
+    Carrie Fisher, 09/09/1234
+    Harrison Ford, 19/10/1231
+    Jhonny Deep, 07/02/2367
+    Carrie Fisher 08/03/323
+
+A1 - A2
+    Harrison Ford, 19/10/1231
+
+A2 - A1
+
+    Jhonny Deep, 07/02/2367
+    Carrie Fisher,  08/03/323
+
+A1 X A2 (a1.nombre, a1.fecha_nac, a2.nombre, a2.fecha_nac)
+
+    cardinalidad = 2 x 3 = 6
+
+    Carrie Fisher,   09/09/1234,  Carrie Fisher,    09/09/1234
+    Carrie Fisher,   09/09/1234,  Jhonny Deep,      07/02/2367
+    Carrie Fisher,   09/09/1234,  Carrie Fisher,    08/03/323
+    Harrison Ford,   19/10/1231,  Carrie Fisher,    09/09/1234
+    Harrison Ford,   19/10/1231,  Jhonny Deep,      07/02/2367
+    Harrison Ford,   19/10/1231,  Carrie Fisher,    08/03/323
+
+Quiero borrar todos los que tienen fecha < 2020
+    Borrar = SIGMA [fecha_nac>'01/01/2020'] (Actores)
+
+    Actores - Borrar
+
+Quiero el nombre de aquellos actores que hayan nacido exactamente el 2/10/1979:
+    PI [nombre] (Sigma [fecha=' 02/10/1979'](Actores))

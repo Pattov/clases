@@ -1,0 +1,51 @@
+Personas(DNI, Nombre) y Coches (matrícula, marca, modelo, Dni)
+        777, Vicente                    9999, VW, Gold, 888
+        888, Paquita                    7775, VW, Tiguan, 777
+                                        9775, Ford, Focus, 888
+                                        7676, Renault, Twngo, 888
+
+A1 X A2 (p.DNI, Nombre, matricula, marca, modelo, c.DNI)
+
+        Grado → 6 ⇒ Grado(Personas X Coches) = grado(Personas)+ grado(Coches) = 4 + 2 =6
+
+        Cardinalidad → 2 x 4 = 8  ⇒ Cardinalidad(Personas X Coches) = Cardinalidad(Personas)* Cardinalidad(Coches) = 4 * 2 = 8
+
+        777, Vicente, 9999, VW, Gold, 888
+        777, Vicente, 7775, WV, Tiguan, 777
+        777, Vicente, 9775, Ford, Focus, 888
+        777, Vicente, 676, Renault, Twngo, 888 
+        888, Paquita, 9999, VW, Gold, 888
+        888, Paquita, 7775, WV, Tiguan, 777
+        888, Paquita , 9775, Ford, Focus, 888
+        888, Paquita , 676, Renault, Twngo, 888 
+
+PI nombre (Personas)
+
+        Vicente
+        Paquita
+
+PI marca (Coches) = π marca (Coches)
+
+        VW
+        Ford
+        Renault
+
+Sigma marca=VW(Coches) == σ marcas=´vw´(Coches)
+
+        9999, VW, Gold, 888
+        7775, VW, Tiguan, 777
+
+Cual es la marca y modelo de los coches de Paquita
+
+    PI[marca, modelo](SIGMA [nombre='Paquita'] (SIGMA[personas.DNI = Coches.DNI] (PersonasXCoches)))
+
+SIGMA [Modelo='Golf' OR modelo='Tiguan'](Coches)
+
+    Quiero los coches que sean golf o tiguan
+
+    otra forma de hacerlo es:
+    Sigma[modelo='Golf'](Coches) U Sigma[modelo='Tiguan'](Coches)
+
+Todos los coches que tengan como marca la misma que tenga golf   
+    SIGMA [modelo='Golf'](coches)) -> A
+    PI[coches.mat, coches.marca, coches.modelo, coches.DNI](Sigma[coches.marca=a.marca](Coches x A))
