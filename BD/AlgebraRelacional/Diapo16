@@ -1,5 +1,10 @@
-1. PALENCIA <-- SIGMA[CLIENTES.cod=cliente AND Productos.cod=prod AND pob='PALENCIA' AND pob='LEON'](CLIENTESXPRODUCTOSXVENTAS)
+1. SIGMA[CLIENTES.cod=cliente AND Productos.cod=prod AND pob='PALENCIA' AND pob='LEON'](CLIENTESXPRODUCTOSXVENTAS)
 
+2. JUAN <-- Sigma[CLIENTES.cod=cliente AND Productos.cod=prod AND cantidad=5 AND desc='bolsa de pipas' AND c.nombre='Juan'](CLIENTESXPRODUCTOSXVENTAS)
+    ciudad<--PI[pob](JUAN)
+            (ciudadx)
+
+    distint
 
 
 PI[nombre, tel](CLientes)

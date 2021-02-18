@@ -43,6 +43,7 @@ Obtener los valores de P# para los proveedores que suministran para el articulo 
     Algebra relacional
         PI[id_p, pnombre, categoria, ciudad](SIGMA[id_p=prod AND id_t=art AND art='T1' AND id_t='C1'](proveedoresXarticulosXenvios))
 
-Obtener los valores de tnombre en order alfabetico para los articulos abastecidos por el proveedor P1
+Obtener los valores de tnombre de los articulos abastecidos por el proveedor P1
 
-    PI[tnombre](SIGMA[](articulosxproveedores))
+    PI[tnombre](SIGMA[id_p='T1'](catalogos))
+
