@@ -1,0 +1,48 @@
+proveedores(id_p(PK), pnombre, categoria, ciudad)
+componentes(id_c(PK), cnombre, color, peso, ciudad)
+articulos(id_t(PK), tnombre, ciudad)
+envios(prod(FK), comp(FK), art(FK), cantidad)
+
+Obtener todos los detalles de todos los articulos de CACERES
+    
+    Algebra relacional
+        PROYECCION[CAMPOS](RELACION)--SELECCION[CONDICION](RELACION)
+        PI[id_t, tnombre, ciudad](SIGMA[ciudad='CACERES'](articulos));
+
+    SQL
+        SELECT campos FROM relacion Where condicion
+
+        SELECT id_t, tnombre, ciudad
+        FROM articulos
+        WHERE ciudad='CACERES'
+
+Obtener todos los valores de P# para los proveedores que abastecen el articulo T1
+
+    Algebra relacional
+        PI[id_p](SIGMA[art=id_t AND prod=id_p](ENVIOSXARTICULOSXPROVEEDORES)U SIGMA[art='T1'](envios))
+
+    consulta SQL
+        SELECT 
+        UNION
+        SELECT
+
+Obtener la lista de pares de atributos (color y ciudad) de la tabla componentes eliminando los pares duplicados
+
+    Algebra relacional
+        PI[color, ciudad](componentes)
+
+Obtener de la tabla de articulos los valores de t# y ciudad donde el nombre de la ciudad acaba en d o contiene al menos una e
+    
+    Algebra relacional
+        PI[id_t, articulos.ciudad](SIGMA[ciudad=*o or ciudad=e](articulos))
+
+    sentencia
+
+Obtener los valores de P# para los proveedores que suministran para el articulo T1 el componente C1
+
+    Algebra relacional
+        PI[id_p, pnombre, categoria, ciudad](SIGMA[id_p=prod AND id_t=art AND art='T1' AND id_t='C1'](proveedoresXarticulosXenvios))
+
+Obtener los valores de tnombre en order alfabetico para los articulos abastecidos por el proveedor P1
+
+    PI[tnombre](SIGMA[](articulosxproveedores))

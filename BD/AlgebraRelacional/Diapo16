@@ -1,0 +1,21 @@
+1. PALENCIA <-- SIGMA[CLIENTES.cod=cliente AND Productos.cod=prod AND pob='PALENCIA' AND pob='LEON'](CLIENTESXPRODUCTOSXVENTAS)
+
+
+
+PI[nombre, tel](CLientes)
+    nombre y telefono de los clientes
+SIGMA[pob='LEON'](Clientes)
+    clientes que son de LEON
+PI[nombre, tel](SIGMA[pob='LEON'](Clientes))
+    nombre y telefono de los clientes que son de LEON
+PI[nombre, tel](SIGMA[pob='LEON'](Clientes))U PI[nombre, tel](SIGMA[nombre='LEO'](Clientes))
+    nombre y telefono de los quientes de leon y que su nombre sea leo
+PI[nombre](SIGMA[pob='VIANA'](Clientes))U PI[nombre, tel](SIGMA[nombre='LEO'](Clientes))
+    nombre de los clientes de Viana y todos los telefonos de los que se llaman leo
+SIGMA[v.prod=c.cod](Ventas X Productos)
+    productos que han sido vendidos
+PI[nombre,desc](SIGMA[v.prod=c.cod AND v.clientes=c.cod](CLIENTES x Productos X Ventas))
+    Nombre de de los clientes y articulos que compro
+
+
+

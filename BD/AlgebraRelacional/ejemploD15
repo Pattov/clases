@@ -21,7 +21,11 @@ DESCRIPCION Y PRECIO QUE NO HAN SIDO COMPRADOS
 NOMBRE DE LOS CLIENTES Y DESC DE PRODUCTOS QUE HAN COMPRADO CUYA CANTIDAD SEA 5 ARTICULOS VENDIDOS
     PI[CLIENTES.NOMBRE, PRODUCTOS.DESC](SIGMA[CANT=>5](SIGMA[PROD=p.cod U CLIENTE=c.cod](VENTASXPRODUCTOSxCLIENTES)))
 
-    SELECT
+    sentencia
+        SELECT c.nombre, p.desc                         ---- esto es la PROYECCION
+        FROM productos p, clientes c, ventas v          ---- esto es el producto cartesiano de PXCXV
+        WHERE p.cod = v.prod AND v.cliente = c.cod      ---- esta es la condicion del join
+            AND v.cant >=5;                             ---- este es otro filtro cualquiera
 
 NOMBRE Y DESC DE PRODUCTOS VENDIDOS CON 5 ARTICULOS VENDIDOS
     PI[PRODUCTOS.NOMBRE, PRODUCTOS.DESC](SIGMA[CLIENTE=COD U CANTIDAD=5](VENTASXPRODUCTOS))
@@ -45,3 +49,12 @@ PRODUCTOS que se han VENDIDO en salamanca o cuyo descripcion sea "boligrafo"
 
 
 join clave externa con clave primaria de otra
+
+    Algebra relacional
+        Sigma[prod=p.cod AND cliente=c.cod](C x P X V)
+
+    sentencia
+        SELECT *
+        FROM productos p, clientes c, ventas V
+        Where p.cod= v.prod AND v.cliente = c.cod;
+
