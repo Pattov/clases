@@ -1,0 +1,64 @@
+CREATE TABLE prestamos(
+    libro VARCHAR(10),
+    usuario VARCHAR(9),
+    fecha DATE NOT NULL,
+    fecha_dev DATE,
+    anotaciones VARCHAR(50),
+    PRIMARY KEY(libro, usuario, fecha),
+    FOREIGN KEY(libro) REFERENCES libros(cod),
+    FOREIGN KEY(usuario) REFERENCES usuario(NIF),
+);
+Título y autor de los libros que se han sacado en 2021.
+
+PI[libros.titulo, libros.autor]( SIGMA[libros.cod=prestamos AND prestamos.fecha='2021'](libros X prestamos) )
+Ejercicios UT6-UT7 (70 puntos)
+
+En un sistema de gestión de préstamos bibliotecarios se extraen las siguientes relaciones:
+LIBROS(cod, titulo, autor, fecha_pub)
+   	USUARIOS(NIF, nombre, telefono)
+	PRESTAMOS(libro, usuario, fecha, fecha_dev, anotaciones)
+
+Se pide lo siguiente:
+(15p) Define la sentencia SQL necesaria para crear la tabla de préstamos. Asume que las tablas de usuarios y libros ya están creadas y que la fecha de devolución puede ser NULL (sólo se rellena en el momento de la devolución).
+CREATE TABLE prestamos(
+    libro VARCHAR(10),
+    usuario VARCHAR(9),
+    fecha DATE NOT NULL,
+    fecha_dev DATE,
+    anotaciones VARCHAR(50),
+    PRIMARY KEY(libro, usuario, fecha),
+    FOREIGN KEY(libro) REFERENCES libros(cod),
+    FOREIGN KEY(usuario) REFERENCES usuario(NIF),
+);
+
+(15p) Calcula cuánto espacio en disco ocuparía la tabla de préstamos cuando lleguemos al millón de préstamos registrados. Asume codificación UTF-8 con un promedio de 1.6B por carácter codificado y adopta enfoque pesimista en cuanto a la ocupación real de cada campo que pueda ser variable. Las fechas se almacenan con 8B.
+enfoque pesimista es que se va a ocupar todo (va a ir al máximo)
+
+1 tupla ocupa:
+el campo libro son máximo 10 caracteres, si cada carácter va a usar 1.6 B -> 1.6 * 10=16B, haremos con los campos usuario y anotaciones lo mismo
+1.6B*10 caracteres+1.6B*9 caracteres+1.6B*50 caracteres = 16B+14.4B+80B = 110.4B
+y ha esto le sumamos que las fechas ocupan 8B y tenemos 2
+110.4+16=126.4B/tupla
+
+si hay 1 000 000 tuplas x 126.4B = 126.400.000 B
+Si esto lo pasamos a GB son 0.1264GB
+
+SOLUCIÓN = NECESITA 0.1264 GB  
+
+
+
+Calcula las siguientes consultas en álgebra relacional usando sólo operaciones elementales:
+(10p) Título y autor de los libros que se han sacado en 2021.
+
+PI[libros.titulo, libros.autor]( SIGMA[libros.cod=prestamos.libro AND prestamos.fecha='2021'](libros X prestamos) )
+
+(10p) Nombre y teléfono de los usuarios que no han devuelto sus préstamos aún.
+NODEV <-- SIGMA[fecha_dev=NULL](prestamos)
+
+PI[usuarios.nombre, usuarios.telefono]( SIGMA[prestamos.usuario=usuarios.NIF](NODEV X usuarios))
+
+(20p) Teniendo en cuenta que los préstamos no pueden pasar de 5 días, modifica la consulta anterior para saber qué usuarios deben ser penalizados. Puedes hacer uso de la función CURR_DATE() para saber la fecha actual y puedes restar dos fechas para saber el número de días que difieren entre ellas.
+
+NODEV <-- SIGMA[fecha_dev=NULL](prestamos)
+
+PI[usuarios.nombre, usuarios.telefono]( SIGMA[prestamos.usuario=usuarios.NIF AND (prestamos.fecha+5)> CURR_DATE()](NODEV X usuarios))

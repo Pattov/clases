@@ -22,11 +22,22 @@ CREATE TABLE envios (
     prod VARCHAR(5),
     comp VARCHAR(5),
     art VARCHAR(5),
-    cantidad INT,
+    cantidad INT ,
     PRIMARY KEY(prod, comp, art),
     FOREIGN KEY(prod) REFERENCES proveedores(id_p),
     FOREIGN KEY (comp) REFERENCES componentes(id_c),
     FOREIGN KEY (art) REFERENCES articulos(id_t)
+);
+
+CREATE TABLE prestamos(
+    libro VARCHAR(10),
+    usuario VARCHAR(9),
+    fecha DATE NOT NULL,
+    fecha_dev DATE,
+    anotaciones VARCHAR(50),
+    PRIMARY KEY(libro, usuario, fecha),
+    FOREIGN KEY(libro) REFERENCES libros(cod),
+    FOREIGN KEY(usuario) REFERENCES usuario(NIF),
 );
 
 show tables;

@@ -44,11 +44,11 @@ SELECT cod, tit, texto, prop, bin(perm), lecturas from articulos;
 
 SHOW WARNINGS;
 
--- solos el Año
+-- solo el Año
 SELECT date_format(fecha_crea, '%Y')from usuarios;
 SELECT date_format(fecha_crea, '%d/%m/%Y')from usuarios;
 SELECT date_format(fecha_crea, 'Año: %Y, Mes:%m, Día: %d')from usuarios;
--- Para quitarla el encabezado se hace con AS
+-- Para quitar el encabezado se hace con AS
 SELECT date_format(fecha_crea, 'Año: %Y, Mes:%m, Día: %d') AS fecha from usuarios;
 SELECT cod AS 'Identificador del usuario' from usuarios;
 
