@@ -34,76 +34,36 @@
         <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" />
       </div>
     </div>
-    <!--------------------cart items details--------------------->
-    <div class="small-container cart-page">
-      <table>
-        <tr>
-          <th>Product</th>
-          <th>Quantity</th>
-          <th>Subtotal</th>
-        </tr>
-        <tr>
-          <td>
-            <div class="cart-info">
-              <img src="images/buy-1.jpg" />
-              <div>
-                <p>Red Printed TShirt</p>
-                <small>Precio: $50.00</small>
-                <br />
-                <a href="">Remove</a>
-              </div>
+    <!-----------------------account page------------------------>
+    <div class="account page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <img src="images/image1.png" width="100%">
+                </div>
+                <div class="col-2">
+                    <div class="form-container">
+                        <div class="form-btn">
+                            <span onclick="login()">Login</span>
+                            <span onclick="register()">Register</span>
+                            <hr id="Indicator">
+                        </div>
+                        <form id="LoginForm">
+                            <input type="text" placeholder="Username">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Login</button>
+                            <a href="">Forgot password</a>
+                        </form>
+                        <form id="RegForm">
+                            <input type="text" placeholder="Username">
+                            <input type="email" placeholder="Email">
+                            <input type="password" placeholder="Password">
+                            <button type="submit" class="btn">Registro</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-          </td>
-          <td><input type="number" value="1" /></td>
-          <td>$50.00</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cart-info">
-              <img src="images/buy-2.jpg" />
-              <div>
-                <p>Red Printed TShirt</p>
-                <small>Precio: $75.00</small>
-                <br />
-                <a href="">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td><input type="number" value="1" /></td>
-          <td>$75.00</td>
-        </tr>
-        <tr>
-          <td>
-            <div class="cart-info">
-              <img src="images/buy-3.jpg" />
-              <div>
-                <p>Red Printed TShirt</p>
-                <small>Precio: $85.00</small>
-                <br />
-                <a href="">Remove</a>
-              </div>
-            </div>
-          </td>
-          <td><input type="number" value="1" /></td>
-          <td>$85.00</td>
-        </tr>
-      </table>
-      <div class="total-price">
-        <table>
-          <tr>
-            <td>Subtotal</td>
-            <td>$210.00</td>
-          </tr>
-          <tr>
-            <td>IVA 10%</td>
-            <td>$21.00</td>
-          </tr>
-          <tr>
-            <td>Subtotal</td>
-            <td>$231.00</td>
-          </tr>
-        </table>
-      </div>
+        </div>
     </div>
     <!--------------------------footer--------------------------->
     <div class="footer">
@@ -149,15 +109,31 @@
     </div>
     <!------------------js for tooggle menu----------------->
     <script>
-      var MenuItems = document.getElementById("MenuItems");
-      MenuItems.style.maxHeight = "0px";
-      function menutoggle() {
-        if (MenuItems.style.maxHeight == "0px") {
-          MenuItems.style.maxHeight = "200px";
-        } else {
-          MenuItems.style.maxHeight = "0px";
+        var MenuItems = document.getElementById("MenuItems");
+        MenuItems.style.maxHeight = "0px";
+        function menutoggle() {
+            if (MenuItems.style.maxHeight == "0px") {
+                MenuItems.style.maxHeight = "200px";
+            } else {
+                MenuItems.style.maxHeight = "0px";
+            }
         }
-      }
-    </script>
+        </script>
+    <!------------------js for tooggle Form----------------->
+        <script>
+            var LoginForm = document.getElementById("LoginForm")
+            var RegForm = document.getElementById("RegForm")
+            var Indicator = document.getElementById("Indicator")
+                function register(){
+                    RegForm.style.transform = "translateX(0px)";
+                    LoginForm.style.transform = "translateX(0px)";
+                    Indicator.style.transform = "translateX(100px)";
+                }
+                function login(){
+                    RegForm.style.transform = "translateX(300px)";
+                    LoginForm.style.transform = "translateX(300px)";
+                    Indicator.style.transform = "translateX(0px)";
+                }
+        </script>
   </body>
 </html>
