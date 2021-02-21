@@ -1,0 +1,73 @@
+:root {
+  --colorAC: #56b6eb;
+  --colorAO: #3d7fe7;
+  --fondo: #f1f1f1;
+}
+.container {
+  border: 1.5px solid var(--colorAO);
+  border-radius: 0.25rem;
+}
+/* ------------------------------------------------------------- */
+/* -----------------------fuera de la tabla--------------------- */
+/* ------------------------------------------------------------- */
+.caja {
+  padding: 0.5em;
+}
+.der {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+}
+.abajo{
+
+}
+.box{
+  
+  margin: auto;
+}
+.buscar {
+  padding: 0 0.5em;
+}
+/* paginas */
+.fondo{
+  background: var(--colorAC);
+}
+.blanco{
+  color: #f1f1f1;
+}
+table{
+  /* por defecto tiene un border-space de 2px y un border-collapse: separate; --> para eliminarlo he visto esto*/
+  border-collapse: collapse;
+}
+.btn{
+ background-color: #ABD5F9;
+ border: 1px solid grey;
+}
+.clic{
+  background-color: azure;
+}
+
+/* ------------------------------------------------------------- */
+/* ---------------------------tabla---------------------------- */
+/* ------------------------------------------------------------- */
+.cuerpo{
+  width: 100%;
+}
+th{
+  background-image: linear-gradient(var(--colorAC),var(--colorAO));
+  padding: .5em;
+  color: aliceblue;
+  border: .01px solid var(--fondo);
+}
+.oscuro{
+  background-color: var(--fondo);
+}
+tr, td{
+  padding: 0.5em;
+  vertical-align: inherit;
+  text-align: center;
+  border: 0.1px solid var(--fondo);
+}
+.icono{
+  padding: 0 .5em;
+}
