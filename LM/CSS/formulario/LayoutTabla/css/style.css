@@ -9,7 +9,7 @@
 .container {
   border: 1.5px solid var(--colorAO);
   border-radius: 0.25rem;
-  overflow-x:auto;
+  overflow-x: auto;
 }
 /* ------------------------------------------------------------- */
 /* -----------------------fuera de la tabla--------------------- */
@@ -36,18 +36,18 @@
 .paginas{
   margin: 0.5em;
   margin-left: auto;
-  padding: 0.5em;
 }
 .fondo{
   background: var(--colorAC);
 }
-a{
+.btn a{
   text-decoration: none;
   color: black;
   list-style: none;
+  padding: 0.5em;
 }
-.blanco{
-  text-decoration-color: #f1f1f1;
+.blanco a{
+  color: #f1f1f1;
 }
 table{
   /* por defecto tiene un border-space de 2px y un border-collapse: separate; --> para eliminarlo he visto esto*/
@@ -60,7 +60,6 @@ table{
 .clic{
   background-color: azure;
 }
-
 /* ------------------------------------------------------------- */
 /* ---------------------------tabla---------------------------- */
 /* ------------------------------------------------------------- */
@@ -68,13 +67,12 @@ table{
   width: 100%;
 }
 .encabezadotabla{
-  background-image: linear-gradient(var(--colorAC),var(--colorAO));
+  background: linear-gradient(var(--colorAC),var(--colorAO));
   padding: .5em;
   color: aliceblue;
-}
-.borde{
   border: .01px solid var(--fondo);
 }
+
 .oscuro{
   background-color: var(--fondo);
 }
@@ -84,7 +82,11 @@ tr, td{
   text-align: center;
   border: 0.1px solid var(--fondo);
 }
-
+.iconos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .icono{
   width: 18px;
   margin: 0 .25em;
