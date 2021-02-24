@@ -1,3 +1,6 @@
+*{
+  font-family: sans-serif;
+}
 :root {
   --colorAC: #56b6eb;
   --colorAO: #3d7fe7;
@@ -6,6 +9,7 @@
 .container {
   border: 1.5px solid var(--colorAO);
   border-radius: 0.25rem;
+  overflow-x:auto;
 }
 /* ------------------------------------------------------------- */
 /* -----------------------fuera de la tabla--------------------- */
@@ -18,22 +22,32 @@
   right: 0.5em;
   top: 0.5em;
 }
-.abajo{
-
-}
-.box{
-  
-  margin: auto;
-}
 .buscar {
   padding: 0 0.5em;
 }
+.elementos{
+  display: flex;
+  align-items: center;
+}
+.texto{
+  padding-left: .5em;
+}
 /* paginas */
+.paginas{
+  margin: 0.5em;
+  margin-left: auto;
+  padding: 0.5em;
+}
 .fondo{
   background: var(--colorAC);
 }
+a{
+  text-decoration: none;
+  color: black;
+  list-style: none;
+}
 .blanco{
-  color: #f1f1f1;
+  text-decoration-color: #f1f1f1;
 }
 table{
   /* por defecto tiene un border-space de 2px y un border-collapse: separate; --> para eliminarlo he visto esto*/
@@ -53,10 +67,12 @@ table{
 .cuerpo{
   width: 100%;
 }
-th{
+.encabezadotabla{
   background-image: linear-gradient(var(--colorAC),var(--colorAO));
   padding: .5em;
   color: aliceblue;
+}
+.borde{
   border: .01px solid var(--fondo);
 }
 .oscuro{
@@ -68,6 +84,17 @@ tr, td{
   text-align: center;
   border: 0.1px solid var(--fondo);
 }
+
 .icono{
-  padding: 0 .5em;
+  width: 18px;
+  margin: 0 .25em;
+  padding: 4px;
+  box-shadow: 0px 0px 5px 0px rgba(32, 32, 32, 0.2);
+  border-radius: 2px;
+}
+tbody>tr:hover{
+  background-color: #ABD6F9;
+}
+tbody>tr:hover .icono{
+  background-color: azure;
 }

@@ -24,7 +24,7 @@ enfoque pesimista es que se va a ocupar todo (va a ir al máximo)
 1 tupla ocupa:
 el campo libro son máximo 10 caracteres, si cada carácter va a usar 1.6 B -> 1.6 * 10=16B, haremos con los campos usuario y anotaciones lo mismo
 1.6B*10 caracteres+1.6B*9 caracteres+1.6B*50 caracteres = 16B+14.4B+80B = 110.4B
-y ha esto le sumamos que las fechas ocupan 8B y tenemos 2
+y a esto le sumamos que las fechas ocupan 8B y tenemos 2
 110.4+16=126.4B/tupla
 
 si hay 1 000 000 tuplas x 126.4B = 126.400.000 B
