@@ -26,6 +26,19 @@ CREATE TABLE prestamos(
 );
 
 -- Título y autor de los libros que se han sacado en 2021.
-SELECT titulo, libro
-    FROM libros, prestamos
-    WHERE libros.cod=prestamos.libro AND YEAR(prestamos.fecha)='2021';
+    SELECT titulo, libro
+        FROM libros, prestamos
+        WHERE libros.cod=prestamos.libro AND YEAR(prestamos.fecha)='2021';
+
+-- Nombre y telefono de los usuarios que no han devuelto sus prestamos aún
+    SELECT usuarios.nombre, usuarios.telefono
+        FROM usuarios JOIN nodev
+        WHERE nodev in
+            SELECT *
+            FROM PRESTAMOS
+            WHERE fecha_dev is NULL
+
+--Teniendo en cuenta que los préstamos no pueden pasar de 5 días, modifica la consulta anterior para saber qué usuarios deben ser penalizados. Puedes hacer uso de la función CURR_DATE() para saber la fecha actual y puedes restar dos fechas para saber el número de días que difieren entre ellas.
+
+
+
