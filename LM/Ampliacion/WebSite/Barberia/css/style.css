@@ -1,0 +1,10 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.class{
+    background: linear-gradient(rgba(0, 0, 0, 0.5),#009688),src(image/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+}
