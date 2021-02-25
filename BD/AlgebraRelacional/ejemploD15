@@ -48,7 +48,12 @@ PRODUCTOS que se han VENDIDO en salamanca o cuyo descripcion sea "boligrafo"
     
     PI[cod.prod](VENTAS)-PI[cod.prod](LEON)
 
+Nombre de las personas que viven en el mismo sitio que Juan
+    PJ <-- SIGMA(nombre='Juan')[USUARIOS]
+    SIGMA(PJ.POB=usuarios.POB)[USUARIOSxPJ]
 
+
+    
 join clave externa con clave primaria de otra
 
     Algebra relacional
