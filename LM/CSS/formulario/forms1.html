@@ -14,9 +14,56 @@
         width: 20ch;
         text-align: right;
       }
+      fieldset{
+        border-color: tomato;
+        border-radius: 5px;
+      }
+      .increible{
+        color: tomato;
+      }
     </style>
+        <!-- javascript -->
+    <script>
+      function actualizar(){
+        personas = ["Jose", "Ana", "Claudia", "Pepi"];
+        rad = document.getElementById("radio").value;
+        long = (2*Math.PI* rad).toFixed(2);
+        area = (Math.PI*Math.pow(rad,2)).toFixed(2);
+        document.getElementById("longitud").value = long + 'm';
+        document.getElementById("area").value = area + 'm2';
+        if (rad==3){
+          document.getElementById("labomba").innerHTML='<div class="increible">lo flipas</div>';
+        } else {
+          document.getElementById("labomba").innerHTML='';
+        }
+        //esto no tiene nada que ver con la actualizacion de ejercicio radios
+        salida="<table><tr><th>Nombre</th></tr>"
+          for (i = 0; i < personas.length; i++) {
+            salida += "<tr><td>"+personas[i]+"</td></tr>"
+          }
+          salida += "</table>"
+        document.getElementById("tabla").innerHTML=salida;
+      }
+    </script>
   </head>
   <body>
+    <form id="radios">
+      <label>Introduzca el radio</label>
+      <input type="number" id="radio" step="any" onchange="actualizar();">
+      <fieldset>
+        <legend>Resultados</legend>
+        <div>
+        <label for="area">Area de la circunferencia</label>
+        <output id="area"></output>
+      </div>  
+      <div>
+        <label for="longitud">longitud de la circunferencia</label>
+        <output id="longitud"></output>
+      </div> 
+      <div id="labomba"></div>
+      </fieldset>
+    </form>
+    <div id="tabla">Esto se va a borrar---</div>
     <form action="processform.php" method="GET">
       <!-- si hay muchos campos la forma de agrupar campos es con fieldset, y si no ponemos nada lo unico que hace es poner un borde -->
       <fieldset>
@@ -85,14 +132,49 @@
           <input type="radio" name="es" id="es-na" />
           <label for="es-na">N/A</label>
         </div>
+        <select required>
+          <option selected>Elija su opcion</option>
+          <optgroup label="grupo 1">
+            <option value="1">Opción 1</option>
+            <option value="2">Opción 2</option>
+            <option value="3">Opción 3</option>
+            <option value="4">Opción 4</option>
+            <option value="5">Opción 5</option>
+            <option value="6">Opción 6</option>
+          </optgroup>
+          <option value="7">Opción 7</option>
+          <option value="8">Opción 8</option>
+          <option value="9">Opción 9</option>
+          <option value="10">Opción 10</option>
+          <option value="11">Opción 11</option>
+          <option value="12">Opción 12</option>
+          <option value="13">Opción 13</option>
+          <option value="14">Opción 14</option>
+          <option value="15">Opción 15</option>
+        </select>
       </fieldset>
       <input type="submit" value="Iniciar" />
       <textarea
         placeholder="Escriba su mensaje"
         id=""
         cols="30"
-        rows="10"
+        rows="2"
       ></textarea>
+      <fieldset>
+        <label for="provincias"></label>
+        <input type="text" list="ListaProvincias" id="provincias" />
+        <datalist id="listaProvincias">
+          <option value="">Palencia</option>
+          <option value="">Valladolid</option>
+          <option value="">Burgps</option>
+          <option value="">Valencia</option>
+          <option value="">Zaragoza</option>
+          <option value="">Zamora</option>
+          <option value="">Teruel</option>
+          <option value="">Toledo</option>
+        </datalist>
+      </fieldset>
     </form>
+    
   </body>
 </html>
