@@ -21,8 +21,8 @@ CREATE TABLE prestamos(
     fecha_dev DATE,
     anotaciones TEXT,
     PRIMARY KEY(libro, usuario, fecha),
-    FOREIGN KEY(libro) REFERENCES libros(cod),
-    FOREIGN KEY(usuario) REFERENCES usuario(NIF),
+    CONSTRAINT fk_prestamos_libros FOREIGN KEY(libro) REFERENCES libros(cod),
+    CONSTRAINT fk_prestamos_usuario FOREIGN KEY(usuario) REFERENCES usuario(NIF),
 );
 
 -- Título y autor de los libros que se han sacado en 2021.

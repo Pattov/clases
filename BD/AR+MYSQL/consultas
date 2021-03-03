@@ -1,0 +1,21 @@
+show databases;
+
+/* 
+    select <proyecion>          -- PI [proyeccion] (R1 * R2 * R3)
+    FROM <producto cartesianos> -- R1 * R2 * R3
+    Where <condicion seleccion> -- Sigma [condicion seleccion] (R1 * R2 * R3)
+    union 
+    intersection
+*/
+
+-- Quiero saber el codigo de pista, la fecha de clausura y el motivo de todas las pistas cerradas
+-- para todas las pistas cerradas en 2013
+
+/*
+	ALGEBRA RELACIONAL
+    PI[codigo, fecha_clausura, motivo](Sigma[Pistas.id=Pistas_cerradas.id_Pistas AND YEAR(fecha_clausura)='2013')](PISTAS X PISTAS_CERRADAS))
+*/
+
+select codigo as 'Código', fecha_clausula as 'Fecha de Clausura', motivo as 'Motivo'
+from pistas p, pistas_cerradas pc
+where p.id = pc.id_pista and year(fecha_clausura)='2013';

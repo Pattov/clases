@@ -1,0 +1,36 @@
+show databases;
+
+use reservas;
+
+insert into pistas_cerradas 
+values  (20,'2020-12-02','Derrumbe'),
+	    (55,'2020-06-15','Reformas'),
+	    (90,'2014-06-15','Faltas de presupuesto'),
+	    (88,'2013-05-26','Incedio');
+
+/*
+    select <proyecion>        -- PI [proyeccion] (R1 * R2 * R3)
+    FROM <producto cartesianos> -- R1 * R2 * R3
+    Where <condicion seleccion> -- Sigma [condicion seleccion] (R1 * R2 * R3)*/
+
+/* Quiero saber el codigo de pista, la fecha de clausura y el motivo de todas las pistas cerradas para todas las pistas cerradas en 2013
+        Algebra relacional
+             PI[codigo, fecha_clausura, motivo](Sigma[Pistas.id=Pistas_cerradas.id_Pistas AND YEAR(fecha_clausura)='2013')](PISTAS X PISTAS_CERRADAS))*/
+
+select codigo as 'Código', fecha_clausula as 'Fecha de Clausura', motivo as 'Motivo'
+from pistas p, pistas_cerradas pc
+where p.id = pc.id_pista and year(fecha_clausura)='2013';
+
+-- ver solo 19 tuplas
+select * from pistas limit 19;
+
+-- ver desde las 190 a la 200 tuplas
+select * from pistas limit 190,200;
+
+<a href="https://adsasdasdasda/listado.php?p=3&ipp=10">3</a>
+SELECT * From pista limit p*ipp, p*ipp
+
+//crea una tabla igual que la tabla pistas
+CREATE table pistas_archivo like pistas;
+
+insert into pistas_archivo SELECT * From pistas;
