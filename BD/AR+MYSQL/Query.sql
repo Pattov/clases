@@ -34,3 +34,28 @@ SELECT * From pista limit p*ipp, p*ipp
 CREATE table pistas_archivo like pistas;
 
 insert into pistas_archivo SELECT * From pistas;
+
+--        O        R        D        E        N        A        R
+
+
+    --Ordena de forma desdendente ASC DESC
+    SELECT p1.*, p2.* 
+        FROM  pistas p1, pistas p2
+        WHERE p1.tipo = p2.tipo AND p1.id <> p2.id
+        ORDER BY p1.codigo, .id_polideportivo desc;
+
+    SELECT p1.*, p2.* 
+        FROM  pistas p1, pistas p2
+        WHERE p1.tipo = p2.tipo AND p1.id <> p2.id
+        ORDER BY p1.codigo asc, p1.id_polideportivo desc;
+
+--fUNCIONES AGREGADAS
+    SELECT COUNT(*)
+        FROM  pistas p1, pistas p2
+        WHERE p1.tipo = p2.tipo AND p1.id <> p2.id
+        ORDER BY p1.codigo, .id_polideportivo desc;
+
+--SELECT MAX(PRECIO) FROM reservas;
+
+SELECT * FROM reservas
+ORDER BY PRECIO DESC;
