@@ -48,6 +48,7 @@ insert into pistas_archivo SELECT * From pistas;
         FROM  pistas p1, pistas p2
         WHERE p1.tipo = p2.tipo AND p1.id <> p2.id
         ORDER BY p1.codigo asc, p1.id_polideportivo desc;
+        
 
 --fUNCIONES AGREGADAS
     SELECT COUNT(*)

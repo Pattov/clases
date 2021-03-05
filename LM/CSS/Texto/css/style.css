@@ -1,0 +1,43 @@
+*{
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+.texto{
+    width: 40%;
+    background-color: black;
+    color: violet;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em;
+    /*font-size: 100%;/* Recomendación -> %, del font-size del padre, rem, em, px  */
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1rem; /*incluye negativos*/
+    text-transform: uppercase;
+    text-decoration: wavy line-through royalblue;
+    /*text-align: justify;*/
+    line-height: 2rem; /*interlineados*/
+}
+.caja-boton{
+    display: flex;
+    justify-content: center;
+}
+.button {
+    background-color: rgb(7, 44, 7);
+    color: rgb(194, 188, 218);
+    padding: 1em 2em;
+    border-radius: 5px;
+    display: inline-block;
+    font-size: 5rem;
+    /*font-size: 5em;*/
+}
+.parrafo{
+    font-family: 'Abril Fatface', cursive;
+    background-attachment: ; /*Para imagenes*/
+}
+.titulo{
+    font-family: 'Advent Pro', sans-serif;
+    text-shadow:  -1px -1px 2px palegreen;
+}
