@@ -1,0 +1,34 @@
+S (id_s(PK), snombre, estado, ciudad)
+SP (id_s (PK,FK), id_p(PK,FK),cant)
+P (id_p(PK), pnombre, color, peso, ciudad)
+
+
+1.1 Obtener el nombre de los proveedores que suministran la pieza con el codigo P2.
+    Algebra Relacional
+        
+1.2 Obtener el nombre de los proveedores que suministran por lo menos una pieza roja.
+
+1.3 Obtener el nombre de las piezas de color rojo suministradas por los proveedores de la ciudad de Londres
+
+1.4 Obtener el código de los proveedores que suministran alguna de las piezas que suministra el proveedor con el codigo S2
+
+1.5 Obtener los datos de los envios de más de 100 unidades, mostrando tambien el nombre del proveedor y el de la pieza
+
+1.6 Obtener el nombre de los proveedores que suministran todas las piezas
+
+1.7 Obtener el codigo de los proveedores que suministran, al menos , todas las piezas suministradas por el proveedor con codigo S2
+
+1.8 Obtener el nombre de los proveedores que no suministran la pieza con el codigo P2
+
+1.9 Obtener los datos de los proveedores que solo suministran piezas de color rojo.
+
+1.10 Obtener el nombre de los proveedores que suministran, al menos, todas las piezas que se almacenan en la ciudad de Paris
+
+1.11 Obtener los datos del envio de mas piezas
+
+1.12 Para cada proveedor, mostrar la cantidad total de piezas que envia al mes, la cantidad media y el numero de envios
+
+1.13 obtener el codigo de los proveedores que realizan envios en calidades superiores a la cantidad media por envio
+
+1.14 Para cada ciudad en la que se almacenan piezas, obtener el numero de piezas que almacena de cada color distinto
+
