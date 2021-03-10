@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Formulario1</title>
+</head>
+<body>
+    <form action=".php" method="GET" class="form">
+        <div class="caja">
+        <label class="etiqueta" for="nombre">Nombre</label>
+        <input class="campo" type="text" id="nombre" placeholder="Escribe tu nombre">
+    </div>
+    <div class="caja">
+        <label class="etiqueta" for="apell">Apellidos</label>
+        <input class="campo" type="text" id="apell" placeholder="1r Apellido">
+    </div>
+    <div class="caja">
+        <label class="etiqueta" for="email">Email</label>
+        <input class="campo" type="text" id="email" placeholder="Email">
+    </div>
+    <div class="caja">
+        <label class="etiqueta" for="asunto">Asunto</label>
+        <input class="campo" type="text" id="asunto" placeholder="titular de la consulta">
+    </div>
+    <div class="caja">
+        <label class="etiqueta" for="mensaje">Mensaje</label>
+        <textarea class="campo mensaje" maxlength="300" placeholder="describe brevemente en menos de 300 caracteres" name="" id="mensaje"  cols="30" rows="10"></textarea>
+    </div>
+    <input type="submit" value="Enviar datos">
+    </form>
+</body>
+</html>

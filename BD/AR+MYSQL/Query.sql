@@ -80,3 +80,10 @@ insert into pistas_archivo SELECT * From pistas;
         select min(precio), tipo from pistas; 
         --solo mostrará el precio minimo entre todos los tipos
 
+-- cuanto dinero se gasta de media la gente en cada ciudad
+    select ciudad, avg(r.precio) 
+    from reservas r, polideportivos pd, pistas p
+    where r.id_pista = pd.id and p.id_polideportivo=pd.id 
+    group by pd.ciudad;
+    select COUNT(id_pista) from reservas r,  polideportivos pd,  pistas p where r.id_pista = pd.id and p.id_polideportivo=pd.id 
+    group by pd.ciudad;
