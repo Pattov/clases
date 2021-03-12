@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Examen de formularios y texto</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+    <link rel="stylesheet" href="style_base.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <h1>SCA - Inventario de productos</h1>
+    </header>
+    <nav>
+      <ul class="menu">
+        <li><a href="#"><i class="material-icons">shopping_cart</i> 
+          Solicitudes de compra</a></li>
+        <li><a class="selected" href="#"><i class="material-icons">inventory</i>
+          Inventario</a></li>
+        <li><a href="#"><i class="material-icons">summarize</i>
+          Informe de entradas</a></li>
+        <li><a href="#"><i class="material-icons">outbox</i>
+          Informe de salidas</a></li>
+        <li><a href="#"><i class="material-icons">engineering</i>
+          Mantenimiento</a></li>
+        <li><a href="#" class="abrirtq">
+          Abrir ticket de soporte</a></li>
+      </ul>
+    </nav>
+    <main>
+      <div class="filters">
+        <fieldset class= cajas>
+          <legend><i class="material-icons">filter_alt</i></legend>
+          <div class="cajadiv">
+            <label class="txt" for="" >Por ID:</label>
+            <input class="campos" type="text" name="id"  id="" placeholder="Introduce un ID..."/>
+          </div>
+          <div class="cajadiv">
+            <label class="txt" for="" >Por texto:</label>
+              <select class="campos" name="" id="">
+                <option class="campos">Artículo</option>
+                <option class="campos">Descripción</option>
+                <option selected class="campos">Artículo y descripción</option>
+              </select>
+              <select class="campos" name="" id="">
+                <option class="campos">No coincide con</option>
+                <option selected class="campos">Coincide con</option>
+                <option class="campos">contiene a</option>
+                <option class="campos">No contiene a</option>
+              </select>
+              <input class="campos" type="text" name="id" id="" placeholder="Introduce un texto..." />
+          </div>
+          <div class="cajadiv">
+            <label class="txt" for="">PVP entre:</label>
+              <input class="campos num" type="text" name="id" id=""  placeholder="Lim. inferior..." />
+              <input class="campos num" type="text" name="id" id=""  placeholder="Lim. superior..." />
+          </div>
+        </fieldset>
+        <fieldset class= cajas>
+          <legend class="titulo">Disponibilidad</legend>
+          <div class="cajadiv">
+            <input type="radio" name="disp" id="" /> Todos los productos
+          </div>
+          <div class="cajadiv">
+            <input type="radio" name="disp" id="" /> Productos en Stock
+          </div>
+          <div class="cajadiv">
+            <input type="radio" name="disp" id="" /> Productos sin Stock
+          </div>
+        </fieldset>
+        <input class="btn" type="submit" value="Aplicar">
+      </div>
+      <div class="results">
+        <table class="results-table">
+          <tr class="textocabecera">
+            <th>ID</th>
+            <th>Artículo</th>
+            <th>Descripción</th>
+            <th>PVP</th>
+            <th>Stock</th>
+          </tr>
+          <tr>
+            <td>I997</td>
+            <td>Vendaje hidrófobo</td>
+            <td>Vendaje de 50x530cm en pack de 3</td>
+            <td>23€</td>
+            <td>15</td>
+          </tr>
+          <tr class="par">
+            <td>JB97</td>
+            <td>Agua oxigenada</td>
+            <td>Bote de agua oxigenada de 50cl</td>
+            <td>5€</td>
+            <td>200</td>
+          </tr>
+          <tr>
+            <td>IN78</td>
+            <td>Tijeras precisión</td>
+            <td>Tijeras con recubrimiento de titanio</td>
+            <td>51€</td>
+            <td>9</td>
+          </tr>
+        </table>
+      </div>
+    </main>
+  </body>
+</html>
