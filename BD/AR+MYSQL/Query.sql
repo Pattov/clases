@@ -36,6 +36,13 @@ SELECT * From pista limit p*ipp, p*ipp
 
 //crea una tabla igual que la tabla pistas
 CREATE table pistas_archivo like pistas;
+-- ejemplo
+    -- PRIMERO
+    select * from pistas where codigo Like '%RM%';
+    -- select * from TABLA where CAMPO Like CONDICION;
+    select * from pistas where codigo Like '%I_R%';
+    -- UN SOLO CARACTER _
+    
 
 insert into pistas_archivo SELECT * From pistas;
 
@@ -79,6 +86,24 @@ insert into pistas_archivo SELECT * From pistas;
     --precio mini por cada tipo de pista;
         select min(precio), tipo from pistas; 
         --solo mostrará el precio minimo entre todos los tipos
+        --ojo no es lo mismo que 
+        SELECT id, codigo, tipo, ROUND(AVG(precio))
+        FROM pistas
+        GROUP BY tipo
+
+-- Media de las pistas que esten entre 10 y 11 y su precio este entre 5 y 9
+
+        SELECT id, codigo, tipo, ROUND(AVG(precio))
+        FROM pistas
+        GROUP BY tipo
+        having AVG(precio) between 10 and 11;
+-- Media de las pistas cuya media esten entre 10 y 11
+        SELECT id, codigo, tipo, ROUND(AVG(precio))
+        FROM pistas
+        Where precio between 5 and 15
+        GROUP BY tipo
+        having AVG(precio) between 10 and 11;
+
 
 -- cuanto dinero se gasta de media la gente en cada ciudad
     select ciudad, avg(r.precio) 
@@ -87,3 +112,43 @@ insert into pistas_archivo SELECT * From pistas;
     group by pd.ciudad;
     select COUNT(id_pista) from reservas r,  polideportivos pd,  pistas p where r.id_pista = pd.id and p.id_polideportivo=pd.id 
     group by pd.ciudad;
+
+
+-- Insertar una tabla en otra, la proyeccion tiene que coincidir con el esquema de la tabla a la que se quiere copiar
+    Insert into pistas_temp select*from pistas where tipo='tenis';
+
+-- Incrementar el valor a algo
+-- OJO HACER ANTES SELECT Y LUEGO UPDATE;
+    Update tabla set campo=campo*1.1;
+    Update tabla set campo=campo*1.15 where tipo='futbol';
+
+LIMIT
+
+-- if(abierto) o if(!abierto) si son booleans
+
+SELECT P.codigo, P.tipo
+FROM pistas P INNER JOIN polideportivos PP  ON P.id_polideportivo = PP.id 
+WHERE PP.ciudad = 'Zaragoza'
+
+
+-- Numero de polideportivos en cada ciudad
+select ciudad, count(id) as cantidad
+from polideportivos
+group by ciudad
+
+-- Numero de polideportivos de tenis
+select ciudad, count(id) as cantidad
+from polideportivos pol INNER JOIN pistas pis on pol.id=pis.id_polideportivo
+where pis.tipo = 'tenis'
+group by ciudad
+--Todos los polideportivos de huesca
+SELECT *
+FROM polideportivos
+WHERE ciudad ='Huesca'
+AND id_polideportivo IN(SELECT id from polideportivo where ciudad='Huesca')
+
+--Todos los polideportivos que no son de huesca
+SELECT *
+FROM polideportivos
+WHERE ciudad ='Huesca'
+AND id_polideportivo IN(SELECT id from polideportivo where ciudad='Huesca')
