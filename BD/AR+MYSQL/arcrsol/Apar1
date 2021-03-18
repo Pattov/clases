@@ -1,6 +1,6 @@
-S (id_s(PK), snombre, estado, ciudad)
-SP (id_s (PK,FK), id_p(PK,FK),cant)
-P (id_p(PK), pnombre, color, peso, ciudad)
+S (id_s(PK), snombre, estado, ciudad) Proveedores
+SP (id_s (PK,FK), id_p(PK,FK),cant) Catalogo
+P (id_p(PK), pnombre, color, peso, ciudad) Productos
 
 
 1.1 Obtener el nombre de los proveedores que suministran la pieza con el codigo P2.
@@ -12,6 +12,11 @@ P (id_p(PK), pnombre, color, peso, ciudad)
     Algebra Relacional
         Rojo <- SIGMA[color='Rojo'](P)
         PI[snombre](SIGMA(s.id_s=sp.id_s AND p.id_p=sp.id_p)[RojoXSPXS])
+
+    Consultas
+        SELECT snombre
+        FROM P, S, SP 
+        Where P.color='Rojo' AND s.id_s=sp.id_s AND p.id_p=sp.id_p
 
 1.3 Obtener el nombre de las piezas de color rojo suministradas por los proveedores de la ciudad de Londres
 

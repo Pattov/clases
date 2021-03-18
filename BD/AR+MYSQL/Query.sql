@@ -126,29 +126,44 @@ LIMIT
 
 -- if(abierto) o if(!abierto) si son booleans
 
-SELECT P.codigo, P.tipo
-FROM pistas P INNER JOIN polideportivos PP  ON P.id_polideportivo = PP.id 
-WHERE PP.ciudad = 'Zaragoza'
+    SELECT P.codigo, P.tipo
+    FROM pistas P INNER JOIN polideportivos PP  ON P.id_polideportivo = PP.id 
+    WHERE PP.ciudad = 'Zaragoza'
+
 
 
 -- Numero de polideportivos en cada ciudad
-select ciudad, count(id) as cantidad
-from polideportivos
-group by ciudad
+    select ciudad, count(id) as cantidad
+    from polideportivos
+    group by ciudad
 
 -- Numero de polideportivos de tenis
-select ciudad, count(id) as cantidad
-from polideportivos pol INNER JOIN pistas pis on pol.id=pis.id_polideportivo
-where pis.tipo = 'tenis'
-group by ciudad
+    select ciudad, count(id) as cantidad
+    from polideportivos pol INNER JOIN pistas pis on pol.id=pis.id_polideportivo
+    where pis.tipo = 'tenis'
+    group by ciudad
+
 --Todos los polideportivos de huesca
-SELECT *
-FROM polideportivos
-WHERE ciudad ='Huesca'
-AND id_polideportivo IN(SELECT id from polideportivo where ciudad='Huesca')
+    SELECT *
+    FROM polideportivos
+    WHERE ciudad ='Huesca'
+    AND id_polideportivo IN(SELECT id from polideportivo where ciudad='Huesca')
 
 --Todos los polideportivos que no son de huesca
-SELECT *
-FROM polideportivos
-WHERE ciudad ='Huesca'
-AND id_polideportivo IN(SELECT id from polideportivo where ciudad='Huesca')
+    SELECT *
+    FROM polideportivos
+    WHERE ciudad ='Huesca'
+    AND id_polideportivo IN(SELECT id from polideportivo where ciudad='Huesca')
+
+
+-- Precio medio, por tipo de pista y cuyo precio minimo de pista sea menor que 5, de las pistas que no están operativas
+    SELECT P.tipo, AVG(P.precio) AS precio_medio
+    FROM pistas P, pistas_abiertas PA
+    WHERE P.id = PA.id_pista AND PA.operativa = FALSE -- tupla a tupla
+    GROUP BY P.tipo
+    HAVING MIN(P.precio>11); -- si aplica a todo
+
+-- Cantida de pistas en cada polideportivo
+    SELECT id_polideportivo as Polideportivo, COUNT(id) as "Nº Pistas" 
+    FROM pistas
+    GROUP BY id_polideportivo;
