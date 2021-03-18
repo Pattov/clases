@@ -5,8 +5,13 @@ P (id_p(PK), pnombre, color, peso, ciudad)
 
 1.1 Obtener el nombre de los proveedores que suministran la pieza con el codigo P2.
     Algebra Relacional
-        
+        P2<- SIGMA[id_p="P2"](SP)
+        PI[snombre](SIGMA[s.id_s = sp.id_s](P2XS))
+
 1.2 Obtener el nombre de los proveedores que suministran por lo menos una pieza roja.
+    Algebra Relacional
+        Rojo <- SIGMA[color='Rojo'](P)
+        PI[snombre](SIGMA(s.id_s=sp.id_s AND p.id_p=sp.id_p)[RojoXSPXS])
 
 1.3 Obtener el nombre de las piezas de color rojo suministradas por los proveedores de la ciudad de Londres
 
