@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<mensajes>
+    <mensaje>
+        <origen>patri@gmail.com</origen>
+        <destinos>
+            <destino>manola@gmail.com</destino>
+            <destino>merida@gmail.com</destino>
+        </destinos>
+        <asunto >Hi! there</asunto>
+        <cuerpo tamanio="9ch">Buenos dias</cuerpo>
+        <respondido/>
+    </mensaje>
+    <mensaje>
+        <origen>manola@gmail.com</origen>
+        <destinos>
+            <destino>patri@gmail.com</destino>
+        </destinos>
+        <asunto >re: Hi! there</asunto>
+        <cuerpo lenguaje="Español">Holaaaaaaaaaaa!</cuerpo>
+    </mensaje>
+</mensajes>

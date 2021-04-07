@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Ejercicio de ejemplo
+Documento XML que represente el boletin de notas de los alumnos de una clase
+ - Habrá un listado de alumnos, de los cuales conoceremos el nombre y NIF
+ - Habrá un listado de asignaturas con su codigo y descripción
+ - Habrá un listado de notas, mediante la asociación de un alumno a una asignatura junto con su correspondiente calificación
+ 
+ Ejemplo
+ Manolito Fernández con NIF 89812466H, con un 7 en LLMM y un 9 en Programación.
+-->
+<boletin>
+    <alumnos>
+      <alumno>
+        <nombre>Manolito</nombre>
+        <apellido>Fernandez</apellido>
+        <nif >89812466H</nif>
+      </alumno>
+    </alumnos>
+    <asignaturas>
+      <asignatura cod="LM01">Lenguaje de Marcas</asignatura>
+      <asignatura cod="PR01">Programación</asignatura>
+    </asignaturas>
+    <notas>
+      <nota cod="LM01" nif="89812466H">7</nota>
+      <nota cod="PR01" nif="89812466H">9</nota>
+    </notas>
+</boletin>

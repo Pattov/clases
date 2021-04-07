@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<disco>
+    <canciones>
+        <titulo>mi vaca</titulo>
+        <duracion>18</duracion>
+        <interpretes>
+            <interprete>mariano</interprete>
+            <interprete>jacinto</interprete>
+            <interprete>sara</interprete>
+        </interpretes>
+    </canciones>
+    <canciones>
+        <titulo>su mula</titulo>
+        <duracion>10</duracion>
+        <interpretes>
+            <interprete>mariano</interprete>
+        </interpretes>
+    </canciones>
+    <canciones>
+        <titulo>arrea</titulo>
+        <duracion>2</duracion>
+        <interpretes>
+            <interprete>sara</interprete>
+        </interpretes>
+    </canciones>
+</disco>
