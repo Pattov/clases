@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de nuevo usuario</title>
+    </script>
+</head>
+<body>
+    <h1>Introduce tus datos de registro</h1>
+    <form method="POST" action="registro.php">
+        <div>
+            <label for="mail">Email</label>
+            <input type="email" name="mail" id="mail" />
+        </div>
+        <div>
+            <label for="pass">Password</label>
+            <input type="password" name="pass" id="pass"/>
+        </div>
+        <div>
+            <label for="repass">Repita Password</label>
+            <input type="password" name="repass" id="repass"/>
+        </div>
+        <div>
+            <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre"/>
+        </div>
+        <div>
+            <input type="submit" value="Registrar" />
+        </div>
+    </form>
+</body>
+</html>
