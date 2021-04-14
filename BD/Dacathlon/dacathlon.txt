@@ -1,0 +1,2 @@
+Dacathlon esta formada por personas, estas personas pueden ser clientes o empleados.
+De las personas vamos almacenar el nif, nombre y apellidos, dirección, email, telefono.

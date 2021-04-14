@@ -1,3 +1,4 @@
+<?php include "mysql.php"; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -44,5 +45,16 @@
             }
         ?>
     </table>
+        
+    <?php 
+    if($con -> close()) echo "<div>conexión cerrada correctamente</div>\n";
+    else echo "<div>No se pudo cerrar la conexión</div>\n";
+    ?>
+
+    <?php if($codo) {?>
+        <div>codo</div>
+    <?php } else {?>
+        <div>culo</div>
+    <?php }?>
 </body>
 </html>
