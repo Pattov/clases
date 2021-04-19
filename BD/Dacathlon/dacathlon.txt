@@ -1,6 +1,4 @@
 Dacathlon esta formada por personas, estas personas pueden ser clientes o empleados.
-De las personas vamos almacenar el nif, nombre y apellidos, dirección, email, telefono.
-Dacathlon esta formada por personas, estas personas pueden ser clientes o empleados.
 De las personas vamos almacenar el NIF, nombre y apellidos, dirección, email, teléfono.
 
 Los empleados están dirigidos de un jefe de cada sección, de estos empleados almacenaremos el código y el sueldo.
