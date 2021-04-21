@@ -1,10 +1,11 @@
 Dacathlon esta formada por personas, estas personas pueden ser clientes o empleados.
+
 De las personas vamos almacenar el NIF, nombre y apellidos, dirección, email, teléfono.
 
-Los empleados están dirigidos de un jefe de cada sección, de estos empleados almacenaremos el código y el sueldo.
+Los empleados están dirigidos por un jefe en cada sección, de los empleados almacenaremos el código y el sueldo.
 
-Los productos vendidos estarán relacionadas con cada sección (Esto queda reflejado para hacer referencia a que las ventas no suponen una comisión para los empleados)
+Los productos vendidos estarán relacionados con cada sección (hacemos referencia a esto para dejar constancia de que las ventas no suponen una comisión para los empleados)
 
-De la venta se almacenará la fecha, hora, cantidad, importes Brutos, Iva y totales.
+De la venta se almacenará los datos de la factura como fecha, hora, cantidad, Importes Brutos, Iva e Importe total...
 
-Los Productos pertenecen a una categoría de cada sección, de estos almacenaremos datos como código, nombre, descripción, color, fabricante, marca, modelo, precio unitario...
+Los Productos pertenecen a una categoría de cada sección, de estos productos almacenaremos datos como código, nombre, descripción, color, fabricante, marca, modelo, precio unitario...
