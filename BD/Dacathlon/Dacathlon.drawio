@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-21T18:30:04.934Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36" version="14.6.5" etag="XY_vKDTIyAvCSj4DJdUf" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-04-21T19:00:04.592Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36" version="14.6.5" etag="GzgxLkRxYAUPxVgQ9fWI" type="github" pages="2">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Original">
     <mxGraphModel dx="1102" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -479,7 +479,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Modificado" id="_7FsUHv406dsETqL1JrX">
-    <mxGraphModel dx="1102" dy="659" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="918" dy="549" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-0" />
         <mxCell id="oL43XxU_vpYvVj9KqVrM-1" parent="oL43XxU_vpYvVj9KqVrM-0" />
@@ -842,8 +842,26 @@
         <mxCell id="oL43XxU_vpYvVj9KqVrM-88" value="pertenece a" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="oL43XxU_vpYvVj9KqVrM-1">
           <mxGeometry x="882" y="397" width="120" height="60" as="geometry" />
         </mxCell>
+        <mxCell id="jDy6BYOLtapnwUf9dXAd-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="oL43XxU_vpYvVj9KqVrM-1" source="oL43XxU_vpYvVj9KqVrM-89" target="oL43XxU_vpYvVj9KqVrM-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="388" />
+              <mxPoint x="900" y="340" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jDy6BYOLtapnwUf9dXAd-2" value="m" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jDy6BYOLtapnwUf9dXAd-1">
+          <mxGeometry x="0.7938" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="jDy6BYOLtapnwUf9dXAd-3" value="n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="jDy6BYOLtapnwUf9dXAd-1">
+          <mxGeometry x="-0.7149" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-89" value="Sección" style="whiteSpace=wrap;html=1;align=center;" vertex="1" parent="oL43XxU_vpYvVj9KqVrM-1">
-          <mxGeometry x="712" y="367.5" width="100" height="40" as="geometry" />
+          <mxGeometry x="712" y="367.5" width="98" height="40" as="geometry" />
         </mxCell>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-90" value="n" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="oL43XxU_vpYvVj9KqVrM-1" source="oL43XxU_vpYvVj9KqVrM-92" target="oL43XxU_vpYvVj9KqVrM-4">
           <mxGeometry relative="1" as="geometry" />
