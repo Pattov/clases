@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-04-24T19:36:24.579Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36" etag="ri4cfjMaLag5sNhIDr_f" version="14.6.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-04-24T19:45:04.627Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36" etag="cvUrHk-YNabiW3fktp3n" version="14.6.6" type="github" pages="2">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Original">
     <mxGraphModel dx="942" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
@@ -479,7 +479,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Modificado" id="_7FsUHv406dsETqL1JrX">
-    <mxGraphModel grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" page="1" fold="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1108" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-0" />
         <mxCell id="oL43XxU_vpYvVj9KqVrM-1" parent="oL43XxU_vpYvVj9KqVrM-0" />
@@ -966,7 +966,7 @@
           <mxGeometry x="702" y="257.5" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-117" value="Cada categoría tiene asociadas ciertas características (por ejemplo, el calzado tiene un número, tacón, grosor de suela, tipo de suela, etc). Además, cada producto debe tener un valor para cada característica que tenga su categoría asociada (siguiendo con el ejemplo, las zapatillas ZF9376, tienen un 39, no tienen tacón, la suela es de 2 cm y con tacos gordos).&lt;br&gt;&lt;br&gt;La cuestión es: ¿cubre este modelo esa funcionalidad? Si no es así ¿cómo se podría arreglar?" style="shape=note;size=20;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 2;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
-          <mxGeometry x="1600" y="582.5" width="260" height="210" as="geometry" />
+          <mxGeometry x="1291" y="170" width="260" height="210" as="geometry" />
         </mxCell>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="oL43XxU_vpYvVj9KqVrM-1" source="oL43XxU_vpYvVj9KqVrM-119" target="oL43XxU_vpYvVj9KqVrM-5" edge="1">
           <mxGeometry relative="1" as="geometry">
