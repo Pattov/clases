@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-04-24T19:45:04.627Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.128 Safari/537.36" etag="cvUrHk-YNabiW3fktp3n" version="14.6.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-04-25T09:53:36.222Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" etag="_AS5LnZcUzju59jU57mx" version="14.6.6" type="github" pages="2">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Original">
-    <mxGraphModel dx="942" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="868" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -479,7 +479,7 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Modificado" id="_7FsUHv406dsETqL1JrX">
-    <mxGraphModel dx="1108" dy="722" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1021" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-0" />
         <mxCell id="oL43XxU_vpYvVj9KqVrM-1" parent="oL43XxU_vpYvVj9KqVrM-0" />
@@ -489,7 +489,7 @@
         <mxCell id="oL43XxU_vpYvVj9KqVrM-3" value="Persona" style="whiteSpace=wrap;html=1;align=center;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
           <mxGeometry x="362" y="582.5" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="oL43XxU_vpYvVj9KqVrM-1" source="oL43XxU_vpYvVj9KqVrM-4" target="GRg-SzB-Ln8Gp-4iXVaB-4">
+        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="oL43XxU_vpYvVj9KqVrM-1" source="oL43XxU_vpYvVj9KqVrM-4" target="GRg-SzB-Ln8Gp-4iXVaB-4" edge="1">
           <mxGeometry relative="1" as="geometry">
             <Array as="points">
               <mxPoint x="990" y="570" />
@@ -497,7 +497,7 @@
             </Array>
           </mxGeometry>
         </mxCell>
-        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-10" value="n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GRg-SzB-Ln8Gp-4iXVaB-5">
+        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-10" value="n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="GRg-SzB-Ln8Gp-4iXVaB-5" vertex="1" connectable="0">
           <mxGeometry x="-0.8777" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -846,7 +846,7 @@
         <mxCell id="oL43XxU_vpYvVj9KqVrM-84" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="oL43XxU_vpYvVj9KqVrM-1" source="oL43XxU_vpYvVj9KqVrM-88" target="oL43XxU_vpYvVj9KqVrM-5" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="oL43XxU_vpYvVj9KqVrM-85" value="n" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="oL43XxU_vpYvVj9KqVrM-84" vertex="1" connectable="0">
+        <mxCell id="oL43XxU_vpYvVj9KqVrM-85" value="1" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="oL43XxU_vpYvVj9KqVrM-84" vertex="1" connectable="0">
           <mxGeometry x="0.8828" y="1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
@@ -966,7 +966,7 @@
           <mxGeometry x="702" y="257.5" width="100" height="100" as="geometry" />
         </mxCell>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-117" value="Cada categoría tiene asociadas ciertas características (por ejemplo, el calzado tiene un número, tacón, grosor de suela, tipo de suela, etc). Además, cada producto debe tener un valor para cada característica que tenga su categoría asociada (siguiendo con el ejemplo, las zapatillas ZF9376, tienen un 39, no tienen tacón, la suela es de 2 cm y con tacos gordos).&lt;br&gt;&lt;br&gt;La cuestión es: ¿cubre este modelo esa funcionalidad? Si no es así ¿cómo se podría arreglar?" style="shape=note;size=20;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 2;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
-          <mxGeometry x="1291" y="170" width="260" height="210" as="geometry" />
+          <mxGeometry x="1310" y="30" width="260" height="210" as="geometry" />
         </mxCell>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-118" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=none;endFill=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="oL43XxU_vpYvVj9KqVrM-1" source="oL43XxU_vpYvVj9KqVrM-119" target="oL43XxU_vpYvVj9KqVrM-5" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -976,27 +976,22 @@
         <mxCell id="oL43XxU_vpYvVj9KqVrM-119" value="nombre" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
           <mxGeometry x="890" y="170" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="oL43XxU_vpYvVj9KqVrM-1" source="GRg-SzB-Ln8Gp-4iXVaB-4" target="oL43XxU_vpYvVj9KqVrM-26">
+        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;endArrow=none;endFill=0;" parent="oL43XxU_vpYvVj9KqVrM-1" source="GRg-SzB-Ln8Gp-4iXVaB-4" target="oL43XxU_vpYvVj9KqVrM-26" edge="1">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-11" value="m" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" vertex="1" connectable="0" parent="GRg-SzB-Ln8Gp-4iXVaB-7">
+        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-11" value="m" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" parent="GRg-SzB-Ln8Gp-4iXVaB-7" vertex="1" connectable="0">
           <mxGeometry x="0.748" y="-1" relative="1" as="geometry">
             <mxPoint as="offset" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-4" value="tiene" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="oL43XxU_vpYvVj9KqVrM-1">
+        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-4" value="tiene" style="shape=rhombus;perimeter=rhombusPerimeter;whiteSpace=wrap;html=1;align=center;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
           <mxGeometry x="1030" y="327" width="120" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;endArrow=none;endFill=0;" edge="1" parent="oL43XxU_vpYvVj9KqVrM-1" source="GRg-SzB-Ln8Gp-4iXVaB-12" target="oL43XxU_vpYvVj9KqVrM-4">
-          <mxGeometry relative="1" as="geometry">
-            <Array as="points">
-              <mxPoint x="1150" y="810" />
-              <mxPoint x="1150" y="585" />
-            </Array>
-          </mxGeometry>
-        </mxCell>
-        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-12" value="stock" style="ellipse;whiteSpace=wrap;html=1;align=center;" vertex="1" parent="oL43XxU_vpYvVj9KqVrM-1">
+        <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-12" value="stock" style="ellipse;whiteSpace=wrap;html=1;align=center;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
           <mxGeometry x="1291" y="790" width="100" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="zp_4qBqCupILGSXB9QBY-0" value="&lt;span style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250); display: inline; float: none;&quot;&gt;Cada categoría tiene asociadas ciertas características (por ejemplo, el calzado tiene un número, tacón, grosor de suela, tipo de suela, etc). Además, cada producto debe tener un valor para cada característica que tenga su categoría asociada (siguiendo con el ejemplo, las zapatillas ZF9376, tienen un 39, no tienen tacón, la suela es de 2 cm y con tacos gordos).&lt;/span&gt;&lt;br style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250);&quot;&gt;&lt;br style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250);&quot;&gt;&lt;span style=&quot;color: rgb(0, 0, 0); font-family: helvetica; font-size: 12px; font-style: normal; font-weight: 400; letter-spacing: normal; text-align: center; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(248, 249, 250); display: inline; float: none;&quot;&gt;La cuestión es: ¿cubre este modelo esa funcionalidad? Si no es así ¿cómo se podría arreglar?&lt;/span&gt;" style="text;whiteSpace=wrap;html=1;" vertex="1" parent="oL43XxU_vpYvVj9KqVrM-1">
+          <mxGeometry x="1470" y="300" width="290" height="100" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
