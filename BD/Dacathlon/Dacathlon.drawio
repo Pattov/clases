@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-04-25T10:06:25.196Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" etag="oYZhZB-xspdyHPdSntpU" version="14.6.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2021-04-25T10:07:40.928Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/90.0.4430.85 Safari/537.36" etag="ulIzuaKU4zCnEEEdKCh-" version="14.6.6" type="github" pages="2">
   <diagram id="R2lEEEUBdFMjLlhIrx00" name="Original">
-    <mxGraphModel dx="942" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="868" dy="482" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -479,12 +479,12 @@
     </mxGraphModel>
   </diagram>
   <diagram name="Modificado" id="_7FsUHv406dsETqL1JrX">
-    <mxGraphModel dx="942" dy="614" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
+    <mxGraphModel dx="1021" dy="567" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" math="0" shadow="0" extFonts="Permanent Marker^https://fonts.googleapis.com/css?family=Permanent+Marker">
       <root>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-0" />
         <mxCell id="oL43XxU_vpYvVj9KqVrM-1" parent="oL43XxU_vpYvVj9KqVrM-0" />
         <mxCell id="oL43XxU_vpYvVj9KqVrM-2" value="" style="rounded=0;whiteSpace=wrap;html=1;dashed=1;dashPattern=1 2;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
-          <mxGeometry x="810" y="64" width="568" height="740" as="geometry" />
+          <mxGeometry x="930" y="80" width="568" height="740" as="geometry" />
         </mxCell>
         <mxCell id="oL43XxU_vpYvVj9KqVrM-3" value="Persona" style="whiteSpace=wrap;html=1;align=center;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
           <mxGeometry x="362" y="582.5" width="100" height="40" as="geometry" />
@@ -998,7 +998,7 @@
         <mxCell id="GRg-SzB-Ln8Gp-4iXVaB-12" value="stock" style="ellipse;whiteSpace=wrap;html=1;align=center;fillColor=#dae8fc;strokeColor=#6c8ebf;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
           <mxGeometry x="1291" y="790" width="100" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="zp_4qBqCupILGSXB9QBY-0" value="Añadiendo una relación&amp;nbsp;" style="text;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" parent="oL43XxU_vpYvVj9KqVrM-1" vertex="1">
+        <mxCell id="zp_4qBqCupILGSXB9QBY-0" value="&lt;font face=&quot;Roboto, RobotoDraft, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 13px&quot;&gt;Añadiendo una relación entre característica&amp;nbsp;y producto (n - m) creemos que se podría&amp;nbsp;solucionar, de esta relación saldrá&amp;nbsp;una tabla de características&amp;nbsp;del producto&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;font face=&quot;Arial&quot;&gt;&lt;span style=&quot;font-size: 13px&quot;&gt;Otras modificaciones que hemos creído&amp;nbsp;oportunas son:&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;ul&gt;&lt;li&gt;&lt;font face=&quot;Roboto, RobotoDraft, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 13px&quot;&gt;cambiar la relación de productos y categorías&amp;nbsp;de n-m a 1-n&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;/li&gt;&lt;li&gt;&lt;font face=&quot;Roboto, RobotoDraft, Helvetica, Arial, sans-serif&quot;&gt;&lt;span style=&quot;font-size: 13px&quot;&gt;hemos incluido el atributo stock en los productos, para evitar repetir datos con los productos&amp;nbsp;que sean iguales (con las mismas características)&lt;/span&gt;&lt;/font&gt;&lt;br&gt;&lt;/li&gt;&lt;/ul&gt;" style="text;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="oL43XxU_vpYvVj9KqVrM-1">
           <mxGeometry x="1400" y="250.5" width="290" height="213" as="geometry" />
         </mxCell>
       </root>
