@@ -8,7 +8,7 @@ CREATE TABLE `dacathlon`.`personas` (
   `direccion_2` VARCHAR(45) NULL,
   `email` VARCHAR(45) NULL,
   `telefono` INT NULL
-)
+);
 
 CREATE TABLE `dacathlon`.`clientes` (
   `idCliente` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
