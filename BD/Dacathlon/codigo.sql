@@ -121,7 +121,7 @@ INSERT INTO personas (nif, nombre) VALUES
 ('44532435G', 'Alexys'),
 ('17342043J', 'Pilar')
 ('16504348K', 'Felix')
-('14232849F', 'Catalina');3,5
+('14232849F', 'Catalina');
 
 INSERT INTO clientes VALUES
 (3),(5);
