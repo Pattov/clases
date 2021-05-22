@@ -67,7 +67,7 @@ CREATE TABLE `dacathlon`.`ventas`(
 );
 
 CREATE TABLE `dacathlon`.`categorias`(
-  `idCategoria` VARCHAR(4) NOT NULL PRIMARY KEY,
+  `idCategoria` INT NOT NULL PRIMARY KEY,
   `descripcion` VARCHAR(45) NULL
 );
 
