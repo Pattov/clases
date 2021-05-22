@@ -1,4 +1,8 @@
-CREATE SCHEMA `dacathlon` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;
+DROP DATABASE IF EXISTS dacathlon;
+
+CREATE DATABASE `dacathlon` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci ;
+USE `dacathlon`;
+
 CREATE TABLE `dacathlon`.`personas` (
   `idPersona` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   `nif` VARCHAR(9) NOT NULL,
@@ -63,12 +67,12 @@ CREATE TABLE `dacathlon`.`ventas`(
 );
 
 CREATE TABLE `dacathlon`.`categorias`(
-  `idCategoria` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  `idCategoria` VARCHAR(4) NOT NULL PRIMARY KEY,
   `descripcion` VARCHAR(45) NULL
 );
 
 CREATE TABLE `dacathlon`.`cat_pro`(
-  `id_categoria` INT NOT NULL,
+  `id_categoria` VARCHAR(4) NOT NULL,
   `id_producto` INT NOT NULL,
   PRIMARY KEY(`id_categoria`, `id_producto`),
   FOREIGN KEY (`id_categoria`) 
@@ -79,8 +83,8 @@ CREATE TABLE `dacathlon`.`cat_pro`(
 
 CREATE TABLE `dacathlon`.`caracteristicas`(
   `idCaracteristica` INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-  `id_categoria` INT NOT NULL,
-  `nombre` VARCHAR(40),
+  `id_categoria` VARCHAR(4) NOT NULL,
+  `nombre` VARCHAR(100),
   FOREIGN KEY (`id_categoria`)
       REFERENCES `dacathlon`.`categorias` (`idCategoria`)
 );
@@ -111,4 +115,18 @@ CREATE TABLE `dacathlon`.`posicionVenta`(
     REFERENCES `dacathlon`.`productos` (`idProducto`)
 );
 
+INSERT INTO personas (nif, nombre) VALUES
+('58423232B', 'Juancho'),
+('83492323A', 'Marta'),
+('44532435G', 'Alexys'),
+('17342043J', 'Pilar')
+('16504348K', 'Felix')
+('14232849F', 'Catalina');3,5
+
+INSERT INTO clientes VALUES
+(3),(5);
+
+INSERT INTO categorias VALUES
+('C001', 'Calzado deportivo'),
+('C002', 'Calzado de montaña');
 
