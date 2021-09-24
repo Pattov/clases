@@ -1,0 +1,8 @@
+.nombre {
+    color: tomato;
+}
+.imagen{
+    position: absolute;
+    right: 4em;
+    top:5em;
+}
