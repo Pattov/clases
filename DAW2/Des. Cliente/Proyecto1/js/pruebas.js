@@ -1,12 +1,12 @@
 // objeto.propiedasdelobjeto
-      /**
-       *
-       *
-       * @param {number} a 
-       * @param {number} b
-       * @return {number} 
-       */
-      function Suma(a, b) {
+     /**
+      *@author Patricia
+      *
+      * @param {number} a 
+      * @param {number} b
+      * @return {number} 
+      */
+     function Suma(a, b) {
         return a + b;
       }
       // crear un punto de interrupcion en las herramientas de desarrollo
