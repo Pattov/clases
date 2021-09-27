@@ -1,0 +1,24 @@
+:root{
+    --altofoto:80%;
+    --arfoto:0,7772020725388601%;
+    /* dividir ancho por alto */
+}
+.titulo{
+    background-color: black;
+    color: aquamarine;
+    font-size: 5em;
+    text-align: center;
+    margin-top: 0;
+}
+.foto{
+    height: calc(var(--arfoto)*var(--altofoto));
+    width: calc(var(--altofoto));
+}
+.imagen{
+    float: left;
+    width: 40%;
+    margin-left: 10%;
+}
+h2{
+    margin-top: 20%;
+}
