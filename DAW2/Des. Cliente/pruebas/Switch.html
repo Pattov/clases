@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rupturas</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("Introduce un número del 1 al 10");
+      switch (true) {
+        case num === "1" ||
+          num === "3" ||
+          num === "5" ||
+          num === "7" ||
+          num === "9":
+          alert(`${num} = Impar`);
+          break;
+        case Number(num) % 2 === 0:
+          alert(`${num} = Par`);
+          break;
+        default:
+          alert(`Número no valido`);
+          break;
+      }
+    </script>
+  </body>
+</html>
