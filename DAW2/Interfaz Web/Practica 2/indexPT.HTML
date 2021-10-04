@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Formulario1</title>
+  </head>
+  <body>
+    <form>
+        <fieldset>
+            <legend>Acceso</legend>
+        
+        <div class="caja">
+            <label class="etiqueta" for="email">Email</label>
+            <input class="campo" type="email" id="email" />
+          </div>
+        <div class="caja">
+            <label class="etiqueta" for="contra">Contraseña</label>
+            <input class="campo" type="password" id="contra" />
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Datos</legend>
+        <div class="caja">
+          <label class="etiqueta" for="nombre">Nombre</label>
+          <input class="campo" type="text" id="nombre"/>
+        </div>
+        
+        <div class="caja">
+          <label class="etiqueta" for="apell">Apellido</label>
+          <input class="campo" type="text" id="apell"/>
+        </div>
+        
+        <div>
+            <label for="provincias">Provincia</label>
+            <input type="text" list="listaProvincias" id="provincias">
+            <datalist id="listaProvincias">
+                <option>Valladolid</option>
+                <option>Valencia</option>
+                <option>Teruel</option>
+                <option>Toledo</option>
+                <option>Zaragoza</option>
+                <option>Zamora</option>
+                <option>Palencia</option>
+                <option>León</option>
+            </datalist>
+        </div>
+        <label for="gen">Genero</label>
+        <div class="caja">
+          <input type="radio" name="gen" id="gen-hombre" />
+          <label for="gen-hombre">Hombre</label>
+        </div>
+        <div>
+          <input type="radio" name="gen" id="gen-mujer" />
+          <label for="gen-mujer">Mujer</label>
+        </div>
+        <div>
+          <input type="radio" name="gen" id="gen-na" />
+          <label for="gen-na">N/A</label>
+        </div>
+        
+      </fieldset>
+      <div>
+        <input type="checkbox" name="acceso" id="acceso" />
+        <label for="acceso">Estoy de acuerdo a los Terminos y Condiciones</label>
+      </div>
+      <input type="submit" value="Enviar datos" />
+    </form>
+  </body>
+</html>
