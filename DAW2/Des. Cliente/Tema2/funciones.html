@@ -9,9 +9,24 @@
 <body>
     <script>
         //declaracion de funciones
-        function suma(a,b...numeros) {
-            return a+b;
+        // function suma(a,b) {
+        //     return a+b;
+        // }
+        function suma (...numeros) {
+        let acum = 0;
+         for (let index = 0; index < numeros.length; index++) {
+             acum+=numeros[index];    
+         }
+        return acum;
         }
+        // usar argument no es lo mas usado desde que aparecio en ES6 los ... pero seria asi:
+        // function suma() {
+        //     let acumulador = 0;
+        //     for (let index = 0; index < arguments.length; index++) {
+        //         acumulador+=arguments[index];    
+        //     }
+        //     return acumulador;
+        // }
         //declaracion de variables del ambito
         //sentencias del programa
         console.log(suma(5,6));
