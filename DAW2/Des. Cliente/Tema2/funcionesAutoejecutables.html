@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones IIFE</title>
+</head>
+<body>
+    <p>IIFE siglas en ingles</p>
+    <p>se declaran y se ejecutan en la misma sentencia</p> 
+    <script>
+        //(Declaracion de la funcion)(parametros)
+
+        let modulo1=(function(mensaje){
+            return mensaje.toUpperCase();
+        })("Hola Mundo");
+        // Se usa para implementar un patron de diseño 
+        let modulo2=(function(mensaje){
+            console.log(mensaje);
+                    
+        })(modulo1);
+    </script>
+</body>
+</html>

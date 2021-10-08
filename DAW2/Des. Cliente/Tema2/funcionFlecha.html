@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Son siempre anonimas</p>
+    <button>PULSAME</button>
+    <script>
+        // F U N C I O N E S    F L E C H A    C O N    V A R I O S    P A R A M E T R O
+        let suma = (...dato)=>{
+            console.log(dato.toString());
+        }
+
+        // F U N C I O N E S    F L E C H A    C O N    U N    P A R A M E T R O
+        // si solo es un parametro no es necesario poner () pero si recomendable para seguir un patron
+        let sym=dato=>{
+            console.log(dato.toString());
+        }
+        // si se trabaja con eventos no es recomendable usar funciones flecha
+        
+        // F U N C I O N E S    F L E C H A    C O N    U N    R E T U R N 
+
+        let sum=dato=>dato**2
+        //seria lo mismo que:
+        // let suma=function(dato){
+        //     return dato**2;
+        // }
+        
+        // F U N C I O N E S    F L E C H A    D E   U N   E V E N T O    
+        // crea unn objeto llamado boton asociado al evento
+        //en este caso con la etiqueta button
+        let boton=document.querySelector("button");
+
+        //E V E N T O S 
+        boton.onclick=()=>{
+            alert("pulsado");
+            //si usasemos esto no sirve si es un objeto de otro contesto
+            //alert(this.value);
+        }
+
+        suma(5);
+        sym("hola");
+    </script>
+</body>
+</html>

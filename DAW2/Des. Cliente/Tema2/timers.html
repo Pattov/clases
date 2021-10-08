@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Parar temporizador</button>
+    <script>
+        //valores opcionales ()
+        /*objeto Window - que es un valor implicito
+        *La ventana de nuestro navegador, 
+        */
+        //temporizador, si ponemos 0 el procesador lo haga cuando pueda de forma asincrona
+        //el mensaje
+        let timer = setTimeout(function() {
+            alert("hola");
+        },5000/*va en milisegundos 5 seg son 5000ms*/, "Hola mundo");
+            
+        // otra forma es 
+            // let bienvenida = function(mensaje) {
+            //     alert(mensaje)}
+            // setTimeout(bienvenida,5000,"Hola mundo");
+        let intervalo = setInterval(function () {
+            console.log("hola");
+        },1000);
+        
+        document.querySelector("button").onclick=function(){
+            clearTimeout(timer) //va a parar el temporizador
+            clearInterval(intervalo) //va a parar el intervalo
+        }
+    </script>
+</body>
+</html>

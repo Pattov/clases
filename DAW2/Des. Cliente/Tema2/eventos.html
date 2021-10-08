@@ -4,15 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anonimas</title>
+    <title>Document</title>
 </head>
 <body>
     <script>
-        // expresion de funcion = funcion anonima
-        let suma = function (dato=0,...resto) {
-            alert("Holaaaaaa");
+        // Ver funciones
+        let boton=document.querySelector("button");
+
+        //E V E N T O S 
+        boton.onclick=function(){
+            alert("pulsado");
         }
-        console.log(suma);
+        
     </script>
 </body>
 </html>
