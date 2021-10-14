@@ -39,6 +39,11 @@
 
 
              // O P E R A D O R E S      D E     C O M P A R A C I O N 
+             
+
+             // O P E R A D O R E S      D E     L O G I C A 
+
+             // O P E R A D O R E S      D E     C A D E N A              
             
     ?>
 </body>
