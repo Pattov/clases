@@ -1,0 +1,16 @@
+*{
+    background-color: #FAF2E4;
+    
+}
+:root{
+    --color: #dd855c;;
+}
+header{
+    ba
+}
+h2{
+    color: var(--color);
+}
+.img{
+    text-align: center;
+}
