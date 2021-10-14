@@ -1,0 +1,32 @@
+Glossary
+
+A | B | C | D | E | F | G | I | J | L | M | N | O | P | Q | R | S | T | U | V | W | X
+
+A
+
+
+ aliasing 
+ The jagged stair-stepped edges that can appear between colors in a bitmapped graphic. 
+
+ anchor 
+ The HTML element responsible for making hyperlinks. 
+
+ applet 
+ A self-contained, mini-executable program, such as one written in the Java programming language. 
+
+ attribute 
+ Parameters that extend or modify an HTML element 
+
+ 
+
+B
+
+ 
+ backend 
+ Aspects of a web site that pertain to functions that take place on the server 
+
+ bit depth 
+ A measurement of colors based on the number of bits alloted by the file or system 
+
+ browser 
+ The client software that requests and displays web pages. 
