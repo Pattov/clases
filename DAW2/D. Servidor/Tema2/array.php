@@ -54,7 +54,8 @@
          */
         // funciones con arrays
         //ordenar
-        //asort,arsort...
+        //asort,arsort(en el sentido inverso),
+        //https://www.php.net/manual/es/ref.array.php
        $arrayAOrdenar = array(3,2,4,1,5,8);
        sort($arrayAOrdenar);
        var_dump($arrayAOrdenar);

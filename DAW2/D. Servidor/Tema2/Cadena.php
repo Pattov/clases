@@ -23,7 +23,7 @@
         //Sustituye un texto dentro de una cadena
         echo str_replace("mundo","clase", "Hola mundo"); // Hola Clase              buscar,reemplazar
         echo "<br>";
-        str
+
 
     ?>
 </body>
