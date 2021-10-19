@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RegExp</title>
+</head>
+<body>
+    <!-- T E O R I A  -->
+    <!-- https://developer.mozilla.org/es/docs/Web/JavaScript/Guide/Regular_Expressions -->
+    <!-- P A R A     P R O B A R -->
+    <!-- https://regexr.com/ -->
+    <script>
+        let texto="iaydajhfla asjfgal asj 4512 4545ygf 4525HIS 4557YSQL 4578HYR";
+        let expr=/\b\d{4}[A-Z]{3}\b/;
+        let matriculas=texto.match(/\b\d{4}[A-Z]{3}\b/g);
+        // alert(expr.exec(texto));
+        alert(matriculas.toString());
+    </script>
+</body>
+</html>
