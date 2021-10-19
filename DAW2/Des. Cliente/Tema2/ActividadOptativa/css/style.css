@@ -1,0 +1,132 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Boton Menu */
+body {
+    background-color: black;
+}
+.container{
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    top: 1.5em;
+    left: 3em;
+    transform: translate(-50%);
+    border-radius: 10px;
+    background: #252525;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50px;
+    box-shadow: 0 0 0 5px rgb(94, 94, 94), 0 0 0 10px rgb(59, 59, 59);
+}
+.container input{
+    -webkit-appearance: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    outline: none;
+    cursor: pointer;
+}
+.menu{
+    width: 300px;
+    height: 150px;
+    background: #000000; 
+    background: linear-gradient(to right, #434343 50%, #000000); 
+    
+
+
+    position: absolute;
+    top: 2.5%;
+    left: 105%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+}
+a{
+    text-decoration: none;
+    color: azure;
+}
+.menu div{
+    display: flex;
+    align-items: center;
+    margin: 10px 30px 0 35px;
+    padding: 10px 0 10px 15px;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.336);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all .4s;
+}
+.menu div button{
+    margin-left: 10px;
+   
+}
+.menu div:hover{
+    transform: translateX(12px);
+}
+input:checked ~ .menu{
+    display: flex;
+    animation: anim 0.5s;
+}
+/* Titulo */
+/*-------------------------------------------------------*/
+/*                    Fuentes - Style                    */
+/*-------------------------------------------------------*/
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+button{
+    position: relative;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 40px;
+    font-weight: 800;
+    color: #ff00a5;
+    text-shadow: 1px 3px 15px #000;
+    -webkit-text-stroke: 3px #000;
+    text-transform: uppercase;
+    transition: .5s all;
+    cursor: pointer;
+}
+/*-------------------------------------------------------*/
+/*  Dos Pseudo-Elementos de los dos rombos de colores    */
+/*-------------------------------------------------------*/
+button::after, button::before{
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: 205px;
+    height: 70px;
+    transform: skew(-35deg);
+    transition: .5s all;
+}
+button::before{
+    top: -35px;
+    left: -120px;
+    background: #00ffee;
+    box-shadow: 1px 4px 25px #01ada2;
+}
+button::after{
+    bottom: -35px;
+    right: -120px;
+    background: #fbff00;
+    box-shadow: 1px 4px 25px #fbff00;
+}
+
+
