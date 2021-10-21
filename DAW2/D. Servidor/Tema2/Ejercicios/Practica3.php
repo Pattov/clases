@@ -27,6 +27,7 @@
             }
             echo "<hr>";
             //4.Haz un script que calcule el número de días transcurridos desde una fecha dada a otra.
+            
 
             //5.Haz un script que sume un número de horas a una fecha.
 
