@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Objets</title>
+</head>
+<body>
+    <script>
+        let numero = [1,2,3,4,5];
+        //DEFINIR UN OBJETO CON NOTACION JSON
+        //esta basado en notacion Json
+        //OBJETO NATIVO
+        let persona={
+            //esto es una propiedad
+            identidad :{
+                nombre:"Pepe",
+                apellido1:"Diez",
+                apellido2:"Lopez"
+            },
+            //declarar metodo javaScript antiguo
+            // mostrar:function(){ 
+            //     console.log(`${this.identidad.nombre}) ${this.identidad.apellido1}${this.identidad.apellido2}`);
+            // }
+            // mas recomendada:  - JavaScript nuevo
+            mostrar(){
+                console.log(`${this.identidad.nombre} ${this.identidad.apellido1}${this.identidad.apellido2}`)
+            }
+        }
+        persona.mostrar();
+        persona.domicilios={
+            calle:"Filipinos s/n",
+            poblacion:"Palencia",
+            provincia:"Palencia"
+        }
+
+        //funciones constructuras
+        function Persona(nombre, apellido1, apellido2) {
+            this.nombre=nombre;
+            this.apel1=apellido1;
+            this.apel2=apellido2;
+        }
+        let Persona1 = new Persona("pepe", "lopez","ruiz");
+        console.log(`${this.identidad.nombre} ${this.identidad.apel1} ${this.identidad.apel2}`)
+        debugger;
+
+        //funcion class
+        class Personita{
+            constructor(nombre, apellido1, apellido2){
+                this.nombre=nombre;
+                this.apel1=apellido1;
+                this.apel2=apellido2;
+            }
+            mostrar(){
+                console.log(`${this.nombre} ${this.apel1}${this.apel2}`)
+            }
+        }
+    </script>
+</body>
+</html>
