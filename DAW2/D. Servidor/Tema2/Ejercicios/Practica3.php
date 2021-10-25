@@ -27,6 +27,7 @@
             echo "<hr>";
 
             //4.Haz un script que calcule el número de días transcurridos desde una fecha dada a otra.
+            echo "Desde el día 7/4/2021 hasta el día 22/10/2021 hay ";
             $dia1 = new DateTime("2021-4-7");
             $dia2 = new DateTime("2021-10-22");
             $diferencia = $dia1->diff($dia2);
@@ -83,7 +84,7 @@
                     }   
 
             //8.Hacer un programa que muestre en pantalla información de PHP con la función phpinfo(). Muestra la información centrada horizontalmente en la pantalla.
-                    
+            phpinfo();        
 
         ?>
     </body>
