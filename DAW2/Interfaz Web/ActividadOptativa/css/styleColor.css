@@ -17,7 +17,7 @@ body{
     margin: 40px;
     background: black;
     transition: 0.5s;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .box:hover{
@@ -38,10 +38,12 @@ body{
     max-width: 100%;
     opacity: 0.1;
     transition: 0.5s;
+    max-height: 100%;
 }
 
 .box:hover .imgBx img{
     opacity: 1;
+    max-height: 85%;
 }
 
 .box:before{

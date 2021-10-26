@@ -16,6 +16,7 @@ body {
     transform: translate(-50%);
     border-radius: 10px;
     background: #252525;
+    z-index: 1;
 }
 .container::before{
     content: '';
@@ -42,9 +43,6 @@ body {
     height: 150px;
     background: #000000; 
     background: linear-gradient(to right, #434343 50%, #000000); 
-    
-
-
     position: absolute;
     top: 2.5%;
     left: 105%;
@@ -67,6 +65,7 @@ a{
     border-radius: 10px;
     cursor: pointer;
     transition: all .4s;
+    letter-spacing: 2.5px;
 }
 .menu div button{
     margin-left: 10px;
