@@ -9,18 +9,25 @@
 <body>
     <script>
         function comprobar(cadena) {
-            let correo = /\b\w{1,}\@{1}\w{1,}\.{1}\w{2,3}\b/;
+            let correo = /\b\w{1,}\@\w{1,}\.\w{2,3}\b/;
             let tel = /\b\d{9}\b/;
-            let nif;
+            let nif = /\b[0-9]{8}[a-z][A-Z]\b/;
+            let mensaje;
             switch (cadena) {
-                case value:
-                    
+                case correo:
+                    mensaje = "Esto es un correo";
                     break;
-            
+                case tel:
+                    mensaje = "Esto es un telefono";
+                    break;
+                case nif:
+                    mensaje = "Esto es un nif";
+                    break;
                 default:
+                    mensaje = "No es ni un Email, un telefono o un NIF";
                     break;
             }
-                
+                return mensaje;
         }
         let validar=false;
         validar = comprobar(prompt("Introduce tu correo, NIF, Telefono"));

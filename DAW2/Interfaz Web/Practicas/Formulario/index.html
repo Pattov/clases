@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario</title>
+    <style>
+        .primer{
+            margin-bottom: 1em;
+        }
+        div div{
+            margin: 1em 0;
+        }
+        .comentario{
+            font-size: small;
+        }
+    </style>
+</head>
+<body>
+    <form action="alta.php" method="post">
+        <div class="primer progress">
+            <label for="progre">Progreso en el formulario:</label>
+            <progress id="progre" max="100" value="0"></progress>
+        </div>
+        <div class="datos">
+            <fieldset>
+                <legend>Datos personales</legend>
+                <div>
+                    <label for="name">Nombre y apellidos:<label>
+                    <input type="text" id="name" name="nombre" required>
+                </div>
+                <div>
+                    <label for="nac">Fecha de nacimiento: </label>
+                    <input type="date" id="nac" name="fechaNac">
+                </div>
+                <div>
+                    <label for="tlf">Teléfono: </label>
+                    <input type="tel" id="tlf" name="movil">
+                </div>
+                <div>
+                    <label for="logo">Fotografía reciente: </label>
+                    <input type="file" id="logo" name="foto" accept="image/png, image/jpeg">
+                </div>
+                <div>
+                    <label for="mail">Correo electrónico: </label>
+                    <input type="email" id="mail" name="email" required>
+                </div>
+                <div>
+                    <label for="contrasena">Contraseña: </label>
+                    <input type="password" id="contrasena" name="contra" minlength="8">
+                    <span class="comentario"> Si se indica, se usará para crearle una cuenta de usuario. 8 caracteres como mínimo.</spam>
+                </div>
+            </fieldset>
+        <div>
+        <div class="progress">
+            <label for="progre">Progreso en el formulario: </label>
+            <progress max="100" id="progre" value="65"></progress>
+        </div>
+        <div class="merito">
+            <fieldset>
+                <legend>Méritos académicos</legend>
+                <div>Señale la titulación más alta que posea</div>
+                <ul>
+                  <li>
+                    <label for="eso">Enseñanza obligatoria / sin estudios </label>
+                    <input type="radio" id="eso" name="estudios">
+                  </li>
+                  <li>
+                    <label for = "medio">Bachillerato / CC.FF. de grado medio de FP </label> 
+                    <input type="radio" id="medio" name="estudios">
+                  </li>
+                  <li>
+                    <label for = "superior">Estudios universitarios de primer ciclo / CC.FF. de grado superior de FP </label>
+                    <input type="radio" id="superior" name="estudios">
+                  </li>
+                  <li>
+                    <label for="grado">Grado / Licenciatura universitaria </label>
+                    <input type="radio" id="grado" name="estudios">
+                  </li>
+                  <li>
+                    <label for="master">Estudios de postgrado / máster </label>
+                    <input type="radio" id="master" name="estudios">
+                  </li>
+                  <li>
+                    <label for="doctorado">Doctorado </label>
+                    <input type="radio" id="doctorado" name="estudios">
+                  </li>
+                </ul>
+                <div>
+                  <label for="titulación">Indique los títulos académicos que desee aportar a su ficha personal:</label><br>
+                  <textarea id="titulacion" rows="4" cols="63"> </textarea>
+                </div>
+              </fieldset>
+        </div>
+        <div class="progress">
+            <label for="progr">Progreso en el formulario: </label>
+            <progress max="100" id="progr" value="85"></progress>
+        </div>
+        <div class="sectores">
+            <fieldset>
+                <legend>Sectores en los que desea trabajar</legend>
+                <ul>
+                  <li>
+                    <label for="educa">Educación </label>
+                    <input type="checkbox" id="educa" name="educacion">
+                  </li>
+                  <li>
+                    <label for="tecno">Tecnología </label>
+                    <input type="checkbox" id="tecno" name="tecnologia">
+                  </li>
+                  <li>
+                    <label for="constr">Construcción </label>
+                    <input type="checkbox" id="constr" name="construccion">
+                  </li>
+                  <li>
+                    <label for="hostel">Hostelería </label>
+                    <input type="checkbox" id="hostel" name="hosteleria">
+                  </li>
+                  <li>
+                    <label for="indus">Industria </label>
+                    <input type="checkbox" id="indus" name="industria">
+                  </li>
+                  <li>
+                    <label for="serv">Servicios al hogar </label>
+                    <input type="checkbox" id="serv" name="servicios">
+                  </li>
+                </ul>
+              </fieldset>
+        </div>
+        <div class="progress">
+            <label for="prog">Progreso en el formulario: </label>
+            <progress max="100" class="prog" value="91"></progress>
+        </div>
+        <div class="otros">
+            <fieldset>
+                <legend>Otros aspectos</legend>
+                <div>
+                  <label for="ccaa">Comunidad auntónoma preferida para trabajar:</label>
+                  <select id="ccaa">
+                    <option value="">Seleccione la comunidad autónoma</option>
+                        <optgroup label="A">
+                            <option value="Andalucia">Andalucía</option>
+                            <option value="Aragon">Aragón</option>
+                            <option value="Asturias">Asturias</option>
+                        </optgroup>
+                        <optgroup label="C">
+                            <option value="Canarias">Canarias</option>
+                            <option value="Cantabria">Cantabria</option>
+                            <option value="Castilla La Mancha">Castilla-La Mancha</option>
+                            <option value="Castilla y Leon">Castilla y León</option>
+                            <option value="Cataluna">Cataluña</option>
+                            <option value="Ceuta">Ceuta</option>
+                            <option value="Comunidad de Madrid">Comunidad de Madrid</option>
+                            <option value="Comunidad de Navarra">Comunidad Foral de Navarra</option>
+                            <option value="Comunidad Valenciana">Comunidad Valenciana</option>
+                        </optgroup>
+                        <optgroup label="E">
+                            <option value="Extremadura">Extremadura</option>
+                        </optgroup>
+                        <optgroup label="G">
+                            <option value="Galicia">Galicia</option>
+                        </optgroup>
+                        <optgroup label="I">
+                            <option value="Islas Baleares">Islas Baleares</option>
+                        </optgroup>
+                        <optgroup label="L">
+                            <option value="La Rioja">La Rioja</option>
+                        </optgroup>
+                        <optgroup label="M">
+                            <option value="Melilla">Melilla</option>
+                            <option value="Murcia">Región de Murcia</option>
+                        </optgroup>
+                        <optgroup label="P">
+                            <option value="Pais Vasco">País Vasco</option>
+                        </optgroup>
+                  </select>
+                </div>
+                <div>
+                  <label>Probabilidad de recibir ofertas: </label>
+                    <meter min="0" high="8" max="10" value="9"></meter>
+                </div>
+              </fieldset>
+        </div>
+    </form>
+</body>
+</html>
