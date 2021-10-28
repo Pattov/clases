@@ -67,7 +67,7 @@ a{
     transition: all .4s;
     letter-spacing: 2.5px;
 }
-.menu div button{
+.menu div .boton{
     margin-left: 10px;
    
 }
@@ -89,7 +89,7 @@ body{
     height: 100vh;
     overflow: hidden;
 }
-button{
+.boton{
     position: relative;
     border: none;
     outline: none;
@@ -106,7 +106,7 @@ button{
 /*-------------------------------------------------------*/
 /*  Dos Pseudo-Elementos de los dos rombos de colores    */
 /*-------------------------------------------------------*/
-button::after, button::before{
+.boton::after, .boton::before{
     content: '';
     z-index: -1;
     position: absolute;
@@ -115,13 +115,13 @@ button::after, button::before{
     transform: skew(-35deg);
     transition: .5s all;
 }
-button::before{
+.boton::before{
     top: -35px;
     left: -120px;
     background: #00ffee;
     box-shadow: 1px 4px 25px #01ada2;
 }
-button::after{
+.boton::after{
     bottom: -35px;
     right: -120px;
     background: #fbff00;
