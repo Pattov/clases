@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1 - Arrays</title>
+</head>
+<body>
+    <!-- Ejercicios 1:
+    Partiendo del siguiente array [1,5,2,7,3,2,4,5,8,7,3,4,5,6,7,3,8,4,1] ordénalo y que no hay elementos repetidos. -->
+    <script>
+        let numeros = [1,5,2,7,3,2,4,5,8,7,3,4,5,6,7,3,8,4,1];
+        //quitar los numeros repetidos
+        let hecho  = numeros.filter((valor, indice) => {
+            return numeros.indexOf(valor) === indice;
+            }
+        );
+        // imprimirlos y ordenarlos
+        console.log("El Array sin numeros repetidos y ordenados queda asi: ", hecho.sort());
+    </script>
+</body>
+</html>
