@@ -40,3 +40,4 @@ export class Producto {
     this.cantidad = cantidad;
   }
 }
+
