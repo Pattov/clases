@@ -31,6 +31,7 @@ export function obtieneFactura() {
     //instancio Factura con los productos, empresa,  cliente y fecha
     factura = new clases.Factura(empresa, cliente, productos, fecha)
     factura.listadoFactura();
+    factura.almacenarFactura();
     productos.length = 0; //borro el array para agregar los productos de la siguiente factura
   
   }

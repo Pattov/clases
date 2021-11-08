@@ -30,6 +30,9 @@ export class Factura {
 
     document.getElementById("visor").innerHTML = listado;
   }
+  almacenarFactura(){
+    localStorage.setItem("factura",JSON.stringify(factura));
+  }
 }
 
 //Declaración de clase Producto
