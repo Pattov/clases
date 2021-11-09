@@ -17,6 +17,6 @@ document.getElementById("btn1").onclick=function() {
 }
 
 document.getElementById("btn2").onclick=function() {
-    let identidad=JSON.parse(localStorage.getItem("nombre"));
-    
+    let otra=localStorage.getItem("nombre");
+    console.log('Nombre: '+otra);
 }

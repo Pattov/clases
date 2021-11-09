@@ -1,5 +1,3 @@
-
-
 //capturar valores del formulario
 document.getElementById("btnAgregar").onclick=function () {
     // verificar que existe item agenda[] (array vacio)
@@ -7,7 +5,7 @@ document.getElementById("btnAgregar").onclick=function () {
     //sino creo el item (almacenamiento local)
 }
 
-//instacion objeto apunte
+//instanciar objeto apunte
 
 //recupero el item agenda -> convertimos en array
 
