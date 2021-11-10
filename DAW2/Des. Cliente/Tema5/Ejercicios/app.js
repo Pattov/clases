@@ -40,10 +40,12 @@ document.getElementById("btnBuscar").onclick = function () {
     }else{
         listado += `<p>`+formulario.nombre.value+`</p>`;
         //imprime localidad
-        listado += `<p> vive en la calle ${buscado.direccion.calle} en la Población ${buscado.direccion.poblacion} en la Provincia ${buscado.direccion.provincia}</p>`;
+        listado += `<p> Vive en la Calle ${buscado.direccion.calle} en la Población ${buscado.direccion.poblacion} en la Provincia ${buscado.direccion.provincia}</p>`;
         //imprime array
         (buscado.telefono).forEach((tel) => {
-            listado += `<p> Su Teléfono es ${tel} </p>`;
+            if(!(tel === "")){
+                listado += `<p> Puedes llamar al ${tel} </p>`;
+            }
         });
     }
     document.getElementById("visor").innerHTML = listado;
