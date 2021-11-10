@@ -34,6 +34,7 @@ document.getElementById("btnAgregar").onclick=function() {
 document.getElementById("btnBuscar").onclick = function () {
     let buscado = JSON.parse(localStorage.getItem(formulario.nombre.value));
     let listado = `<h1>El resultado obtenido es: </h1>`;
+    //imprimo si no existe y si existe
     if(buscado === null){
         listado += `<p>En la agenda no esta `+formulario.nombre.value+` </p>` ;
     }else{
