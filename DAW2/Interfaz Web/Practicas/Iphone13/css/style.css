@@ -135,7 +135,7 @@ footer{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap
 }
 .title{
     height: 30%;
@@ -154,8 +154,8 @@ footer{
     border-radius: 10px;
     margin: 25px;
     text-align: center;
+    padding: 12px 0;
 }
 .paragraf .battery img {
-    width: 9%;
-    height: 9%;
+    width: 7%;
 }
