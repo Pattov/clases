@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 3 - Arrays</title>
+</head>
+<body>
+    
+    <!-- Simular una bonoloto automática. Crear 6 números aleatorios del 1 al 49 sin repetirse . Guardar los números
+        en un array. Esto será la apuesta.
+        De la misma manera, crear otro array con la combinación ganadora y el complementario.
+        Comparar la combinación ganadora con la apuesta. Mostrar en un alert : la apuesta, la combinación
+        ganadora y los aciertos. El complementario solo aparecerá como acierto en caso de que tenga además 5
+        aciertos de la combinación ganadora.
+        • La comprobación de la existencia de un número acertado dentro de la combinación ganadora se
+        realizará con alguno de los métodos de Array que utilizan un callback.
+        • Utilizar los métodos Math.random() y Math.floor() para la obtención del número aleatorio. -->
+    <script>
+        //funciones
+        function NumerosAleatorios(min, max) {
+        return Math.round(Math.random() * (max - min) + min);
+        }
+        //variables
+        let numero;
+        let apuesta = [];
+        let ganadora = [];
+        let aciertos = 0;
+        //relleno array de la apuesta con 6 numeros aleatorios y comprobar que no estan repetidos
+        for (let i = 0; i < 6; i++) {
+            numero = NumerosAleatorios(1,50);
+            if(i==0){
+                apuesta.push(numero);
+            } else {
+                for (let j = 0; j < apuesta.length; j++) {
+                    if(numero == apuesta[j]){
+                        i--;
+                    }else{
+                        apuesta.push(numero);
+                    }
+                    break;
+                    
+                }
+            }
+        }
+        //ordeno el array
+        apuesta.sort((a, b) => a - b);
+        //relleno array de la combinacion ganadora con 7 numeros aleatorios (6 normales y 1 complementario)  y comprobar que no estan repetidos
+        for (let i = 0; i < 7; i++) {
+            numero = NumerosAleatorios(1,50);
+            if(i==0){
+                ganadora.push(numero);
+            } else {
+                for (let j = 0; j < ganadora.length; j++) {
+                if(numero == ganadora[j]){
+                    i--;
+                }else{
+                    ganadora.push(numero);
+                }
+                break;
+                
+                }
+            }
+        }
+        //ordeno el array
+        ganadora.sort((a, b) => a - b);
+        //comprobacion
+        for (let i = 0; i < ganadora.length; i++) {
+            //comprobar los primeros 6 numeros
+            if(i<7){
+                //comparar los dos arrays y añadir aciertos cuando encuentre igualdad
+                for (let j = 0; j < apuesta.length; j++) {
+                    if(ganadora[i]===apuesta[j]){
+                        aciertos++;
+                    }
+                }
+            } else {
+                //el complemeto solo si hay 5 aciertos
+                if(aciertos==5){
+                    for (let j = 0; j < apuesta.length; j++) {
+                    if(ganadora[7]===apuesta[j]){
+                        aciertos++;
+                    }
+                }
+                }
+            }
+            
+        }
+        alert("La apuesta ha sido "+apuesta + "\nLa combinación ganadora es "+ganadora+"\nEl numero de aciertos ha sido "+aciertos)
+    </script>
+</body>
+</html>
