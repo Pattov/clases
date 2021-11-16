@@ -12,5 +12,14 @@
     Crear una función que acepte una cadena con este formato y que me devuelva otra cadena con el nombre
     en formato:
     Nombre Apellido1 Apellido2 -->
+    <script>
+        function CambiarNombre(texto) {
+            let aTexto = texto.trim().split(",");
+            return aTexto[1]+" "+aTexto[0];
+        }
+        let texto = "Tovar Quintano, Patricia";
+        console.log(CambiarNombre(texto));
+        
+    </script>
 </body>
 </html>

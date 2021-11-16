@@ -10,11 +10,17 @@
     <!-- 1.-Dado el siguiente texto "hola que tal.como estás.yo muy bien" crea un string donde se corrige la falta
         ortográfica existente de poner en mayúscula la primera letra de una frase. -->
         <script>
-            let textomal = "hola que tal.como estás.yo muy bien";
-            let aTexto = textomal.split(".").trim();
-            aTexto.forEach(element => {
-                
-            });
+
+            let textoMal = "hola que tal.como estás.yo muy bien";
+            let textoBien = "";
+            //partir el texto en un Array por frase
+            let aTexto = textoMal.trim().split(".");
+            //cambio la primera a mayusculas
+            for (let i = 0; i < aTexto.length; i++) {
+                textoBien += aTexto[i].charAt(0).toUpperCase() + aTexto[i].slice(1)+". ";
+            }
+            //Imprimo
+            alert(textoBien);
         </script>
 </body>
 </html>
