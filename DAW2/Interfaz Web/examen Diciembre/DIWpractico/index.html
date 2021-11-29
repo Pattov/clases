@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulario en HTML</title>
+
+    <style>
+      .primer {
+        margin-top: 1em;
+        margin-bottom: 1em;
+      }
+      div div {
+        margin: 1em 0;
+      }
+      .comentario {
+        font-size: small;
+      }
+      .busqueda {
+        position: absolute;
+        right: 25px;
+        top: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="">
+      <div class="busqueda">
+        <label for="Busqueda">Busqueda:</label>
+        <input type="search" id="" />
+        <input type="submit" value="Enviar" />
+      </div>
+      <div class="primer">
+        <label for="progre">Progreso en el formulario:</label>
+        <progress id="progre" max="100" value="0"></progress>
+      </div>
+
+      <fieldset>
+        <legend>Datos</legend>
+        <div>
+          <div>
+            <label for="nombre">Nombre: </label>
+            <input type="text" name="nombre" id="nombre" />
+          </div>
+          <div>
+            <label for="apel">Apellidos: </label>
+            <input type="text" name="apel" id="apel" />
+          </div>
+          <div>
+            <label for="domicilio">Domicilio: </label>
+            <input type="text" name="apel" id="apel" />
+          </div>
+          <div>
+            <label for="mun">Munucipio: </label>
+            <input type="text" name="apel" id="apel" />
+          </div>
+          <div>
+            <label for="prov"
+              >Comunidad auntónoma preferida para trabajar:</label
+            >
+            <select id="prov">
+              <option value="">Seleccione la provincia que ha nacido</option>
+              <optgroup label="A">
+                <option value="Acoruna">A Coruña</option>
+                <option value="Alicante">Alicante</option>
+                <option value="Albacete">Albacete</option>
+                <option value="Almeria">Almería</option>
+                <option value="Araba">Araba</option>
+                <option value="Asturias">Asturias</option>
+                <option value="Avila">Ávila</option>
+              </optgroup>
+              <optgroup label="B">
+                <option value="Badajoz">Badajoz</option>
+                <option value="Barcelona">Barcelona</option>
+                <option value="Burgos">Burgos</option>
+              </optgroup>
+              <optgroup label="C">
+                <option value="Caceres">Cáceres</option>
+                <option value="Cadiz">Cádiz</option>
+                <option value="Cantabria">Cantabria</option>
+                <option value="Castellon">Castellón</option>
+                <option value="Ceuta">Ceuta</option>
+                <option value="Ciudad Real">Ciudad Real</option>
+                <option value="Cordoba">Córdoba</option>
+                <option value="Cuenca">Cuenca</option>
+              </optgroup>
+              <optgroup label="G">
+                <option value="Guipúzcoa">Guipuzcoa</option>
+                <option value="Gerona">Gerona</option>
+                <option value="Granada">Granada</option>
+                <option value="Guadalajara">Guadalajara</option>
+              </optgroup>
+
+              <optgroup label="H">
+                <option value="Huelva">Huelva</option>
+                <option value="Huesca">Huesca</option>
+              </optgroup>
+              <optgroup label="I">
+                <option value="Islas Baleares">Islas Baleares</option>
+              </optgroup>
+              <optgroup label="J">
+                <option value="Jaen">Jaén</option>
+              </optgroup>
+              <optgroup label="L">
+                <option value="La Rioja">La Rioja</option>
+                <option value="Las Palmas">Las Palmas</option>
+                <option value="Leon">León</option>
+                <option value="Lleida">Lleida</option>
+                <option value="Lugo">Lugo</option>
+              </optgroup>
+              <optgroup label="M">
+                <option value="Madrid">Madrid</option>
+                <option value="Malaga">Málaga</option>
+                <option value="Melilla">Melilla</option>
+                <option value="Murcia">Murcia</option>
+              </optgroup>
+
+              <optgroup label="N">
+                <option value="Navarra">Navarra</option>
+              </optgroup>
+
+              <optgroup label="O">
+                <option value="Orense">Orense</option>
+              </optgroup>
+              <optgroup label="P">
+                <option value="Palencia">Palencia</option>
+                <option value="Pontevedra">Pontevedra</option>
+              </optgroup>
+              <optgroup label="S">
+                <option value="Salamanca">Salamanca</option>
+                <option value="Tenerife">Santa Cruz de Tenerife</option>
+                <option value="Segovia">Segovia</option>
+                <option value="Sevilla">Sevilla</option>
+                <option value="Soria">Soria</option>
+              </optgroup>
+              <optgroup label="T">
+                <option value="Tarragona">Tarragona</option>
+                <option value="Teruel">Teruel</option>
+                <option value="Toledo">Toledo</option>
+              </optgroup>
+              <optgroup label="V">
+                <option value="Valencia">Valencia</option>
+                <option value="Valladolid">Valladolid</option>
+                <option value="Vizcaya">Vizcaya</option>
+              </optgroup>
+              <optgroup label="Z">
+                <option value="Zamora">Zamora</option>
+                <option value="Zaragoza">Zaragoza</option>
+              </optgroup>
+            </select>
+          </div>
+          <div>
+            <fieldset>
+              <legend for="estudios">Indicar nivel de estudios:</legend>
+
+              <div>
+                <input type="radio" id="eso" name="estudios" />
+                <label for="eso">Enseñanza obligatoria / sin estudios </label>
+              </div>
+              <div>
+                <input type="radio" id="medio" name="estudios" />
+                <label for="medio"
+                  >Bachillerato / CC.FF. de grado medio de FP
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="superior" name="estudios" />
+                <label for="superior"
+                  >Estudios universitarios de primer ciclo / CC.FF. de grado
+                  superior de FP
+                </label>
+              </div>
+              <div>
+                <input type="radio" id="grado" name="estudios" />
+                <label for="grado">Grado / Licenciatura universitaria </label>
+              </div>
+              <div>
+                <input type="radio" id="master" name="estudios" />
+                <label for="master">Estudios de postgrado / máster </label>
+              </div>
+              <div>
+                <input type="radio" id="doctorado" name="estudios" />
+                <label for="doctorado">Doctorado </label>
+              </div>
+            </fieldset>
+          </div>
+          <div>
+            <fieldset>
+              <legend>Indicar aficiones:</legend>
+              <div>
+                <input type="checkbox" id="afi1" />
+                <label for="afi1">Salir a Andar</label>
+              </div>
+              <div>
+                <input type="checkbox" id="afi2" />
+                <label for="afi2">Leer</label>
+              </div>
+              <div>
+                <input type="checkbox" id="afi3" />
+                <label for="afi3">Ir al Cine</label>
+              </div>
+            </fieldset>
+          </div>
+          <div>
+            <label for="color">Indicar color favorito: </label>
+            <input type="color" name="" id="" />
+          </div>
+          <div>
+            <label for="nac">Fecha de nacimiento: </label>
+            <input type="date" id="nac" />
+          </div>
+          <div>
+            <label for="TiempoNac">Hora de Nacimiento: </label>
+            <input type="time" id="TiempoNac" />
+          </div>
+          <div>
+            <label for="tlf">Teléfono: </label>
+            <input type="tel" id="tlf" />
+          </div>
+          <div>
+            <label for="pagWeb">Página web: </label>
+            <input type="url" id="pagWeb" />
+          </div>
+          <div>
+            <label for="mail">E-mail: </label>
+            <input type="email" id="mail" />
+          </div>
+          <div>
+            <label for="curri">Subir CV: </label>
+            <input type="file" id="curri" accept="application/pdf" />
+          </div>
+          <div>
+            <label for="edad">Edad: </label>
+            <input type="number" id="edad" />
+          </div>
+
+          <div>
+            <label for="altura">Indicar altura: </label>
+            <meter
+              min="1.00"
+              high="1.90"
+              max="2.50"
+              low="1.5"
+              value="1.45"
+            ></meter>
+          </div>
+          <div>
+            <label for="peso">Indicar peso: </label>
+            <meter min="20" high="100" max="400" low="50" value="102"></meter>
+          </div>
+
+          <div>
+            <label for="habitos">Indicar hábitos alimenticios: </label>
+            <br />
+            <textarea id="habitos" cols="80" rows="8"></textarea>
+          </div>
+          <div>
+            <label for="contra">Contraseña: </label>
+            <input type="password" id="contra" />
+          </div>
+          <div>
+            <input type="submit" value="Enviar Datos" />
+            <input type="reset" value="Resetear Datos" />
+          </div>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Valoracion</legend>
+        <label for="val">Valore nuestro servicio</label>
+        <input type="range" id="val" />
+      </fieldset>
+    </form>
+  </body>
+</html>
