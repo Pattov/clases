@@ -1,0 +1,41 @@
+Instrucciones para crear la siguiente página web:
+
+Crear una gran cabecera ocupando todo el espacio disponible en la pantalla (ancho y alto), sin barras de desplazamiento, pero con un mosaico de imágenes en vez de una única. 
+
+El mosaico cambiara su disposición dependiendo del ancho disponible en pantalla: definiremos una cuadrícula para pantallas hasta 500 px de ancho, otra entre 500 px y 800 px y una más cuando se disponga de más de 800 px —1, 2 y 3 columnas—.
+
+El comportamiento debe ser fluido, la rejilla y su contenido tienen que cubrir el ancho y alto en todo momento. 
+
+* Se proporcionan capturas con los siguientes anchos de ventana: 475 px, 500 px, 799 px, 800 px, 1200 px.
+El alto en las capturas es de 915 px.
+
+Además de la configuración de la rejilla, es importante: 
+la colocación de las imágenes de fondo;
+la tipografía y sus estilos;
+la alineación vertical y horizontal de los contenidos;
+la legibilidad de los textos sobre imágenes;
+los cambios en el diseño en diferentes anchos;
+los degradados.
+
+Fuente para los párrafos (Google fonts): "Architects Daughter"
+Fuente para los títulos (Google fonts): "Mochiy Pop P One"
+
+
+
+
+
+
+
+* Se proporcionan capturas con los siguientes anchos de ventana: 475 px, 500 px, 799 px, 800 px, 1200 px.
+El alto en las capturas es de 915 px.
+
+Además de la configuración de la rejilla, es importante: 
+la colocación de las imágenes de fondo;
+la tipografía y sus estilos;
+la alineación vertical y horizontal de los contenidos;
+la legibilidad de los textos sobre imágenes;
+los cambios en el diseño en diferentes anchos;
+los degradados.
+
+Fuente para los párrafos (Google fonts): "Architects Daughter"
+Fuente para los títulos (Google fonts): "Mochiy Pop P One"
