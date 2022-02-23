@@ -23,6 +23,8 @@ body{
     background-position: center center;
     color: hsl(240deg 76% 22%);
     text-shadow: 0 0 5px white;
+    display: flex;
+    flex-flow: column wrap;
 }
 p{
     font-family: 'Architects Daughter', cursive;
@@ -64,7 +66,7 @@ h2{
     text-decoration: none;
     color: aliceblue;
     grid-area: job;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: center;
     background-image: linear-gradient(to top, #CA5233, #24074D);
 }
