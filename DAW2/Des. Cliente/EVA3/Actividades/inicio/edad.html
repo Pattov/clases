@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clasificacion Edad</title>
+</head>
+<body>
+    <script>
+        let edad, votar; 
+        // Perdimos la edad
+        edad=prompt('Ingrese su edad:','');
+
+        if (edad>=0 && edad <12) {
+            alert("Es un niño");
+        }
+        if (edad>=12 && edad<18) {
+            alert("Es un Adolescente");
+        }
+        if (edad>=18 && edad<65) {
+            alert("Es un Adulto");
+        }
+        if (edad>=65) {
+            alert("Es un Jubilado");
+        }
+
+        //puede votar
+        votar = (edad>=18)? "Puede Votar": "No Puede Votar";
+        alert(votar);
+
+        //Pendiente las excepciones de >100 o <0 son Error
+    </script>
+</body>
+</html>

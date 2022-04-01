@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Figuras</title>
+</head>
+<body>
+    <script>
+        //Segun la figura calcularemos el Area o el Perimetro
+        const PI = 3.14;
+        let calcular, forma, resultado, lado, base, altura, radio;
+
+        //introducir A o P
+        calcular = prompt("¿Qué vas a querer Calcular? (A)rea o (P)erímetro");
+
+        // Error
+        // if(calcular != "A" || calcular != "a" || calcular != "P" || calcular != "p"){
+        //      calcular = prompt("introduce una A para el Área o una P para el Perímetro");
+        // }
+
+        //introducir cuadrado (C), rectángulo (R) o círculo (Ci) 
+        forma = prompt("¿Qué Figura desea? (C)uadrado, (R)ectángulo o (Ci)rculo ");
+        // Error
+        // if(forma != "C" || forma != "c" || forma != "R" || forma != "r"|| forma != "CI" || forma != "Ci" || forma != "ci"){
+        //     forma = prompt("introduce una C para el Cuadrado, una R para el Réctangulo o una CI para el Círculo");
+        // }
+
+        if(calcular == "A" || calcular == "a"){
+            if(forma == "C" || forma == "c"){
+                lado = prompt("¿Cuanto es el lado?");
+                resultado = lado*lado;
+                alert("El Área del Cuadrado es "+resultado);
+            }
+            if(forma == "R" || forma == "r"){
+                base = prompt("¿Cuanto es la Base?");
+                altura = prompt("¿Cuanto es la Altura?");
+                resultado = base*altura;
+                alert("El Área del Rectángulo es "+resultado);
+            }
+            if(forma == "CI" || forma == "Ci" || forma == "ci"){
+                radio = prompt("¿Cuanto es el Radio?");
+                resultado = PI*(radio*radio);
+                alert("El Área del Circulo es "+resultado);
+            }
+        } else if(calcular == "P" || calcular == "p"){
+            if(forma == "C" || forma == "c"){
+                lado = prompt("¿Cuanto es el lado?");
+                resultado = 4*lado;
+                alert("El Perímetro del Cuadrado es "+resultado);
+            }
+            if(forma == "R" || forma == "r"){
+                base = prompt("¿Cuanto es la Base?");
+                altura = prompt("¿Cuanto es la Altura?");
+                resultado = (2*base)*(2*altura);
+                alert("El Perímetro del Rectángulo es "+resultado);
+            }
+            if(forma == "CI" || forma == "Ci" || forma == "ci"){
+                radio = prompt("¿Cuanto es el Radio?");
+                resultado = 2*PI*radio;
+                alert("El Perímetro del Circulo es "+resultado);
+            }
+        }else{
+            alert("Se ha encontrado algún Error");
+        }
+        
+
+
+
+    </script>
+</body>
+</html>

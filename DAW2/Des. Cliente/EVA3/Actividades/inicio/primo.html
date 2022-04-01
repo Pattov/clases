@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primo</title>
+</head>
+<body>
+    <script>
+        let num;
+        let primo=true;
+        //num entre 0 y 100
+            do {
+                num = prompt("Introduce un número del 1 al 100");
+            } while (num<=0||num>100);
+            //dentro de la franja
+            //recorro el numero
+            for (let index = 2; index < num; index++) {
+                if(num % index === 0){
+                    //es divisible
+                    primo=false;
+                }
+            }
+            if(primo==true){
+                alert(`El Número ${num} es primo`);
+            }else{
+                alert(`El Número ${num} no es primo`);
+            }
+        
+    </script>
+</body>
+</html>

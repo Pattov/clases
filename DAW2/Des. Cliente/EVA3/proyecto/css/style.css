@@ -1,0 +1,38 @@
+.contenedor{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+    
+}
+.calculadora{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-color: tomato;
+    width: 30%; 
+    padding: 1.4em;
+    gap: 0.5em;
+    justify-items: center;
+}
+
+
+.txt_pantalla { grid-area: 1 / 1 / 2 / 5; }
+#btn_borrar { grid-area: 2 / 2 / 3 / 4; }
+#btn_siete { grid-area: 3 / 1 / 4 / 2; }
+#btn_ocho { grid-area: 3 / 2 / 4 / 3; }
+#btn_nueve { grid-area: 3 / 3 / 4 / 4; }
+#btn_division { grid-area: 3 / 4 / 4 / 5; }
+#btn_cuatro { grid-area: 4 / 1 / 5 / 2; }
+#btn_cinco { grid-area: 4 / 2 / 5 / 3; }
+#btn_seis { grid-area: 4 / 3 / 5 / 4; }
+#btn_multiplicar { grid-area: 4 / 4 / 5 / 5; }
+#btn_uno { grid-area: 5 / 1 / 6 / 2; }
+#btn_dos { grid-area: 5 / 2 / 6 / 3; }
+#btn_tres { grid-area: 5 / 3 / 6 / 4; }
+#btn_resta { grid-area: 5 / 4 / 6 / 5; }
+#btn_cero { grid-area: 6 / 1 / 7 / 2; }
+#btn_coma { grid-area: 6 / 2 / 7 / 3; }
+#btn_igual { grid-area: 6 / 3 / 7 / 4; }
+#btn_suma { grid-area: 6 / 4 / 7 / 5; }
