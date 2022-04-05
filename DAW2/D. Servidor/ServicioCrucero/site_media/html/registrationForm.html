@@ -1,0 +1,29 @@
+<form action="{action}" method="POST">
+    
+    <label>Nombre de usuario y apellidos:</label>
+    <input class="rounded-input" type="text" name="username" required/>
+    <br><br>
+    <label>Contraseña:</label>     
+    <input class="rounded-input" type="password" name="password" required/>
+    <br><br>
+    <label>Repetir contraseña:</label>
+                
+    <input class="rounded-input" type="password" name="repassword" required/>
+    <br><br>
+    <label>Fecha de Nacimiento</label>   
+    <input class="rounded-input" type="date" name="fechNacimiento" required/>
+    <br><br>
+    <label>DNI</label>   
+    <input class="rounded-input" type="text" name="dni" required/>
+    <br><br>
+    <label>Tipo de Cliente</label> 
+    <select id="id">
+        <option value="familia">Familia</option>
+        <option value="single">Single</option>
+        <option value="couple">Couple</option>
+        <option value="business">Business</option>
+        <option value="vip">VIP</option>
+    </select>
+
+    <button type="submit" value="register">Register</button>
+</form>

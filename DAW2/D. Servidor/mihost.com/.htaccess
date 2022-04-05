@@ -1,0 +1,3 @@
+AuthName "Acceso Restringido"
+AuthType Basic
+AuthUserFile "c:\xampp\apache\usuario" require valid-user

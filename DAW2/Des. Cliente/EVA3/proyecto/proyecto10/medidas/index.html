@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Convertidor de peso</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+  <div class="contenedor">
+    <div class="calculadora">
+        <h3 class="titulo">Conversor</h3>
+        <!-- <button class="botonC">Calcular</button> -->
+        <button class="botonB">Reiniciar</button>
+        <div class="celda cGramos">
+          <label for="gramos">Gramos - gr</label>
+          <input type="number" id="gramos" contenteditable=""/>
+        </div>
+        <div class="celda cLibra">
+          <label for="libra">Libras - lb</label>
+          <input type="number" id="libra" contenteditable=""/>
+        </div>
+        <div class="celda cQuintal">
+          <label for="quintal">Quintales - q</label>
+          <input type="number" id="quintal" contenteditable=""/>
+        </div>
+        <div class="celda cOnza">
+          <label for="onza">Onzas - oz</label>
+          <input type="number" id="onza"/>
+        </div>
+        <div id="error"></div>
+        
+      </div>
+    </div>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
