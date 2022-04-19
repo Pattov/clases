@@ -1,0 +1,16 @@
+body{
+    margin: 2em;
+    
+}
+.text-secondary{
+    font-size: xx-large;
+}
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+.textoJS{
+    font-size: 1.5em;
+}
