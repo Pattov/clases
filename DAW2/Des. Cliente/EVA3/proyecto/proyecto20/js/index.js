@@ -1,3 +1,9 @@
+// Comprobamos si el navegador soporta WebStorage 
+if(typeof(Storage)!=="undefined"){
+    //El navegador soporta WebStorage 
 
-//comprobar si la cesta esta vacia
-    document.getElementById("cuerpo").innerHTML = '<p class="textoJS">El carrito está vacio. Pulsa el boton para añadir Productos</p>';
+}else{
+    alert("El Programa va a presentar problemas. Usa otro Navegador");
+}
+
+
