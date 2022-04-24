@@ -1,45 +1,122 @@
 /* E N C A B E Z A D O  */
-body{
-    margin: 2em;
-    
-}
 .text-secondary{
     font-size: xx-large;
 }
-/*F O T O S*/
-img{
-    width: 35%;
-    
+.main-header{
+    position: fixed;
+    background: #ffffff;
+    width: 100%;
+    top: 0;
+    padding: 1.2em 0;
+    box-shadow: 0 0 8px 0 rgba(0,0,0,.12);
+    border-radius: 0;
+    z-index: 2;
 }
+.container{
+    display: flex;
+    justify-content: space-between;
+}
+
+/*T O L T I P S*/
+span[data-descr] {
+    position: relative;
+    text-decoration: underline;
+    cursor: help;
+    margin-left: 20px;
+  }
+  
+  span[data-descr]:hover::after,
+  span[data-descr]:focus::after {
+    content: attr(data-descr);
+    position: absolute;
+    left: 60%;
+    top: 2.8em;
+    min-width: 100px;
+    border-radius: 10px;
+    padding: 6px 10px;
+    font-size: 14px;
+    z-index: 3;
+    background-color: #9e9e9e;
+    color: white;
+  }
 
 
 /* cuerpo */
+
+.card{
+    padding: 1em 2em;   
+    width: 100%;
+    border-radius: 10px;
+    margin: .5em;
+    border: 1px solid rgba(0,0,0,0);
+    box-shadow: 0px 4px 56px 7px rgba(0,0,0,0.1);
+}
+.ing-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;    
+    margin-top: 12px;
+   
+}
+.ing-content img{
+    width: 150px;
+}
+
+.ing-content #precio,
+.ing-content .btn{
+    font-size: 12px;
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+.pq-content{
+    display: inline-block;
+    margin-top: 10px;
+    position: relative;
+}
+.pq-content #precio,
+.pq-content .btn{
+    background-color: #000;
+    color: #fff;
+    padding: 5px 20px 5px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    vertical-align: text-top;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+input[type=number] { 
+    -moz-appearance:textfield; 
+    width: 60%;
+}
+
+input[type=button] {
+    margin: 0;
+}
+h4{
+    font-weight: 400;
+    color: #9e9e9e;
+}
+
 .cuerpo {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
+    margin: 5.4em 0 0 0.5em;
+    justify-items: center
 }
  
-.pan { 
-    grid-area: 1 / 1 / 2 / 2; }
-.galleta {
-grid-area: 1 / 2 / 2 / 3; }
-.arroz { 
-    grid-area: 1 / 3 / 2 / 4; }
-.pollo { 
-    grid-area: 2 / 1 / 3 / 2; }
-.queso { 
-    grid-area: 2 / 2 / 3 / 3; }
-.pescado { 
-    grid-area: 2 / 3 / 3 / 4; }
+.pan { grid-area: 1 / 1 / 2 / 2; }
+.galleta { grid-area: 1 / 2 / 2 / 3; }
+.arroz {grid-area: 1 / 3 / 2 / 4; }
+.pollo { grid-area: 2 / 1 / 3 / 2; }
+.queso { grid-area: 2 / 2 / 3 / 3; }
+.pescado { grid-area: 2 / 3 / 3 / 4; }
 
-/* section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 80vh;
-} */
-
-/* .textoJS{
-    font-size: 1.5em;
-} */
+    /*F O T O S*/
+img{
+    width: auto;  
+}
