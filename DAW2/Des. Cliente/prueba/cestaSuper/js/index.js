@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
     // Variables
     const baseDeDatos = [
         {
@@ -35,7 +34,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const DOMcarrito = document.querySelector('#carrito');
     const DOMtotal = document.querySelector('#total');
     const DOMbotonVaciar = document.querySelector('#boton-vaciar');
-    const miLocalStorage = window.localStorage;
 
     // Funciones
 
@@ -86,8 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
         carrito.push(evento.target.getAttribute('marcador'))
         // Actualizamos el carrito 
         renderizarCarrito();
-        // Actualizamos el LocalStorage
-        guardarCarritoEnLocalStorage();
+
     }
 
     /**
@@ -125,8 +122,8 @@ document.addEventListener('DOMContentLoaded', () => {
             miNodo.appendChild(miBoton);
             DOMcarrito.appendChild(miNodo);
         });
-        // Renderizamos el precio total en el HTML
-        DOMtotal.textContent = calcularTotal();
+       // Renderizamos el precio total en el HTML
+       DOMtotal.textContent = calcularTotal();
     }
 
     /**
@@ -141,9 +138,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
         // volvemos a renderizar
         renderizarCarrito();
-        // Actualizamos el LocalStorage
-        guardarCarritoEnLocalStorage();
-
     }
 
     /**
@@ -169,28 +163,12 @@ document.addEventListener('DOMContentLoaded', () => {
         carrito = [];
         // Renderizamos los cambios
         renderizarCarrito();
-        // Borra LocalStorage
-        localStorage.clear();
-
-    }
-
-    function guardarCarritoEnLocalStorage () {
-        miLocalStorage.setItem('carrito', JSON.stringify(carrito));
-    }
-
-    function cargarCarritoDeLocalStorage () {
-        // ¿Existe un carrito previo guardado en LocalStorage?
-        if (miLocalStorage.getItem('carrito') !== null) {
-            // Carga la información
-            carrito = JSON.parse(miLocalStorage.getItem('carrito'));
-        }
     }
 
     // Eventos
     DOMbotonVaciar.addEventListener('click', vaciarCarrito);
 
     // Inicio
-    cargarCarritoDeLocalStorage();
     renderizarProductos();
     renderizarCarrito();
-});
+  });
