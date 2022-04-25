@@ -1,3 +1,6 @@
+body{
+    min-width: 400px;
+}
 /* E N C A B E Z A D O  */
 .text-secondary{
     font-size: xx-large;
@@ -20,7 +23,6 @@
 /*T O L T I P S*/
 span[data-descr] {
     position: relative;
-    text-decoration: underline;
     cursor: help;
     margin-left: 20px;
   }
@@ -42,10 +44,38 @@ span[data-descr] {
 
 
 /* cuerpo */
-
+.cuerpo {
+    width: 100%; /*2022 78%*/
+    display: grid;
+    margin: 5.4em 0 0 0;
+    justify-items: center;
+   
+    grid-template-rows: repeat(7, 1fr);
+    grid-template-areas:
+        "pan"
+        "galleta"
+        "arroz"
+        "pollo"
+        "queso"
+        "pescado"
+        "cesta";
+}
+ 
+.pan { grid-area: pan; }
+.galleta { grid-area: galleta; }
+.arroz {grid-area: arroz; }
+.pollo { grid-area: pollo; }
+.queso { grid-area: queso; }
+.pescado { grid-area: pescado; }
+.cesta{
+    grid-area: cesta;
+    width: 80%;
+    background-color: #6c757d82;
+    color: aliceblue;
+}
 .card{
-    padding: 1em 2em;   
-    width: 100%;
+    padding: 1em 1em;   
+    min-width: 60%;
     border-radius: 10px;
     margin: .5em;
     border: 1px solid rgba(0,0,0,0);
@@ -68,24 +98,23 @@ span[data-descr] {
     margin-bottom: 10px;
     font-weight: 500;
 }
-.pq-content{
-    display: inline-block;
-    margin-top: 10px;
-    position: relative;
-}
-.pq-content #precio,
-.pq-content .btn{
-    background-color: #000;
-    color: #fff;
+#precio,.btn{
+
     padding: 5px 20px 5px 20px;
+    border: 1px solid #6c757d;
     border-radius: 20px;
     cursor: pointer;
     vertical-align: text-top;
 }
+
+.btn{
+    color: #fff;
+    background-color: #6c757d;
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
+   -webkit-appearance: none; 
+    margin: 0; 
 }
 
 input[type=number] { 
@@ -97,26 +126,29 @@ input[type=button] {
     margin: 0;
 }
 h4{
+    margin-top: 7px;
     font-weight: 400;
-    color: #9e9e9e;
 }
 
-.cuerpo {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    margin: 5.4em 0 0 0.5em;
-    justify-items: center
-}
- 
-.pan { grid-area: 1 / 1 / 2 / 2; }
-.galleta { grid-area: 1 / 2 / 2 / 3; }
-.arroz {grid-area: 1 / 3 / 2 / 4; }
-.pollo { grid-area: 2 / 1 / 3 / 2; }
-.queso { grid-area: 2 / 2 / 3 / 3; }
-.pescado { grid-area: 2 / 3 / 3 / 4; }
-
-    /*F O T O S*/
 img{
     width: auto;  
+}
+
+@media all and (min-width: 500px) {
+    .cuerpo {
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "pan galleta cesta"
+            "arroz pollo cesta"
+            "queso pescado cesta";
+    }
+}
+@media all and (min-width: 800px) {
+    .cuerpo {
+    grid-template-columns: 1fr 1fr 1fr 2fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+    "pan galleta arroz cesta"
+    "pollo queso pescado cesta"; 
+    }
 }

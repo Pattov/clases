@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="myText1">Uneditable Paragraph</p>
+<div id="myText2" contentEditable="true">Editable Paragraph</div>
+
+<p id="infoText1">Can edit the first paragraph? </p>
+<p id="infoText2">Can edit the second paragraph? </p>
+<script>
+    document.getElementById('infoText1').innerHTML += document.getElementById('myText1').isContentEditable;
+document.getElementById('infoText2').innerHTML += document.getElementById('myText2').isContentEditable;
+
+</script>
+</body>
+</html>
