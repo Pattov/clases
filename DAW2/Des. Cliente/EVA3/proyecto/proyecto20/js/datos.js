@@ -11,7 +11,7 @@ let precioqueso = 1;
 let preciopescado= 1;
 
 //LA CANTIDAD SE INCREMENTARA CON UN BOTÓN Y EL PRECIO SE COGERÁ DE EL INPUT DE LA PAGINA 
-export const PRODUCTOS = [
+export const BDPRODUCTOS = [
     {
         id: 1,
         nombre: 'Pan',
