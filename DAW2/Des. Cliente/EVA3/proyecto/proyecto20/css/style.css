@@ -111,6 +111,11 @@ span[data-descr] {
     color: #fff;
     background-color: #6c757d;
 }
+.ing-content .btn:hover{
+    border: 1px solid rgb(20, 72, 30);
+    background-color: rgb(20, 72, 30);
+    color: #fff;
+}
 input[type=number]::-webkit-inner-spin-button, 
 input[type=number]::-webkit-outer-spin-button { 
    -webkit-appearance: none; 
@@ -124,6 +129,9 @@ input[type=number] {
 
 input[type=button] {
     margin: 0;
+}
+input.placeholder {
+    text-align: center;
 }
 h4{
     margin-top: 7px;
