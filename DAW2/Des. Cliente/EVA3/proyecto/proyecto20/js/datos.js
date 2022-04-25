@@ -1,7 +1,7 @@
 export let carrito = [];
 export const CUERPOPROD = document.querySelector('#items');
-export const TOTAL = document.querySelector('#total');
 export const IMPRIMIRCARRO = document.querySelector('#carrito');
+export const TXTTOTAL = document.querySelector('#total');
 //VARIABLES PRECIOS
 let preciopan = 1;
 let preciogalleta = 1;

@@ -130,3 +130,9 @@ export function imprimirCarrito() {
  /**
  * Varia el carrito y vuelve a dibujarlo
  */
+  function vaciarCarrito() {
+    // Limpiamos los productos guardados
+    datos.carrito = [];
+    // Renderizamos los cambios
+    imprimirCarro();
+}

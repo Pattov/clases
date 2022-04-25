@@ -1,5 +1,7 @@
 import * as funciones from "./funciones.js";
 
+//INTANCIA DE BOTONES QUE NO SE USAN EN LOS OTROS MODULOS
+const BTNVACIAR = document.querySelector('#boton-vaciar');
 
 //una vez que la pagina es cargada
 document.addEventListener('DOMContentLoaded', () => {
@@ -9,11 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         //Declaración de eventos
         document.getElementsByClassName("btn").onclick = funciones.cuerpoProductos;
-       
+        BTNVACIAR.addEventListener('click', funciones.vaciarCarrito);
 
-    // Eventos
+    // EJECUCION DE FUNCIONES
         funciones.cuerpoProductos();
         funciones.imprimirCarrito();
+
     }else{
         alert("El Programa va a presentar problemas. Usa otro Navegador");
     }
