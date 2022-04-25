@@ -10,10 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //El navegador soporta WebStorage
 
         //Declaración de eventos
-        document.getElementsByClassName("btn").onclick = funciones.cuerpoProductos;
         BTNVACIAR.addEventListener('click', funciones.vaciarCarrito);
-
-    // EJECUCION DE FUNCIONES
+        // EJECUCION DE FUNCIONES
         funciones.cuerpoProductos();
         funciones.imprimirCarrito();
 

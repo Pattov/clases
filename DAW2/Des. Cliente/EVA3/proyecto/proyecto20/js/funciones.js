@@ -1,45 +1,37 @@
 import * as datos from "./datos.js";
 
 /**
- * Evento para añadir un producto al carrito de la compra cuando se pulsa el boton
- */
-function aniadirProductoAlCarrito(evento) {
-    // Añadimos el Nodo a nuestro carrito
-    datos.carrito.push(evento.target.getAttribute('marcador'))
-    // Actualizamos el carrito 
-    imprimirCarrito();
-
-}
-/**
  * Evento para borrar un elemento del carrito
  */
  function borrarItemCarrito(evento) {
     // Obtenemos el producto ID que hay en el boton pulsado
-    const IDS = evento.target.dataset.item;
+    const IDBOTON = evento.target.dataset.item;
     // Borramos todos los productos
-    datos.carrito = datos.carrito.filter((carritoId) => {
-        return carritoId !== IDS;
+    carrito = carrito.filter((carritoId) => {
+        return carritoId !== IDBOTON;
     });
-    // volvemos a renderizar
+
+    // volvemos a imprimir el carrito
     imprimirCarrito();
 }
+
 /**
  * Calcula el precio total teniendo en cuenta los productos repetidos
  */
-function calcularTotal() {
+ function calcularTotal() {
     // Recorremos el array del carrito 
-    return datos.carrito.reduce((total, item) => {
+    return carrito.reduce((total, item) => {
         // De cada elemento obtenemos su precio
-        const PRODUCTO = datos.PRODUCTOS.filter((itemBaseDatos) => {
+        const MIITEM = datos.BDPRODUCTOS.filter((itemBaseDatos) => {
             return itemBaseDatos.id === parseInt(item);
         });
         // Los sumamos al total
-        // return total + PRODUCTO[0].precio;
+        return total + MIITEM[0].precio;
     }, 0).toFixed(2);
 }
 
 /**
- * 
+ * Genera la estructura del HTML con los datos de los productos
  * E S T R U C T U R A 
  *<div class="card">
         <div class="galleta ing-content">
@@ -52,14 +44,14 @@ function calcularTotal() {
  */
 
 export function cuerpoProductos() {
-    datos.PRODUCTOS.forEach((info) => {
-        // Estructura
+    datos.BDPRODUCTOS.forEach((info) => {
+        // Estructura de la Card Container
         const CCONTAINER = document.createElement('div');
         CCONTAINER.classList.add('card');
-        // Body
-        const CCARD = document.createElement('div');
-        CCARD.classList.add(info.nombre, 'ing-content');
-        // Imagen
+        // Card Body
+        const CBODY = document.createElement('div');
+        CBODY.classList.add(info.nombre, 'ing-content');
+        // Card de la Imagen
         const CIMAGEN = document.createElement('img');
         CIMAGEN.classList.add('foto');
         CIMAGEN.setAttribute('src', info.imagen);
@@ -73,66 +65,81 @@ export function cuerpoProductos() {
         CBOTON.textContent = '+';
         CBOTON.setAttribute('id', `btnAcum${info.nombre}`);
         CBOTON.setAttribute('marcador', info.id);
-        CBOTON.addEventListener('click', aniadirProductoAlCarrito);
-        // Precio
+        CBOTON.addEventListener('click', incluirProductoAlCarrito);
+        // Precio (INPUT - PARA PODER INTRODUCIR EL TEXTO)
         const CINPUT = document.createElement('input');
         CINPUT.setAttribute('type', 'number');
         CINPUT.setAttribute('id', 'precio');
         CINPUT.setAttribute('placeholder', 'PRECIO');
         // Hacemos la estructura en árbol
-        CCARD.appendChild(CIMAGEN);
-        CCARD.appendChild(CTITULO);
-        CCARD.appendChild(CBOTON);
-        CCARD.appendChild(CINPUT);
-        CCONTAINER.appendChild(CCARD);
+        CBODY.appendChild(CIMAGEN);
+        CBODY.appendChild(CTITULO);
+        CBODY.appendChild(CINPUT);
+        CBODY.appendChild(CBOTON);
+        CCONTAINER.appendChild(CBODY);
         datos.CUERPOPROD.appendChild(CCONTAINER);
     });
 }
 
 /**
- * Dibuja todos los productos guardados en el carrito
- */
+* Dibuja todos los productos guardados en el carrito
+*/
 export function imprimirCarrito() {
     // Vaciamos todo el html
     datos.IMPRIMIRCARRO.textContent = '';
     // Quitamos los duplicados
-    const CARRITOSINDUPL = [...new Set(datos.carrito)];
+    const CARRITO_SIN_DUPLICADOS = [...new Set(carrito)];
     // Generamos los Nodos a partir de carrito
-    CARRITOSINDUPL.forEach((item) => {
+    CARRITO_SIN_DUPLICADOS.forEach((item) => {
         // Obtenemos el item que necesitamos de la variable base de datos
-        const PRODUCTO = datos.PRODUCTOS.filter((itemBaseDatos) => {
-            // ¿Coincide las id? Solo puede existir un caso
-            itemBaseDatos.id === parseInt(item);
+        const MIITEM = datos.BDPRODUCTOS.filter((itemBaseDatos) => {
+        // ¿Coincide las id? Solo puede existir un caso
+        return itemBaseDatos.id === parseInt(item);
         });
         // Cuenta el número de veces que se repite el producto
-        const UNIDPRODUCTOS = datos.carrito.reduce((total, itemId) => {
-            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
-            return itemId === item ? total += 1 : total;
+         const UNID_PRODUCTO = carrito.reduce((total, itemId) => {
+          // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+          return itemId === item ? total += 1 : total;
         }, 0);
-        // Creamos la estructura del item del carrito
-        const LINEA = document.createElement('li');
-        LINEA.textContent = `${UNIDPRODUCTOS} x ${PRODUCTO[0].nombre} - ${PRODUCTO[0].precio}€`;
-
-        // Boton de borrar
-        const QUITARPORLINEA = document.createElement('button');
-        QUITARPORLINEA.classList.add('btn', 'btn-danger', 'mx-5');
-        QUITARPORLINEA.textContent = 'X';
-        QUITARPORLINEA.style.marginLeft = '1rem';
-        QUITARPORLINEA.dataset.item = item;
-        QUITARPORLINEA.addEventListener('click', borrarItemCarrito);
-        // creamos herencias
-        LINEA.appendChild(QUITARPORLINEA);
-        datos.IMPRIMIRCARRO.appendChild(LINEA);
+    // Creamos LA ESTRUCTURA del item del carrito
+    const CCONTAINER = document.createElement('li');
+    CCONTAINER.classList.add('list-group-item', 'prop');
+    CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${MIITEM[0].precio}€`;
+    // Boton de borrar linea
+    const BTNLINEA = document.createElement('button');
+    BTNLINEA.classList.add('btn', 'btn-danger', 'btnlinea');
+    BTNLINEA.textContent = 'X';
+    BTNLINEA.addEventListener('click', borrarItemCarrito);
+    BTNLINEA.dataset.item = item;
+    // creamos estructura HTML
+    CCONTAINER.appendChild(BTNLINEA);
+    datos.IMPRIMIRCARRO.appendChild(CCONTAINER);
     });
-    // Renderizamos el precio total en el HTML
-    datos.TOTAL.textContent = calcularTotal();
+    // modificamos el precio total en el HTML
+    datos.TXTTOTAL.textContent = calcularTotal();
 }
+
+/**
+ * Evento para añadir un producto al carrito de la compra cuando se pulsa el boton
+ */
+ function incluirProductoAlCarrito(evento) {
+    // Añadimos el Nodo a nuestro carrito
+    carrito.push(evento.target.getAttribute('marcador'));
+    // Actualizamos el carrito 
+    imprimirCarrito();
+}
+
+
  /**
  * Varia el carrito y vuelve a dibujarlo
  */
-  function vaciarCarrito() {
+export function vaciarCarrito() {
     // Limpiamos los productos guardados
-    datos.carrito = [];
+    carrito = [];
     // Renderizamos los cambios
-    imprimirCarro();
+    imprimirCarrito();
 }
+/*instancio la variable en este módulo porque solo se ejecuta una vez, 
+* mientras que con script se ejecuta tantas veces como lo indiquemos
+*/
+let carrito = [];
