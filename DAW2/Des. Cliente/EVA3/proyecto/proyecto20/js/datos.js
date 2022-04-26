@@ -1,34 +1,24 @@
-
+export const BTNVACIAR = document.querySelector('#boton-vaciar');
 export const CUERPOPROD = document.querySelector('#items');
 export const IMPRIMIRCARRO = document.querySelector('#carrito');
 export const TXTTOTAL = document.querySelector('#total');
+export const BTNSNUMEROS = document.querySelector('#btnAcumArroz');
 
 //VARIABLES PRECIOS
 let numero;
-let preciopan = document.getElementById('btnAcumPan');
-let preciogalleta = document.getElementById('btnAcumGalletas');
-let precioarroz = document.getElementById('btnAcumArroz');
-let preciopollo = document.getElementById('btnAcumPollo');
-let precioqueso = document.getElementById('btnAcumQueso');
-let preciopescado= document.getElementById('btnAcumPescado');
-// gramo.oninput = () => {
-//     //comprobamos que el numero es positivo
-//     numero = numerosPositivos(gramo.value);
-//     //desactivamos los otros elementos cuando escribimos
-//     libra.setAttribute('disabled','');
-//     quintal.setAttribute('disabled','');
-//     onza.setAttribute('disabled','');
-//     //hacemos operaciones
-//     libra.value = parseFloat(numero*0.0022);
-//     quintal.value = parseFloat(numero*1e-5);
-//     onza.value = parseFloat(numero*0.035274);
-//   };
-// preciopan.oninput = () => {
-//     if(preciopan==null){
-//         preciopan=0;
-//     }else{
-//         preciopan=preciopan.value;
-//     }
+// let preciopan = document.getElementById('btnAcumPan');
+// let preciogalleta = document.getElementById('btnAcumGalletas');
+// let precioarroz = document.getElementById('btnAcumArroz');
+// let preciopollo = document.getElementById('btnAcumPollo');
+// let precioqueso = document.getElementById('btnAcumQueso');
+// let preciopescado= document.getElementById('btnAcumPescado');
+let preciopan = 1;
+let preciogalleta = 1;
+let precioarroz = 1;
+let preciopollo = 1;
+let precioqueso = 1;
+let preciopescado= 1;
+
 
 // }
 //LA CANTIDAD SE INCREMENTARA CON UN BOTÓN Y EL PRECIO SE COGERÁ DE EL INPUT DE LA PAGINA 

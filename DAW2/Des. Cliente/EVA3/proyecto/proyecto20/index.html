@@ -1,3 +1,4 @@
+<!-- https://www.acontracorrientech.com/como-construir-un-pop-up-con-vanilla-javascript/ -->
 <!DOCTYPE html>
 <html lang="es">
 
@@ -17,7 +18,7 @@
 <body>
     <header>
         <nav class="main-header">
-            <div class="container">
+            <div class="contenedor">
                 <div>
                     <span class="fw-bold text-secondary">
                         <i class="bi bi-shop"></i>
@@ -28,13 +29,13 @@
                     <span class="fw-bold text-secondary" data-descr="Historial de compras">
                         <i class="bi bi-bag-check"></i>
                     </span>
+                    <!-- https://getbootstrap.com/docs/5.1/components/modal/#fullscreen-modal -->
                 </div>
             </div>
         </nav>
     </header>
 
     <div id="items" class="cuerpo">
-        <!-- el resto de los elementos se genera con el JS Funcion ImprimirCuerpo -->
         <div class="card cesta">
             <div class="sidebar">
                 <h2>Carrito</h2>
@@ -42,9 +43,20 @@
                 <hr>
                 <p class="text-right">Total: <span id="total"></span>&euro;</p>
                 <button id="boton-vaciar" class="btn btn-danger">Vaciar</button>
-                <button id="boton-comprar" class="btn btn-info">Comprar</button>
+                <button id="boton-carrito" class="btn btn-info">Guardar Carrito</button>
             </div>
         </div>
+         <!-- el resto de los elementos se genera con el JS Funcion ImprimirCuerpo -->
+         <!-- La estructura del card sera  
+                <div class="card">
+                    <div class="nombreproducto ing-content">
+                        <img class="foto" src="././img/pexels-nombreproducto.jpg">
+                        <h4 class="card-title">nombreproducto</h4>
+                        <input type="number" id="precio" placeholder="PRECIO">
+                        <button class="btn" id="btnAcumPan" marcador="1">+</button>
+                    </div>
+                </div>
+        -->
     </div>
     <script type="module" src="js/index.js"></script>
 </body>

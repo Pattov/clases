@@ -1,7 +1,5 @@
 import * as funciones from "./funciones.js";
-
-//INTANCIA DE BOTONES QUE NO SE USAN EN LOS OTROS MODULOS
-const BTNVACIAR = document.querySelector('#boton-vaciar');
+import * as datos from "./datos.js";
 
 //una vez que la pagina es cargada
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +8,13 @@ document.addEventListener('DOMContentLoaded', () => {
         //El navegador soporta WebStorage
 
         //Declaración de eventos
-        BTNVACIAR.addEventListener('click', funciones.vaciarCarrito);
+        datos.BTNVACIAR.addEventListener('click', funciones.vaciarCarrito);
+        
+        botonesNumeros.forEach(boton => {
+            boton.addEventListener('input',() => {
+                agregarNumero(boton.innerText);
+            })
+        });
         // EJECUCION DE FUNCIONES
         funciones.cuerpoProductos();
         funciones.imprimirCarrito();
