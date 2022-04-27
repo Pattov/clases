@@ -10,9 +10,8 @@ import * as datos from "./datos.js";
     carrito = carrito.filter((carritoId) => {
         return carritoId !== IDBOTON;
     });
-
-    // volvemos a imprimir el carrito
     imprimirCarrito();
+    guardarLocalStorage();
 }
 
 /**
@@ -28,6 +27,17 @@ import * as datos from "./datos.js";
         // Los sumamos al total
         return total + MIITEM[0].precio;
     }, 0).toFixed(2);
+}
+
+/**
+ * Comprueba el Carrito y lo carga en la información
+ */
+export function cargarLocalStorage () {
+    // ¿Existe un carrito previo guardado en LocalStorage?
+    if (datos.LOCALSTORAGE.getItem('carrito') !== null) {
+        // Carga la información
+        carrito = JSON.parse(datos.LOCALSTORAGE.getItem('carrito'));
+    }
 }
 
 /**
@@ -70,7 +80,11 @@ export function cuerpoProductos() {
         const CINPUT = document.createElement('input');
         CINPUT.setAttribute('type', 'number');
         CINPUT.setAttribute('id', 'precio');
+        CINPUT.setAttribute('class', 'btnp');
         CINPUT.setAttribute('placeholder', 'PRECIO');
+        CINPUT.dataset.item = datos.BDPRODUCTOS;
+        CINPUT.setAttribute('value', `${info.precio}`);
+        CINPUT.addEventListener('input',actualizarPrecio);
         // Hacemos la estructura en árbol
         CBODY.appendChild(CIMAGEN);
         CBODY.appendChild(CTITULO);
@@ -90,9 +104,9 @@ export function cuerpoProductos() {
 export function imprimirCarrito() {
     // Vaciamos todo el html
     datos.IMPRIMIRCARRO.textContent = '';
-    // Quitamos los duplicados
+    // creamos un array con el Set
     const CARRITO_SIN_DUPLICADOS = [...new Set(carrito)];
-    // Generamos los Nodos a partir de carrito
+    // Quitamos los duplicados
     CARRITO_SIN_DUPLICADOS.forEach((item) => {
         // Obtenemos el item que necesitamos de la variable base de datos
         const MIITEM = datos.BDPRODUCTOS.filter((itemBaseDatos) => {
@@ -109,7 +123,7 @@ export function imprimirCarrito() {
         CCONTAINER.classList.add('list-group-item', 'prop');
         CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${MIITEM[0].precio}€`;
         const BTNLINEA = document.createElement('button');
-        BTNLINEA.classList.add('btn', 'btn-danger', 'btnlinea', 'btnp');
+        BTNLINEA.classList.add('btn', 'btn-danger', 'btnlinea');
         BTNLINEA.textContent = 'X';
         BTNLINEA.addEventListener('click', borrarItemCarrito);
         BTNLINEA.dataset.item = item;
@@ -128,9 +142,15 @@ export function imprimirCarrito() {
     carrito.push(evento.target.getAttribute('marcador'));
     // Actualizamos el carrito 
     imprimirCarrito();
+    guardarLocalStorage();
 }
 
-
+/**
+ *Guarda carrito en el localStorage usando Stringify para cambiar el objeto en una cadena JSON
+ */
+function guardarLocalStorage () {
+    datos.LOCALSTORAGE.setItem('carrito', JSON.stringify(carrito));
+}
  /**
  * Varia el carrito y vuelve a dibujarlo
  */
@@ -138,6 +158,8 @@ export function vaciarCarrito() {
     // Limpiamos los productos guardados
     carrito = [];
     imprimirCarrito();
+    //Borrar LocalStorage
+    datos.LOCALSTORAGE.removeItem('carrito');
 }
 /*instancio la variable en este módulo porque si lo pongo en otro modulo solo se ejecuta una vez, 
 * mientras que si esta en el mismo módulo se ejecuta tantas veces como lo instanciemos(actua igual q un scrip)

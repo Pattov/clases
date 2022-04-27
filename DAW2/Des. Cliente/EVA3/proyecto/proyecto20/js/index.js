@@ -10,12 +10,8 @@ document.addEventListener('DOMContentLoaded', () => {
         //Declaración de eventos
         datos.BTNVACIAR.addEventListener('click', funciones.vaciarCarrito);
         
-        botonesNumeros.forEach(boton => {
-            boton.addEventListener('input',() => {
-                agregarNumero(boton.innerText);
-            })
-        });
         // EJECUCION DE FUNCIONES
+        funciones.cargarLocalStorage();
         funciones.cuerpoProductos();
         funciones.imprimirCarrito();
 
