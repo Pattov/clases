@@ -36,16 +36,11 @@ function actualizarPrecio(e) {
  * Calcula el precio total teniendo en cuenta los productos repetidos
  */
  function calcularTotal() {
-     //2022
-    // Recorremos el array del carrito 
-    return carrito.reduce((total, item) => {
-        // De cada elemento obtenemos su precio
-        const MIITEM = carrito.filter((itemPrecio) => {
-            return itemPrecio[1] === parseInt(item);
-        });
-        // Los sumamos al total
-        return total + MIITEM[0].precio;
-    }, 0).toFixed(2);
+    let acumulador = 0;
+    carrito.forEach(producto => {
+        acumulador += parseFloat(producto[1]);
+    });
+    return acumulador.toFixed(2);
 }
 
 /**
@@ -74,8 +69,12 @@ export function cargarLocalStorage () {
  */
 
 export function cuerpoProductos() {
-    //2022 ???foreach
     datos.BDPRODUCTOS.forEach((info) => {
+        const MIITEM = carrito.forEach(itemPrecio => {
+            if(itemPrecio[0] == info.id){
+                return itemPrecio[1]
+            }
+        });
         // Estructura de la Card Container
         const CCONTAINER = document.createElement('div');
         CCONTAINER.classList.add('card');
@@ -94,8 +93,7 @@ export function cuerpoProductos() {
         CBOTON.classList.add('btn');
         CBOTON.textContent = '+';
         CBOTON.setAttribute('marcadorCantidad', info.id);
-        // 2022
-        // CBOTON.setAttribute('value', carrito[1]);
+        CBOTON.setAttribute('value', MIITEM);
         CBOTON.addEventListener('click', incluirProductoAlCarrito);
         // Precio (INPUT - PARA PODER INTRODUCIR EL TEXTO)
         const CINPUT = document.createElement('input');
@@ -103,8 +101,6 @@ export function cuerpoProductos() {
         CINPUT.setAttribute('type', 'number');
         CINPUT.setAttribute('id', `precio${info.nombre}`);
         CINPUT.setAttribute('placeholder', 'PRECIO');
-        // 2022
-        // CINPUT.setAttribute('value', carrito[1]);
         CINPUT.setAttribute('marcadorPrice', info.id);
         CINPUT.addEventListener('input',actualizarPrecio);
         // Hacemos la estructura en árbol
@@ -133,22 +129,28 @@ export function imprimirCarrito() {
         // Obtenemos el item que necesitamos de la variable base de datos
         const MIITEM = datos.BDPRODUCTOS.filter((itemBaseDatos) => {
             // ¿Coincide las id? Solo puede existir un caso
-            return itemBaseDatos.id === parseInt(item);
+            return itemBaseDatos.id === parseInt(item[0]);
         });
         // Cuenta el número de veces que se repite el producto
         const UNID_PRODUCTO = carrito.reduce((total, itemId) => {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
-            return itemId === item ? total += 1 : total;
+            return itemId === item[0] ? total += 1 : total;
         }, 0);
+        // Cogemos el precio
+        const PRECIO_PRODUCTO = carrito.forEach(itemPrecio => {
+            if(itemPrecio[0]===item[0]){
+                return itemPrecio[1]
+            }
+        });
         // Creamos LA ESTRUCTURA del item del carrito
         const CCONTAINER = document.createElement('li');
         CCONTAINER.classList.add('list-group-item', 'prop');
-        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${MIITEM[0].precio}€`;
+        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${PRECIO_PRODUCTO}€`;
         const BTNLINEA = document.createElement('button');
         BTNLINEA.classList.add('btn', 'btn-danger', 'btnlinea');
         BTNLINEA.textContent = 'X';
         BTNLINEA.addEventListener('click', borrarItemCarrito);
-        BTNLINEA.dataset.item = item;
+        BTNLINEA.dataset.item = item[0];
         CCONTAINER.appendChild(BTNLINEA);
         datos.IMPRIMIRCARRO.appendChild(CCONTAINER);
     });
