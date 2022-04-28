@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
         datos.BTNVACIAR.addEventListener('click', funciones.vaciarCarrito);
         
         // EJECUCION DE FUNCIONES
-        funciones.cargarLocalStorageCarrito();
+        funciones.cargarLocalStorage();
         funciones.cuerpoProductos();
         funciones.imprimirCarrito();
 

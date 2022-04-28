@@ -9,13 +9,11 @@ function actualizarPrecio(e) {
     console.log("Valor Producto "+VALORPRODUCTOINPUT);
     //Cambiamos el valor del precio
     datos.BDPRODUCTOS.forEach(item => {
-
         if(item.id == IDPRODUCTOINPUT){
             e.target.setAttribute('value',VALORPRODUCTOINPUT);
             // item.precio = VALORPRODUCTOINPUT;
         }
     });
-    imprimirCarrito
 }
 /**
  * Evento para borrar un elemento del carrito
@@ -27,29 +25,23 @@ function actualizarPrecio(e) {
     
     // Borramos todos los productos
     carrito = carrito.filter((carritoId) => {
-        return carritoId !== IDBOTON;
-    });
-    /**
-     * condicion
-     * precioValor[1] !== VALORBOTON && precioValor[0] !== IDBOTON */
-    precioCarrito = precioCarrito.filter(precioValor => {
-        return precioValor[1] !== VALORBOTON && precioValor[0] !== IDBOTON
+        return carritoId[0] !== IDBOTON && carritoId[1] !== VALORBOTON;
     });
         
-    imprimirCarrito();
-    guardarLocalStorageCarrito();
-    guardarLocalStoragePrecio();
+    imprimirCarrito;
+    guardarLocalStorage;
 }
 
 /**
  * Calcula el precio total teniendo en cuenta los productos repetidos
  */
  function calcularTotal() {
+     //2022
     // Recorremos el array del carrito 
     return carrito.reduce((total, item) => {
         // De cada elemento obtenemos su precio
-        const MIITEM = datos.BDPRODUCTOS.filter((itemBaseDatos) => {
-            return itemBaseDatos.id === parseInt(item);
+        const MIITEM = carrito.filter((itemPrecio) => {
+            return itemPrecio[1] === parseInt(item);
         });
         // Los sumamos al total
         return total + MIITEM[0].precio;
@@ -59,19 +51,13 @@ function actualizarPrecio(e) {
 /**
  * Comprueba el Carrito y lo carga en la información
  */
-export function cargarLocalStorageCarrito () {
+export function cargarLocalStorage () {
     // ¿Existe un carrito previo guardado en LocalStorage?
     if (datos.LOCALSTORAGE.getItem('carrito') !== null) {
         // Carga la información
         carrito = JSON.parse(datos.LOCALSTORAGE.getItem('carrito'));
     }
     
-}
-/**
- * Comprueba el Precio y lo carga en la información
- */
- export function cargarLocalStoragePrecio () {
-    precioCarrito = JSON.parse(datos.LOCALSTORAGE.getItem('precio'));
 }
 
 /**
@@ -88,6 +74,7 @@ export function cargarLocalStorageCarrito () {
  */
 
 export function cuerpoProductos() {
+    //2022 ???foreach
     datos.BDPRODUCTOS.forEach((info) => {
         // Estructura de la Card Container
         const CCONTAINER = document.createElement('div');
@@ -107,7 +94,8 @@ export function cuerpoProductos() {
         CBOTON.classList.add('btn');
         CBOTON.textContent = '+';
         CBOTON.setAttribute('marcadorCantidad', info.id);
-        CBOTON.setAttribute('value', info.precio);
+        // 2022
+        // CBOTON.setAttribute('value', carrito[1]);
         CBOTON.addEventListener('click', incluirProductoAlCarrito);
         // Precio (INPUT - PARA PODER INTRODUCIR EL TEXTO)
         const CINPUT = document.createElement('input');
@@ -115,7 +103,8 @@ export function cuerpoProductos() {
         CINPUT.setAttribute('type', 'number');
         CINPUT.setAttribute('id', `precio${info.nombre}`);
         CINPUT.setAttribute('placeholder', 'PRECIO');
-        CINPUT.setAttribute('value', info.precio);
+        // 2022
+        // CINPUT.setAttribute('value', carrito[1]);
         CINPUT.setAttribute('marcadorPrice', info.id);
         CINPUT.addEventListener('input',actualizarPrecio);
         // Hacemos la estructura en árbol
@@ -173,26 +162,18 @@ export function imprimirCarrito() {
  */
  function incluirProductoAlCarrito(evento) {
     // Añadimos el Nodo a nuestro carrito
-    carrito.push(evento.target.getAttribute('marcadorCantidad'));
-    precioCarrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
+    carrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
     // Actualizamos el carrito 
     imprimirCarrito();
-    guardarLocalStorageCarrito();
-    guardarLocalStoragePrecio();
+    guardarLocalStorage();
 }
 
 
 /**
  *Guarda carrito en el localStorage usando Stringify para cambiar el objeto en una cadena JSON
  */
-function guardarLocalStorageCarrito () {
+function guardarLocalStorage () {
     datos.LOCALSTORAGE.setItem('carrito', JSON.stringify(carrito));
-}
-/**
- *Guarda carrito en el localStorage usando Stringify para cambiar el objeto en una cadena JSON
- */
- function guardarLocalStoragePrecio () {
-    datos.LOCALSTORAGE.setItem('precio', JSON.stringify(precioCarrito));
 }
  /**
  * Varia el carrito y vuelve a dibujarlo
@@ -200,14 +181,12 @@ function guardarLocalStorageCarrito () {
 export function vaciarCarrito() {
     // Limpiamos los productos guardados
     carrito = [];
-    precioCarrito = [];
     imprimirCarrito();
     //Borrar LocalStorage
     datos.LOCALSTORAGE.removeItem('carrito');
-    datos.LOCALSTORAGE.removeItem('precio');
 }
 /*instancio la variable en este módulo porque si lo pongo en otro modulo solo se ejecuta una vez, 
 * mientras que si esta en el mismo módulo se ejecuta tantas veces como lo instanciemos(actua igual q un scrip)
+* El carrito esta formado por [cantidad, precio]
 */
 let carrito = [];
-let precioCarrito = [];
