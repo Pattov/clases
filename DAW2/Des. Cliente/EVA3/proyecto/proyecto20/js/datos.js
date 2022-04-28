@@ -13,25 +13,25 @@ export const BDPRODUCTOS = [
     {
         id: 1,
         nombre: 'Pan',
-        precio: NaN,
+        precio: null,
         imagen: '././img/pexels-pan.jpg'
     },
     {
         id: 2,
         nombre: 'Galletas',
-        precio: NaN,
+        precio: null,
         imagen: '././img/pexels-galletas.jpg'
     },
     {
         id: 3,
         nombre: 'Arroz',
-        precio: NaN,
+        precio: null,
         imagen: '././img/pexels-arroz.jpg'
     },
     {
         id: 4,
         nombre: 'Pollo',
-        precio: NaN,
+        precio: null,
         imagen: '././img/pexels-carne.jpg'
     },
     {

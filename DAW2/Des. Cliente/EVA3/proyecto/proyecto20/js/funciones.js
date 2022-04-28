@@ -1,17 +1,32 @@
 import * as datos from "./datos.js";
 
+function actualizarPrecio(e) {
+    const IDPRODUCTOINPUT = e.target.getAttribute('price');
+    console.log("idProducto "+IDPRODUCTOINPUT);
+
+}
 /**
  * Evento para borrar un elemento del carrito
  */
  function borrarItemCarrito(evento) {
     // Obtenemos el producto ID que hay en el boton pulsado
     const IDBOTON = evento.target.dataset.item;
+    const VALORBOTON = evento.target.getAttribute('value');
+    
     // Borramos todos los productos
     carrito = carrito.filter((carritoId) => {
         return carritoId !== IDBOTON;
     });
+    /**
+     * condicion
+     * precioValor[1] !== VALORBOTON && precioValor[0] !== IDBOTON */
+    precioCarrito = precioCarrito.filter(precioValor => {
+        return precioValor[1] !== VALORBOTON && precioValor[0] !== IDBOTON
+    });
+        
     imprimirCarrito();
-    guardarLocalStorage();
+    guardarLocalStorageCarrito();
+    guardarLocalStoragePrecio();
 }
 
 /**
@@ -32,12 +47,19 @@ import * as datos from "./datos.js";
 /**
  * Comprueba el Carrito y lo carga en la información
  */
-export function cargarLocalStorage () {
+export function cargarLocalStorageCarrito () {
     // ¿Existe un carrito previo guardado en LocalStorage?
     if (datos.LOCALSTORAGE.getItem('carrito') !== null) {
         // Carga la información
         carrito = JSON.parse(datos.LOCALSTORAGE.getItem('carrito'));
     }
+    
+}
+/**
+ * Comprueba el Precio y lo carga en la información
+ */
+ export function cargarLocalStoragePrecio () {
+    precioCarrito = JSON.parse(datos.LOCALSTORAGE.getItem('precio'));
 }
 
 /**
@@ -75,6 +97,7 @@ export function cuerpoProductos() {
         CBOTON.textContent = '+';
         CBOTON.setAttribute('id', `btnAcum${info.nombre}`);
         CBOTON.setAttribute('marcador', info.id);
+        CBOTON.setAttribute('value', info.precio);
         CBOTON.addEventListener('click', incluirProductoAlCarrito);
         // Precio (INPUT - PARA PODER INTRODUCIR EL TEXTO)
         const CINPUT = document.createElement('input');
@@ -82,8 +105,8 @@ export function cuerpoProductos() {
         CINPUT.setAttribute('id', 'precio');
         CINPUT.setAttribute('class', 'btnp');
         CINPUT.setAttribute('placeholder', 'PRECIO');
-        CINPUT.dataset.item = datos.BDPRODUCTOS;
-        CINPUT.setAttribute('value', `${info.precio}`);
+        CINPUT.setAttribute('value', info.precio);
+        CINPUT.setAttribute('price', info.id);
         CINPUT.addEventListener('input',actualizarPrecio);
         // Hacemos la estructura en árbol
         CBODY.appendChild(CIMAGEN);
@@ -136,20 +159,30 @@ export function imprimirCarrito() {
 
 /**
  * Evento para añadir un producto al carrito de la compra cuando se pulsa el boton
+ * y el precio
  */
  function incluirProductoAlCarrito(evento) {
     // Añadimos el Nodo a nuestro carrito
     carrito.push(evento.target.getAttribute('marcador'));
+    precioCarrito.push([evento.target.getAttribute('marcador'),evento.target.getAttribute('value')]);
     // Actualizamos el carrito 
     imprimirCarrito();
-    guardarLocalStorage();
+    guardarLocalStorageCarrito();
+    guardarLocalStoragePrecio();
 }
+
 
 /**
  *Guarda carrito en el localStorage usando Stringify para cambiar el objeto en una cadena JSON
  */
-function guardarLocalStorage () {
+function guardarLocalStorageCarrito () {
     datos.LOCALSTORAGE.setItem('carrito', JSON.stringify(carrito));
+}
+/**
+ *Guarda carrito en el localStorage usando Stringify para cambiar el objeto en una cadena JSON
+ */
+ function guardarLocalStoragePrecio () {
+    datos.LOCALSTORAGE.setItem('precio', JSON.stringify(precioCarrito));
 }
  /**
  * Varia el carrito y vuelve a dibujarlo
@@ -157,11 +190,14 @@ function guardarLocalStorage () {
 export function vaciarCarrito() {
     // Limpiamos los productos guardados
     carrito = [];
+    precioCarrito = [];
     imprimirCarrito();
     //Borrar LocalStorage
     datos.LOCALSTORAGE.removeItem('carrito');
+    datos.LOCALSTORAGE.removeItem('precio');
 }
 /*instancio la variable en este módulo porque si lo pongo en otro modulo solo se ejecuta una vez, 
 * mientras que si esta en el mismo módulo se ejecuta tantas veces como lo instanciemos(actua igual q un scrip)
 */
 let carrito = [];
+let precioCarrito = [];
