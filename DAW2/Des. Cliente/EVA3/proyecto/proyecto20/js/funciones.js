@@ -1,9 +1,21 @@
 import * as datos from "./datos.js";
 
 function actualizarPrecio(e) {
+    //Obtenemos el Producto ID donde se escribe 
     const IDPRODUCTOINPUT = e.target.getAttribute('marcadorPrice');
     console.log("idProducto "+IDPRODUCTOINPUT);
+    //Obtenemos el valor que se escribe en tipo numero
+    const VALORPRODUCTOINPUT = e.target.value;
+    console.log("Valor Producto "+VALORPRODUCTOINPUT);
+    //Cambiamos el valor del precio
+    datos.BDPRODUCTOS.forEach(item => {
 
+        if(item.id == IDPRODUCTOINPUT){
+            e.target.setAttribute('value',VALORPRODUCTOINPUT);
+            // item.precio = VALORPRODUCTOINPUT;
+        }
+    });
+    imprimirCarrito
 }
 /**
  * Evento para borrar un elemento del carrito
@@ -99,9 +111,9 @@ export function cuerpoProductos() {
         CBOTON.addEventListener('click', incluirProductoAlCarrito);
         // Precio (INPUT - PARA PODER INTRODUCIR EL TEXTO)
         const CINPUT = document.createElement('input');
-        CINPUT.classList.add(`precio${info.nombre}`);
+        CINPUT.classList.add('precio');
         CINPUT.setAttribute('type', 'number');
-        CINPUT.setAttribute('id', 'precio');
+        CINPUT.setAttribute('id', `precio${info.nombre}`);
         CINPUT.setAttribute('placeholder', 'PRECIO');
         CINPUT.setAttribute('value', info.precio);
         CINPUT.setAttribute('marcadorPrice', info.id);

@@ -94,13 +94,13 @@ span[data-descr] {
     width: 150px;
 }
 
-.ing-content #precio,
+.ing-content .precio,
 .ing-content .btn{
     font-size: 12px;
     margin-bottom: 10px;
     font-weight: 500;
 }
-#precio,.btn{
+.precio,.btn{
 
     padding: 5px 20px 5px 20px;
     border: 1px solid #6c757d;
