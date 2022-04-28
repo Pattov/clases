@@ -1,7 +1,7 @@
 import * as datos from "./datos.js";
 
 function actualizarPrecio(e) {
-    const IDPRODUCTOINPUT = e.target.getAttribute('price');
+    const IDPRODUCTOINPUT = e.target.getAttribute('marcadorPrice');
     console.log("idProducto "+IDPRODUCTOINPUT);
 
 }
@@ -70,7 +70,7 @@ export function cargarLocalStorageCarrito () {
                 <img class="foto" src="././img/pexels-nombreproducto.jpg">
                 <h4 class="card-title">nombreproducto</h4>
                 <input type="number" id="precio" placeholder="PRECIO">
-                <button class="btn" id="btnAcumPan" marcador="1">+</button>
+                <button class="btn" id="btnAcumPan" marcadorCantidad="1">+</button>
             </div>
         </div>
  */
@@ -89,24 +89,22 @@ export function cuerpoProductos() {
         CIMAGEN.setAttribute('src', info.imagen);
         // Titulo
         const CTITULO = document.createElement('h4');
-        CTITULO.classList.add('card-title');
         CTITULO.textContent = info.nombre;
         // Boton 
         const CBOTON = document.createElement('button');
         CBOTON.classList.add('btn');
         CBOTON.textContent = '+';
-        CBOTON.setAttribute('id', `btnAcum${info.nombre}`);
-        CBOTON.setAttribute('marcador', info.id);
+        CBOTON.setAttribute('marcadorCantidad', info.id);
         CBOTON.setAttribute('value', info.precio);
         CBOTON.addEventListener('click', incluirProductoAlCarrito);
         // Precio (INPUT - PARA PODER INTRODUCIR EL TEXTO)
         const CINPUT = document.createElement('input');
+        CINPUT.classList.add(`precio${info.nombre}`);
         CINPUT.setAttribute('type', 'number');
         CINPUT.setAttribute('id', 'precio');
-        CINPUT.setAttribute('class', 'btnp');
         CINPUT.setAttribute('placeholder', 'PRECIO');
         CINPUT.setAttribute('value', info.precio);
-        CINPUT.setAttribute('price', info.id);
+        CINPUT.setAttribute('marcadorPrice', info.id);
         CINPUT.addEventListener('input',actualizarPrecio);
         // Hacemos la estructura en árbol
         CBODY.appendChild(CIMAGEN);
@@ -163,8 +161,8 @@ export function imprimirCarrito() {
  */
  function incluirProductoAlCarrito(evento) {
     // Añadimos el Nodo a nuestro carrito
-    carrito.push(evento.target.getAttribute('marcador'));
-    precioCarrito.push([evento.target.getAttribute('marcador'),evento.target.getAttribute('value')]);
+    carrito.push(evento.target.getAttribute('marcadorCantidad'));
+    precioCarrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
     // Actualizamos el carrito 
     imprimirCarrito();
     guardarLocalStorageCarrito();
