@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
         datos.BTNVACIAR.addEventListener('click', funciones.vaciarCarrito);
         
         // EJECUCION DE FUNCIONES
-        funciones.cargarLocalStorage();
+        
         funciones.cuerpoProductos();
         funciones.imprimirCarrito();
+        funciones.cargarLocalStorage();
 
     }else{
         alert("El Programa va a presentar problemas. Usa otro Navegador");

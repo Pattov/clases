@@ -3,22 +3,27 @@ import * as datos from "./datos.js";
 function actualizarPrecio(e) {
     //Obtenemos el Producto ID donde se escribe 
     const IDPRODUCTOINPUT = e.target.getAttribute('marcadorPrice');
-    console.log("idProducto "+IDPRODUCTOINPUT);
+    console.log("idProducto "+IDPRODUCTOINPUT+" tipo "+typeof(IDPRODUCTOINPUT));
     //Obtenemos el valor que se escribe en tipo numero
-    const VALORPRODUCTOINPUT = e.target.value;
-    console.log("Valor Producto "+VALORPRODUCTOINPUT);
-    //creamos el array
-    carrito = carrito.filter((item)=> {
-        console.log(item[0]);
-        return item;
-        // if(item[0][0] == IDPRODUCTOINPUT){
-        //     return item[0][1]=VALORPRODUCTOINPUT;
-            
-        //     // e.target.setAttribute('value',VALORPRODUCTOINPUT);
-        //     // item.precio = VALORPRODUCTOINPUT;
-        // }
-    });
-    console.log(carrito);
+    const VALORPRODUCTOINPUT = e.target.valueAsNumber;
+    console.log("Valor Producto "+VALORPRODUCTOINPUT+" tipo "+typeof(VALORPRODUCTOINPUT));
+    //Añadimos el Valor al Array de Precios Formado por IDProducto + PrecioProcucto
+    if(precio.length != 0){
+        //El array ya tiene valores
+        //¿Tiene el mismo id? modificamos el valor, en caso contrario añadimos uno nuevo(push)
+        precio.forEach(element => {
+            if (element[0]===IDPRODUCTOINPUT) {
+                element[1]=VALORPRODUCTOINPUT
+            } else {
+                precio.push([IDPRODUCTOINPUT,VALORPRODUCTOINPUT]);
+            }
+        });
+       
+    }else{
+         //Si no hay nada, lo añadimos
+         precio.push([IDPRODUCTOINPUT,VALORPRODUCTOINPUT]);
+    }
+    console.log(precio);
 }
 /**
  * Evento para borrar un elemento del carrito
@@ -75,11 +80,12 @@ export function cargarLocalStorage () {
 
 export function cuerpoProductos() {
     datos.BDPRODUCTOS.forEach((info) => {
-        const MIITEM = carrito.forEach(itemPrecio => {
-            if(itemPrecio[0] == info.id){
-                return itemPrecio[1]
-            }
-        });
+        //2022
+        // const MIITEM = carrito.forEach(itemPrecio => {
+        //     if(itemPrecio[0] == info.id){
+        //         return itemPrecio[1]
+        //     }
+        // });
         // Estructura de la Card Container
         const CCONTAINER = document.createElement('div');
         CCONTAINER.classList.add('card');
@@ -93,13 +99,6 @@ export function cuerpoProductos() {
         // Titulo
         const CTITULO = document.createElement('h4');
         CTITULO.textContent = info.nombre;
-        // Boton 
-        const CBOTON = document.createElement('button');
-        CBOTON.classList.add('btn');
-        CBOTON.textContent = '+';
-        CBOTON.setAttribute('marcadorCantidad', info.id);
-        CBOTON.setAttribute('value', MIITEM);
-        CBOTON.addEventListener('click', incluirProductoAlCarrito);
         // Precio (INPUT - PARA PODER INTRODUCIR EL TEXTO)
         const CINPUT = document.createElement('input');
         CINPUT.classList.add('precio');
@@ -108,6 +107,15 @@ export function cuerpoProductos() {
         CINPUT.setAttribute('placeholder', 'PRECIO');
         CINPUT.setAttribute('marcadorPrice', info.id);
         CINPUT.addEventListener('input',actualizarPrecio);
+        // Boton 
+        const CBOTON = document.createElement('button');
+        CBOTON.classList.add('btn');
+        CBOTON.textContent = '+';
+        CBOTON.setAttribute('marcadorCantidad', info.id);
+        //2022
+        // CBOTON.setAttribute('value', MIITEM);
+        CBOTON.addEventListener('click', incluirProductoAlCarrito);
+        
         // Hacemos la estructura en árbol
         CBODY.appendChild(CIMAGEN);
         CBODY.appendChild(CTITULO);
@@ -134,28 +142,22 @@ export function imprimirCarrito() {
         // Obtenemos el item que necesitamos de la variable base de datos
         const MIITEM = datos.BDPRODUCTOS.filter((itemBaseDatos) => {
             // ¿Coincide las id? Solo puede existir un caso
-            return itemBaseDatos.id === parseInt(item[0]);
+            return itemBaseDatos.id === parseInt(item);
         });
         // Cuenta el número de veces que se repite el producto
         const UNID_PRODUCTO = carrito.reduce((total, itemId) => {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
-            return itemId === item[0] ? total += 1 : total;
+            return itemId === item ? total += 1 : total;
         }, 0);
-        // Cogemos el precio
-        const PRECIO_PRODUCTO = carrito.forEach(itemPrecio => {
-            if(itemPrecio[0]===item[0]){
-                return itemPrecio[1]
-            }
-        });
         // Creamos LA ESTRUCTURA del item del carrito
         const CCONTAINER = document.createElement('li');
         CCONTAINER.classList.add('list-group-item', 'prop');
-        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${PRECIO_PRODUCTO}€`;
+        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${MIITEM[0].precio}€`;
         const BTNLINEA = document.createElement('button');
         BTNLINEA.classList.add('btn', 'btn-danger', 'btnlinea');
         BTNLINEA.textContent = 'X';
         BTNLINEA.addEventListener('click', borrarItemCarrito);
-        BTNLINEA.dataset.item = item[0];
+        BTNLINEA.dataset.item = item;
         CCONTAINER.appendChild(BTNLINEA);
         datos.IMPRIMIRCARRO.appendChild(CCONTAINER);
     });
@@ -170,7 +172,7 @@ export function imprimirCarrito() {
  function incluirProductoAlCarrito(evento) {
     // Añadimos el Nodo a nuestro carrito
     // carrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
-    carrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
+    carrito.push(evento.target.getAttribute('marcadorCantidad'));
     // Actualizamos el carrito 
     imprimirCarrito();
     guardarLocalStorage();
@@ -193,8 +195,12 @@ export function vaciarCarrito() {
     //Borrar LocalStorage
     datos.LOCALSTORAGE.removeItem('carrito');
 }
+
+
+
 /*instancio la variable en este módulo porque si lo pongo en otro modulo solo se ejecuta una vez, 
 * mientras que si esta en el mismo módulo se ejecuta tantas veces como lo instanciemos(actua igual q un scrip)
-* El carrito esta formado por [cantidad, precio]
+* El carrito esta formado por [cantidad, precio][cantidad,precio].....
 */
 let carrito = [];
+let precio= [];
