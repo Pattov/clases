@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresiones Regulares</title>
+</head>
+<body>
+    <script>
+         
+        var numero=23;//Cadena de Precio con 2 decimales
+        function Precio2DecimalesValido(numero) {
+            let val = /^([0-9]{0,}[\.]{0,1}[0-9]{1,2})$/;
+            return val.test(numero);
+                
+        }
+        let validar=false;
+        validar = Precio2DecimalesValido(numero);
+        if(validar){
+            console.log("valido");
+        }else{
+            alert("Ha habido algún Error. \n \t El numero debe ser Positivo \n \t Tiene que tener maximo dos decimales");
+        }
+    </script>
+</body>
+</html>
+</html>

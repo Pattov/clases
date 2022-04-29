@@ -1,37 +1,19 @@
 import * as datos from "./datos.js";
-
+/**
+ * Actualizamos el precio cuando alguien escribe en el input
+ * teniendo en cuenta el Id_Producto y el precio 
+ */
 function actualizarPrecio(e) {
-    let ultimovalor = 0;
+    let existe = false;  
+    let validar=false;
     //Obtenemos el Producto ID donde se escribe 
     const IDPRODUCTOINPUT = e.target.getAttribute('marcadorPrice');
-    console.log("idProducto "+IDPRODUCTOINPUT+" tipo "+typeof(IDPRODUCTOINPUT));
     //Obtenemos el valor que se escribe en tipo numero
-    const VALORPRODUCTOINPUT = e.target.valueAsNumber;
-    console.log("Valor Producto "+VALORPRODUCTOINPUT+" tipo "+typeof(VALORPRODUCTOINPUT));
-
-
-    //Añadimos el Valor al Array de Precios Formado por IDProducto + PrecioProcucto
-let existe = false;
-// for(let i=0; i<precio.length;i++)
-// {
-//     let id_temporal=precio[i][0];
-//
- 
-//     if(IDPRODUCTOINPUT==id_temporal)
-//     {
-//         precio[i][1] =VALORPRODUCTOINPUT;
-//         existe=true;
-//     }
-
-// }
-
-// if(existe==false)
-// {
-//     precio.push([IDPRODUCTOINPUT,VALORPRODUCTOINPUT]);
-// }
-
-       
-        // const INDEX = precio.findIndex(precio => precio[i][0]===IDPRODUCTOINPUT);
+    const VALORPRODUCTOINPUT = e.target.value;
+    //comprobamos que cumple la expresión regular
+    validar = Precio2DecimalesValido(VALORPRODUCTOINPUT);
+    if(validar){
+        //Añadimos el Valor al Array de Precios Formado por IDProducto + PrecioProcucto
         //El array ya tiene valores
         precio.forEach(element => {
             if (element[0]===IDPRODUCTOINPUT) {
@@ -39,18 +21,17 @@ let existe = false;
                 existe=true;
             }
         });
-    
-    
-    if(existe==false){
-         //Si no hay nada, lo añadimos
-         precio.push([IDPRODUCTOINPUT,VALORPRODUCTOINPUT]);
+        //Si no hay nada, lo añadimos
+        existe==false?precio.push([IDPRODUCTOINPUT,VALORPRODUCTOINPUT]):0;
+    }else{
+        alert("Ha habido algún Error. Recuerda el número debe ser Positivo");
+        e.target.value = "";
     }
-    //Los Ordeno
-    
-    precio = precio.sort();
-    
     console.log(precio);
+
+
 }
+
 /**
  * Evento para borrar un elemento del carrito
  */
@@ -160,8 +141,8 @@ export function cuerpoProductos() {
 */
 //////////////let arrayClaseMentira =[ Id, nombre, unidades, precio]
 export function imprimirCarrito() {
-    int precioTotal=0;
-    arrayClaseMentira = []; //igual vacio
+    // int precioTotal=0;
+    // arrayClaseMentira = []; //igual vacio
     // Vaciamos todo el html
     datos.IMPRIMIRCARRO.textContent = '';
     // creamos un array con el Set
@@ -183,15 +164,15 @@ export function imprimirCarrito() {
             return precioItem[0]==MIITEM[0].id? precioItem[1]: null;
         }
         )
-        const precio_del_producto = PRECIO[0][1];
-        precioTotal+=precio_del_producto * UNID_PRODUCTO;
-
+        // const precio_del_producto = PRECIO[0][1];
+        // precioTotal+=precio_del_producto * UNID_PRODUCTO;
+        
        ////////////// arrayClaseMentira.push(IITEM[0].nombre,UNID_PRODUCTO,precio_del_producto)
 
         // Creamos LA ESTRUCTURA del item del carrito
         const CCONTAINER = document.createElement('li');
         CCONTAINER.classList.add('list-group-item', 'prop');
-        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${precio_del_producto}€`;
+        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - €`;
         const BTNLINEA = document.createElement('button');
         BTNLINEA.classList.add('btn', 'btn-danger', 'btnlinea');
         BTNLINEA.textContent = 'X';
@@ -223,6 +204,20 @@ export function imprimirCarrito() {
  */
 function guardarLocalStorage () {
     datos.LOCALSTORAGE.setItem('carrito', JSON.stringify(carrito));
+    datos.LOCALSTORAGE.setItem('precio', JSON.stringify(precio));
+}
+/**
+ * Comprueba si el número pasado cumple los parametros
+ * de ser Positivo, tener maximo dos decimales
+ *
+ * @param {*} numero que hay que comprobar
+ * @return {*} True = si cumple todo
+ *             False = no cumple los requisitos
+ */
+function Precio2DecimalesValido(numero) {
+    let val = /^([\.0-9]{0,})$/;
+    return val.test(numero);
+        
 }
  /**
  * Varia el carrito y vuelve a dibujarlo
@@ -230,9 +225,11 @@ function guardarLocalStorage () {
 export function vaciarCarrito() {
     // Limpiamos los productos guardados
     carrito = [];
+    precio = [];
     imprimirCarrito();
     //Borrar LocalStorage
     datos.LOCALSTORAGE.removeItem('carrito');
+    datos.LOCALSTORAGE.removeItem('precio');
 }
 
 
@@ -242,4 +239,4 @@ export function vaciarCarrito() {
 * El carrito esta formado por [cantidad, precio][cantidad,precio].....
 */
 let carrito = [];
-let precio= [];
+let precio = [];
