@@ -4,7 +4,7 @@ export const IMPRIMIRCARRO = document.querySelector('#carrito');
 export const TXTTOTAL = document.querySelector('#total');
 export const LOCALSTORAGE=window.localStorage;
 
-// }
+
 //LA CANTIDAD SE INCREMENTARA CON UN BOTÓN Y EL PRECIO SE COGERÁ DE EL INPUT DE LA PAGINA 
 export const BDPRODUCTOS = [
     {

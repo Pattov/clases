@@ -7,13 +7,18 @@ function actualizarPrecio(e) {
     //Obtenemos el valor que se escribe en tipo numero
     const VALORPRODUCTOINPUT = e.target.value;
     console.log("Valor Producto "+VALORPRODUCTOINPUT);
-    //Cambiamos el valor del precio
-    datos.BDPRODUCTOS.forEach(item => {
-        if(item.id == IDPRODUCTOINPUT){
-            e.target.setAttribute('value',VALORPRODUCTOINPUT);
-            // item.precio = VALORPRODUCTOINPUT;
-        }
+    //creamos el array
+    carrito = carrito.filter((item)=> {
+        console.log(item[0]);
+        return item;
+        // if(item[0][0] == IDPRODUCTOINPUT){
+        //     return item[0][1]=VALORPRODUCTOINPUT;
+            
+        //     // e.target.setAttribute('value',VALORPRODUCTOINPUT);
+        //     // item.precio = VALORPRODUCTOINPUT;
+        // }
     });
+    console.log(carrito);
 }
 /**
  * Evento para borrar un elemento del carrito
@@ -25,7 +30,7 @@ function actualizarPrecio(e) {
     
     // Borramos todos los productos
     carrito = carrito.filter((carritoId) => {
-        return carritoId[0] !== IDBOTON && carritoId[1] !== VALORBOTON;
+        return carritoId[0][0] !== IDBOTON && carritoId[0][1] !== VALORBOTON;
     });
         
     imprimirCarrito;
@@ -38,7 +43,7 @@ function actualizarPrecio(e) {
  function calcularTotal() {
     let acumulador = 0;
     carrito.forEach(producto => {
-        acumulador += parseFloat(producto[1]);
+        acumulador += parseFloat(producto[0][1]);
     });
     return acumulador.toFixed(2);
 }
@@ -164,6 +169,7 @@ export function imprimirCarrito() {
  */
  function incluirProductoAlCarrito(evento) {
     // Añadimos el Nodo a nuestro carrito
+    // carrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
     carrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
     // Actualizamos el carrito 
     imprimirCarrito();

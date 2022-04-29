@@ -64,3 +64,68 @@ function agregarNumero(numero){
 
 }
 
+
+
+/**
+ * Genera la estructura del HTML con los datos de los productos
+ * E S T R U C T U R A 
+        <div class="card">
+            <div class="nombreproducto ing-content">
+                <img class="foto" src="././img/pexels-nombreproducto.jpg">
+                <h4 class="card-title">nombreproducto</h4>
+                <input type="number" id="precio" placeholder="PRECIO">
+                <button class="btn" id="btnAcumPan" marcadorCantidad="1">+</button>
+            </div>
+        </div>
+ */
+
+export function cuerpoProductos() {
+
+        const MIITEM = carrito.forEach(itemPrecio => {
+            if(itemPrecio[0] == info.id){
+                return itemPrecio[1]
+            }
+        });
+        // Boton 
+        const CBOTON = document.createElement('button');
+        CBOTON.setAttribute('value', MIITEM);
+    });
+}
+
+/**
+* Dibuja todos los productos guardados en el carrito
+*   <li class="list-group-item prop">cantidadproducto x nombreproducto - precioproducto€
+        <button class="btn btn-danger btnlinea btnp" data-item="idproducto">X</button>
+    </li>
+*/
+export function imprimirCarrito() {
+    // Quitamos los duplicados
+    CARRITO_SIN_DUPLICADOS.forEach((item) => {
+        
+
+        // Cogemos el precio
+        const PRECIO_PRODUCTO = carrito.forEach(itemPrecio => {
+            if(itemPrecio[0]===item[0]){
+                return itemPrecio[1]
+            }
+        });
+        // Creamos LA ESTRUCTURA del item del carrito
+        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${PRECIO_PRODUCTO}€`;
+
+
+    });
+}
+
+/**
+ * Evento para añadir un producto al carrito de la compra cuando se pulsa el boton
+ * y el precio
+ */
+ function incluirProductoAlCarrito(evento) {
+    // Añadimos el Nodo a nuestro carrito
+    carrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
+    // Actualizamos el carrito 
+
+    
+}
+
+
