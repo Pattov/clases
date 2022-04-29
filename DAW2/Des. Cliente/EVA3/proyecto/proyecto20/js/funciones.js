@@ -1,28 +1,54 @@
 import * as datos from "./datos.js";
 
 function actualizarPrecio(e) {
+    let ultimovalor = 0;
     //Obtenemos el Producto ID donde se escribe 
     const IDPRODUCTOINPUT = e.target.getAttribute('marcadorPrice');
     console.log("idProducto "+IDPRODUCTOINPUT+" tipo "+typeof(IDPRODUCTOINPUT));
     //Obtenemos el valor que se escribe en tipo numero
     const VALORPRODUCTOINPUT = e.target.valueAsNumber;
     console.log("Valor Producto "+VALORPRODUCTOINPUT+" tipo "+typeof(VALORPRODUCTOINPUT));
+
+
     //Añadimos el Valor al Array de Precios Formado por IDProducto + PrecioProcucto
-    if(precio.length != 0){
+let existe = false;
+// for(let i=0; i<precio.length;i++)
+// {
+//     let id_temporal=precio[i][0];
+//
+ 
+//     if(IDPRODUCTOINPUT==id_temporal)
+//     {
+//         precio[i][1] =VALORPRODUCTOINPUT;
+//         existe=true;
+//     }
+
+// }
+
+// if(existe==false)
+// {
+//     precio.push([IDPRODUCTOINPUT,VALORPRODUCTOINPUT]);
+// }
+
+       
+        // const INDEX = precio.findIndex(precio => precio[i][0]===IDPRODUCTOINPUT);
         //El array ya tiene valores
-        //¿Tiene el mismo id? modificamos el valor, en caso contrario añadimos uno nuevo(push)
         precio.forEach(element => {
             if (element[0]===IDPRODUCTOINPUT) {
-                element[1]=VALORPRODUCTOINPUT
-            } else {
-                precio.push([IDPRODUCTOINPUT,VALORPRODUCTOINPUT]);
+                element[1]=VALORPRODUCTOINPUT;
+                existe=true;
             }
         });
-       
-    }else{
+    
+    
+    if(existe==false){
          //Si no hay nada, lo añadimos
          precio.push([IDPRODUCTOINPUT,VALORPRODUCTOINPUT]);
     }
+    //Los Ordeno
+    
+    precio = precio.sort();
+    
     console.log(precio);
 }
 /**
@@ -132,7 +158,10 @@ export function cuerpoProductos() {
         <button class="btn btn-danger btnlinea btnp" data-item="idproducto">X</button>
     </li>
 */
+//////////////let arrayClaseMentira =[ Id, nombre, unidades, precio]
 export function imprimirCarrito() {
+    int precioTotal=0;
+    arrayClaseMentira = []; //igual vacio
     // Vaciamos todo el html
     datos.IMPRIMIRCARRO.textContent = '';
     // creamos un array con el Set
@@ -149,10 +178,20 @@ export function imprimirCarrito() {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId === item ? total += 1 : total;
         }, 0);
+        const PRECIO = precio.filter((precioItem)=>{
+            
+            return precioItem[0]==MIITEM[0].id? precioItem[1]: null;
+        }
+        )
+        const precio_del_producto = PRECIO[0][1];
+        precioTotal+=precio_del_producto * UNID_PRODUCTO;
+
+       ////////////// arrayClaseMentira.push(IITEM[0].nombre,UNID_PRODUCTO,precio_del_producto)
+
         // Creamos LA ESTRUCTURA del item del carrito
         const CCONTAINER = document.createElement('li');
         CCONTAINER.classList.add('list-group-item', 'prop');
-        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${MIITEM[0].precio}€`;
+        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${precio_del_producto}€`;
         const BTNLINEA = document.createElement('button');
         BTNLINEA.classList.add('btn', 'btn-danger', 'btnlinea');
         BTNLINEA.textContent = 'X';

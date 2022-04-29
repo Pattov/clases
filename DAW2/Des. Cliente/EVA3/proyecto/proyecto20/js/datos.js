@@ -11,6 +11,7 @@ export const BDPRODUCTOS = [
         id: 1,
         nombre: 'Pan',
         imagen: '././img/pexels-pan.jpg'
+        
     },
     {
         id: 2,
