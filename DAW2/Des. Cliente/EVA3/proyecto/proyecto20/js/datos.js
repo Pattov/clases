@@ -1,4 +1,5 @@
 export const BTNVACIAR = document.querySelector('#boton-vaciar');
+export const BTNVACIARTODO = document.querySelector('#boton-vaciarTodo');
 export const CUERPOPROD = document.querySelector('#items');
 export const IMPRIMIRCARRO = document.querySelector('#carrito');
 export const TXTTOTAL = document.querySelector('#total');

@@ -12,9 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         // EJECUCION DE FUNCIONES
         
+        funciones.cargarLocalStorage();
         funciones.cuerpoProductos();
         funciones.imprimirCarrito();
-        funciones.cargarLocalStorage();
 
     }else{
         alert("El Programa va a presentar problemas. Usa otro Navegador");

@@ -27,9 +27,6 @@ function actualizarPrecio(e) {
         alert("Ha habido algún Error. Recuerda el número debe ser Positivo");
         e.target.value = "";
     }
-    console.log(precio);
-
-
 }
 
 /**
@@ -38,26 +35,36 @@ function actualizarPrecio(e) {
  function borrarItemCarrito(evento) {
     // Obtenemos el producto ID que hay en el boton pulsado
     const IDBOTON = evento.target.dataset.item;
-    const VALORBOTON = evento.target.getAttribute('value');
-    
     // Borramos todos los productos
     carrito = carrito.filter((carritoId) => {
-        return carritoId[0][0] !== IDBOTON && carritoId[0][1] !== VALORBOTON;
+        return carritoId !== IDBOTON;
     });
-        
-    imprimirCarrito;
-    guardarLocalStorage;
+    precio = precio.filter((precioId) => {
+        return precioId[0] !== IDBOTON;
+    })    
+    imprimirCarrito();
+    guardarLocalStorage();
+    location.reload();
 }
 
 /**
  * Calcula el precio total teniendo en cuenta los productos repetidos
  */
  function calcularTotal() {
-    let acumulador = 0;
-    carrito.forEach(producto => {
-        acumulador += parseFloat(producto[0][1]);
-    });
-    return acumulador.toFixed(2);
+    let total=0;
+    // Recorremos el array del carrito
+    for (let index = 1; index < 7; index++) {
+        let unidProducto = carrito.reduce((total, itemId) => {
+            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
+            return itemId == index ? total += 1 : total;
+        }, 0);
+        let valorPrecio = PrecioDelProducto(index);
+        if(valorPrecio!=""){
+
+            total += (unidProducto*valorPrecio);
+        }
+    } 
+    return total.toFixed(2);
 }
 
 /**
@@ -69,6 +76,9 @@ export function cargarLocalStorage () {
         // Carga la información
         carrito = JSON.parse(datos.LOCALSTORAGE.getItem('carrito'));
     }
+    if (datos.LOCALSTORAGE.getItem('precio') !== null) {
+        precio = JSON.parse(datos.LOCALSTORAGE.getItem('precio'));
+    }
     
 }
 
@@ -78,21 +88,16 @@ export function cargarLocalStorage () {
         <div class="card">
             <div class="nombreproducto ing-content">
                 <img class="foto" src="././img/pexels-nombreproducto.jpg">
-                <h4 class="card-title">nombreproducto</h4>
-                <input type="number" id="precio" placeholder="PRECIO">
-                <button class="btn" id="btnAcumPan" marcadorCantidad="1">+</button>
+                <h4>nombreproducto</h4>
+                <input class="precio" type="number" placeholder="PRECIO" marcadorprice="idProducto" value="">
+                <button class="btn" marcadorcantidad="idProducto" value="">+</button>
             </div>
         </div>
  */
 
 export function cuerpoProductos() {
     datos.BDPRODUCTOS.forEach((info) => {
-        //2022
-        // const MIITEM = carrito.forEach(itemPrecio => {
-        //     if(itemPrecio[0] == info.id){
-        //         return itemPrecio[1]
-        //     }
-        // });
+        let item = PrecioDelProducto(info.id);
         // Estructura de la Card Container
         const CCONTAINER = document.createElement('div');
         CCONTAINER.classList.add('card');
@@ -110,17 +115,16 @@ export function cuerpoProductos() {
         const CINPUT = document.createElement('input');
         CINPUT.classList.add('precio');
         CINPUT.setAttribute('type', 'number');
-        CINPUT.setAttribute('id', `precio${info.nombre}`);
         CINPUT.setAttribute('placeholder', 'PRECIO');
-        CINPUT.setAttribute('marcadorPrice', info.id);
+        CINPUT.setAttribute('marcadorPrice',info.id);
+        CINPUT.setAttribute('value', item);
         CINPUT.addEventListener('input',actualizarPrecio);
         // Boton 
         const CBOTON = document.createElement('button');
         CBOTON.classList.add('btn');
         CBOTON.textContent = '+';
         CBOTON.setAttribute('marcadorCantidad', info.id);
-        //2022
-        // CBOTON.setAttribute('value', MIITEM);
+        CBOTON.setAttribute('value', item);
         CBOTON.addEventListener('click', incluirProductoAlCarrito);
         
         // Hacemos la estructura en árbol
@@ -135,14 +139,11 @@ export function cuerpoProductos() {
 
 /**
 * Dibuja todos los productos guardados en el carrito
-*   <li class="list-group-item prop">cantidadproducto x nombreproducto - precioproducto€
+*   <li class="list-group-item prop">cantidadproducto x nombreproducto
         <button class="btn btn-danger btnlinea btnp" data-item="idproducto">X</button>
     </li>
 */
-//////////////let arrayClaseMentira =[ Id, nombre, unidades, precio]
 export function imprimirCarrito() {
-    // int precioTotal=0;
-    // arrayClaseMentira = []; //igual vacio
     // Vaciamos todo el html
     datos.IMPRIMIRCARRO.textContent = '';
     // creamos un array con el Set
@@ -159,25 +160,16 @@ export function imprimirCarrito() {
             // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId === item ? total += 1 : total;
         }, 0);
-        const PRECIO = precio.filter((precioItem)=>{
-            
-            return precioItem[0]==MIITEM[0].id? precioItem[1]: null;
-        }
-        )
-        // const precio_del_producto = PRECIO[0][1];
-        // precioTotal+=precio_del_producto * UNID_PRODUCTO;
-        
-       ////////////// arrayClaseMentira.push(IITEM[0].nombre,UNID_PRODUCTO,precio_del_producto)
-
+        const PRICE_PRODUCTO = PrecioDelProducto(MIITEM[0].id);
         // Creamos LA ESTRUCTURA del item del carrito
         const CCONTAINER = document.createElement('li');
         CCONTAINER.classList.add('list-group-item', 'prop');
-        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - €`;
+        CCONTAINER.textContent = `${UNID_PRODUCTO} x ${MIITEM[0].nombre} - ${PRICE_PRODUCTO}€`;
         const BTNLINEA = document.createElement('button');
         BTNLINEA.classList.add('btn', 'btn-danger', 'btnlinea');
         BTNLINEA.textContent = 'X';
-        BTNLINEA.addEventListener('click', borrarItemCarrito);
         BTNLINEA.dataset.item = item;
+        BTNLINEA.addEventListener('click', borrarItemCarrito);
         CCONTAINER.appendChild(BTNLINEA);
         datos.IMPRIMIRCARRO.appendChild(CCONTAINER);
     });
@@ -190,26 +182,34 @@ export function imprimirCarrito() {
  * y el precio
  */
  function incluirProductoAlCarrito(evento) {
-    // Añadimos el Nodo a nuestro carrito
-    // carrito.push([evento.target.getAttribute('marcadorCantidad'),evento.target.getAttribute('value')]);
-    carrito.push(evento.target.getAttribute('marcadorCantidad'));
+    //comprobamos si tiene un precio el producto que queremos introducir
+    //si es null es que no hay precio para ese producto
+    const PRECIO_VALOR = PrecioDelProducto(evento.target.getAttribute('marcadorCantidad'));
+    if(PRECIO_VALOR!=""){
+        // Añadimos el Producto a nuestro a nuestro carrito
+        carrito.push(evento.target.getAttribute('marcadorCantidad'));
+    }else{
+        alert("Introduce el Precio");
+    }
     // Actualizamos el carrito 
     imprimirCarrito();
     guardarLocalStorage();
+
 }
 
 
 /**
- *Guarda carrito en el localStorage usando Stringify para cambiar el objeto en una cadena JSON
+ * Guarda carrito en el localStorage usando Stringify para cambiar el objeto en una cadena JSON
  */
 function guardarLocalStorage () {
     datos.LOCALSTORAGE.setItem('carrito', JSON.stringify(carrito));
     datos.LOCALSTORAGE.setItem('precio', JSON.stringify(precio));
-}
+}  
+
 /**
  * Comprueba si el número pasado cumple los parametros
  * de ser Positivo, tener maximo dos decimales
- *
+ * 
  * @param {*} numero que hay que comprobar
  * @return {*} True = si cumple todo
  *             False = no cumple los requisitos
@@ -217,26 +217,44 @@ function guardarLocalStorage () {
 function Precio2DecimalesValido(numero) {
     let val = /^([\.0-9]{0,})$/;
     return val.test(numero);
+}
+/**
+ * Devuelve el precio de un producto
+ * 
+ * @param {*} numero id del Producto
+ * @return {*} el precio de ese producto
+ * si no hay nada sale ""
+ */
+ function PrecioDelProducto(iDproducto) {
+    let price = "";
+    precio.forEach(itemPrecio => {
+    if(itemPrecio[0] == iDproducto){
+        price = itemPrecio[1];
+    }
+    //Si contiene un punto redondear a dos decimales
+    if(price!="" && price.indexOf('.')!= -1){
+       price = parseFloat(price).toFixed(2); 
+    }
+    });
+    return price;
         
 }
  /**
  * Varia el carrito y vuelve a dibujarlo
  */
 export function vaciarCarrito() {
-    // Limpiamos los productos guardados
-    carrito = [];
-    precio = [];
-    imprimirCarrito();
     //Borrar LocalStorage
     datos.LOCALSTORAGE.removeItem('carrito');
     datos.LOCALSTORAGE.removeItem('precio');
+    location.reload();
 }
-
 
 
 /*instancio la variable en este módulo porque si lo pongo en otro modulo solo se ejecuta una vez, 
 * mientras que si esta en el mismo módulo se ejecuta tantas veces como lo instanciemos(actua igual q un scrip)
-* El carrito esta formado por [cantidad, precio][cantidad,precio].....
 */
 let carrito = [];
+//Declaro un Array Multidimensional
+// https://www.programiz.com/javascript/multidimensional-array
+// El carrito esta formado por [cantidad, precio][cantidad,precio].....
 let precio = [];
