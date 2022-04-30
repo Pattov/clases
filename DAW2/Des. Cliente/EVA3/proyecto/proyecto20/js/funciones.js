@@ -49,18 +49,17 @@ function actualizarPrecio(e) {
 
 /**
  * Calcula el precio total teniendo en cuenta los productos repetidos
+ * @returns numero total con dos decimales
  */
  function calcularTotal() {
     let total=0;
-    // Recorremos el array del carrito
+    // Recorremos el array del carrito, sacando el numero de unidades y el valor, hacemos el calculo
     for (let index = 1; index < 7; index++) {
         let unidProducto = carrito.reduce((total, itemId) => {
-            // ¿Coincide las id? Incremento el contador, en caso contrario no mantengo
             return itemId == index ? total += 1 : total;
         }, 0);
         let valorPrecio = PrecioDelProducto(index);
         if(valorPrecio!=""){
-
             total += (unidProducto*valorPrecio);
         }
     } 
