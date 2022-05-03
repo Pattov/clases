@@ -38,14 +38,16 @@ CREATE TABLE `super`.`venta` (
     `ven_id` INT NOT NULL AUTO_INCREMENT , 
     `ven_dia` date NOT NULL , 
     `ven_hora` date NOT NULL , 
-    `ven_clie` INT(11) NOT NULL, 
-    `ven_emp` INT(11) NOT NULL, 
-    `ven_men` INT(11), 
-    PRIMARY KEY (`ven_id`),
-    FOREIGN KEY(`ven_emp`) REFERENCES empleado(emp_id),
-    FOREIGN KEY(`ven_clie`) REFERENCES cliente(clie_id),
-    FOREIGN KEY(`ven_men`) REFERENCES mensajero(men_id)
+    `ven_clie` INT NOT NULL, 
+    `ven_emp` INT NOT NULL, 
+    `ven_men` INT NOT NULL, 
+    PRIMARY KEY (`ven_id`)
     ) ENGINE = InnoDB;
+-- 2022
+--   ,
+--     FOREIGN KEY(`ven_emp`) REFERENCES `super`.`empleado`(`emp_id`),
+--     FOREIGN KEY(`ven_clie`) REFERENCES `super`.`cliente`(`clie_id`),
+--     FOREIGN KEY(`ven_men`) REFERENCES `super`.`mensajero`(`men_id`)
 
 CREATE TABLE `super`.`formaPago` ( 
     `for_id` INT NOT NULL AUTO_INCREMENT , 
@@ -58,11 +60,14 @@ CREATE TABLE `super`.`formaPago` (
 CREATE TABLE `super`.`pagoVenta` ( 
     `pag_id` INT NOT NULL AUTO_INCREMENT , 
     `pag_for` INT(11) NOT NULL, 
-    `pag_vent` INT(11) NOT NULL,
-    PRIMARY KEY (`pag_id`),
-    FOREIGN KEY(`pag_for`) REFERENCES formaPago(for_id),
-    FOREIGN KEY(`pag_vent`) REFERENCES venta(ven_id)
+    `pag_vent` INT NOT NULL,
+    PRIMARY KEY (`pag_id`)
     ) ENGINE = InnoDB;
+
+    -- 2022
+    -- ,
+    -- FOREIGN KEY(`pag_for`) REFERENCES formaPago(for_id),
+    -- FOREIGN KEY(`pag_vent`) REFERENCES venta(ven_id)
 
 CREATE TABLE `super`.`productos` ( 
     `prod_id` INT NOT NULL AUTO_INCREMENT , 
@@ -77,9 +82,12 @@ CREATE TABLE `super`.`productos` (
 CREATE TABLE `super`.`posicion` ( 
     `pos_id` INT NOT NULL AUTO_INCREMENT , 
     `pos_cantidad` INT(6) NOT NULL , 
-    `pos_ven` INT(11) NOT NULL , 
-    `pos_prod` INT(11) NOT NULL,
-    PRIMARY KEY (`pos_id`),
-    FOREIGN KEY(`pos_prod`) REFERENCES productos(prod_id),
-    FOREIGN KEY(`pos_ven`) REFERENCES venta(ven_id)
+    `pos_ven` INT NOT NULL, 
+    `pos_prod` INT NOT NULL,
+    PRIMARY KEY (`pos_id`)
     ) ENGINE = InnoDB;
+
+    -- 2022
+    -- ,
+    -- FOREIGN KEY(`pos_prod`) REFERENCES productos(prod_id),
+    -- FOREIGN KEY(`pos_ven`) REFERENCES venta(ven_id)
