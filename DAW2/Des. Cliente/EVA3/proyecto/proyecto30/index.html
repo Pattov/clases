@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
+    <title>Quiero ser Millonario</title>
+</head>
+<body>
+    <div class="contenedor">
+        <header>
+            <div class="der">
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#historial">
+                    <i class="bi bi-clock-history"></i>
+                </button>
+                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#instrucciones">
+                    <i class="bi bi-info-lg"></i>
+                </button>
+            </div>
+        </header>
+        <div class="inicio">
+            <img src="img/imagen_2022-05-04_112456347-removebg-preview.png">
+            <select name="nivel" class="nivel" id="nivel">
+                <option value="" selected disabled>¿Que dificultad eliges?</option>
+                <option value="Facil">Facil</option>
+                <option value="Medio">Medio</option>
+                <option value="Dificil">Dificil</option>
+            </select>
+            <button type="button" class="btn btn-outline-secondary">
+                Empezar juego
+            </button>
+        </div>
+    </div>
+    <!-- P A N T A L L A    M O D A L-->
+    <!-- informacion -->
+    <div class="modal fade" id="instrucciones" tabindex="-1" aria-labelledby="instruccion" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="instruccion">Estas son las Instrucciones</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Hola
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Historial -->
+    <div class="modal fade" id="historial" tabindex="-1" aria-labelledby="instruccion" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="instruccion">Historial</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              Hola
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <script src="js/main.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</body>
+</html>
+
+<!-- <body>
+
+    <div class="ventana" id="ventana">
+        
+
+        <div class="llamar" id="llamar">
+            <i class="icon-cool2"></i>
+            <p>Creo que la respuesta correcta es:</p>
+            <p id="correcto">fhhg</p>
+        </div>
+
+        <div class="audiencia" id="audiencia">
+            <i class="icon-users"></i>
+            <p>La audiencia opina que:</p>
+            <span>A) <progress class="progreso" max="100" value="10" ></progress></span>
+            <span>B) <progress class="progreso" max="100" value="10" ></progress></span>
+            <span>C) <progress class="progreso" max="100" value="10" ></progress></span>
+            <span>D) <progress class="progreso" max="100" value="10" ></progress> </span>
+        </div>  
+
+        <div class="correcta" id="resp_correcta">
+            <i class="icon-checkmark"></i>
+            <p>¡RESPUESTA CORRECTA!</p>
+            <p id="pasaste"> </p>
+            
+        </div>
+
+        <i class="seguir" id="seguir">Continuar</i>
+    
+    </div>
+
+    <div class="ventana ventana2" id="ventana2">
+        <img id="img_vent" src="medios/img/1078718.png" alt="">
+        <p class="victoria" id="victoria">¡FELICIDADES HAZ GANADO!</p>
+        <P class="ganado" id="ganado">Te llevas a casa $ </P>
+        <i class="seguir" id="terminar">Terminar juego</i>
+    </div>
+
+
+    <div class="contenedor">
+
+        <div class="principal">
+            <img src="medios/img/logo.png" alt="logo" class="logo" id="logo">
+            <a href="#" class="btn jugar" id="jugar" title="Comenzar juego">Comenzar juego</a>
+
+            <div class="pregunta_zona" id="pregunta-zona">
+                <div class="tiempo">
+                    <span id="tiempo">
+                        <p id="timer">30</p>
+                    </span>
+                    <div class="comodin" id="comodin">
+                        <i class="icon-phone comodines" title="Llamar a un amigo"></i>
+                        <i class="icon-users comodines" title="Acudir a la audiencia" ></i>
+                        <i class="mitad comodines" title="50/50">50</i>
+                        
+
+                    </div>
+
+                    
+                </div>
+
+                <div class="cont_pregunta">
+                    
+                    <div class="preg_borde"><div class="preg" id="preg"><p>PREGUNTA</p></div></div>
+
+                    <div class="respuestas">
+                        <div class="resp_borde">
+                            <div class="resp"><span>A- </span><p class="respuesta"></p></div>
+                        </div>
+                        <div class="resp_borde">
+                            <div class="resp"><span>B- </span><p class="respuesta"></p></div>
+                        </div>
+                        <div class="resp_borde">
+                            <div class="resp"><span>C- </span><p class="respuesta"></p></div>
+                        </div>
+                        <div class="resp_borde">
+                            <div class="resp"><span>D- </span><p class="respuesta"></p></div>
+                        </div>
+                        
+                    </div>
+
+                    
+
+                </div>
+
+                <div class="rendirse btn " id="rendirse"> <i class="icon-exit"></i> Me rindo</div>
+            </div>
+
+
+
+
+
+        </div>
+    </div>
+
+    
+
+
+
+    </div>
+
+    <script src="js/variable.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/preg.js"></script>
+
+
+
+    </script>
+  
+  </body> -->

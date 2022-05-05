@@ -1,0 +1,25 @@
+body{
+    width: 100vw;
+    height: 100vh;
+}
+header{
+    padding: 1em;
+}
+.der{
+    float: right;
+}
+.inicio{
+    margin-top: 6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.nivel{
+    padding: 7px;
+    margin-bottom: 13px;
+}
+.desaparecer {
+    transition: 1s all ease-in;
+    transform: scale(0);
+  }

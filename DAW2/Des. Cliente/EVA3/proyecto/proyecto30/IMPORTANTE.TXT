@@ -1,0 +1,15 @@
+ - COMPRIMIR  con vuestro nombre y el nombre del juego.
+ 
+ - SACAR EL WORD FUERA ANTES DE COMPRIMIR
+    ENTREGAR:
+        API
+        WORD
+
+ - Minimos
+    Tendrá un contador tipo cronómetro. Ejemplo: cuenta atrás.
+    Tiene que tener un marcador con la puntuación del jugador.
+    En el juego se tiene que poder ganar o perder y hay que indicar cuando sucede cada cosa.
+    Tiene que tener controles para iniciar, pausar o finalizar la partida. Estas funciones tienen que estar asociadas también a una combinación de teclas del teclado. Ej. ctrl+e finalizar.
+    El juego debe contar con niveles de dificultad (mínimo 3) que se podrá seleccionar antes de comenzar la partida. 
+    El nivel de dificultad elegido se guardará y recuperará entre sesiones utilizando una cookie.
+    Debes crear un registro con las tres mejores puntuaciones del usuario que tienes que mostrar de alguna forma y almacenar en API STORAGE. Además de la puntuación se mostrará en que fecha y hora se obtuvo.
