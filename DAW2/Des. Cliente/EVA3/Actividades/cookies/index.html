@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function verCookies() {
+            alert("Cookies actuales\n"+document.cookie);
+        }
+        function crearModifCookie() {
+            let nombre;
+            let valor;
+            // Este dato sera para el numero de dias
+            let expiracion;
+            setCookies(nombre, valor, expiracion);
+        }
+        function deleteCookie(nombre) {
+            setCookies(nombre,"",0);
+        }
+        function setCookies(nombre, valor, expiracion) {
+            let d = new Date();
+            d.setTime(d.getTime()+(expiracion*24*60*60*60*1000));
+            let exp = "expires="+d.toUTCString();
+            document.cookie = nombre+"="+valor+";"+exp;
+        }
+        function getCookie(nombre) {
+            let nom = nombre+"=";
+            let array = document.cookie.split(";");
+            for (let i = 0; i < array.length; i++) {
+                let c = array[i];
+                while (c.charAt(0)==" ") {
+                    c = c.substring(1);
+                }
+                if(c.indexOf(nombre)==0){
+                    return c.substring(nom.length, c.length);
+                }
+            }
+            return "";
+        }
+    </script>
+</body>
+</html>

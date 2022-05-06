@@ -15,10 +15,10 @@
     <div class="contenedor">
         <header>
             <div class="der">
-                <button type="button" class="btn btn-outline-secondary" data-bs-toggle="modal" data-bs-target="#historial">
+                <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#historial">
                     <i class="bi bi-clock-history"></i>
                 </button>
-                <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#instrucciones">
+                <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#instrucciones">
                     <i class="bi bi-info-lg"></i>
                 </button>
             </div>
@@ -31,7 +31,7 @@
                 <option value="Medio">Medio</option>
                 <option value="Dificil">Dificil</option>
             </select>
-            <button type="button" class="btn btn-outline-dark">
+            <button type="button" class="btn btn-outline-light">
                 Empezar juego
             </button>
         </div>
@@ -75,6 +75,20 @@
     
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <!-- Cookie -->
+    <script>
+        //crear cookie; fecha expiracion - UTC - 
+        document.cookie="nivel = medio; expires=Thu, 17 Nov 2017 12:00:00 UTC";
+
+        //Leer un cookie
+        let miCookie = document.cookie;
+        alert(miCookie);
+        // Modificar cookie
+        document.cookie = "nivel = alto;";
+        //Borrar Cookie
+        document.cookie="nivel = medio; expires=Thu, 01 Jan 1970 00:00:00 UTC";    
+
+    </script>
 </body>
 </html>
 

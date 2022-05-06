@@ -1,19 +1,21 @@
 body{
     width: 100vw;
     height: 100vh;
-    background-image: url("../img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg");
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)), 
+                url("../img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    /* background: linear-gradient(to bottom, #da4453, #89216b); */
-    /* background: linear-gradient(to bottom, #ec008c, #fc6767); */
 }
+
 header{
     padding: 1em;
 }
+
 .der{
     float: right;
 }
+
 .inicio{
     margin-top: 6em;
     display: flex;
@@ -21,16 +23,25 @@ header{
     align-items: center;
     flex-direction: column;
 }
+
 .nivel{
     padding: 7px;
     margin-bottom: 13px;
 }
+select{
+	/* appearance: none; */
+    background-color: rgba(240, 255, 255, 0);
+    color: aliceblue;
+}
+option{
+    color: #000;
+}
 .desaparecer {
     transition: 1s all ease-in;
     transform: scale(0);
-  }
-  .logo{
-    height: 65vh;
-    
+}
+
+.logo{
+    height: 60vh;  
                  
 }
