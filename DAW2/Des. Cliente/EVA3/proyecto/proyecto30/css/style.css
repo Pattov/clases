@@ -16,7 +16,7 @@ header{
     float: right;
 }
 
-.inicio{
+#menu{
     margin-top: 6em;
     display: flex;
     justify-content: center;
@@ -29,19 +29,12 @@ header{
     margin-bottom: 13px;
 }
 select{
-	/* appearance: none; */
     background-color: rgba(240, 255, 255, 0);
     color: aliceblue;
 }
 option{
     color: #000;
 }
-.desaparecer {
-    transition: 1s all ease-in;
-    transform: scale(0);
-}
-
-.logo{
-    height: 60vh;  
-                 
+#juego{
+    display: none;
 }

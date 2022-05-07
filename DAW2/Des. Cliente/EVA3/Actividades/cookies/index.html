@@ -7,6 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Cookie -->
+    <script>
+        //crear cookie; fecha expiracion - UTC - 
+        document.cookie="nivel = medio; expires=Thu, 17 Nov 2017 12:00:00 UTC";
+
+        //Leer un cookie
+        let miCookie = document.cookie;
+        alert(miCookie);
+        // Modificar cookie
+        document.cookie = "nivel = alto;";
+        //Borrar Cookie
+        document.cookie="nivel = medio; expires=Thu, 01 Jan 1970 00:00:00 UTC";    
+
+    </script>
     <script>
         function verCookies() {
             alert("Cookies actuales\n"+document.cookie);
