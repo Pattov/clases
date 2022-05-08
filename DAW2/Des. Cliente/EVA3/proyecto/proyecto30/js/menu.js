@@ -1,17 +1,20 @@
-/* <select name="nivel" class="nivel" id="nivel" onchange="MostrarSelect()">
-                <option value="" selected disabled>¿Que dificultad eliges?</option>
-                <option value="Facil">Facil</option>
-                <option value="Medio">Medio</option>
-                <option value="Dificil">Dificil</option>
-            </select> */
-
-        
-function GenerarSeleccionarNivel() {
+/**
+ * Generamos el select
+ * Se puntara tal que así
+ * <select name="nivel" class="nivel" id="nivel" onchange="MostrarSelect()">
+ *      <option value="" selected disabled>¿Que dificultad eliges?</option>
+ *      <option value="Facil">Facil</option>
+ *      <option value="Medio">Medio</option>
+ *    <option value="Dificil">Dificil</option>
+ * </select> 
+ *
+ */
+function generarSeleccionarNivel() {
     // Creamos el Select
     const CSELECT = document.createElement('select');
     CSELECT.classList.add('nivel');
     CSELECT.setAttribute('id', 'nivel');
-    CSELECT.addEventListener('change',SelectElegido);
+    CSELECT.addEventListener('change',selectElegido);
     // De cada Objeto que tenemos en nivel creamos un option distinto
     NIVELES.forEach(cadanivel => {
         const COPTION = document.createElement('option');
@@ -33,14 +36,13 @@ function GenerarSeleccionarNivel() {
  * 
  * @param {*} e
  */
-function SelectElegido(e) {
+function selectElegido(e) {
     nivelElegido = e.target.value;
 }
-//
 
 
 nivelElegido = getCookie('nivel');
-GenerarSeleccionarNivel();
+generarSeleccionarNivel();
 
 JUGAR.addEventListener("click", () => {
     //comprubamos si el nivel esta elegido
@@ -49,7 +51,12 @@ JUGAR.addEventListener("click", () => {
         setCookies('nivel',nivelElegido,7);
         //desaparece el div del Menú
         PANTALLAMENU.style.display="none";
+        //aparece la pantalla juego
         PANTALLAJUGADAS.style.display="grid";
+        // document.body.setAttribute("style").background = ref;
+        //temporizador
+        stop=false;
+        temporizador();
     }else{
         alert("Elige un nivel");
     }

@@ -1,6 +1,8 @@
 const JUGAR= document.getElementById("jugar");
 const PANTALLAMENU= document.getElementById("menu");
 const PANTALLAJUGADAS= document.getElementById("juego");
+const PANTALLATIEMPO= document.getElementById("timer");
+const PANTALLARESULTADOPOPUP= document.getElementById("resultado");
 const NIVELES = [
     {
         nivel:'',
@@ -20,4 +22,7 @@ const NIVELES = [
     }
 ];
 const SELECT= document.getElementById("select");
+let cont_tiempo=30;
+let indicadorIntervalo;
 let nivelElegido;
+let stop=true;
