@@ -32,7 +32,70 @@
             </button>
         </div>
         <div id="juego">
-            <h1>Hola</h1>
+          <!-- PARTE DE LA DERECHA -->
+            <div class="tiempo">
+                <span id="tiempo">
+                    <p id="timer">30</p>
+                </span>
+            </div>
+            <div id="comodines">
+                <button class="mitad comodin">50/50</button>
+                <button class="mitad comodin">X-PELOS</button>
+            </div>
+            <div id="btnControles">
+              <div class="btn-group" role="group" >
+                <button type="button" class="btn btn-outline-light" >
+                  <i class="bi bi-play-fill"></i>
+                </button>
+                <button type="button" class="btn btn-outline-light" >
+                  <i class="bi bi-pause-fill"></i>
+                </button>
+                <button type="button" class="btn btn-outline-light" >
+                  <i class="bi bi-box-arrow-left"></i>
+                  Plantarse
+                </button>
+              </div>
+            </div>
+            
+            <!-- CENTRO DEL JUEGO -->
+            <div id="pantalla">
+              <div>
+                <p>¡BUENA SUERTE!</p>
+              </div>
+            </div>
+            <div id="marcador">
+              <div class="puntos">
+                <div class="blo1">
+                  <p class="conseguido">100 puntos</p>
+                  <p class="conseguido">200 puntos</p>
+                  <p>300 puntos</p>
+                  <p>400 puntos</p>
+                  <p>500 puntos</p>
+                </div>
+                <div class="blo2">
+                  <p>600 puntos</p>
+                  <p>700 puntos</p>
+                  <p>800 puntos</p>
+                  <p>900 puntos</p>
+                  <p>1000 puntos</p>
+                </div>
+                <div class="blo3">
+                  <p>1100 puntos</p>
+                  <p>1200 puntos</p>
+                  <p>1300 puntos</p>
+                  <p>1400 puntos</p>
+                  <p>1500 puntos</p>
+                </div>
+              </div>
+            </div>
+            <!-- ZONA DE PREGUNTAS -->
+            <div id="pregunta" class="cuadro">
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, animi eius? Facere cumque ex exercitationem vitae, recusandae magni placeat aspernatur accusamus dicta reprehenderit, aut eveniet impedit nihil labore tempore neque.</p>
+            </div>
+            <div id="respuestauno" class="cuadro">Respuesta 1</div>
+            <div id="respuestados" class="cuadro">Respuesta 2</div>
+            <div id="respuestatres" class="cuadro">Respuesta 3</div>
+            <div id="respuestacuatro" class="cuadro">Respuesta 4</div>            
         </div>
     </div>
     <!-- P A N T A L L A    M O D A L-->
@@ -73,119 +136,9 @@
     <script src="js/cookie.js"></script>
     <script src="js/variable.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/preg.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     
 </body>
 </html>
-
-<!-- <body>
-
-    <div class="ventana" id="ventana">
-        
-
-        <div class="llamar" id="llamar">
-            <i class="icon-cool2"></i>
-            <p>Creo que la respuesta correcta es:</p>
-            <p id="correcto">fhhg</p>
-        </div>
-
-        <div class="audiencia" id="audiencia">
-            <i class="icon-users"></i>
-            <p>La audiencia opina que:</p>
-            <span>A) <progress class="progreso" max="100" value="10" ></progress></span>
-            <span>B) <progress class="progreso" max="100" value="10" ></progress></span>
-            <span>C) <progress class="progreso" max="100" value="10" ></progress></span>
-            <span>D) <progress class="progreso" max="100" value="10" ></progress> </span>
-        </div>  
-
-        <div class="correcta" id="resp_correcta">
-            <i class="icon-checkmark"></i>
-            <p>¡RESPUESTA CORRECTA!</p>
-            <p id="pasaste"> </p>
-            
-        </div>
-
-        <i class="seguir" id="seguir">Continuar</i>
-    
-    </div>
-
-    <div class="ventana ventana2" id="ventana2">
-        <img id="img_vent" src="medios/img/1078718.png" alt="">
-        <p class="victoria" id="victoria">¡FELICIDADES HAZ GANADO!</p>
-        <P class="ganado" id="ganado">Te llevas a casa $ </P>
-        <i class="seguir" id="terminar">Terminar juego</i>
-    </div>
-
-
-    <div class="contenedor">
-
-        <div class="principal">
-            <img src="medios/img/logo.png" alt="logo" class="logo" id="logo">
-            <a href="#" class="btn jugar" id="jugar" title="Comenzar juego">Comenzar juego</a>
-
-            <div class="pregunta_zona" id="pregunta-zona">
-                <div class="tiempo">
-                    <span id="tiempo">
-                        <p id="timer">30</p>
-                    </span>
-                    <div class="comodin" id="comodin">
-                        <i class="icon-phone comodines" title="Llamar a un amigo"></i>
-                        <i class="icon-users comodines" title="Acudir a la audiencia" ></i>
-                        <i class="mitad comodines" title="50/50">50</i>
-                        
-
-                    </div>
-
-                    
-                </div>
-
-                <div class="cont_pregunta">
-                    
-                    <div class="preg_borde"><div class="preg" id="preg"><p>PREGUNTA</p></div></div>
-
-                    <div class="respuestas">
-                        <div class="resp_borde">
-                            <div class="resp"><span>A- </span><p class="respuesta"></p></div>
-                        </div>
-                        <div class="resp_borde">
-                            <div class="resp"><span>B- </span><p class="respuesta"></p></div>
-                        </div>
-                        <div class="resp_borde">
-                            <div class="resp"><span>C- </span><p class="respuesta"></p></div>
-                        </div>
-                        <div class="resp_borde">
-                            <div class="resp"><span>D- </span><p class="respuesta"></p></div>
-                        </div>
-                        
-                    </div>
-
-                    
-
-                </div>
-
-                <div class="rendirse btn " id="rendirse"> <i class="icon-exit"></i> Me rindo</div>
-            </div>
-
-
-
-
-
-        </div>
-    </div>
-
-    
-
-
-
-    </div>
-
-    <script src="js/variable.js"></script>
-    <script src="js/main.js"></script>
-    <script src="js/preg.js"></script>
-
-
-
-    </script>
-  
-  </body> -->

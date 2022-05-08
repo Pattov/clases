@@ -49,19 +49,8 @@ JUGAR.addEventListener("click", () => {
         setCookies('nivel',nivelElegido,7);
         //desaparece el div del Menú
         PANTALLAMENU.style.display="none";
-        PANTALLAJUGADAS.style.display="flex";
+        PANTALLAJUGADAS.style.display="grid";
     }else{
         alert("Elige un nivel");
     }
-    // setInterval(() => {
-    //     
-    //     bloque_juego.classList.add("comenzar");
-
-    //     //temporizador
-    //     stop=false;
-
-        
-    // }, 2000);
-        // temporizador();
-
-})
+});
