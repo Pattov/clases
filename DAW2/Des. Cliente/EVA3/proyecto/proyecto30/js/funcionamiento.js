@@ -1,3 +1,20 @@
+function cerrarVentana() {
+    //Borrar Cookie
+    deleteCookie('nivel');
+    location.reload();
+}
+/**
+ * Mensaje que se genera cuando se Gana
+ *
+ */
+
+ function ganar(razon,dinero_ganado){
+    //Detenemos el Intervalo que este haciendo
+    clearInterval(indicadorIntervalo);
+    const TITULO = 'PERDISTE';
+    const DINERO = 'Has acumulado '+dinero_ganado+' €';
+    ventanaModal(TITULO, razon, DINERO);
+}
 /**
  * temporizador regresivo
  *
@@ -19,7 +36,8 @@
                 cont_tiempo=0;
                 PANTALLATIEMPO.innerText = cont_tiempo;
                 PANTALLATIEMPO.style.color="tomato";
-                perder();
+                razonPerder = 'Se ha acabado tu tiempo, El Cronometro llego a 0';
+                perder(razonPerder,dinero_ganado);
             }    
         }
     }, 1000); 
@@ -27,60 +45,109 @@
 /**
  * Mensaje que se genera cuando se pierde
  *
+ * @param {*} razon - Indicamos la razón por la que perdemos
+ * @param {*} dinero_ganado - Acumulador de los premios conseguidos
  */
- function perder(){
+
+ function ganar(razon,dinero_ganado){
     //Detenemos el Intervalo que este haciendo
     clearInterval(indicadorIntervalo);
-    const TITULO ="";
-    const TEXTO ="¡Has perdido! Intentalo nuevamente";
-    victoria.style.display="inline-block";
-    document.getElementById("img_vent").setAttribute("src","medios/img/perder.jpg");
-    ganado.innerText=ganado.innerText + " " + dinero_ganado;
-    ventanaModal(TEXTO);
+    const TITULO = 'GANASTES';
+    const DINERO = 'Has acumulado '+dinero_ganado+' €';
+    ventanaModal(TITULO, razon, DINERO);
 }
+
 /**
- * Crearemos la siguiente Ventana Modal
- *  <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="instruccion">Historial</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              Hola
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
+ * Generamos la ventana modal con la solucion del juego
+ *  Ganaste - Has acumulado x€/  Perdiste - X razón
+ * con la siguiente estructura
+ *  <div class="contenedor-modal" visibility: visible;>
+ *      <div class="ventana-modal">
+ *          <h1>Perdiste</h1>
+ *          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore et itaque delectus quo, atque repellat? Doloremque eum repudiandae ea iure. Nesciunt vitae ipsam illum molestias, placeat consequatur corrupti. Ducimus, inventore!</p>
+ *          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="Cerrar()">Terminar Juego</button>
+ *      </div>
+ *  </div>
+ * @param {*} solucion Pasamos como parametro si se Gana/Pierde
+ * @param {*} texto Razón
+ * @param {*} dineroAcumulado dinero Ganado con el que acabamos la partida
  */
- function ventanaModal(texto){
-     // Creamos el primer DIV
-    const CDIVPRIMERO = document.createElement('div');
-    CDIVPRIMERO.classList.add('modal-dialog','modal-dialog-centered');
+ function ventanaModal(solucion, texto, dineroAcumulado){
+     // Creamos el primer DIV con el contenedor modal
+    const CCONTENEDORMODAL = document.createElement('div');
+    CCONTENEDORMODAL.classList.add('contenedor-modal');
     //Creamos el segundo DIV
-    const CDIVCONTENEDOR = document.createElement('div');
-    CDIVCONTENEDOR.classList.add('modal-content');
-    //Creamos el div Header
-    const CDIVHEADER = document.createElement('div');
-    CDIVHEADER.classList.add('modal-header');
-    //Creamos h5 y boton de cerrar
-    const CHEADERTITULO = document.createElement('h5');
-    CHEADERTITULO.classList.add('modal-title');
+    const CMODAL = document.createElement('div');
+    CMODAL.classList.add('ventana-modal');
+    const CTITULO = document.createElement('h1');
+    CTITULO.textContent = solucion;
+    const CTEXTO = document.createElement('p');
+    CTEXTO.textContent = texto;
+    const CDINERO = document.createElement('p');
+    CDINERO.textContent = dineroAcumulado;
+    const CBOTON = document.createElement('button');
+    CBOTON.setAttribute('type', 'button');
+    CBOTON.classList.add('btn','btn-secondary');
+    CBOTON.textContent = 'Terminar Juego';
+    CBOTON.addEventListener('click', cerrarVentana);
+    //Generamos la estructura HTML
+    CMODAL.appendChild(CTITULO);  
+    CMODAL.appendChild(CTEXTO);  
+    CMODAL.appendChild(CDINERO);  
+    CMODAL.appendChild(CBOTON);  
+    CCONTENEDORMODAL.appendChild(CMODAL);  
+    PANTALLARESULTADOPOPUP.appendChild(CCONTENEDORMODAL);
+}
 
-    const CHEADERBOTONCERRAR = document.createElement('button');
-    const CDIVBODY = document.createElement('div');
-    CDIVBODY.classList.add('modal-content');
-    const CDIVFOOTER = document.createElement('div');
-    CDIVFOOTER.classList.add('modal-content');
 
-    CDIVHEADER.appendChild(CHEADERTITULO);
-    CDIVHEADER.appendChild(CHEADERBOTONCERRAR);
-    CDIVCONTENEDOR.appendChild(CDIVHEADER);  
-    CDIVCONTENEDOR.appendChild(CDIVBODY);  
-    CDIVCONTENEDOR.appendChild(CDIVFOOTER);  
-    CDIVPRIMERO.appendChild(CDIVCONTENEDOR);  
-    PANTALLARESULTADOPOPUP.appendChild(CDIVPRIMERO);
+// Eventos Botones
+BTNSCOMODINES.forEach(boton => {
+    boton.addEventListener('click',(e) => {
+        e.target.setAttribute('disabled','');
+        //         if(amigo==false & e.target.classList.contains("icon-phone")){
+            //     amigo=true;
+            //     identificacion="llamar";
+            //     aparecer_ventana();
+            //     document.getElementById("correcto").innerText= preguntas[nivel].resp;
+            // } else if(publico==false & e.target.classList.contains("icon-users")){
+            //     publico=true;
+            //     identificacion="audiencia";
+            //     aparecer_ventana();
+            //     for (var i=0;i<4;i++) {
+        
+            //         if(respuestas[i].innerText==preguntas[nivel].resp) barra[i].value="70";
+                    
+            //     } 
+        
+            // }else if(mitad==false & e.target.classList.contains("mitad")){
+            //     mitad=true;
+            //     let aux1=0;
+            //     for (var i=0;i<4 & aux1<2;i++) {
+                    
+            //         if(respuestas[i].innerText!=preguntas[nivel].resp){
+            //             aux1++;
+            //             respuestas[i].innerText="";
+            //         } 
+                    
+            //     } 
+        
+                
+            // }  
+    })
+});
+BTNSCONTROLCONT.forEach(boton => {
+    boton.addEventListener('click',() => {
+        stop=false;
+    })
+});
+BTNSCONTROLPARAR.forEach(boton => {
+    boton.addEventListener('click',() => {
+        stop=true;
+    })
+});
 
+//Botones para rendirse o terminar el juego
+RENDIRSE.onclick=()=>{
+    razonPerder='Te Rendiste';
+    perder(razonPerder,dinero_ganado);
 }

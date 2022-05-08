@@ -53,7 +53,6 @@ JUGAR.addEventListener("click", () => {
         PANTALLAMENU.style.display="none";
         //aparece la pantalla juego
         PANTALLAJUGADAS.style.display="grid";
-        // document.body.setAttribute("style").background = ref;
         //temporizador
         stop=false;
         temporizador();
