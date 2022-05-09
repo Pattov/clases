@@ -56,6 +56,7 @@ JUGAR.addEventListener("click", () => {
         //temporizador
         stop=false;
         temporizador();
+        generarJugada(nivelElegido);
     }else{
         alert("Elige un nivel");
     }

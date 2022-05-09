@@ -1,3 +1,39 @@
+const BDPREGUNTAS = [
+    {
+        nivel:'facil',
+        pregunta: '&iquest;En qu&eacute; pa&iacute;s de Europa se encuentra el misterioso Lago de Ness&#63;',
+        respuestas: ['Finlandia ','Escocia ','Austria','Dinamarca'],
+        contestacion:[' Incorrecto.',' Correcto!',' Incorrecto.',' Incorrecto.'],
+        correcta: 1
+    },{
+        nivel:'medio',
+        pregunta: '&iquest;En qu&eacute; pa&iacute;s se encuentra el r&iacute;o Arkansas?',
+        respuestas: ['Francia ','Paraguay ','Finlandia ','Estados Unidos '],
+        contestacion:[' Incorrecto.',' Incorrecto.',' Incorrecto.',' Correcto!'],
+        correcta: 3
+    },{
+        nivel:'facil',
+        pregunta: '&iquest;Cual es la profesi&oacute;n de Mario Bross?',
+        respuestas: ['Ladr&oacute;n de bancos ','Bombero ','Fontanero ','Ladr&oacute;n de champi&ntilde;ones '],
+        contestacion:[' Incorrecto.',' Incorrecto.',' Correcto!',' Incorrecto.'],
+        correcta: 2
+    },{
+        nivel:'facil',
+        pregunta: 'En la serie de los Simpsons &iquest;cuantos hijos tienen Homer y Marge?',
+        respuestas: ['Ninguno ','5 ','1 ','3 '],
+        contestacion:[' Incorrecto.',' Incorrecto.',' Incorrecto.',' Correcto!'],
+        correcta: 3
+    }
+    // ,{
+    //     nivel:'facil', 
+    //     nivel:'medio', 
+    //     nivel:'dificil',
+    //     pregunta: '&iquest;?',
+    //     respuestas: ['Respuesta1 ','Respuesta2 ','Respuesta3 ','Respuesta4 '],
+    //     contestacion:[' Incorrecto.',' Incorrecto.',' Incorrecto.',' Incorrecto.'],
+    //     correcta: 
+    // }
+]
 const BTNSCOMODINES= document.querySelectorAll(".comodin");
 const BTNSCONTROLPARAR = document.querySelectorAll('.parar');
 const BTNSCONTROLCONT = document.querySelectorAll('.continuar');

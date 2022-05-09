@@ -5,13 +5,14 @@ function cerrarVentana() {
 }
 /**
  * Mensaje que se genera cuando se Gana
- *
+ * @param {*} razon - Indicamos la razón por la que perdemos
+ * @param {*} dinero_ganado - Acumulador de los premios conseguidos
  */
 
  function ganar(razon,dinero_ganado){
     //Detenemos el Intervalo que este haciendo
     clearInterval(indicadorIntervalo);
-    const TITULO = 'PERDISTE';
+    const TITULO = 'GANASTES';
     const DINERO = 'Has acumulado '+dinero_ganado+' €';
     ventanaModal(TITULO, razon, DINERO);
 }
@@ -49,10 +50,10 @@ function cerrarVentana() {
  * @param {*} dinero_ganado - Acumulador de los premios conseguidos
  */
 
- function ganar(razon,dinero_ganado){
+ function perder(razon,dinero_ganado){
     //Detenemos el Intervalo que este haciendo
     clearInterval(indicadorIntervalo);
-    const TITULO = 'GANASTES';
+    const TITULO = 'PERDISTE';
     const DINERO = 'Has acumulado '+dinero_ganado+' €';
     ventanaModal(TITULO, razon, DINERO);
 }
