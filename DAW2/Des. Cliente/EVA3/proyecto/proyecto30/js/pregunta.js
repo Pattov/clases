@@ -4,6 +4,7 @@ function generarJugada(nivel) {
     const PREGUNTASPORNIVEL = BDPREGUNTAS.filter((pregunta)=>{
         return pregunta.nivel===nivel;
     });
+    console.log(PREGUNTASPORNIVEL);
     PREGUNTASPORNIVEL.forEach(pregunta => {
         pantallaPregunta.innerHTML = pregunta.pregunta;
         pantallaRespuestaA.setAttribute('respuesta',pregunta.contestacion[0]);
@@ -15,35 +16,40 @@ function generarJugada(nivel) {
         pantallaRespuestaD.setAttribute('respuesta',pregunta.contestacion[3]);
         pantallaRespuestaD.innerHTML = pregunta.respuestas[3];
     });
-    PREGUNTASPORNIVEL.pop();
 }
 
-function comprobarRespuesta(solucion) {
+function comprobarRespuesta(solucion, numeroRespuestas) {
     if(solucion=='Incorrecto'){
+        dinero_ganado = 0;
         razonPerder = 'Has fallado la pregunta';
         perder(razonPerder,dinero_ganado);
     }else{
         PANTALLACOMENTARIOS.textContent = '¡Correcto!';
+        dinero_ganado = seleccionarPremio(numeroRespuestas);
+        if(numeroRespuestas== 14){
+            ganar('Acertaste todas las preguntas',dinero_ganado);
+        }
         //Siguiente nivel sustituir por
         // PANTALLACOMENTARIOS.textContent = 'Pregunta Nº';
         // PANTALLACOMENTARIOS.textContent = 'Pregunta Nº';
-        respuestaCorrecta = true;
     }
-    return respuestaCorrecta;
 }
 function respuestaClick(e) {
-    
-    if(numrespuestas<1){
         correcionMarcada = e.target.getAttribute('respuesta');
-        dinero_ganado = pintarPremio(numrespuestas);
         numrespuestas++;
-        let solucion = comprobarRespuesta(correcionMarcada);
-        if(solucion === true && numrespuestas== 15){
-            ganar('Acertaste todas las preguntas',dinero_ganado);
-        }
-    }else{
-        alert("Ya Elegiste una respuesta")
-    }
+        comprobarRespuesta(correcionMarcada, numrespuestas);
+        
+    // if(numrespuestas<1){
+    //     correcionMarcada = e.target.getAttribute('respuesta');
+    //     numrespuestas++;
+    //     let solucion = comprobarRespuesta(correcionMarcada);
+    //     if(solucion === true && numrespuestas== 15){
+    //         dinero_ganado = pintarPremio(numrespuestas);
+    //         ganar('Acertaste todas las preguntas',dinero_ganado);
+    //     }
+    // }else{
+    //     alert("Ya Elegiste una respuesta")
+    // }
 }
 //cojo el Evento donde hago click
 NUMMARCADO.forEach((botonRespuesta)=>{
@@ -55,6 +61,6 @@ let pantallaRespuestaA = document.getElementById("respuestauno");
 let pantallaRespuestaB = document.getElementById("respuestados");
 let pantallaRespuestaC = document.getElementById("respuestatres");
 let pantallaRespuestaD = document.getElementById("respuestacuatro");
-let numrespuestas = 0;
+let numrespuestas = -1;
 let nivelPregunta = 0;
 let correcionMarcada;

@@ -3,7 +3,7 @@ const BDPREGUNTAS = [
         nivel:'facil',
         pregunta: '&iquest; En qu&eacute; pa&iacute;s de Europa se encuentra el misterioso Lago de Ness&#63;',
         respuestas: ['Finlandia ','Escocia ','Austria','Dinamarca'],
-        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto'],
     },{
         nivel:'medio',
         pregunta: '&iquest; En qu&eacute; pa&iacute;s se encuentra el r&iacute;o Arkansas?',

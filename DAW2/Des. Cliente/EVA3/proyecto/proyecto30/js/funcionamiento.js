@@ -153,25 +153,18 @@ RENDIRSE.onclick=()=>{
     razonPerder='Te Rendiste';
     perder(razonPerder,dinero_ganado);
 }
-function pintarPremio(numero) {
+function seleccionarPremio(numero) {
     let valor;
-    //tenemos tres bloques donde estan los 5 primeros hijos...
-    if(numero<5){
         //pinta en pantalla el p seleccionado
-        PANTALLAPUNTOS.children[0].children[numero].setAttribute('class','conseguido')
+        PANTALLAPUNTOS.children[numero].setAttribute('class','conseguido')
         //cojemos el valor que tiene el valor pintado
         valor = PANTALLAPUNTOS.children[0].children[numero].textContent;
-    }else if(numero<10){
-        //le quitamos los 5 primeros numeros para saber que posicion tengo que pintar
-        //El numero es 7, 7-5=2 sabemos el que tenemos que pintar es el segundo hijo
-        numero-=5;
-        PANTALLAPUNTOS.children[1].children[numero].setAttribute('class','conseguido')
+
+        PANTALLAPUNTOS.children[numero].setAttribute('class','conseguido')
         valor = PANTALLAPUNTOS.children[1].children[numero].textContent;
-    }else{
-        numero-=10;
-        PANTALLAPUNTOS.children[2].children[numero].setAttribute('class','conseguido')
+
+        PANTALLAPUNTOS.children[numero].setAttribute('class','conseguido')
         valor = PANTALLAPUNTOS.children[2].children[numero].textContent;
-    }
 
     //devuelvo el valor quitando el signo €
     return valor.substring(0, valor.indexOf('€'));

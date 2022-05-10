@@ -1,9 +1,10 @@
 body{
     width: 100vw;
     height: 100vh;
-    background: linear-gradient(to left, #f1f2b5, #135058);
-    /* background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)), 
-                    url("../img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg"); */
+    /* background-color: #10a37e; */
+    /* background: linear-gradient(to left, #f1f2b5, #135058); */
+    background: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.8)), 
+    url("../img/rene-bohmer-YeUVDKZWSZ4-unsplash.jpg");
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
@@ -42,12 +43,12 @@ option{
     padding: 1em 1em 0 0;
     width: 100vw;
     height: 85vh;
-    grid-template-columns: repeat(11,1fr);
+    grid-template-columns: repeat(10, 1fr);
     grid-template-rows: repeat(7, 1fr);
     gap: 10px;
 }
 .tiempo{
-    grid-area: 1 / 1 / 6 / 4;
+    grid-area: 1 / 1 / 6 / 3;
     align-self: center;
 }
 #tiempo{
@@ -57,13 +58,16 @@ option{
     background-position: center;
     display: flex;
     justify-content: center;
-    font-size: 12vw;
+    font-size: 9vw;
     font-weight: bold;
     color: #FFC000;
     width: 100%;
 }
+#timer{
+    padding: 1em;
+}
 #comodines{
-    grid-area: 6 / 1 / 7 / 4;
+    grid-area: 6 / 1 / 7 / 3;
     justify-self: center;
     align-self: center;
 }
@@ -73,14 +77,14 @@ option{
 }
 
 #btnControles{
-    grid-area: 7 / 1 / 8 / 4;
+    grid-area: 7 / 1 / 8 / 3;
     justify-self: center;
     align-self: center;
 }
 #pantalla{
-    grid-area: 1 / 4 / 4 / 7;
-    background-color: #222674;
-    border:2px solid whitesmoke;
+    grid-area: 1 / 3/ 3 / 9;
+    background-color: #9298bb;
+    border:5px solid #1B3B74;
     border-radius: 23px;
 }
 #pantalla div{
@@ -94,16 +98,17 @@ option{
     color: goldenrod;
 }
 #marcador{
-    grid-area: 1 / 7 / 4 / 12;
-    background-color: #222674;
-    border:2px solid whitesmoke;
+    grid-area: 1 / 9 / 8 / 11;
+    background-color: #9298bb;
+    border:5px solid #1B3B74;
     border-radius: 23px;
 }
 #marcador #puntos{
     height: 100%;
     display: flex;
-    justify-content: space-evenly;
-    align-items: flex-end;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
     color: aliceblue;
     font-size: larger;
 }
@@ -111,34 +116,37 @@ option{
     color: gold;
 }
 #pregunta { 
-    grid-area: 4 / 4 / 6 / 12; 
+    grid-area: 3 / 3 / 6 / 9;
 }
 #respuestauno { 
-    grid-area: 6 / 4 / 7 / 8; 
+    grid-area: 6 / 3 / 7 / 6; 
 }
 #respuestados { 
-    grid-area: 6 / 8 / 7 / 12; 
+    grid-area: 7 / 3 / 8 / 6;
 }
 #respuestatres { 
-    grid-area: 7 / 4 / 8 / 8; 
+    grid-area: 6 / 6 / 7 / 9;
 }
 #respuestacuatro { 
-    grid-area: 7 / 8 / 8 / 12; 
+    grid-area: 7 / 6 / 8 / 9; 
 }
 
 .cuadro{
     display: flex;
     align-items: center;
     padding-left: 30px;
-    color: black;
-    background-color: rgba(240, 248, 255, 0.368);
-    border: 10px solid #B88846;
-    border-image: linear-gradient(45deg, aliceblue, #222674)1;
+    color: whitesmoke;
+    background-color: #1B3B74;
+    border: 10px solid #9298bb;
+    border-radius: 10px;
+    
 }
 #pregunta{
     font-size: x-large;
+    font-size: 2em;
 }
 .respuesta{
+    font-size: 1.5em;
     cursor: pointer;
 }
 .contenedor-modal{
