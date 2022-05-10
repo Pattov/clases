@@ -1,28 +1,24 @@
 const BDPREGUNTAS = [
     {
         nivel:'facil',
-        pregunta: '&iquest;En qu&eacute; pa&iacute;s de Europa se encuentra el misterioso Lago de Ness&#63;',
+        pregunta: '&iquest; En qu&eacute; pa&iacute;s de Europa se encuentra el misterioso Lago de Ness&#63;',
         respuestas: ['Finlandia ','Escocia ','Austria','Dinamarca'],
-        contestacion:[' Incorrecto.',' Correcto!',' Incorrecto.',' Incorrecto.'],
-        correcta: 1
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
     },{
         nivel:'medio',
-        pregunta: '&iquest;En qu&eacute; pa&iacute;s se encuentra el r&iacute;o Arkansas?',
+        pregunta: '&iquest; En qu&eacute; pa&iacute;s se encuentra el r&iacute;o Arkansas?',
         respuestas: ['Francia ','Paraguay ','Finlandia ','Estados Unidos '],
-        contestacion:[' Incorrecto.',' Incorrecto.',' Incorrecto.',' Correcto!'],
-        correcta: 3
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
     },{
         nivel:'facil',
-        pregunta: '&iquest;Cual es la profesi&oacute;n de Mario Bross?',
+        pregunta: '&iquest; Cual es la profesi&oacute;n de Mario Bross?',
         respuestas: ['Ladr&oacute;n de bancos ','Bombero ','Fontanero ','Ladr&oacute;n de champi&ntilde;ones '],
-        contestacion:[' Incorrecto.',' Incorrecto.',' Correcto!',' Incorrecto.'],
-        correcta: 2
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
     },{
         nivel:'facil',
         pregunta: 'En la serie de los Simpsons &iquest;cuantos hijos tienen Homer y Marge?',
         respuestas: ['Ninguno ','5 ','1 ','3 '],
-        contestacion:[' Incorrecto.',' Incorrecto.',' Incorrecto.',' Correcto!'],
-        correcta: 3
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
     }
     // ,{
     //     nivel:'facil', 
@@ -30,7 +26,7 @@ const BDPREGUNTAS = [
     //     nivel:'dificil',
     //     pregunta: '&iquest;?',
     //     respuestas: ['Respuesta1 ','Respuesta2 ','Respuesta3 ','Respuesta4 '],
-    //     contestacion:[' Incorrecto.',' Incorrecto.',' Incorrecto.',' Incorrecto.'],
+    //     contestacion:['Incorrecto','Incorrecto','Incorrecto','Incorrecto'],
     //     correcta: 
     // }
 ]
@@ -56,9 +52,11 @@ const NIVELES = [
         descripcion: 'Difícil'
     }
 ];
+const PANTALLACOMENTARIOS= document.getElementById("pantallaMensaje");
 const PANTALLAJUGADAS= document.getElementById("juego");
 const PANTALLAMENU= document.getElementById("menu");
 const PANTALLATIEMPO= document.getElementById("timer");
+const PANTALLAPUNTOS= document.getElementById("puntos");
 const PANTALLARESULTADOPOPUP= document.getElementById("resultado");
 const RENDIRSE= document.getElementById("rendirse");
 const SELECT= document.getElementById("select");
@@ -70,3 +68,5 @@ let indicadorIntervalo;
 let nivelElegido;
 let razonPerder;
 let stop=true;
+const NUMMARCADO = document.querySelectorAll('.respuesta');
+let respuestaCorrecta = false;

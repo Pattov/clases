@@ -99,11 +99,11 @@ option{
     border:2px solid whitesmoke;
     border-radius: 23px;
 }
-#marcador .puntos{
+#marcador #puntos{
     height: 100%;
     display: flex;
     justify-content: space-evenly;
-    align-items: center;
+    align-items: flex-end;
     color: aliceblue;
     font-size: larger;
 }
@@ -137,6 +137,9 @@ option{
 }
 #pregunta{
     font-size: x-large;
+}
+.respuesta{
+    cursor: pointer;
 }
 .contenedor-modal{
     display:flex;
