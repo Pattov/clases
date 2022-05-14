@@ -10,11 +10,6 @@ function comprobarRespuesta(solucion) {
     if(solucion=='Incorrecto'){
         //Has perdido
         perder('Has fallado la pregunta',0);
-        //almacenas en Local Storage por si es el maximo nivel que has alcanzado
-        let hoy = new Date();
-        let razon = `Fallaste la pregunta ${num_pregunta+1}`;
-        //cargas registro en el localStorage con el numero de la pregunta, el premio obtenido, el nivel, y la fecha
-        cargarRegistros(num_pregunta, razon, nivelElegido, hoy);
     }else{
         //imprimimos que esta correcto
         PANTALLACOMENTARIOS.textContent = '¡Correcto!';
@@ -24,18 +19,11 @@ function comprobarRespuesta(solucion) {
         if(num_pregunta== 14){
             //Has Ganado y acabamos el programa
             ganar('Acertaste todas las preguntas', dinero_ganado);
-            PANTALLAJUGADAS.style.display = 'none';
-            //almacenas
-            let hoy = new Date();
-            let razon = 'Contestastes todas las preguntas'
-            num_pregunta++;
-            //cargas registro en el localStorage con el numero de la pregunta, el premio obtenido, el nivel, y la fecha
-            cargarRegistros(num_pregunta, razon, nivelElegido, hoy);
         }
         //vamos a por la siguiente pregunta
             //ponermos a 30 el temporizador
-            cont_tiempo=31;
             clearInterval(indicadorIntervalo);
+            cont_tiempo=31;
             stop=false;
             //imprimimos la siguiente pregunta
             num_pregunta++;
@@ -49,6 +37,7 @@ function comprobarRespuesta(solucion) {
  */
  function generarJugada(nivel) {
     PANTALLACOMENTARIOS.textContent = '¡Buena Suerte!';
+
     //actualizamos valor en la variable nivelElegido
     nivelElegido = nivel;
     //Generamos las 15 preguntas de la jugada
@@ -56,16 +45,12 @@ function comprobarRespuesta(solucion) {
     //Iniciamos la Primera pregunta con el index a 0
     siguientePregunta(num_pregunta);
 }
-
-/**
- * Genera preguntas aleatorias según nivel
- */
 function generarPreguntas() {
     //seleccionamos todas las preguntas del nivel elegido
     preguntasPorNivel = BDPREGUNTAS.filter((pregunta)=>{
         return pregunta.nivel===nivelElegido;
     });
-    //Barajo las preguntas
+    //Barajo las 15 primeras
     preguntasPorNivel = shuffle(preguntasPorNivel);
 }
 /**
@@ -76,11 +61,6 @@ function generarPreguntas() {
 function respuestaClick(e) {
     //guardamos en la variable el valor de la respuesta donde hacemos click 
     correcionMarcada = e.target.getAttribute('respuesta');
-    if(correcionMarcada == 'Incorrecto'){
-        e.target.style.background = 'red';
-    }else{
-        e.target.style.background = 'green';
-    }
     //comprobamos la respuesta
     comprobarRespuesta(correcionMarcada);
 }
@@ -91,21 +71,19 @@ function respuestaClick(e) {
  * @param {*} numeroPregunta el index con la pregunta que quiero imprimir
  */
 function siguientePregunta(numeroPregunta) {
-    //reinicias Temporizador 
-    temporizador();
     //Hacemos visibles todas las respuestas (Solo son necesarios tres porque son a los que afecta el comodin)
     pantallaRespuestaA.style.visibility = "visible";
     pantallaRespuestaB.style.visibility = "visible";
     pantallaRespuestaD.style.visibility = "visible";
-    //color
+    //imprimimos en pantalla la pregunta
     setTimeout(() =>{
-        pantallaRespuestaA.style.background = "#2F5597";
-        pantallaRespuestaB.style.background = "#2F5597";
-        pantallaRespuestaC.style.background = "#2F5597";
-        pantallaRespuestaD.style.background = "#2F5597";
-    }, 100);
-
+    PANTALLACOMENTARIOS.textContent = 'Pregunta Nº '+(numeroPregunta+1)
+    }, 1500);
+    //reinicias Temporizador
+    
+    temporizador();
     //metemos en un nuevo array las preguntas encontradas con el nivel elegido
+    
     //imprimimos la pregunta del array
     pantallaPregunta.innerHTML = preguntasPorNivel[numeroPregunta].pregunta;
     //barajamos el index de las respuestas para que no aparezcan en el mismo orden
@@ -120,13 +98,11 @@ function siguientePregunta(numeroPregunta) {
     pantallaRespuestaC.innerHTML = preguntasPorNivel[numeroPregunta].respuestas[respuestas[2]];
     pantallaRespuestaD.setAttribute('respuesta',preguntasPorNivel[numeroPregunta].contestacion[respuestas[3]]);
     pantallaRespuestaD.innerHTML = preguntasPorNivel[numeroPregunta].respuestas[respuestas[3]];
-        //imprimimos en pantalla la pregunta
-        setTimeout(() =>{
-            PANTALLACOMENTARIOS.textContent = 'Pregunta Nº '+(numeroPregunta+1)
-        }, 500);
+    
 }
 //cojo el Evento donde hago click
 NUMMARCADO.forEach((botonRespuesta)=>{
     botonRespuesta.addEventListener('click',respuestaClick);
 })
 
+let preguntasPorNivel;

@@ -204,9 +204,7 @@ const BDPREGUNTAS = [
 const BTNSCOMODINES= document.querySelectorAll(".comodin");
 const BTNSCONTROLPARAR = document.querySelectorAll('.parar');
 const BTNSCONTROLCONT = document.querySelectorAll('.continuar');
-const LOCALSTORAGE=window.localStorage;
 const JUGAR= document.getElementById("jugar");
-const MODALREGISTROS= document.getElementById("registros");
 const NIVELES = [
     {
         nivel:'',
@@ -237,9 +235,6 @@ const NUMMARCADO = document.querySelectorAll('.respuesta');
 let comodinMitad= false;
 let comodinSiguiente= false;
 let cont_tiempo=30;
-let contadorNumeroRegistrosFacil = 0;
-let contadorNumeroRegistrosmedio = 0;
-let contadorNumeroRegistrosdificil = 0;
 let correcionMarcada;
 let dinero_ganado=0;
 let incorrecto = 2;
@@ -253,7 +248,8 @@ let pantallaRespuestaB = document.getElementById("respuestados");
 let pantallaRespuestaC = document.getElementById("respuestatres");
 let pantallaRespuestaD = document.getElementById("respuestacuatro");
 let razonPerder;
-
-
 let respuestas = [0,1,2,3];
 let stop=true;
+
+    
+

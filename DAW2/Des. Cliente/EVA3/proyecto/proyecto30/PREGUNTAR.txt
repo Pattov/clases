@@ -1,3 +1,0 @@
-FICHERO CON NUESTRO NOMBRE Y EL NOMBRE DEL JUEGO
-Tiene que tener un ¿marcador? con la puntuación del jugador.
-En el Word - Portada con nombre del alumno y ¿?fecha? FECHA ENTREGA???.

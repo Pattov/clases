@@ -12,6 +12,7 @@ function cerrarVentana() {
  * @param {*} razon - Indicamos la razón por la que perdemos
  * @param {*} dinero_ganado - Acumulador de los premios conseguidos
  */
+
  function ganar(razon,dinero_ganado){
     //Detenemos el Intervalo que este haciendo
     clearInterval(indicadorIntervalo);
@@ -20,26 +21,6 @@ function cerrarVentana() {
     ventanaModal(TITULO, razon, DINERO);
 }
 /**
- * Funcion auxiliar copiada de internet
- * @author David Brainer
- * @link https://stackoverflow.com/questions/8837454/sort-array-of-objects-by-single-key-with-date-value 
- * Funcion Para Ordenar
- *
- * @param {*} array array para Ordenar
- * @param {*} key propiedad que vamos a comparar
- * @return {*} el array ordenado
- */
- function sortByKey(array, key) {
-    return array.sort(function(a, b) {
-        var x = a[key]; var y = b[key];
-        return ((x > y) ? -1 : ((x < y) ? 1 : 0));
-    });
-}
-/**
- * Funcion auxiliar copiada de internet
- * @author Ilya Kantor
- * @link https://es.javascript.info/task/shuffle#:~:text=Escribe%20la%20función%20shuffle 
- * 
  * Reordena de forma aleatoria los elementos del array
  *
  * @param {*} array que quiero barajar
@@ -48,8 +29,6 @@ function cerrarVentana() {
 function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
 }
-
-
 /**
  * temporizador regresivo
  *
@@ -213,28 +192,15 @@ BTNSCONTROLPARAR.forEach(boton => {
 
 //Botones para rendirse o terminar el juego
 RENDIRSE.onclick=()=>{
-    razonPerder='Finalizaste el Juego';
+    razonPerder='Te Rendiste';
     perder(razonPerder,0);
-    //almacenas en Local Storage por si es el maximo nivel que has alcanzado
-    let hoy = new Date();
-    //cargas registro en el localStorage con el numero de la pregunta, el premio obtenido, el nivel, y la fecha
-    cargarRegistros(num_pregunta, razonPerder, nivelElegido, hoy);
 }
 //Boton evento teclado
-window.addEventListener("keydown", (evento) => {
-    /* El código "Space" representa la pulsación de la barra espaciadora */
-    if (evento.code == "Space") {
-        stop = true;
+window.addEventListener("keydown", (event)=>{
+    if(event.key==32&&stop==false){
+        stop=true
     }
-    if(evento.key == 'k'|| evento.key == 'K'){
-        stop = false;
+    if(event.key==32&&stop==true){
+        stop=false
     }
-    if(evento.key == 'f'|| evento.key == 'F'){
-        razonPerder='Te Rendiste';
-        perder(razonPerder,0);
-        //almacenas en Local Storage por si es el maximo nivel que has alcanzado
-        let hoy = new Date();
-        //cargas registro en el localStorage con el numero de la pregunta, el premio obtenido, el nivel, y la fecha
-        cargarRegistros(num_pregunta, razonPerder, nivelElegido, hoy);
-    }
-});
+},false);

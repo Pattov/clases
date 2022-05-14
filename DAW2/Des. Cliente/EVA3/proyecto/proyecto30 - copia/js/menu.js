@@ -43,7 +43,6 @@ function selectElegido(e) {
 
 nivelElegido = getCookie('nivel');
 generarSeleccionarNivel();
-generarModalRegistros();
 
 JUGAR.addEventListener("click", () => {
     //comprubamos si el nivel esta elegido

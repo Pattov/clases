@@ -2,7 +2,7 @@
     --amarillo: #FFD34D;
     --amarilloclaro: #FFE699; 
     --azul: #2F5597;
-    --azulOscuro: #1A3667;
+    --rojo: #1A3667;
     --blanco: whitesmoke;
 }
 
@@ -94,7 +94,7 @@ option{
     justify-self: center;
 }
 #pantalla div{
-    background-color: var(--azulOscuro);
+    background-color: var(--rojo);
     border: 2px solid #000;
     border-radius: 10px;
     display: flex;
@@ -173,11 +173,6 @@ option{
     font-size: 1.5em;
     cursor: pointer;
 }
-.respuesta:hover{
-    font-size: 1.5em;
-    cursor: pointer;
-    border: 2px solid var(--blanco);
-}
 .contenedor-modal{
     display:flex;
     background-color: rgba(0, 0, 0, 0.3);
@@ -199,17 +194,6 @@ option{
     text-align: center;
 }
 
-/* CSS */
-.btnAtajo {
-    background-color: #E0E3E6;
-    border: 1px solid #272829;
-    border-radius: .5rem;
-    color: #272829;
-    padding: .45rem 1rem;
-    margin-bottom: 12px;
-    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
-  }
-  
 
 
 

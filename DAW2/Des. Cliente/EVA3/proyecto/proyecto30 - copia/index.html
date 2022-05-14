@@ -42,7 +42,7 @@
                 <button class="btn btn-outline-light comodin mitad">
                   50/50</button>
                 <button class="btn btn-outline-light comodin siguiente">
-                  Next</button>
+                  Paso Pregunta</button>
             </div>
             <div id="btnControles">
               <div class="btn-group" role="group" >
@@ -54,7 +54,7 @@
                 </button>
                 <button type="button" id="rendirse" class="btn btn-outline-light" >
                   <i class="bi bi-box-arrow-left"></i>
-                  Finalizar
+                  Plantarse
                 </button>
               </div>
             </div>
@@ -107,35 +107,11 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="instruccion">Instrucciones</h5>
+              <h5 class="modal-title" id="instruccion">Estas son las Instrucciones</h5>
               <button type="button" class="btn-close continuar" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <div id="atajos">
-                <h6>Atajos de Teclado para el Cronómetro</h6>
-                <div>
-                  <button class="btnAtajo" role="button">Space</button> <i class="bi bi-arrow-right-short"></i> Pausar
-                  <i class="bi bi-dot"></i>
-                  <button class="btnAtajo" role="button">K</button> <i class="bi bi-arrow-right-short"></i> Iniciar
-                  <i class="bi bi-dot"></i>
-                  <button class="btnAtajo" role="button">F</button> <i class="bi bi-arrow-right-short"></i> Finalizar
-                </div>
-              </div>
-                <h6>Paso a Paso</h6>
-                <ol>
-                  <li>Elegir Nivel</li>
-                  <li>Leer la pregunta propuesta y las 4 posibles respuestas</li>
-                  <li>Eligir la respuesta correcta</li>
-                </ol>
-                <h6>Objetivo</h6>
-                <ul>
-                  <li>Responder a las 15 preguntas correctamente del tirón</li>
-                </ul>
-                <h6>Comodines</h6>
-                <ul>
-                  <li><strong>50/50</strong> - Descarta 2 preguntas Incorrectas</li>
-                  <li><strong>Next</strong> - Valida la pregunta y a por la siguiente pregunta</li>
-                </ul>  
+              Hola
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary continuar" data-bs-dismiss="modal">Close</button>
@@ -145,13 +121,14 @@
       </div>
       <!-- Historial -->
     <div class="modal fade" id="historial" tabindex="-1" aria-labelledby="Historial" aria-hidden="true">
-        <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="Historial">LOGROS</h5>
+              <h5 class="modal-title" id="Historial">Historial</h5>
               <button type="button" class="btn-close continuar" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" id="registros">
+            <div class="modal-body">
+              Hola
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary continuar" data-bs-dismiss="modal">Close</button>
@@ -163,10 +140,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     <script src="js/cookie.js"></script>
     <script src="js/variable.js"></script>
-    <script src="js/localStorage.js"></script>
     <script src="js/funcionamiento.js"></script>  
     <script src="js/menu.js"></script>
     <script src="js/pregunta.js"></script>
 </body>
 </html>
-
