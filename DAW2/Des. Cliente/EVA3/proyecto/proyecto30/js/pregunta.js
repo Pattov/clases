@@ -1,5 +1,3 @@
-
-
 /**
  * Comprobamos si la respuesta es correcta o no
  *
@@ -65,6 +63,7 @@ function generarPreguntas() {
     preguntasPorNivel = BDPREGUNTAS.filter((pregunta)=>{
         return pregunta.nivel===nivelElegido;
     });
+    console.log(preguntasPorNivel);
     //Barajo las preguntas
     preguntasPorNivel = shuffle(preguntasPorNivel);
 }

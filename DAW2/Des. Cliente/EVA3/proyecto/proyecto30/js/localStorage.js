@@ -1,15 +1,15 @@
 
 /**
+ * Funcion que sirve para Guardar el LocalStorage
  *
- *
- * @param {*} nombre
- * @return {*} 
+ * @param {*} key string como se guarda la variable 
+ * @return {*} el LocalStorage
  */
-function cargarLocalStorage (nombre) {
+function cargarLocalStorage (key) {
     // ¿Existe nombre previo guardado en LocalStorage?
-    if (LOCALSTORAGE.getItem(nombre) !== null) {
+    if (LOCALSTORAGE.getItem(key) !== null) {
         // Carga la información
-        return JSON.parse(LOCALSTORAGE.getItem(nombre));
+        return JSON.parse(LOCALSTORAGE.getItem(key));
     }
 }
 /**
@@ -23,7 +23,64 @@ function cargarLocalStorage (nombre) {
  * @param {*} nivel nivel seleccionado
  * @param {*} fechayhora fecha y hora en  la que ha ocurrido
  */
+ function cargarRegistros(numeroPregunta, razon, nivel, fechayhora) {
+    //A C T U A L I Z O   L A S    V A R I A B L E S  G L O B A L E S   
+    registroantiguofacil = cargarLocalStorage('facil');
+    registroantiguomedio = cargarLocalStorage('medio');
+    registroantiguodificil = cargarLocalStorage('dificil');
+    //si hay registros
+    if(registroantiguofacil!=null&&nivel=='facil'){
+        //incluimos los datos actualizados
+        contadorNumeroRegistros = registroantiguofacil.length;
+        registros = registroantiguofacil;      
+    }
+    if(registroantiguomedio!=null&&nivel=='medio'){
+        contadorNumeroRegistros = registroantiguomedio.length;
+        registros = registroantiguomedio;
+    }
+    if(registroantiguodificil!=null&&nivel=='dificil'){
+        contadorNumeroRegistros = registroantiguodificil.length;
+        registros = registroantiguodificil;
+    }
 
+    // P R E P A R A M O S   L A    V A R I A B L E  P A S A D A S   P O R   P A R A M E T R O
+    // obtenemos la fecha actual con el formato d-m-Y
+    let fecha = fechayhora.getDate() + '-' + ( fechayhora.getMonth() + 1 ) + '-' + fechayhora.getFullYear();
+    //obtenemos la hora actual
+    var hora = fechayhora.getHours() + ':' + fechayhora.getMinutes() + ':' + fechayhora.getSeconds();
+
+
+    //C R E A M O S     E L     O B J E T O
+    // {
+    //     pregunta: 12,
+    //     razon:"Abandonaste",
+    //     dia: 13-05-2022,
+    //     hora: 12+":"+23
+    // }
+
+    let registro = {
+        pregunta: numeroPregunta,
+        observaciones: razon,
+        fecha: fecha,
+        hora: hora
+    }
+
+    //nivel
+    if(contadorNumeroRegistros<3){
+        //si hay menos de tres les añadimos directamente
+        //lo añadimos
+        registros.push(registro);
+    }else{
+        //si el registro esta completo
+        registros.push(registro);
+        //los ordenamos - teniendo en cuenta la pregunta, la fecha y la hora
+        registros = sortByKey(sortByKey(sortByKey(registros,'hora'),'fecha'),'pregunta');
+        //cojemos solo los tres primeros
+        registros = registros.slice(0,3);
+    }
+    guardarLocalStorage(nivel ,registros);
+
+}
 /**
  * Guardar en el localStorage usando Stringify para cambiar el objeto en una cadena JSON
  */
@@ -264,92 +321,3 @@ function generarModalRegistros() {
 
 }
 
-function cargarRegistros(numeroPregunta, razon, nivel, fechayhora) {
-    //A C T U A L I Z O   L A S    V A R I A B L E S  G L O B A L E S   
-    registroantiguofacil = cargarLocalStorage('facil');
-    registroantiguomedio = cargarLocalStorage('medio');
-    registroantiguodificil = cargarLocalStorage('dificil');
-
-    //si hay registros
-    if(registroantiguofacil!=null){
-        //incluimos los datos actualizados
-        contadorNumeroRegistrosFacil = registroantiguofacil.length;
-        console.log("registros "+contadorNumeroRegistrosFacil);
-        registrosFaciles = registroantiguofacil;
-        console.log("Registros Trabajando "+registrosFaciles);      
-    }
-    if(registroantiguomedio!=null){
-        contadorNumeroRegistrosmedio = registroantiguomedio.length;
-        registrosMedios = registroantiguomedio;
-    }
-    if(registroantiguodificil!=null){
-        contadorNumeroRegistrosdificil = registroantiguodificil.length;
-        registrosDificiles = registroantiguodificil;
-    }
-
-    // P R E P A R A M O S   L A    V A R I A B L E  P A S A D A S   P O R   P A R A M E T R O
-    // obtenemos la fecha actual con el formato d-m-Y
-    let fecha = fechayhora.getDate() + '-' + ( fechayhora.getMonth() + 1 ) + '-' + fechayhora.getFullYear();
-    //obtenemos la hora actual
-    var hora = fechayhora.getHours() + ':' + fechayhora.getMinutes() + ':' + fechayhora.getSeconds();
-
-
-    //C R E A M O S     E L     O B J E T O
-    // {
-    //     pregunta: 12,
-    //     razon:"Abandonaste",
-    //     dia: 13-05-2022,
-    //     hora: 12+":"+23
-    // }
-
-    let registro = {
-        pregunta: numeroPregunta,
-        observaciones: razon,
-        fecha: fecha,
-        hora: hora
-    }
-
-    //nivel facil
-    if(nivel=='facil'&& contadorNumeroRegistrosFacil<3){
-        //si hay menos de tres les añadimos directamente
-        //lo añadimos
-        registrosFaciles.push(registro);
-        console.log(registrosFaciles);
-    }else{
-        //si el registro esta completo
-        registrosFaciles.push(registro);
-        //los ordenamos - teniendo en cuenta la pregunta, la fecha y la hora
-        registrosFaciles = sortByKey(sortByKey(sortByKey(registrosFaciles,'hora'),'fecha'),'pregunta');
-        //cojemos solo los tres primeros
-        registrosFaciles = registrosFaciles.slice(0,3);
-    }
-    guardarLocalStorage(nivel ,registrosFaciles);
-    
-
-    //nivel medio
-    if(nivel=='medio' && contadorNumeroRegistrosmedio<3){
-        registrosMedios.push(registro);
-    }else{
-        registrosMedios.push(registro);
-        registrosMedios = sortByKey(sortByKey(sortByKey(registrosMedios,'hora'),'fecha'),'pregunta');
-        registrosMedios = registrosMedios.slice(0,3);
-    }
-    guardarLocalStorage(nivel ,registrosMedios);
-
-    if(nivel=='dificil' && contadorNumeroRegistrosdificil<3){
-        registrosDificiles.push(registro);
-    }else{
-        registrosDificiles.push(registro);
-        registrosDificiles = sortByKey(sortByKey(sortByKey(registrosDificiles,'hora'),'fecha'),'pregunta');
-        registrosDificiles = registrosDificiles.slice(0,3);
-    }
-    guardarLocalStorage(nivel ,registrosDificiles);
-
-}
-
-let registrosFaciles = [];
-let registrosMedios = [];
-let registrosDificiles = [];
-let registroantiguofacil;
-let registroantiguomedio;
-let registroantiguodificil;

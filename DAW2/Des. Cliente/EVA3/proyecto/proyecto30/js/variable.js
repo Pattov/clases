@@ -1,3 +1,76 @@
+//Botones
+const BTNSCOMODINES= document.querySelectorAll(".comodin");
+const BTNSCONTROLPARAR = document.querySelectorAll('.parar');
+const BTNSCONTROLCONT = document.querySelectorAll('.continuar');
+const RENDIRSE= document.getElementById("rendirse");
+
+//Comodines
+let comodinMitad= false;
+let comodinSiguiente= false;
+
+//Correcion Preguntas
+let correcionMarcada;
+let dinero_ganado=0;
+let incorrecto = 2;
+let razonPerder;
+
+//LocalStorage
+const LOCALSTORAGE=window.localStorage;
+const MODALREGISTROS= document.getElementById("registros");
+let contadorNumeroRegistros = 0;
+let registros = [];
+let registroantiguofacil;
+let registroantiguomedio;
+let registroantiguodificil;
+
+//Menu
+const JUGAR= document.getElementById("jugar");
+const NIVELES = [
+    {
+        nivel:'',
+        descripcion: '¿Qué dificultad eliges?'
+    },
+    {
+        nivel:'facil',
+        descripcion: 'Fácil'
+    },
+    {
+        nivel:'medio',
+        descripcion: 'Medio'
+    },
+    {
+        nivel:'dificil',
+        descripcion: 'Difícil'
+    }
+];
+const PANTALLAMENU= document.getElementById("menu");
+const SELECT= document.getElementById("select");
+let nivelElegido;
+
+//Mostramos en el Navegador
+const PANTALLACOMENTARIOS= document.getElementById("pantallaMensaje");
+const PANTALLAJUGADAS= document.getElementById("juego");
+const PANTALLAPUNTOS= document.getElementById("puntos");
+const PANTALLARESULTADOPOPUP= document.getElementById("resultado");
+
+//preguntas y respuestas
+const NUMMARCADO = document.querySelectorAll('.respuesta');
+let num_pregunta = 0;
+let numrespuestas = -1;
+let pantallaPregunta = document.getElementById("pregunta");
+let pantallaRespuestaA = document.getElementById("respuestauno");
+let pantallaRespuestaB = document.getElementById("respuestados");
+let pantallaRespuestaC = document.getElementById("respuestatres");
+let pantallaRespuestaD = document.getElementById("respuestacuatro");
+let respuestas = [0,1,2,3];
+
+//Temporizador
+const PANTALLATIEMPO= document.getElementById("timer");
+let cont_tiempo=30;
+let indicadorIntervalo;
+let stop=true;
+
+//Base de Datos con las preguntas
 const BDPREGUNTAS = [
     {
         nivel:'dificil',
@@ -169,27 +242,148 @@ const BDPREGUNTAS = [
         contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
     },{
         nivel:'facil', 
-        pregunta: '&iquest;Cual es el hueso mas largo en el cuerpo humano?',
-        respuestas: ['Húmero ','Peroné ','Tibia ','Fémur '],
+        pregunta: '&iquest;Cu&aacute;l es el hueso m&aacute;s largo en el cuerpo humano?',
+        respuestas: ['H&uacute;mero ','Peron&eacute; ','Tibia ','F&eacute;mur '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Debajo de que &aacute;rbol se encontraba Newton cuando, seg&uacute;n la leyenda, descubri&oacute; la ley de la gravedad?',
+        respuestas: ['Peral ','Manzano ','Cerezo ','Melocotonero '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'facil',
+        pregunta: '&iquest;Qu&eacute; han de tener dos objetos para que entre ellos exista gravedad?',
+        respuestas: ['Fuerza ','Aceleraci&oacute;n ','Masa ','Energ&iacute;a '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;l es la intensidad de la gravedad en la Tierra a nivel del mar?',
+        respuestas: ['98 m/s&sup2; ','9,8 km/s&sup2; ','9,8 m/s&sup2; ','0,98 m/s&sup2; '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Cu&aacute;l es el planeta m&aacute;s grande del sistema solar?',
+        respuestas: ['Saturno ','J&uacute;piter ','Urano ','Neptuno '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: 'Las estrellas agrupadas forman...',
+        respuestas: ['Sat&eacute;lites ','Sistemas ','Universos ','Constelaciones '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'dificil', 
+        pregunta: '&iquest;Cu&aacute;nto pesa el cerebro de un ser humano adulto?',
+        respuestas: ['2.5 Kg ','2 Kg ','1.5 Kg ','1 Kg '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Cu&aacute;ntos dientes permanentes tiene un ser humano adulto?',
+        respuestas: ['30 ','32 ','35 ','26 '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: 'Aproximadamente &iquest;cu&aacute;ntos pelos tenemos en la cabeza?',
+        respuestas: ['Entre 300.000 y 400.000 ','Entre 50.000 y 100.000 ','Entre 100.000 y 200.000 ','Entre 200.000 y 300.000 '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;ntos metros miden los intestinos?',
+        respuestas: ['Entre 8 y 9 ','Entre 5 y 6 ','Entre 9 y 10 ','Entre 7 y 8 '],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;ntos huesos hay en el cuerpo humano?',
+        respuestas: ['220 ','187 ','201 ','206 '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;ntas veces se calcula que latir&aacute; el coraz&oacute;n a lo largo de toda la vida de un humano?',
+        respuestas: ['1.000 millones de veces ','2.000 millones de veces ','3.000 millones de veces ','4.000 millones de veces '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: 'En el sistema de puntos ol&iacute;mpicos &iquest;cu&aacute;ntos puntos se concede por cada medalla de bronce obtenida en una prueba?',
+        respuestas: ['4 ','3 ','10 ','5 '],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Cu&aacute;l es el &uacute;nico deporte acu&aacute;tico que estuvo presente en todos los Juegos Ol&iacute;mpicos?',
+        respuestas: ['Nataci&oacute;n ','Salto ','Waterpolo ','Nataci&oacute;n sincronizada '],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Cu&aacute;l de los siguientes deportes NO se disputa en los Juegos Ol&iacute;mpicos?',
+        respuestas: ['Vela ','BMX ','Triatl&oacute;n ','Hockey sobre hielo '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cul &aacute;es la ciudad griega que dio inicio al transporte de la antorcha ol&iacute;mpica?',
+        respuestas: ['Esparta ','Atenas ','Olimpia ','Creta '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;En qu&eacute; continente nunca se ha realizado una edici&oacute;n de los Juegos Ol&iacute;mpicos?',
+        respuestas: ['Asia ','Ocean&iacute;a ','Am&eacute;rica ','&Aacute;frica '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Cu&aacute;l fue el s&iacute;mbolo de Katniss Everdeen en &quot;Los juegos del hambre&quot;',
+        respuestas: ['Cisne ','Leona ','&Aacute;guila  ','Sinsajo '],
         contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
     }
     ,{
         nivel:'facil', 
-        pregunta: '&iquest;Debajo de que árbol se encontraba Newton cuando, según la leyenda, descubrió la ley de la gravedad?',
-        respuestas: ['Peral ','Manzano ','Cerezo ','Melocotonero '],
+        pregunta: '&iquest;C&oacute;mo se llama el actor protagonista de &quot;Solo en casa&quot;?',
+        respuestas: ['Keanu Reeves ','Johnny Depp ','Macaulay Culkin ','Leonardo DiCaprio '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    }
+    ,{
+        nivel:'facil', 
+        pregunta: '&iquest;A qui&eacute;n se considera el Rey del Pop?',
+        respuestas: ['Michael Jackson','Justin Bieber ','Zayn Malik ','Zac Efron '],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    }
+    ,{
+        nivel:'facil', 
+        pregunta: '&iquest;De qu&eacute; pel&iacute;cula es el pr&iacute;ncipe azul?',
+        respuestas: ['Cenicienta ','Sirenita ','Bella Durmiente ','Mul&aacute;n'],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    }
+    ,{
+        nivel:'medio', 
+        pregunta: '&iquest;Qu&eacute; pel&iacute;cula navideña incluye un cameo de Donald Trump?',
+        respuestas: ['Solo en casa ','Solo en casa 2: Perdido en Nueva York ','Richie Rich ','Una pandilla de pillos '],
         contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
     }
     ,{
-        nivel:'facil',
-        pregunta: '&iquest;Que han de tener dos objetos para que entre ellos exista gravedad?',
-        respuestas: ['Fuerza ','Aceleración ','Masa ','Energía '],
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;l es el animal nacional de Escocia?',
+        respuestas: ['Caballo ','Lobo ','Unicornio ','Vaca '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    }
+    ,{
+        nivel:'facil', 
+        pregunta: '&iquest;Cu&aacute;les son los nombres de las cuatro casas de Hogwarts?',
+        respuestas: ['Gryffindor, Ravenclaw, Hufflepuff y Slytherin','Gryffin, Cuervo, Elefante y Serpiente ','Norte, Este, Oeste y Sur ','Rojo, azul, verde y naranja '],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    }
+    ,{
+        nivel:'medio',
+        pregunta: '&iquest;Qu&eacute; pa&iacute;s produce m&aacute;s caf&eacute; en el mundo?',
+        respuestas: ['Colombia ','Indonesia ','Brasil ','Vietnam '],
         contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
     }
     ,{
         nivel:'dificil',
-        pregunta: '&iquest;Cual es la intensidad de la gravedad en la Tierra a nivel del mar?',
-        respuestas: ['98 m/s2 ','9,8 km/s2 ','9,8 m/s2 ','0,98 m/s2 '],
-        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+        pregunta: '&iquest;A qu&eacute; sabe el Cointreau?',
+        respuestas: ['Albahaca ','Lim&oacute;n ','Vainilla ','Naranja'],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    }
+    ,{
+        nivel:'medio', 
+        pregunta: '&iquest;C&oacute;mo se llamaba el b&uacute;ho mascota de Harry Potter?',
+        respuestas: ['Errol ','Hedwig ','Crookshanks ','Scabbers '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
     }
     // ,{
     //     nivel:'facil', 
@@ -197,63 +391,6 @@ const BDPREGUNTAS = [
     //     nivel:'dificil',
     //     pregunta: '&iquest;?',
     //     respuestas: ['Respuesta1','Respuesta2','Respuesta3','Respuesta4'],
-    //     contestacion:['Incorrecto','Incorrecto','Incorrecto','Incorrecto'],
-    //     correcta: 
+    //     contestacion:['Incorrecto','Incorrecto','Incorrecto','Incorrecto']
     // }
 ]
-const BTNSCOMODINES= document.querySelectorAll(".comodin");
-const BTNSCONTROLPARAR = document.querySelectorAll('.parar');
-const BTNSCONTROLCONT = document.querySelectorAll('.continuar');
-const LOCALSTORAGE=window.localStorage;
-const JUGAR= document.getElementById("jugar");
-const MODALREGISTROS= document.getElementById("registros");
-const NIVELES = [
-    {
-        nivel:'',
-        descripcion: '¿Qué dificultad eliges?'
-    },
-    {
-        nivel:'facil',
-        descripcion: 'Fácil'
-    },
-    {
-        nivel:'medio',
-        descripcion: 'Medio'
-    },
-    {
-        nivel:'dificil',
-        descripcion: 'Difícil'
-    }
-];
-const PANTALLACOMENTARIOS= document.getElementById("pantallaMensaje");
-const PANTALLAJUGADAS= document.getElementById("juego");
-const PANTALLAMENU= document.getElementById("menu");
-const PANTALLATIEMPO= document.getElementById("timer");
-const PANTALLAPUNTOS= document.getElementById("puntos");
-const PANTALLARESULTADOPOPUP= document.getElementById("resultado");
-const RENDIRSE= document.getElementById("rendirse");
-const SELECT= document.getElementById("select");
-const NUMMARCADO = document.querySelectorAll('.respuesta');
-let comodinMitad= false;
-let comodinSiguiente= false;
-let cont_tiempo=30;
-let contadorNumeroRegistrosFacil = 0;
-let contadorNumeroRegistrosmedio = 0;
-let contadorNumeroRegistrosdificil = 0;
-let correcionMarcada;
-let dinero_ganado=0;
-let incorrecto = 2;
-let indicadorIntervalo;
-let nivelElegido;
-let num_pregunta = 0;
-let numrespuestas = -1;
-let pantallaPregunta = document.getElementById("pregunta");
-let pantallaRespuestaA = document.getElementById("respuestauno");
-let pantallaRespuestaB = document.getElementById("respuestados");
-let pantallaRespuestaC = document.getElementById("respuestatres");
-let pantallaRespuestaD = document.getElementById("respuestacuatro");
-let razonPerder;
-
-
-let respuestas = [0,1,2,3];
-let stop=true;
