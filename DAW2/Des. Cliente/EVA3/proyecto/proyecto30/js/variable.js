@@ -132,14 +132,12 @@ const BDPREGUNTAS = [
         pregunta: '&iquest;Cu&aacute;l es el pa&iacute;s m&aacute;s peque&ntilde;o de Centroam&eacute;rica?',
         respuestas: ['Nicaragua','Panam&aacute;','El Salvador ','Honduras '],
         contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
-    }
-    ,{
+    },{
         nivel:'medio', 
         pregunta: '&iquest;Cu&aacuteles son los colores de la bandera de Letonia?',
         respuestas: ['Azul y negro ','Amarillo y  verde ','Azul, verde y negro ','Rojo y blanco '],
         contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
-    }
-    ,{
+    },{
         nivel:'dificil',
         pregunta: '&iquest;En qu&eacute; continente se encuentra el r&iacute;o Tocantins?',
         respuestas: ['Am&eacute;rica ','Europa ','Asia ','&Aacute;frica '],
@@ -169,8 +167,7 @@ const BDPREGUNTAS = [
         pregunta: 'Napole&oacute;n Bonaparte nombr&oacute; a su hermano Jos&eacute; I rey &iquest;de qu&eacute; pa&iacute;s?',
         respuestas: ['Inglaterra ','Italia ','B&eacute;lgica ','Espa&ntilde;a '],
         contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
-    }
-    ,{
+    },{
         nivel:'facil', 
         pregunta: '&iquest;Qui&eacute;n fue el m&aacute;s poderoso rey de la tribu de los Hunos?',
         respuestas: ['Aecio ','Mundzuk ','Elac ','Atila '],
@@ -330,67 +327,280 @@ const BDPREGUNTAS = [
         pregunta: '&iquest;Cu&aacute;l fue el s&iacute;mbolo de Katniss Everdeen en &quot;Los juegos del hambre&quot;',
         respuestas: ['Cisne ','Leona ','&Aacute;guila  ','Sinsajo '],
         contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
-    }
-    ,{
+    },{
         nivel:'facil', 
         pregunta: '&iquest;C&oacute;mo se llama el actor protagonista de &quot;Solo en casa&quot;?',
         respuestas: ['Keanu Reeves ','Johnny Depp ','Macaulay Culkin ','Leonardo DiCaprio '],
         contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
-    }
-    ,{
+    },{
         nivel:'facil', 
         pregunta: '&iquest;A qui&eacute;n se considera el Rey del Pop?',
         respuestas: ['Michael Jackson','Justin Bieber ','Zayn Malik ','Zac Efron '],
         contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
-    }
-    ,{
+    },{
         nivel:'facil', 
         pregunta: '&iquest;De qu&eacute; pel&iacute;cula es el pr&iacute;ncipe azul?',
         respuestas: ['Cenicienta ','Sirenita ','Bella Durmiente ','Mul&aacute;n'],
         contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
-    }
-    ,{
+    },{
         nivel:'medio', 
-        pregunta: '&iquest;Qu&eacute; pel&iacute;cula navideña incluye un cameo de Donald Trump?',
+        pregunta: '&iquest;Qu&eacute; pel&iacute;cula navide&ntilde;a incluye un cameo de Donald Trump?',
         respuestas: ['Solo en casa ','Solo en casa 2: Perdido en Nueva York ','Richie Rich ','Una pandilla de pillos '],
         contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
-    }
-    ,{
+    },{
         nivel:'dificil',
         pregunta: '&iquest;Cu&aacute;l es el animal nacional de Escocia?',
         respuestas: ['Caballo ','Lobo ','Unicornio ','Vaca '],
         contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
-    }
-    ,{
+    },{
         nivel:'facil', 
         pregunta: '&iquest;Cu&aacute;les son los nombres de las cuatro casas de Hogwarts?',
         respuestas: ['Gryffindor, Ravenclaw, Hufflepuff y Slytherin','Gryffin, Cuervo, Elefante y Serpiente ','Norte, Este, Oeste y Sur ','Rojo, azul, verde y naranja '],
         contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
-    }
-    ,{
+    },{
         nivel:'medio',
         pregunta: '&iquest;Qu&eacute; pa&iacute;s produce m&aacute;s caf&eacute; en el mundo?',
         respuestas: ['Colombia ','Indonesia ','Brasil ','Vietnam '],
         contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
-    }
-    ,{
+    },{
         nivel:'dificil',
         pregunta: '&iquest;A qu&eacute; sabe el Cointreau?',
         respuestas: ['Albahaca ','Lim&oacute;n ','Vainilla ','Naranja'],
         contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
-    }
-    ,{
+    },{
         nivel:'medio', 
         pregunta: '&iquest;C&oacute;mo se llamaba el b&uacute;ho mascota de Harry Potter?',
         respuestas: ['Errol ','Hedwig ','Crookshanks ','Scabbers '],
         contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest; Qui&eacute;n tiene m&aacute;s seguidores en Instagram?',
+        respuestas: ['Selena Gomez','Taylor Swift ','Cristiano Ronaldo ','LiSA '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;C&oacute;mo se llama el mat&oacute;n de Phineas y Ferb?',
+        respuestas: ['Buford ','Doofenshmirtz ','Baljeet ','Ferb '],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: 'En la serie de Phineas y Ferb &iquest;qu&eacute; construyen en el primer d&iacute;a de vacaciones?',
+        respuestas: ['Un perro mec&aacute;nico','Crean el Invierano','Una monta&ntilde;a rusa ','Copias rob&oacute;ticas de s&iacute; mismos'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;C&oacute;mo se llama el &oacute;rgano que utilizan los peces para respirar?',
+        respuestas: ['Pulmones ','Cola ','Escalas ','Agallas '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Qu&eacute; deporte se considera el pasatiempo americano?',
+        respuestas: ['Boxeo ','B&eacute;isbol ','Baloncesto ','Golf '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;C&aacute;mo se llamaba la primera pel&iacute;cula de perros de la historia?',
+        respuestas: ['Cats and Dogs ','Lassie Come Home ','Hotels for Dogs ','Alpha '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;C&oacute;mo se llama el hombre que est&aacute; detr&aacute;s de Mr. Bean?',
+        respuestas: ['Rowan Atkinson ','James Corden ','Rowan Smyth ','Macaulay Culkin '],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Cu&aacute;ntas pel&iacute;culas componen la serie de &quot;Indiana Jones&quot;?',
+        respuestas: ['3 ','5 ','4 ','2 '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;ntos volcanes activos hay en el mundo?',
+        respuestas: ['1450 ','1400 ','1360 ','1350 '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Cu&aacute;l es la isla m&aacute;s grande del mundo?',
+        respuestas: ['Australia ','Filipinas ','Groenlandia ','Rusia '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Cu&aacute;ntas patas tiene una ara&ntilde;a?',
+        respuestas: ['6','7','8','9'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Qu&eacute; famosa banda brit&aacute;nica escribi&oacute; y cant&oacute; la canci&oacute;n &quot;Yellow Submarine&quot;?',
+        respuestas: ['Beatles ','Backstreet Boys ','Los Carpinteros ','NSYNC '],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Qu&eacute; estado norteamericano no ha sufrido nunca un terremoto?',
+        respuestas: ['Florida ','Carolina del Norte ','Dakota del Sur ','Ninguno '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;l es el animal m&aacute;s venenoso?',
+        respuestas: ['Serpiente ','Ranas ','Medusa ','Ara&ntilde;a'],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;nto tiempo duran las c&eacute;lulas cerebrales?',
+        respuestas: ['3 d&iacute;as','2 meses ','3 a&ntilde;os ','Toda una vida '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{ 
+        nivel:'medio', 
+        pregunta: '&iquest;Cu&aacute;l es el lugar m&aacute;s profundo del mundo?',
+        respuestas: ['Salto del &Aacute;ngel ','Lago Baikal ','Fosa de las Marianas ','Mar Egeo '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;A qu&eacute; continente pertenece Grecia?',
+        respuestas: ['Asia ','Europa ','Australia ','&Aacute;frica '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Qu&eacute; nombre de ciudad est&aacute; presente en todos los continentes?',
+        respuestas: ['Nueva York ','Mil&aacute;n ','Roma ','Sydney '],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Qu&eacute; animal es la mamba negra?',
+        respuestas: ['Gusano ','Serpiente ','Jaguar ','Cuervo '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;ntos meses hasta que una ballena pre&ntilde;ada d&eacute; a luz?',
+        respuestas: ['9 meses','4 meses','16 meses','36 meses'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Cu&aacute;l es el animal m&aacute;s grande del mundo?',
+        respuestas: ['Elefante africano ','Ballena azul ant&aacute;rtica ','Calamar colosal ','Jirafa'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;nto tiempo pueden dormir los caracoles a la vez?',
+        respuestas: ['30 horas ','15 horas ','8 horas ','36 horas '],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Cu&aacute;ntas hormigas hay por cada humano en el mundo?',
+        respuestas: ['100','1.6 millones','1.000','100.000'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;D&oacute;nde se encuentra el coraz&oacute;n del camar&oacute;n?',
+        respuestas: ['En su pecho','En su cabeza','En sus colas','En sus piernas'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Qu&eacute; animal es el &uacute;nico animal que no pudo saltar?',
+        respuestas: ['Cerdos ','Ballenas ','Jirafas ','Elefantes '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;ntos cerebros tiene una sanguijuela?',
+        respuestas: ['33','32','34','35'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;De qu&eacute; color es la sangre de un gusano del man&iacute;?',
+        respuestas: ['Rosa','P&uacute;rpura','Rojo','Verde'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Qu&eacute; animal puede vivir durante semanas sin cabeza o cerebro?',
+        respuestas: ['Ara&ntilde;a ','Hormigas ','Cucaracha ','Saltamontes'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Qu&eacute; animal no necesita beber agua durante toda su vida?',
+        respuestas: ['Camello ','Peque&ntilde;a rata canguro','B&uacute;ho ','Elefante'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;l es el nombre real de "Chucky" en Child’s Play?',
+        respuestas: ['George Lee Ray','Charlie Ray','Charles Lee Ray','Henry Ray'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;En qu&eacute; pel&iacute;cula se vio por primera vez la mu&ntilde;eca Anabelle?',
+        respuestas: ['The Conjuring','Friday the 13th ','Chucky','Insidious'],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Cu&aacute;l fue el primer refresco que se llev&oacute; al espacio?',
+        respuestas: ['Pepsi','Fanta','Coca Cola','Snapple'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;nto pesa el disfraz de Chewbacca?',
+        respuestas: ['3,60 kg','7,70kg ','2,70 kg ','6,80 kg'],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;C&oacute;mo se llama la peque&ntilde;a pieza de pl&aacute;stico al final de un cord&oacute;n de zapato?',
+        respuestas: ['Cuerda ','Cobertura ','Encaje ','Herrete '],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Para qu&eacute; pa&iacute;s jug&oacute; David Beckham?',
+        respuestas: ['Espa&ntilde;a','Brasil','EE.UU','Inglaterra'],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Qu&eacute; personaje de Disney de La Sirenita canta la canci&oacute;n B&eacute;sala?',
+        respuestas: ['Flounder','Sebasti&aacute;n','&Uacute;rsula','Pr&iacute;ncipe Eric'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;En qu&eacute; pa&iacute;s esta Praga?',
+        respuestas: ['Espa&ntilde;a','Brasil','Rep&uacute;blica Checa','Inglaterra'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Qu&eacute; servicio de correo electr&oacute;nico es propiedad de Microsoft?',
+        respuestas: ['Outlook','Yahoo Mail','Gmail','iCloud Mail'],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;l era el antiguo nombre de una barra de Snickers antes de que cambiara en 1990?',
+        respuestas: ['Race','Marathon','Smile','Sprint'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'facil', 
+        pregunta: '&iquest;Cu&aacute;l es el planeta m&aacute;s peque&ntilde;o de nuestro sistema solar?',
+        respuestas: ['Tierra','Venus','Marte','Mercurio'],
+        contestacion:['Incorrecto','Incorrecto','Incorrecto','Correcto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Qui&eacute;n fue el jefe de estado en Jap&oacute;n durante la Segunda Guerra Mundial?',
+        respuestas: ['Emperador Hirohito','Emperador Mutsuhito','Emperador Akihito','Emperador Yoshihito'],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil', 
+        pregunta: '&iquest;Cu&aacute;l es el segundo nombre de Chandler en la comedia Friends?',
+        respuestas: ['Arthur','Bing','Muriel','John'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Cu&aacute;nto mide una piscina ol&iacute;mpica?',
+        respuestas: ['25 metros','50 metros','60 metros','40 metros'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'medio', 
+        pregunta: '&iquest;Alrededor de cu&aacute;ntas papilas gustativas tiene la lengua humana de promedio?',
+        respuestas: ['100','1.000','10.000','100.000'],
+        contestacion:['Incorrecto','Incorrecto','Correcto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Cu&aacute;l fue la primera pel&iacute;cula animada de largometraje que se lanz&oacute;?',
+        respuestas: ['Pocahontas','Blanca Nieves y los siete enanitos','Peque&ntilde;a sirena','Cenicienta'],
+        contestacion:['Incorrecto','Correcto','Incorrecto','Incorrecto']
+    },{
+        nivel:'dificil',
+        pregunta: '&iquest;Por qu&eacute; pel&iacute;cula obtuvo Tom Hanks su primera nominaci&oacute;n al Oscar?',
+        respuestas: ['Quisiera ser grande','Forrest Gump','Apolo 13','Tienes un e-mail'],
+        contestacion:['Correcto','Incorrecto','Incorrecto','Incorrecto']
     }
-    // ,{
-    //     nivel:'facil', 
-    //     nivel:'medio', 
-    //     nivel:'dificil',
-    //     pregunta: '&iquest;?',
-    //     respuestas: ['Respuesta1','Respuesta2','Respuesta3','Respuesta4'],
-    //     contestacion:['Incorrecto','Incorrecto','Incorrecto','Incorrecto']
-    // }
 ]

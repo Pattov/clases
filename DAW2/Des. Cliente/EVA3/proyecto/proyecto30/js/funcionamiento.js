@@ -71,8 +71,12 @@ function shuffle(array) {
                 cont_tiempo=0;
                 PANTALLATIEMPO.innerText = cont_tiempo;
                 PANTALLATIEMPO.style.color="red";
-                razonPerder = 'Se ha acabado tu tiempo, El Cronometro llego a 0';
+                razonPerder = 'Se ha acabado tu tiempo';
                 perder(razonPerder,0);
+                //almacenas en Local Storage por si es el maximo nivel que has alcanzado
+                let hoy = new Date();
+                //cargas registro en el localStorage con el numero de la pregunta, el premio obtenido, el nivel, y la fecha
+                cargarRegistros(num_pregunta, razonPerder, nivelElegido, hoy);
             }    
         }
     }, 1000); 
@@ -169,11 +173,9 @@ BTNSCOMODINES.forEach(boton => {
                     pantallaRespuestaA.style.visibility = "hidden";
                 }else if(pantallaRespuestaB.getAttribute('respuesta')==='Incorrecto'&&paseporB==false){
                     paseporB = true;
-                    console.log("le respuesta B es Incorrectta");
                     --incorrecto;
                     pantallaRespuestaB.style.visibility = "hidden";
                 }else if(pantallaRespuestaD.getAttribute('respuesta')==='Incorrecto'){
-                    console.log("le respuesta D es Incorrectta");
                     --incorrecto;
                     pantallaRespuestaD.style.visibility = "hidden";
                 }
