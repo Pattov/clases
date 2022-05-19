@@ -12,4 +12,4 @@
    ✅ Tiene que tener controles para iniciar, pausar o finalizar la partida. Estas funciones tienen que estar asociadas también a una combinación de teclas del teclado. Ej. ctrl+e finalizar.
    ✅ El juego debe contar con niveles de dificultad (mínimo 3) que se podrá seleccionar antes de comenzar la partida. 
    ✅ El nivel de dificultad elegido se guardará y recuperará entre sesiones utilizando una cookie.(expires)
-    Debes crear un registro con las tres mejores puntuaciones del usuario que tienes que mostrar de alguna forma y almacenar en API STORAGE. Además de la puntuación se mostrará en que fecha y hora se obtuvo.
+   ✅ Debes crear un registro con las tres mejores puntuaciones del usuario que tienes que mostrar de alguna forma y almacenar en API STORAGE. Además de la puntuación se mostrará en que fecha y hora se obtuvo.
