@@ -25,3 +25,12 @@ Se valorará positivamente:
     Explorar las diferentes funcionalidades de jQuery en la solución (selectores, eventos, manipulación del DOM, animaciones y efectos, etc.).
     Investigar librerías adicionales para presentar los datos. Ej. Chart.js.
 
+
+
+https://www.digitalocean.com/community/tutorials/how-to-use-the-javascript-fetch-api-to-get-data-es
+
+
+https://reqbin.com/req/ala1tavu/sample-api-post-request
+
+
+https://www.postman.com/lunar-station-194590/workspace/smart-retail/documentation/13425695-5d5ca66f-29ed-42bb-a17b-c454cb9d05f3
