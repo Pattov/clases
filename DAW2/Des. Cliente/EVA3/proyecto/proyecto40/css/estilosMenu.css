@@ -1,0 +1,31 @@
+.content .menu {
+    display: grid;
+    height: 100%;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "villagers calendar";
+}
+.content div div{
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin: 15%;
+    border-radius: 15px;
+    background: #1abc9c;
+    
+}  
+.content a{
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+
+}
+
+.content .aldeanos { 
+    grid-area: villagers;
+}
+
+.content .calendario{
+    grid-area: calendar;
+}
