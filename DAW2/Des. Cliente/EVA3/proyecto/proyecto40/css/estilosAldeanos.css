@@ -4,3 +4,17 @@
     height: 92%;
 
 }
+#listaAldeanos{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+    gap: 2em;
+    align-items: stretch;
+}
+.imgs{
+    width: 50px;
+    margin: 2px;
+}
+.card{
+    align-items: center;
+    flex-direction: row-reverse;
+}
