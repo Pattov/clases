@@ -20,6 +20,8 @@ body{
     min-height: 100vh;
     width: 100%;
     overflow: hidden;
+    background: var(--fondo);
+
 }
 /* Sidebard */
 .sidebar{
@@ -169,7 +171,6 @@ body{
     width: calc(100% - var(--anchoPequeño));
     left: var(--anchoPequeño);
     transition: all 0.5s ease;
-    background: var(--fondo);
 }
 
 .sidebar.active ~ .content{

@@ -1,25 +1,12 @@
 .content .menu {
     display: grid;
+    align-items: center;
+    justify-items: center;
     height: 100%;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas:
     "villagers calendar";
-}
-.content div div{
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    margin: 15%;
-    border-radius: 15px;
-    background: #1abc9c;
-    
-}  
-.content a{
-    text-decoration: none;
-    color: #fff;
-    cursor: pointer;
-
 }
 
 .content .aldeanos { 
@@ -28,4 +15,31 @@
 
 .content .calendario{
     grid-area: calendar;
+}
+
+.card{
+    display: flex;
+    text-align: center;
+    width: 60%;
+    height: 60%;
+    cursor: pointer;
+    border: 1px solid #000;
+    background: #fff;
+    border-radius: 12px;
+}
+
+.content a{
+    width: 100%;
+    height: 100%;
+    white-space: nowrap;
+    text-decoration: none;
+}
+
+.content img{
+    margin-top: 20%;
+    width: 45%;
+}
+
+.content p{
+    font-size: xx-large;
 }

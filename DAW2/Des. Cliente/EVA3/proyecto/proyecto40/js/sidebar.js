@@ -1,6 +1,5 @@
-let btn = document.querySelector("#btn");
-let sidebar = document.querySelector(".sidebar");
-
-btn.onclick = function () {
-    sidebar.classList.toggle("active");
-}
+//cuando damos al boton del menu (tres lineas) 
+$("#btn").on("click", function () {
+    //damos el atributo active al elemento <nav class="sidebar">
+    $(".sidebar").toggleClass("active");
+})
