@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filtros>
+    <personalidades>
+        <personalidad>
+            <nombre esp="perezoso">lazy</nombre>
+        </personalidad>
+        <personalidad>
+            <nombre esp="deportista">jock</nombre>
+        </personalidad>
+        <personalidad>
+            <nombre esp="malhumorado">cranky</nombre>
+        </personalidad>
+        <personalidad>
+            <nombre esp="presumido">smug</nombre>
+        </personalidad>
+        <personalidad>
+            <nombre esp="normal">normal</nombre>
+        </personalidad>
+        <personalidad>
+            <nombre esp="animado">peppy</nombre>
+        </personalidad>
+        <personalidad>
+            <nombre esp="presumido">snooty</nombre>
+        </personalidad>
+        <personalidad>
+            <nombre esp="hermana mayor">sisterly</nombre>
+        </personalidad>
+    </personalidades>
+    <especies>
+        <especie>
+            <nombre esp="cocodrilo">alligator</nombre>
+        </especie>
+        <especie>
+            <nombre esp="oso hormiguero">anteater</nombre>
+        </especie>
+        <especie>
+            <nombre esp="oso">bear</nombre>
+        </especie>
+        <especie>
+            <nombre esp="pájaro">bird</nombre>
+        </especie>
+        <especie>
+            <nombre esp="toro">bull</nombre>
+        </especie>
+        <especie>
+            <nombre esp="gato">cat</nombre>
+        </especie>
+        <especie>
+            <nombre esp="cachorro">cub</nombre>
+        </especie>
+        <especie>
+            <nombre esp="pollo">chicken</nombre>
+        </especie>
+        <especie>
+            <nombre esp="vaca">cow</nombre>
+        </especie>
+        <especie>
+            <nombre esp="ciervo">deer</nombre>
+        </especie>
+        <especie>
+            <nombre esp="perro">dog</nombre>
+        </especie>
+        <especie>
+            <nombre esp="pato">duck</nombre>
+        </especie>
+        <especie>
+            <nombre esp="águila">eagle</nombre>
+        </especie>
+        <especie>
+            <nombre esp="elefante">elephant</nombre>
+        </especie>
+        <especie>
+            <nombre esp="rana">frog</nombre>
+        </especie>
+        <especie>
+            <nombre esp="cabra">goat</nombre>
+        </especie>
+        <especie>
+            <nombre esp="gorila">gorilla</nombre>
+        </especie>
+        <especie>
+            <nombre esp="hamster">hamster</nombre>
+        </especie>
+        <especie>
+            <nombre esp="hipopotamo">hippo</nombre>
+        </especie>
+        <especie>
+            <nombre esp="caballo">horse</nombre>
+        </especie>
+        <especie>
+            <nombre esp="koala">koala</nombre>
+        </especie>
+        <especie>
+            <nombre esp="canguro">kangaroo</nombre>
+        </especie>
+        <especie>
+            <nombre esp="leon">lion</nombre>
+        </especie>
+        <especie>
+            <nombre esp="mono">monkey</nombre>
+        </especie>
+        <especie>
+            <nombre esp="raton">mouse</nombre>
+        </especie>
+        <especie>
+            <nombre esp="pulpo">octopus</nombre>
+        </especie>
+        <especie>
+            <nombre esp="avestruz">ostrich</nombre>
+        </especie>
+        <especie>
+            <nombre esp="pinguino">penguin</nombre>
+        </especie>
+        <especie>
+            <nombre esp="cerdo">pig</nombre>
+        </especie>
+        <especie>
+            <nombre esp="conejo">rabbit</nombre>
+        </especie>
+        <especie>
+            <nombre esp="rinoceronte">rhino</nombre>
+        </especie>
+        <especie>
+            <nombre esp="oveja">sheep</nombre>
+        </especie>
+        <especie>
+            <nombre esp="ardilla">squirrel</nombre>
+        </especie>
+        <especie>
+            <nombre esp="tigre">tiger</nombre>
+        </especie>
+        <especie>
+            <nombre esp="lobo">wolf</nombre>
+        </especie>
+    </especies>
+</filtros>

@@ -1,8 +1,25 @@
+.content{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-areas:
+        "header"
+        "contain"
+        "footer";
+    justify-items: end;
+}
+#filtro{
+    grid-area: header;
+}
+.footer{
+    grid-area: footer;
+}
+
 .content_vill{
     margin: 2%;
     width: 96%;
     height: 92%;
-
+    grid-area: contain;
 }
 #listaAldeanos{
     display: grid;
@@ -17,4 +34,9 @@
 .card{
     align-items: center;
     flex-direction: row-reverse;
+}
+
+#filtros{
+    margin-top: 1em;
+    margin-right: 2em;
 }
