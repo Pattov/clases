@@ -27,10 +27,12 @@
     gap: 2em;
     align-items: stretch;
 }
+
 .imgs{
     width: 50px;
     margin: 2px;
 }
+
 .card{
     align-items: center;
     flex-direction: row-reverse;
@@ -39,4 +41,18 @@
 #filtros{
     margin-top: 1em;
     margin-right: 2em;
+    display: flex;
+}
+select{
+    padding: 6px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.btn{
+    margin-left: 10px;
+}
+.footer{
+    height: 10px;
+    width: 1px;
 }

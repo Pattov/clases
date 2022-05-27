@@ -17,9 +17,7 @@
 
 body{
     position: relative;
-    min-height: 100vh;
     width: 100%;
-    overflow: hidden;
     background: var(--fondo);
 
 }
@@ -176,3 +174,49 @@ body{
     left: var(--anchoGrande);
 }
 
+.sinResultado{
+    color: var(--detalles);
+}
+
+/*Scroll*/
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+body {
+    scrollbar-width: none;
+    scrollbar-color: #660481 var(--fondo);
+  }
+
+  /* Chrome, Edge, and Safari */
+body::-webkit-scrollbar {
+    width: 16px;
+  }
+
+body::-webkit-scrollbar-track {
+    background: var(--fondo);
+  }
+
+body::-webkit-scrollbar-thumb {
+    background-color: var(--fondoSidebar);
+    border-radius: 10px;
+    border: 3px solid var(--fondo);
+}
+
+  /* Chrome, Edge, and Safari */
+select::-webkit-scrollbar {
+    width: 10px;
+  }
+
+select::-webkit-scrollbar-track {
+    background: var(--detalles);
+  }
+
+select::-webkit-scrollbar-thumb {
+    background-color: #000;
+    border-radius: 10px;
+}
+body {
+    scrollbar-width: none;
+    scrollbar-color: #660481 #000;
+}
+/* https://www.youtube.com/watch?v=x99urG4tzCc
+https://magtimus.github.io/proyectos/pagina-tipo-blog/blog.html */

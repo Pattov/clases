@@ -14,12 +14,13 @@
     
     <!-- TRADUCTOR -->
     <!-- https://dashboard.weglot.com/ -->
-    <!-- <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
+    <script type="text/javascript" src="https://cdn.weglot.com/weglot.min.js"></script>
     <script>
         Weglot.initialize({
             api_key: 'wg_6b114d0cd4fbde965b77b150b51318b24'
         });
-    </script> -->
+    </script>
+
     <title>iNooK</title>
     <link rel="shortcut icon" href="img/icono.jpeg" type="image/x-icon">
 </head>
@@ -42,15 +43,21 @@
                     <span class="links_name">Villagers</span>
                 </a>
             </li>
+            <li>
+                <a href="music.html">
+                    <img src="img/ic_catalog_music.svg"  style="padding: 6px;">
+                    <span class="links_name" style="margin-left: 7px;">Music</span>
+                </a>
+            </li>
         </ul>
     </nav>
     <!-- contenido derecha -->
     <section class="content">
         <div id="filtros">
             <form action="">
-                <div id="select">
-                </div>
+                <div id="select"></div>
             </form>
+            <button type="button" class="btn btn-outline-dark" style="display: inline-block;">Apply Filters</button>
         </div>
         <div class="content_vill">
             <div id="listaAldeanos">
@@ -59,8 +66,8 @@
         <div class="footer"></div>
     </section>
     
-    
     <script src="js/sidebar.js"></script>
+    <script src="js/general.js"></script>
     <script src="js/aldeanos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 </body>

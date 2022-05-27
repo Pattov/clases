@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 24 24"
+   fill="currentColor"
+   version="1.1"
+   id="svg12"
+   sodipodi:docname="ic_catalog_music.svg"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs16" />
+  <sodipodi:namedview
+     id="namedview14"
+     pagecolor="#ffffff"
+     bordercolor="#111111"
+     borderopacity="1"
+     inkscape:showpageshadow="0"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="1"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="32.833333"
+     inkscape:cx="12.015228"
+     inkscape:cy="12"
+     inkscape:window-width="1920"
+     inkscape:window-height="986"
+     inkscape:window-x="-11"
+     inkscape:window-y="-11"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg12" />
+  <path
+     d="m 19.951371,9.4303928 c -0.979,-0.9911462 -4.545,-3.7073261 -6.716,-5.9336598 -0.893,-0.9153781 -2.276,-0.6449055 -2.276,1.0369588 V 13.85751 A 8.377,7.3802917 0 0 0 9.0873706,13.74474 c -2.756,0.08282 -5.096,1.754108 -5.238,3.951368 -0.233,3.584864 4.87,3.921413 7.6000004,2.650103 1.092,-0.509228 2.01,-1.364697 2.36,-2.408704 0.25,-0.747104 0.202,-1.542663 0.168,-2.322365 -0.082,-1.794634 -0.056,-3.584864 -0.056,-5.375974 V 9.8541618 c 0,-0.08898 0.116,-0.145368 0.199,-0.09603 0.739,0.4457962 1.402,1.0008372 2.04,1.5497122 0.611,0.525087 1.436,1.106559 1.71,1.843091 0.214,0.581472 0.045,1.222853 -0.218,1.787586 -0.037,0.07929 -0.075,0.158583 -0.07,0.241399 0.003,0.08282 0.06,0.174442 0.15,0.191181 0.074,0.01322 0.145,-0.01674 0.213,-0.04934 1.166,-0.558566 2.16,-1.417559 2.49,-2.576979 0.446,-1.549711 0.079,-2.739086 -0.484,-3.3135102 z"
+     id="path10"
+     inkscape:label="path10"
+     style="display:inline;fill:#001cff;stroke-width:0.938626" />
+</svg>
