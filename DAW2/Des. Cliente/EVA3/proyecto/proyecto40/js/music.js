@@ -1,0 +1,1 @@
+const archivo = new Blob([contenido], { type: 'text/plain' });

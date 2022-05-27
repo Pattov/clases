@@ -161,6 +161,7 @@ $('#select').on('click', '.close_personality' ,function() {
     filtroPersonalidad = false;
     valorEscogidoPersonalidad = '';
 });
+
 //Creamos el evento de Borrar Filtros Personalidad
 $('#select').on('click', '.close_species' ,function() {
     //los dejamos como estaban
