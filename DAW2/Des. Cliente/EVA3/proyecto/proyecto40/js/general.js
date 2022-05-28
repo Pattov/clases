@@ -76,3 +76,38 @@ function GenerarSelect(tipo, options) {
     });
 
 }
+
+/* <div class="card card-music">
+        <img src="https://acnhapi.com/v1/images/songs/1" class="card-img-top">
+        <div class="card-body">
+            <h5 class="card-title">Agente Totakeke</h5>
+        </div>
+    </div> */
+function GenerarCardMusic(idioma, datos) {
+    $('.content_music').append(
+        $("<div>", {
+            'class': 'card card-music',
+            'song': datos.music_uri
+        }).append(
+            $("<img>", {
+                'src': datos.image_uri,
+                'class':'card-img-top'
+            })
+        ).append(
+            $("<div>", {
+                'class':'card-body card-music-'+datos.id
+            })
+        )
+    )
+    if(idioma === 'esp'){
+        $(`div.card-music-${datos.id}`).append($("<h5>", {
+            'class':'card-title',
+            text: datos.name_EUes
+        }))
+    }else{
+        $(`div.card-music-${datos.id}`).append($("<h5>", {
+            'class':'card-title',
+            text: datos.name_USen
+        }))
+    }
+}

@@ -1,4 +1,4 @@
-function MostrarCanciones() {
+function MostrarCanciones(idioma) {
     //creo el objeto XMLHTTPREQUEST
     let xhr = new XMLHttpRequest();
     //Le doy el formato
@@ -8,14 +8,49 @@ function MostrarCanciones() {
         if (this.readyState == 4 && this.status == 200) {
             //recibimos la respuesta como un objeto
             let data = xhr.response;
-            console.log(data);
+            for (let i = 0; i < data.length; i++) {
+                const SONG = data[i];
+                GenerarCardMusic(idioma, SONG);
+            }
         }
     };
     //hacemos la peticion a la URL añadiendo el parametro al final seleccionado
-    xhr.open('POST', '././datos/songs.json',true);
-    //introducimos en el Header la contraseña para acceder a la API
-    xhr.setRequestHeader("X-API-KEY", "f66873e9-3cf3-4b56-a17b-1987afe8c3de");
+    xhr.open('POST','././datos/songs.json',true);
     xhr.send();
 }
 
+let lenguaje = 'ing';
 MostrarCanciones();
+
+$('input:checkbox').on('change', function(){
+    if($(this).is(':checked')){
+        lenguaje='esp';
+        MostrarCanciones(lenguaje);
+        $('.content_music').empty();
+        $('#leng').html('ESPAÑOL');
+    } else {
+        lenguaje='ing';
+        MostrarCanciones(lenguaje);
+        $('.content_music').empty();
+        $('#leng').html('ENGLISH');
+    }
+});
+
+$('.content_music').on('click', '.card-music', function () {
+    let valor = $(this).attr('song');
+    $('#music_track').empty();
+    $('#music_track').append(
+        $("<div>").append(
+            $("<audio>", {
+                'controls':'',
+                'name':'media'
+            }).append(
+                $("<source>", {
+                    'src': valor,
+                    'type':'audio/mpeg',
+                    'id':'audio'
+                })
+            )
+        )
+    );
+});

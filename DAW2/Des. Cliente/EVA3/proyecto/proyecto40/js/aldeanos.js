@@ -54,15 +54,12 @@ function MostrarSelectEspecies() {
         const parser = new DOMParser();
         const xml = parser.parseFromString(filtros, "application/xml");
         let especies = xml.getElementsByTagName("especie");
-            for (let i = 0; i < especies.length; i++) {
-                const filtroEspecie = especies[i];
-                // console.log(filtroPersonalidad.getElementsByTagName("nombre")[0].textContent);
-                data.push(filtroEspecie.getElementsByTagName("nombre")[0].textContent);
-            }
-            
-            GenerarSelect(filtro, data);
-
-        
+        for (let i = 0; i < especies.length; i++) {
+            const FILTROESPECIE = especies[i];
+            // console.log(filtroPersonalidad.getElementsByTagName("nombre")[0].textContent);
+            data.push(FILTROESPECIE.getElementsByTagName("nombre")[0].textContent);
+        }
+        GenerarSelect(filtro, data);      
     })
     .catch(error => console.log('error', error));
 }
@@ -81,9 +78,9 @@ function MostrarSelectPersonalidad() {
             //extraemos todas las personalidades en un array
             let personalidades = xml.getElementsByTagName("personalidad");
             for (let i = 0; i < personalidades.length; i++) {
-                const filtroPersonalidad = personalidades[i];
+                const FILTROPERSONALIDAD = personalidades[i];
                 // console.log(filtroPersonalidad.getElementsByTagName("nombre")[0].textContent);
-                data.push(filtroPersonalidad.getElementsByTagName("nombre")[0].textContent);
+                data.push(FILTROPERSONALIDAD.getElementsByTagName("nombre")[0].textContent);
             }
             GenerarSelect(filtro, data);
         }

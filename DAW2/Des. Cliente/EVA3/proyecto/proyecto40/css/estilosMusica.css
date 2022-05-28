@@ -1,0 +1,90 @@
+.cabecera_music{
+    height: 5em;
+    background-color: #1abc9c;
+    position: fixed;
+    width: 100%;
+    box-sizing: 0 0 8px 0 rgb(0,0,0,.12);
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+    
+}
+.cabecera_music .form-group{
+    display: flex;
+    align-items: center;
+}
+#music_track{
+    float: right;
+    margin-left: auto;
+    margin-right: 6em;
+}
+.content_music{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px,1fr));
+    gap: 10px;
+    align-items: stretch;
+    padding: 14px;
+    margin: 5em 0;
+}
+
+.card-music{
+    width: 150px;
+    box-shadow: 0px 0px 10px rgba(0,0,0,0.4);  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background-color: whitesmoke;
+    cursor: pointer;
+}
+
+.card-img-top{
+    width: 150px;
+}
+
+/*Checkbox*/
+.box_1{
+    background: #eee;
+  }
+  
+  input[type="checkbox"].switch_1{
+    font-size: 30px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+    width: 3em;
+    height: 1.5em;
+    background: #ddd;
+    border-radius: 3em;
+    position: relative;
+    cursor: pointer;
+    outline: none;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    
+    input[type="checkbox"].switch_1:checked{
+    background: #000;
+    }
+    
+    input[type="checkbox"].switch_1:after{
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+            box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    -webkit-transform: scale(.7);
+            transform: scale(.7);
+    left: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    }
+    
+    input[type="checkbox"].switch_1:checked:after{
+    left: calc(100% - 1.5em);
+    }
+    
+    

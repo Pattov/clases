@@ -26,6 +26,7 @@
     grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
     gap: 2em;
     align-items: stretch;
+    justify-items: center;
 }
 
 .imgs{
