@@ -1,0 +1,13 @@
+[
+    {
+        "nombre":"sea",
+        "imagen":"<img src=\"././img/capturopedia/Sea_Button.png\">"   
+    },{
+        "nombre":"fish",
+        "imagen":"<img src=\"././img/capturopedia/fish.png\">"
+    },{
+        "nombre":"bugs",
+        "imagen":"<img src=\"././img/capturopedia/Bug.png\">"
+    }
+]
+

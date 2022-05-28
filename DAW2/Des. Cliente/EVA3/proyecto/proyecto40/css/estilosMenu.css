@@ -3,25 +3,29 @@
     align-items: center;
     justify-items: center;
     height: 100vh;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-template-areas:
-    "villagers calendar";
+    "villagers music capturopedia";
 }
 
 .content .aldeanos { 
     grid-area: villagers;
 }
 
-.content .calendario{
-    grid-area: calendar;
+.content .musica{
+    grid-area: music;
+}
+
+.content .capturopedia{
+    grid-area: capturopedia;
 }
 
 .card{
     display: flex;
     text-align: center;
     width: 60%;
-    height: 60%;
+    height: 40%;
     cursor: pointer;
     border: 1px solid #000;
     background: #fff;

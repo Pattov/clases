@@ -1,0 +1,38 @@
+.cabecera_capturopedia{
+    height: 5em;
+    background-color: #1abc9c;
+    /* background-color: tomato; */
+    position: fixed;
+    width: 100%;
+    box-sizing: 0 0 8px 0 rgb(0,0,0,.12);
+    display: flex;
+    align-items: center;
+    padding-left: 2em;
+}
+
+
+.content_capturopedia{
+    padding: 14px;
+    margin: 5em 0;
+}
+
+.criatura img{
+    width: 35px;
+}
+
+.hemisferio svg{
+    color:#FDEDA8;
+    margin: 6px;
+}
+
+#selectMes{
+    border-radius: 4px;
+    font-size: large;
+    background-color: #1abc9c00;
+    padding: 10px;
+    border: 1px solid #000;
+}
+
+.cabecera_capturopedia div{
+    margin-right: .5em;
+}

@@ -133,4 +133,8 @@
             <nombre esp="lobo">wolf</nombre>
         </especie>
     </especies>
+    <hemisferio>
+        <nombre>North</nombre>
+        <nombre>South</nombre>
+    </hemisferio>
 </filtros>

@@ -47,7 +47,6 @@ function GenerarCard(nombre, imagen) {
 */
 
 function GenerarSelect(tipo, options) {
-
     $("#select").append(
         $("<select>", {
             'id':tipo,
@@ -109,5 +108,41 @@ function GenerarCardMusic(idioma, datos) {
             'class':'card-title',
             text: datos.name_USen
         }))
+    }
+}
+/**
+ * <div class="btn-group tipo" role="group" aria-label="Basic radio toggle button group">
+        <input type="radio" class="btn-check criatura" name="btnradio criatura" id="btn_radio1" autocomplete="off" checked>
+        <label class="btn btn-outline-dark" for="btn_radio1">
+            <img src="img/capturopedia/Sea_Button.png">
+        </label>
+    </div>
+ */
+function GenerarGrupoDeBotones(tipo,datos) {
+    $('#'+tipo).append(
+        $("<div>", {
+            'class': 'btn-group '+tipo,
+            'role': 'group',
+            'aria-label': 'Basic radio toggle button group'
+        })
+    )
+
+    for (let i = 0; i < datos.length; i++) {
+        const cadaBoton = datos[i];
+        $(`.${tipo}`).append(
+            $("<input>", {
+                'type': 'radio',
+                'class': 'btn-check '+tipo,
+                'name': 'btnradio '+tipo,
+                'id': 'btn_radio'+(i+1),
+                'autocomplete': 'off',
+                'value':cadaBoton.nombre
+            })
+        ).append(
+            $("<label>", {
+                'class': 'btn btn-outline-dark',
+                'for': 'btn_radio'+(i+1)
+            }).append(cadaBoton.imagen)
+        )
     }
 }

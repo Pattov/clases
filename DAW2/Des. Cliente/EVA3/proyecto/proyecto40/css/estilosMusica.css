@@ -16,7 +16,7 @@
 #music_track{
     float: right;
     margin-left: auto;
-    margin-right: 6em;
+    margin-right: 6%;
 }
 .content_music{
     display: grid;
