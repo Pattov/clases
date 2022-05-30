@@ -112,37 +112,59 @@ function GenerarCardMusic(idioma, datos) {
 }
 /**
  * <div class="btn-group tipo" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check criatura" name="btnradio criatura" id="btn_radio1" autocomplete="off" checked>
+        <input type="radio" class="btn-check criatura" name="btnradio tipo" id="btn_radio1" autocomplete="off" checked>
         <label class="btn btn-outline-dark" for="btn_radio1">
-            <img src="img/capturopedia/Sea_Button.png">
+            imagen
         </label>
     </div>
  */
 function GenerarGrupoDeBotones(tipo,datos) {
     $('#'+tipo).append(
         $("<div>", {
+            'id':tipo+'padre',
             'class': 'btn-group '+tipo,
             'role': 'group',
             'aria-label': 'Basic radio toggle button group'
         })
     )
-
     for (let i = 0; i < datos.length; i++) {
-        const cadaBoton = datos[i];
-        $(`.${tipo}`).append(
+        const BTN = datos[i];
+        let nombre = "";
+        let imagen = "";
+        let letra = "";
+        if(tipo=="hemisferio"){
+            //ESTRAEMOS LOS DATOS DE XML - HEMISFERIOS
+            nombre = BTN.getElementsByTagName("nombre")[0].textContent;
+            imagen = BTN.getElementsByTagName("svg")[0];
+            letra = 'h';
+        }
+        if(tipo=="criatura"){
+            //ESTRAEMOS LOS DATOS JSON
+            nombre = BTN.nombre;
+            imagen = BTN.imagen;
+            letra = 'c'
+        }
+        if(tipo=="meses"){
+            nombre = BTN;
+            imagen = `<p>${BTN}</p>`;
+            letra = 'm'
+        }
+        $(`#${tipo}padre`).append(
             $("<input>", {
                 'type': 'radio',
                 'class': 'btn-check '+tipo,
                 'name': 'btnradio '+tipo,
-                'id': 'btn_radio'+(i+1),
+                'id': 'btn_radio'+(i+1+letra),
                 'autocomplete': 'off',
-                'value':cadaBoton.nombre
+                'importante':nombre
             })
         ).append(
             $("<label>", {
                 'class': 'btn btn-outline-dark',
-                'for': 'btn_radio'+(i+1)
-            }).append(cadaBoton.imagen)
+                'for': 'btn_radio'+(i+1+letra)
+            }).append(imagen)
         )
     }
-}
+    //selecciono el primer hijo de cada uno
+    $(`input:first-child`).prop('checked',true)
+    }

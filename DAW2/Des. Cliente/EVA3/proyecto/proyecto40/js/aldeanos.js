@@ -51,9 +51,9 @@ function MostrarSelectEspecies() {
     .then((resp) => resp.text())
     .then((filtros)=> {
         //creo un objeto que permite parsear elementos del DOM
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(filtros, "application/xml");
-        let especies = xml.getElementsByTagName("especie");
+        const PARSER = new DOMParser();
+        const XML = PARSER.parseFromString(filtros, "application/xml");
+        let especies = XML.getElementsByTagName("especie");
         for (let i = 0; i < especies.length; i++) {
             const FILTROESPECIE = especies[i];
             // console.log(filtroPersonalidad.getElementsByTagName("nombre")[0].textContent);
@@ -79,7 +79,6 @@ function MostrarSelectPersonalidad() {
             let personalidades = xml.getElementsByTagName("personalidad");
             for (let i = 0; i < personalidades.length; i++) {
                 const FILTROPERSONALIDAD = personalidades[i];
-                // console.log(filtroPersonalidad.getElementsByTagName("nombre")[0].textContent);
                 data.push(FILTROPERSONALIDAD.getElementsByTagName("nombre")[0].textContent);
             }
             GenerarSelect(filtro, data);
@@ -93,8 +92,8 @@ function MostrarSelectPersonalidad() {
 }
 
 function MostrarTodos() {
-    const url = 'https://api.nookipedia.com/villagers?game=nh';
-    let request = new Request(url, {
+    const URL = 'https://api.nookipedia.com/villagers?game=nh';
+    let request = new Request(URL, {
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
@@ -103,7 +102,7 @@ function MostrarTodos() {
     });
 
 
-    fetch(url,request)
+    fetch(URL,request)
     .then((resp) => resp.json())
     .then((data)=> {
         return data.map((vill)=> {

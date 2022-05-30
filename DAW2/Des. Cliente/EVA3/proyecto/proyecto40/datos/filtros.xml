@@ -133,8 +133,36 @@
             <nombre esp="lobo">wolf</nombre>
         </especie>
     </especies>
-    <hemisferio>
-        <nombre>North</nombre>
-        <nombre>South</nombre>
-    </hemisferio>
+    <hemisferios>
+        <hemisferio>
+            <nombre>North</nombre>
+            <imagen>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" transform='rotate(90)' fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+                </svg>
+            </imagen>
+        </hemisferio>
+        <hemisferio>
+            <nombre>South</nombre>
+            <imagen>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" transform='rotate(270)'  fill="currentColor" class="bi bi-circle-half" viewBox="0 0 16 16">
+                    <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+                </svg>
+            </imagen>
+        </hemisferio>
+    </hemisferios>
+    <meses>
+        <mes>january</mes>
+        <mes>february</mes>
+        <mes>march</mes>
+        <mes>april</mes>
+        <mes>may</mes>
+        <mes>june</mes>
+        <mes>july</mes>
+        <mes>august</mes>
+        <mes>september</mes>
+        <mes>october</mes>
+        <mes>november</mes>
+        <mes>december</mes>
+    </meses>
 </filtros>

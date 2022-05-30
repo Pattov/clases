@@ -5,13 +5,13 @@ Crear una página web que presente datos abiertos cargados asíncronamente desde
 Los datos a mostrar deberán estar en diferentes formatos y para ello se utilizarán varios métodos.
 
 Realizar un ejemplo de acceso a datos desde el cliente para cada uno de los siguientes casos utilizando Vanilla JS (Javascript puro).
-    ✅ XMLHttpRequest + XML + GET.
+    XMLHttpRequest + XML + GET.
     XMLHttpRequest + XML + POST.
-    ✅ XMLHttpRequest + JSON + GET.
-    ✅ XMLHttpRequest + JSON + POST.
-    ✅ API Fetch + XML + GET.
+    XMLHttpRequest + JSON + GET.
+    XMLHttpRequest + JSON + POST.
+    API Fetch + XML + GET.
     API Fetch + XML + POST.
-    ✅ API Fetch + JSON + GET.
+    API Fetch + JSON + GET.
     API Fetch + JSON + POST.
 Utilizando JQuery obtener y presentar datos abiertos utilizando los servicios ofrecidos por una API desde el lado del cliente.
     Se enviarán datos seleccionados por el usuario al servidor relacionados con la petición. Ej: seleccionar una provincia.
@@ -25,6 +25,6 @@ Se valorará positivamente:
     Explorar las diferentes funcionalidades de jQuery en la solución (selectores, eventos, manipulación del DOM, animaciones y efectos, etc.).
     Investigar librerías adicionales para presentar los datos. Ej. Chart.js.
 
-pendiente:
 
-Hacer Boton para Subir
+
+

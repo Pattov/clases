@@ -1,13 +1,13 @@
 .cabecera_capturopedia{
     height: 5em;
     background-color: #1abc9c;
-    /* background-color: tomato; */
     position: fixed;
     width: 100%;
     box-sizing: 0 0 8px 0 rgb(0,0,0,.12);
     display: flex;
     align-items: center;
     padding-left: 2em;
+    z-index: 4;
 }
 
 
@@ -25,7 +25,7 @@
     margin: 6px;
 }
 
-#selectMes{
+.cabecera_capturopedia select{
     border-radius: 4px;
     font-size: large;
     background-color: #1abc9c00;
@@ -35,4 +35,9 @@
 
 .cabecera_capturopedia div{
     margin-right: .5em;
+}
+#meses p{
+    color: #FDEDA8;
+    width: 4em;
+    margin: 6px 0;
 }
