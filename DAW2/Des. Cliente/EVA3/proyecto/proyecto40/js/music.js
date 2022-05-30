@@ -1,3 +1,9 @@
+/**
+ * Funcion que Muestra las Canciones
+ * Datos conseguidos por
+ * XMLHTTPREQUEST - JSON - POST
+ * @param {*} idioma por el que luego se mostrara el titulo de las canciones
+ */
 function MostrarCanciones(idioma) {
     //creo el objeto XMLHTTPREQUEST
     let xhr = new XMLHttpRequest();
@@ -18,10 +24,10 @@ function MostrarCanciones(idioma) {
     xhr.open('POST','././datos/songs.json',true);
     xhr.send();
 }
-
+//VARIABLES Y EJECUCION DE CODIGO
 let lenguaje = 'ing';
-MostrarCanciones();
-
+MostrarCanciones(lenguaje);
+//EVENTOS
 $('input:checkbox').on('change', function(){
     if($(this).is(':checked')){
         lenguaje='esp';

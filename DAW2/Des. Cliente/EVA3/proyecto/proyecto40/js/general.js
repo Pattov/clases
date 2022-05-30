@@ -7,12 +7,19 @@
 function capitalizarPrimeraLetra(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
-// <div class="card" style="width: 18rem;">
-//     <img src="..." class="card-img-top" alt="...">
-//     <div class="card-body">
-//         <h5 class="card-title">Card title</h5>
-//     </div>
-// </div>
+
+/**
+ * Generamos la Tarjeta
+ *
+ *<div class="card" style="width: 18rem;">
+ *     <img src="..." class="card-img-top" alt="...">
+ *     <div class="card-body">
+ *         <h5 class="card-title">Card title</h5>
+ *     </div>
+ * </div>
+ * @param {*} nombre nombre
+ * @param {*} imagen imagen
+ */
 function GenerarCard(nombre, imagen) {
     //CREAR ESTRUCTURA
     $("#listaAldeanos").append(
@@ -38,14 +45,18 @@ function GenerarCard(nombre, imagen) {
     ); 
 }
 
-/* <select id="personalidad">
-    <option selected disabled>Personalidad</option>
-    <option class="personalidad" value="personalidad1">Personalidad1</option>
-    <option class="personalidad" value="personalidad2">Personalidad2</option>
-</select> 
-<button type="button" class="btn-close" aria-label="Close"></button>
-*/
-
+/**
+ * Generamos el Select
+ * Por ejemplo:
+ * <select id="personalidad">
+ *      <option selected disabled>personalidad</option>
+ *      <option class="personalidad" value="personalidad1">Personalidad1</option>
+ *      <option class="personalidad" value="personalidad2">Personalidad2</option>
+ *</select> 
+ *<button type="button" class="btn-close" aria-label="Close"></button>
+ * @param {*} tipo nombre con el que se genera el select (especies, personalidad...)
+ * @param {*} options datos
+ */
 function GenerarSelect(tipo, options) {
     $("#select").append(
         $("<select>", {
@@ -76,12 +87,17 @@ function GenerarSelect(tipo, options) {
 
 }
 
-/* <div class="card card-music">
-        <img src="https://acnhapi.com/v1/images/songs/1" class="card-img-top">
-        <div class="card-body">
-            <h5 class="card-title">Agente Totakeke</h5>
-        </div>
-    </div> */
+/**
+ *Generamos la tarjeta de Musica
+ *<div class="card card-music">
+ *      <img src="https://acnhapi.com/v1/images/songs/1" class="card-img-top">
+ *      <div class="card-body">
+ *          <h5 class="card-title">Agente Totakeke</h5>
+ *      </div>
+ *</div>
+ * @param {*} idioma pasamos por parametro el idioma seleccionado
+ * @param {*} datos pasamos el objeto con los los datos
+ */
 function GenerarCardMusic(idioma, datos) {
     $('.content_music').append(
         $("<div>", {
@@ -99,24 +115,30 @@ function GenerarCardMusic(idioma, datos) {
         )
     )
     if(idioma === 'esp'){
+        //si es esp generamos el español
         $(`div.card-music-${datos.id}`).append($("<h5>", {
             'class':'card-title',
             text: datos.name_EUes
         }))
     }else{
+        //sino mostramos el ingles
         $(`div.card-music-${datos.id}`).append($("<h5>", {
             'class':'card-title',
             text: datos.name_USen
         }))
     }
 }
+
 /**
- * <div class="btn-group tipo" role="group" aria-label="Basic radio toggle button group">
-        <input type="radio" class="btn-check criatura" name="btnradio tipo" id="btn_radio1" autocomplete="off" checked>
-        <label class="btn btn-outline-dark" for="btn_radio1">
-            imagen
-        </label>
-    </div>
+ *Generamos el grupo de botones
+ *<div class="btn-group tipo" role="group" aria-label="Basic radio toggle button group">
+ *      <input type="radio" class="btn-check criatura" name="btnradio tipo" id="btn_radio1" autocomplete="off" checked>
+ *      <label class="btn btn-outline-dark" for="btn_radio1">
+ *         imagen
+ *      </label>
+ *</div>
+ * @param {*} tipo
+ * @param {*} datos
  */
 function GenerarGrupoDeBotones(tipo,datos) {
     $('#'+tipo).append(
@@ -167,4 +189,4 @@ function GenerarGrupoDeBotones(tipo,datos) {
     }
     //selecciono el primer hijo de cada uno
     $(`input:first-child`).prop('checked',true)
-    }
+}

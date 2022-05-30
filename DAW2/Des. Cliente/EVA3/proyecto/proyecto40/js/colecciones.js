@@ -1,3 +1,9 @@
+/**
+ * Generar Botones de las Criaturas
+ * Hemos usado para conectarnos
+ * API fetch + JSON + POST.
+ * @param {*} tipo nombre que le daremos al Grupo de botones
+ */
 function CrearBotonesCriaturas(tipo) {
     var requestOptions = {
         method: 'POST',
@@ -12,6 +18,12 @@ function CrearBotonesCriaturas(tipo) {
     .catch(error => console.log('error', error));
 }
 
+/**
+ * Generar Botones de los Hemisferios
+ * Hemos usado para conectarnos
+ * API fetch + XML + POST.
+ * @param {*} tipo nombre que le daremos al Grupo de botones
+ */
 function CrearBotonesHemisferio(tipo) {
     var requestOptions = {
         method: 'POST',
@@ -29,11 +41,21 @@ function CrearBotonesHemisferio(tipo) {
     .catch(error => console.log('error', error));
 }
 
+/**
+ * Generar Botones de Meses
+ * @param {*} tipo nombre que le daremos al Grupo de botones
+ */
 function CrearBotonesMeses(tipo) {
     datos = ['ALL','MONTH'];
     GenerarGrupoDeBotones(tipo,datos);    
 }
 
+/**
+ * Generar Select del Mes
+ * Hemos usado para conectarnos
+ * XMLHttpRequest + XML + POST.
+ * @param {*} tipo pasamos por parametro el tipo con el que generaremos el Select
+ */
 function CrearSelectMes(tipo) {
     let data = []
     let xhr = new XMLHttpRequest();
@@ -54,7 +76,13 @@ function CrearSelectMes(tipo) {
     xhr.open('POST', '././datos/filtros.xml',true);
     xhr.send();
 }
-
+/**
+ * Mostramos la tabla con los resultados
+ * Hemos usado para conectarnos
+ * API FETCH + JSON + GET.
+ * Mostramos los aldeanos que tienen dicho filtro
+ *
+ */
 function MostrarCapturopedia() {
     let datos = [];
     let parte = '';
@@ -152,19 +180,20 @@ function MostrarCapturopedia() {
     console.log(error);
     });
 }
-
-let table;
+//Variables y ejecucion de codigo
 //los valores por defecto
 let criaturaElegida = 'sea';
+let elegido = 'ALL';
 let hemisferioElegido = 'North';
 let mesElegido = 'current';
-let elegido = 'ALL';
+let table;
 CrearBotonesCriaturas('criatura');
 CrearBotonesHemisferio('hemisferio');
 CrearBotonesMeses('meses');
 MostrarCapturopedia();
 
-
+//Eventos
+//botones filtros
 $(".cabecera_capturopedia").on( 'change', '.hemisferio', function() {
     if( $(this).is(':checked') ) {
         // Hacer algo si el checkbox ha sido seleccionado
@@ -199,7 +228,6 @@ $(".cabecera_capturopedia").on( 'change', '.meses', function() {
         }
     }
 );
-
 $('#select').on('change','#month', function() {
     //añadimos a la variable del filtro el valor escogido
     mesElegido = $(this).find(":selected").val();

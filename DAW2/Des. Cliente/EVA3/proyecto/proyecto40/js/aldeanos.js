@@ -1,8 +1,19 @@
+//FUNCIONES
+/**
+ * Con esta funcion aplicamos los Filtros seleccionados a los Aldeanos 
+ * Hemos usado para conectarnos
+ * XMLHttpRequest + JSON + GET.
+ * Mostramos los aldeanos que tienen dicho filtro
+ */
 function AplicarFiltros() {
+    //aplicamos los filtros
     let filtrosAplicar='';
+    //si personalidad esta escogido
     if(valorEscogidoPersonalidad!=''){
+        // añadimos a la variable filtros aplicar que vamos a añadir al final de la variable URL 
         filtrosAplicar += '&personality='+valorEscogidoPersonalidad;
     }
+    //si especie esta escogido
     if(valorEscogidoEspecies!=''){
         filtrosAplicar += '&species='+valorEscogidoEspecies;
     }
@@ -38,32 +49,46 @@ function AplicarFiltros() {
     xhr.send();
 }
 
+/**
+ * Esta Funcion genera el Select de Especies con los datos obtenidos de fichero XML
+ * Hemos usado para conectarnos
+ * API FETCH + XML + GET.
+ */
 function MostrarSelectEspecies() {
     let filtro = 'species';
     let data = [];
 
-    var requestOptions = {
+    let requestOptions = {
         method: 'GET',
         redirect: 'follow'
     };
-      
+    //hacemos la conexion
     fetch('././datos/filtros.xml', requestOptions)
+    //configuramos el tipo de la respuesta
     .then((resp) => resp.text())
+    //decimos que hacer con la respuesta
     .then((filtros)=> {
         //creo un objeto que permite parsear elementos del DOM
         const PARSER = new DOMParser();
         const XML = PARSER.parseFromString(filtros, "application/xml");
+        //cojemos los valores que tengan la etiqueta especie
         let especies = XML.getElementsByTagName("especie");
         for (let i = 0; i < especies.length; i++) {
             const FILTROESPECIE = especies[i];
-            // console.log(filtroPersonalidad.getElementsByTagName("nombre")[0].textContent);
+            // guardamos en el array el valor que tiene la etiqueta nombre
             data.push(FILTROESPECIE.getElementsByTagName("nombre")[0].textContent);
         }
+        //generamos el select de especies 
         GenerarSelect(filtro, data);      
     })
     .catch(error => console.log('error', error));
 }
 
+/**
+ * Esta Funcion genera el Select de personalidad con los datos obtenidos de fichero XML
+ * Hemos usado para conectarnos
+ * XMLHttpRequest + XML + GET.
+ */
 function MostrarSelectPersonalidad() {
     let filtro = 'personality';
     let data = [];
@@ -91,6 +116,12 @@ function MostrarSelectPersonalidad() {
     
 }
 
+/**
+ * Con esta funcion vemos todos los Aldeanos 
+ * Hemos usado para conectarnos
+ * API Fetch + JSON + GET.
+ * Mostramos los aldeanos que tienen dicho filtro
+ */
 function MostrarTodos() {
     const URL = 'https://api.nookipedia.com/villagers?game=nh';
     let request = new Request(URL, {
@@ -114,16 +145,18 @@ function MostrarTodos() {
     });
 }
 
+//VARIABLES
 let filtroPersonalidad = false;
 let filtroEspecies = false;
 let valorEscogidoPersonalidad = '';
 let valorEscogidoEspecies = '';
 
+//Ejecutar Codigo
 MostrarTodos();
 MostrarSelectEspecies();
 MostrarSelectPersonalidad();
 
-
+//EVENTOS
 $('#select').on('change','#personality', function() {
     // comprobamos que el filtro de Personalidad no ha sido usado antes
     if(filtroPersonalidad == false){
