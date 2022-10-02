@@ -1,0 +1,102 @@
+*{
+  font-family: sans-serif;
+}
+:root {
+  --colorAC: #56b6eb;
+  --colorAO: #3d7fe7;
+  --fondo: #f1f1f1;
+}
+.container {
+  border: 1.5px solid var(--colorAO);
+  border-radius: 0.25rem;
+  overflow-x: auto;
+}
+/* ------------------------------------------------------------- */
+/* -----------------------fuera de la tabla--------------------- */
+/* ------------------------------------------------------------- */
+.caja {
+  padding: 0.5em;
+}
+.der {
+  position: absolute;
+  right: 0.5em;
+  top: 0.5em;
+}
+.buscar {
+  padding: 0 0.5em;
+}
+.elementos{
+  display: flex;
+  align-items: center;
+}
+.texto{
+  padding-left: .5em;
+}
+/* paginas */
+.paginas{
+  margin: 0.5em;
+  margin-left: auto;
+}
+.fondo{
+  background: var(--colorAC);
+}
+.btn a{
+  text-decoration: none;
+  color: black;
+  list-style: none;
+  padding: 0.5em;
+}
+.blanco a{
+  color: #f1f1f1;
+}
+table{
+  /* por defecto tiene un border-space de 2px y un border-collapse: separate; --> para eliminarlo he visto esto*/
+  border-collapse: collapse;
+}
+.btn{
+ background-color: #ABD5F9;
+ border: 1px solid grey;
+}
+.clic{
+  background-color: azure;
+}
+/* ------------------------------------------------------------- */
+/* ---------------------------tabla---------------------------- */
+/* ------------------------------------------------------------- */
+.cuerpo{
+  width: 100%;
+}
+.encabezadotabla{
+  background: linear-gradient(var(--colorAC),var(--colorAO));
+  padding: .5em;
+  color: aliceblue;
+  border: .01px solid var(--fondo);
+}
+
+.oscuro{
+  background-color: var(--fondo);
+}
+tr, td{
+  padding: 0.5em;
+  vertical-align: inherit;
+  text-align: center;
+  border: 0.1px solid var(--fondo);
+}
+.iconos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icono{
+  width: 18px;
+  margin: 0 .25em;
+  padding: 4px;
+  box-shadow: 0px 0px 5px 0px rgba(32, 32, 32, 0.2);
+  border-radius: 2px;
+}
+tbody>tr:hover{
+  background-color: #ABD6F9;
+}
+tbody>tr:hover .icono{
+  background-color: azure;
+}
