@@ -1,0 +1,21 @@
+{
+  "name": "proyecto",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "rollup -c"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@codemirror/lang-html": "^6.4.3",
+    "@codemirror/lang-javascript": "^6.1.7",
+    "codemirror": "^6.0.1"
+  },
+  "devDependencies": {
+    "@rollup/plugin-node-resolve": "^15.0.2",
+    "rollup": "^3.20.6"
+  }
+}

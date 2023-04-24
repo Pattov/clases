@@ -10,12 +10,13 @@
         GENERAR FAVICON    -->
 
     <link rel="stylesheet" href="styles/estilomenu.css">
+    <link rel="stylesheet" href="styles/general.css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
     </head>
 <body>
     <!-- M E N U  -->
-    <header class="contenedor">
+    <header class="contenedorMenu">
         <div class="logo">
             <span>GENERADOR DOM</span>
         </div>
@@ -31,13 +32,33 @@
             <i class='bx bxl-github' ></i>
         </div>
     </header>
-    <H1>Hola</H1>
-    <div id="editor"></div>
+    <!-- Cuerpo -->
+    <!-- Opciones -->
+    
+    <!-- Paneles -->
+    <div class="contenedor">
+       <div class="panelEditor" id="editor-html">
+       </div> 
+       <div class="panelEditor" id="editor-js">
+       </div> 
+    </div>
+    <script src="js/editor.bundle.js"></script>
     <script src="js/temas.js"></script>
 </body>
 </html>
 <!-- Recursos Usados
 
 https://boxicons.com/ 
+https://morioh.com/p/6f26d21b74b5
+https://codemirror.net
 
+
+Comandos usados
+npm init -y
+
+npm i codemirror @codemirror/lang-javascript
+
+npm i rollup @rollup/plugin-node-resolve
+
+npm start 
 -->
