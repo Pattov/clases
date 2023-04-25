@@ -1,22 +1,35 @@
+
 import {EditorView, basicSetup} from "codemirror"
-import { EditorState } from "@codemirror/state";
+import {EditorState} from "@codemirror/state";
 import {javascript} from "@codemirror/lang-javascript"
 import {htmlLanguage} from '@codemirror/lang-html';
-let updateListenerExtension = EditorView.updateListener.of((update) => {
-  if (update.docChanged) {
-    // Handle the event here
-    console.log("es esto")
-  }
-});
-let editorHtml = new EditorView({
-  doc: "<div class=\"card\">\n\t<div class=\"nombreproducto ing-content\">\n\t\t<img class=\"foto\" src=\"././img/pexels-nombreproducto.jpg\">\n\t\t<h4 class=\"card-title\">nombreproducto</h4>\n\t\t<input type=\"number\" id=\"precio\" placeholder=\"PRECIO\">\n\t\t<button class=\"btn\" id=\"btnAcumPan\" marcador=\"1\">+</button>\n\t</div>\n</div>",
-  extensions: [basicSetup, htmlLanguage,updateListenerExtension],
-  parent: document.getElementById("editor-html")
-  
-})
+
 let editorJs = new EditorView({
-  doc: "",
   extensions: [basicSetup, javascript()],
   parent: document.getElementById("editor-js")
 })
-editorHtml.compositionStarted
+
+let updateListenerExtension = EditorView.updateListener.of((update) => {
+  if (update.docChanged) {
+    //almaceno entrada de datos
+    let StringHtml = editorHtml.contentDOM.innerText;
+    SerializeHtml(StringHtml);
+    
+    //texto = "let texto = \"Hello World\"";
+    editorJs.contentDOM.innerText = texto;
+  }
+});
+
+let editorHtml = new EditorView({
+  extensions: [basicSetup, htmlLanguage, updateListenerExtension],
+  parent: document.getElementById("editor-html")
+})
+
+function SerializeHtml(text) {
+  const nodes = htmlString.split('>');
+   console.log(nodes);
+
+}
+
+
+

@@ -1,3 +1,14 @@
+<div class="card">
+	<div class="nombreproducto ing-content">
+		<img class="foto" src="././img/pexels-nombreproducto.jpg">
+		<h4 class="card-title">nombreproducto</h4>
+		<input type="number" id="precio" placeholder="PRECIO">
+		<button class="btn" id="btnAcumPan" marcador="1">+</button>
+	</div>
+</div>
+
+
+
 datos.BDPRODUCTOS.forEach((info) => {
     let item = PrecioDelProducto(info.id);
     // Estructura de la Card Container
