@@ -1,3 +1,6 @@
+
+/*
+
 <div class="card">
 	<div class="nombreproducto ing-content">
 		<img class="foto" src="././img/pexels-nombreproducto.jpg">
@@ -6,6 +9,8 @@
 		<button class="btn" id="btnAcumPan" marcador="1">+</button>
 	</div>
 </div>
+
+*/
 
 
 
@@ -48,3 +53,6 @@ datos.BDPRODUCTOS.forEach((info) => {
     CCONTAINER.appendChild(CBODY);
     datos.CUERPOPROD.appendChild(CCONTAINER);
 });
+
+
+

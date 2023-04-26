@@ -13,9 +13,9 @@ let updateListenerExtension = EditorView.updateListener.of((update) => {
   if (update.docChanged) {
     //almaceno entrada de datos
     let StringHtml = editorHtml.contentDOM.innerText;
+
+    let texto = "let texto = \"Hello World\"";
     SerializeHtml(StringHtml);
-    
-    //texto = "let texto = \"Hello World\"";
     editorJs.contentDOM.innerText = texto;
   }
 });
@@ -26,8 +26,36 @@ let editorHtml = new EditorView({
 })
 
 function SerializeHtml(text) {
-  const nodes = htmlString.split('>');
-   console.log(nodes);
+  
+  // //cada Elemento constara de 
+  // let elemento = [
+  //   {
+  //     "ElementNode": "h1",
+  //     "TextElement": "hola",
+  //     "hijos":{
+  //       "ElementNode": "h2",
+  //       "TextElement": "hola",
+  //       "hijos":{
+        
+  //       }
+  //     }
+  //   },
+  //   {
+  //     "ElementNode": "h3",
+  //     "TextElement": "hola",
+  //   }
+  // ]
+  
+  console.log(elemento);
+  //Quitar /n/t del String
+  text = text.replace(/[\n\t]/g, "");
+
+  const nodes = text.split('>');
+
+  nodes.forEach(node => {
+    console.log(node);
+    
+  });
 
 }
 
