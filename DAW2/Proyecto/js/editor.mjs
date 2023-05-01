@@ -46,7 +46,9 @@ function SerializeHtml(text) {
   //   }
   // ]
   
-  console.log(elemento);
+  const range = document.createRange();
+  const fragment = range.createContextualFragment(range);
+  console.log(fragment);
   //Quitar /n/t del String
   text = text.replace(/[\n\t]/g, "");
 
