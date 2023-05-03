@@ -17,6 +17,7 @@ let updateListenerExtension = EditorView.updateListener.of((update) => {
     let texto = "let texto = \"Hello World\"";
     //los datos pasan de String a HMTL
     let nodos = convertirElementos(SerializeHtml(StringHtml));
+    //let nodos = SerializeHtml(StringHtml);
     console.log(nodos);
     editorJs.contentDOM.innerText = texto;
   }
@@ -59,22 +60,37 @@ function SerializeHtml(text) {
 //   }
 // ]
 
-function convertirElementos(elementos) {
+function convertirElementos(elements) {
   const nuevosElementos = [];
 
-  elementos.forEach(elemento => {
-    const nuevoElemento = {
-      ElementNode: elemento.tagName,
-      TextElement: elemento.TextElement,
-      hijos: []
-    };
+  const element = {
+    NameElement: undefined,
+    textELement: null,
+    Children: []
+  };
 
-    if (elemento.hijos && elemento.hijos.length > 0) {
-      nuevoElemento.hijos = convertirElementos(elemento.hijos);
-    }
+  nuevosElementos = elements.map((el) => convertirAHijosElemento(el))
+  // elementos.forEach(elemento => {
+    
 
-    nuevosElementos.push(nuevoElemento);
-  });
+  //   if (elemento.hijos && elemento.hijos.length > 0) {
+  //     nuevoElemento.hijos = convertirElementos(elemento.hijos);
+  //   }
+
+  //   nuevosElementos.push(nuevoElemento);
+  // });
 
   return nuevosElementos;
 }
+
+
+// function convertirAHijosElemento(elemento) {
+//   if (elemento.hijos) {
+//     elemento.hijos = elemento.hijos.map((hijo) => convertirAHijosElemento(hijo));
+//   }
+//   return {
+//     ElementNode: elemento.ElementNode,
+//     TextElement: elemento.TextElement,
+//     hijos: elemento.hijos || {},
+//   };
+// }

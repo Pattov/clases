@@ -25869,8 +25869,9 @@
 
        let texto = "let texto = \"Hello World\"";
        //los datos pasan de String a HMTL
-       let textHtml = SerializeHtml(StringHtml);
-       console.log(convertirElementos(textHtml));
+       let nodos = convertirElementos(SerializeHtml(StringHtml));
+       //let nodos = SerializeHtml(StringHtml);
+       console.log(nodos);
        editorJs.contentDOM.innerText = texto;
      }
    });
@@ -25912,24 +25913,33 @@
    //   }
    // ]
 
-   function convertirElementos(elementos) {
+   function convertirElementos(elements) {
      const nuevosElementos = [];
 
-     elementos.forEach(elemento => {
-       const nuevoElemento = {
-         ElementNode: elemento.ElementNode,
-         TextElement: elemento.TextElement,
-         hijos: []
-       };
+     nuevosElementos = elements.map((el) => convertirAHijosElemento(el));
+     // elementos.forEach(elemento => {
+       
 
-       if (elemento.hijos && elemento.hijos.length > 0) {
-         nuevoElemento.hijos = convertirElementos(elemento.hijos);
-       }
+     //   if (elemento.hijos && elemento.hijos.length > 0) {
+     //     nuevoElemento.hijos = convertirElementos(elemento.hijos);
+     //   }
 
-       nuevosElementos.push(nuevoElemento);
-     });
+     //   nuevosElementos.push(nuevoElemento);
+     // });
 
      return nuevosElementos;
+   }
+
+
+   function convertirAHijosElemento(elemento) {
+     if (elemento.hijos) {
+       elemento.hijos = elemento.hijos.map((hijo) => convertirAHijosElemento(hijo));
+     }
+     return {
+       ElementNode: elemento.ElementNode,
+       TextElement: elemento.TextElement,
+       hijos: elemento.hijos || {},
+     };
    }
 
 })();
