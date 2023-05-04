@@ -61,7 +61,7 @@ function SerializeHtml(text) {
 // ]
 
 function convertirElementos(elements) {
-  const nuevosElementos = [];
+  let nuevosElementos = [];
 
   const element = {
     NameElement: undefined,
@@ -69,18 +69,25 @@ function convertirElementos(elements) {
     Children: []
   };
 
-  nuevosElementos = elements.map((el) => convertirAHijosElemento(el))
-  // elementos.forEach(elemento => {
-    
+  
+  console.log(elements)
+  for (const element of elements.children) {
+    console.log(element.textContent);
+    console.log(element.nodeName);
+    for (const attr of element.attributes) {
+      console.log(`Atributo ${attr.nodeName}: ${attr.nodeValue}`);
+    }
+  }
+//   elements.forEach(elemento => {
 
-  //   if (elemento.hijos && elemento.hijos.length > 0) {
-  //     nuevoElemento.hijos = convertirElementos(elemento.hijos);
-  //   }
+//     if (elemento.hijos && elemento.hijos.length > 0) {
+//       nuevoElemento.hijos = convertirElementos(elemento.hijos);
+//     }
 
-  //   nuevosElementos.push(nuevoElemento);
-  // });
+//     nuevosElementos.push(nuevoElemento);
+//   });
 
-  return nuevosElementos;
+//   return nuevosElementos;
 }
 
 

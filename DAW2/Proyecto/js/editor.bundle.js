@@ -25914,32 +25914,38 @@
    // ]
 
    function convertirElementos(elements) {
-     const nuevosElementos = [];
 
-     nuevosElementos = elements.map((el) => convertirAHijosElemento(el));
-     // elementos.forEach(elemento => {
-       
-
-     //   if (elemento.hijos && elemento.hijos.length > 0) {
-     //     nuevoElemento.hijos = convertirElementos(elemento.hijos);
-     //   }
-
-     //   nuevosElementos.push(nuevoElemento);
-     // });
-
-     return nuevosElementos;
-   }
-
-
-   function convertirAHijosElemento(elemento) {
-     if (elemento.hijos) {
-       elemento.hijos = elemento.hijos.map((hijo) => convertirAHijosElemento(hijo));
+     
+     console.log(elements);
+     for (const element of elements.children) {
+       console.log(element.textContent);
+       console.log(element.nodeName);
+       for (const attr of element.attributes) {
+         console.log(`Atributo ${attr.nodeName}: ${attr.nodeValue}`);
+       }
      }
-     return {
-       ElementNode: elemento.ElementNode,
-       TextElement: elemento.TextElement,
-       hijos: elemento.hijos || {},
-     };
+   //   elements.forEach(elemento => {
+
+   //     if (elemento.hijos && elemento.hijos.length > 0) {
+   //       nuevoElemento.hijos = convertirElementos(elemento.hijos);
+   //     }
+
+   //     nuevosElementos.push(nuevoElemento);
+   //   });
+
+   //   return nuevosElementos;
    }
+
+
+   // function convertirAHijosElemento(elemento) {
+   //   if (elemento.hijos) {
+   //     elemento.hijos = elemento.hijos.map((hijo) => convertirAHijosElemento(hijo));
+   //   }
+   //   return {
+   //     ElementNode: elemento.ElementNode,
+   //     TextElement: elemento.TextElement,
+   //     hijos: elemento.hijos || {},
+   //   };
+   // }
 
 })();
