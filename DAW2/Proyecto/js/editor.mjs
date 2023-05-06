@@ -4,6 +4,10 @@ import {EditorState} from "@codemirror/state";
 import {javascript} from "@codemirror/lang-javascript"
 import {htmlLanguage} from '@codemirror/lang-html';
 
+
+
+
+
 let editorJs = new EditorView({
   extensions: [basicSetup, javascript()],
   parent: document.getElementById("editor-js")
@@ -16,7 +20,7 @@ let updateListenerExtension = EditorView.updateListener.of((update) => {
 
     let texto = "let texto = \"Hello World\"";
     //los datos pasan de String a HMTL
-    let nodos = convertirElementos(SerializeHtml(StringHtml));
+    let nodos = convertElementsToObj(SerializeHtml(StringHtml));
     //let nodos = SerializeHtml(StringHtml);
     console.log(nodos);
     editorJs.contentDOM.innerText = texto;
@@ -60,28 +64,27 @@ function SerializeHtml(text) {
 //   }
 // ]
 
-function convertirElementos(elements) {
+function convertElementsToObj(elements) {
   let nuevosElementos = [];
-
-  const element = {
-    NameElement: undefined,
-    textELement: null,
-    Children: []
-  };
-
-  
   console.log(elements)
   for (const element of elements.children) {
-    console.log(element.textContent);
-    console.log(element.nodeName);
+    const elementNode = {};
+    elementNode.NameElement = element.nodeName
+    elementNode.textElement = element.firstChild.textContent.trim();
+    
     for (const attr of element.attributes) {
       console.log(`Atributo ${attr.nodeName}: ${attr.nodeValue}`);
     }
+    //mirar hijos
+    console.log(element.children)
+    nuevosElementos.push(elementNode)
   }
+  return nuevosElementos
+
 //   elements.forEach(elemento => {
 
 //     if (elemento.hijos && elemento.hijos.length > 0) {
-//       nuevoElemento.hijos = convertirElementos(elemento.hijos);
+//       nuevoElemento.hijos = convertElementsToObj(elemento.hijos);
 //     }
 
 //     nuevosElementos.push(nuevoElemento);
@@ -89,6 +92,7 @@ function convertirElementos(elements) {
 
 //   return nuevosElementos;
 }
+
 
 
 // function convertirAHijosElemento(elemento) {
