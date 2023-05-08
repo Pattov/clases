@@ -25913,44 +25913,36 @@
    //   }
    // ]
 
+   function createObj(element) {
+   console.log(element);
+     const elementNode = Object.create(null);
+     elementNode.NameElement = element.nodeName;
+     elementNode.textElement = element.firstChild.textContent !== null ? element.firstChild.textContent.trim() : " ";
+
+     for (const attr of element.attributes) {
+       console.log(`Atributo ${attr.nodeName}: ${attr.nodeValue}`);
+     }
+     return elementNode;
+   }
+
    function convertElementsToObj(elements) {
      let nuevosElementos = [];
      console.log(elements);
      for (const element of elements.children) {
-       const elementNode = {};
-       elementNode.NameElement = element.nodeName;
-       elementNode.textElement = element.firstChild.textContent.trim();
-       
-       for (const attr of element.attributes) {
-         console.log(`Atributo ${attr.nodeName}: ${attr.nodeValue}`);
+       let obj = createObj(element);
+       //mirar hijos
+       if(element.hasChildNodes()){
+         obj.children = [];
+         const children = element.childNodes;
+         console.log(children);
+         for (let i = 0; i < children.length; i++) {
+           createObj(children);
+           //obj.children.push(objChild);
+         }
        }
-       console.log(element.children);
-       nuevosElementos.push(elementNode);
+       nuevosElementos.push(obj);
      }
      return nuevosElementos
-
-   //   elements.forEach(elemento => {
-
-   //     if (elemento.hijos && elemento.hijos.length > 0) {
-   //       nuevoElemento.hijos = convertElementsToObj(elemento.hijos);
-   //     }
-
-   //     nuevosElementos.push(nuevoElemento);
-   //   });
-
-   //   return nuevosElementos;
    }
-
-
-   // function convertirAHijosElemento(elemento) {
-   //   if (elemento.hijos) {
-   //     elemento.hijos = elemento.hijos.map((hijo) => convertirAHijosElemento(hijo));
-   //   }
-   //   return {
-   //     ElementNode: elemento.ElementNode,
-   //     TextElement: elemento.TextElement,
-   //     hijos: elemento.hijos || {},
-   //   };
-   // }
 
 })();
