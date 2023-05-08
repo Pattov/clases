@@ -2,20 +2,12 @@
 /*
 
 <div class="card">
-	<div class="nombreproducto ing-content">
-		<img class="foto" src="">
-		<h4 class="card-title">nombreproducto</h4>
-		<input type="number" id="precio" placeholder="PRECIO">
-		<button class="btn" id="btnAcumPan" marcador="1">+</button>
-	<div class="card">
-	<div class="nombreproducto ing-content">
-		<img class="foto" src="">
-		<h4 class="card-title">nombreproducto</h4>
-		<input type="number" id="precio" placeholder="PRECIO">
-		<button class="btn" id="btnAcumPan" marcador="1">+</button>
-	</div>
+<div class="nombreproducto ing-content">
+	<img class="foto" src="">
+	<h4 class="card-title">nombreproducto</h4>
+	<input type="number" id="precio" placeholder="PRECIO">
+	<button class="btn" id="btnAcumPan" marcador="1">+</button>
 </div>
-		</div>
 </div>
 
 */

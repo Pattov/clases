@@ -64,19 +64,18 @@ function SerializeHtml(text) {
 function createObj(element) {
 console.log(element)
   const elementNode = Object.create(null);
-  elementNode.NameElement = element.nodeName;
+  elementNode.nameElement = element.nodeName;
   elementNode.textElement = element.firstChild.textContent !== null ? element.firstChild.textContent.trim() : " ";
-  ;
+
 
   for (const attr of element.attributes) {
-    console.log(`Atributo ${attr.nodeName}: ${attr.nodeValue}`);
+    elementNode[attr.nodeName] = attr.nodeValue;
   }
   return elementNode;
 }
 
 function convertElementsToObj(elements) {
   let nuevosElementos = [];
-  console.log(elements)
   for (const element of elements.children) {
     let obj = createObj(element);
     //mirar hijos
@@ -84,13 +83,17 @@ function convertElementsToObj(elements) {
       obj.children = [];
       const children = element.childNodes;
       console.log(children);
-      for (let i = 0; i < children.length; i++) {
-        let objChild = createObj(children);
-        
-        //obj.children.push(objChild);
+      for (const child of children) {
+        if(child.nodeName!=="#text"){
+          let objChild = createObj(child);
+          obj.children.push(objChild);
+        }
       }
     }
     nuevosElementos.push(obj)
   }
   return nuevosElementos
 }
+
+
+
