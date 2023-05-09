@@ -77,14 +77,16 @@ console.log(element)
 function convertElementsToObj(elements) {
   let nuevosElementos = [];
   for (const element of elements.children) {
+    console.log(element.childElementCount)
     let obj = createObj(element);
     //mirar hijos
-    if(element.hasChildNodes()){
+    if(element.hasChildNodes() && element.childElementCount!=0){
       obj.children = [];
       const children = element.childNodes;
       console.log(children);
       for (const child of children) {
         if(child.nodeName!=="#text"){
+          console.log(child.childElementCount)
           let objChild = createObj(child);
           obj.children.push(objChild);
         }
