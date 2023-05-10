@@ -10,13 +10,18 @@ body{
     color: var(--colorFuente);
     margin: 0;
 }
+.logo{
+    text-align: center;
+}
 .logo span{
     font-size: 1.25rem;
     font-weight: 700;
-    padding-left: var(--padding);
 }
 
-
+.logo img{
+    width: 4em;
+    padding-left: var(--padding);
+}
 .contenedorMenu{
     display: flex;
     justify-content: space-between;
