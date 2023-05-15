@@ -25965,4 +25965,16 @@
      return fragment;
    }
 
+   var select = document.getElementById("ejemplos");
+   select.addEventListener("change", function() {
+     var selectedOption = select.value; // Obtener el valor de la opción seleccionada
+
+     // Actualizar el contenido del editor con el texto correspondiente a la opción seleccionada
+     if (selectedOption === "sencillo") {
+       editorHtml.contentDOM.innerText = "<p>hola</p>";
+     } else if (selectedOption === "select") {
+       editorHtml.contentDOM.innerText = "<select class=\"form-select form-select-lg mb-3\" aria-label=\".form-select-lg example\">\n\t<option selected>Open this select menu</option>\n\t<option value=\"1\">One</option>\n\t<option value=\"2\">Two</option>\n\t<option value=\"3\">Three</option>\n</select>";
+     } 
+   });
+
 })();
