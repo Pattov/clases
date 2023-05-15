@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles/general.css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
-    </head>
+</head>
 <body>
     <!-- M E N U  -->
     <header class="contenedorMenu">
@@ -33,8 +33,13 @@
     <!-- Opciones -->
     <select id="ejemplos">
         <option value="hide">-- Selecciona una opcion --</option>
-        <option value="sencillo">boostrap</option>
-        <option value="select">select</option>
+        <option value="sencillo">Sencillo</option>
+        <option value="select">Select</option>
+    </select>
+    <select id="lenguaje">
+        <option value="hide">-- Selecciona un lenguaje --</option>
+        <option value="js">javascript</option>
+        <option value="jquery">jquery</option>
     </select>
     <!-- Paneles -->
     <div class="contenedor">
@@ -43,13 +48,23 @@
        <div class="panelEditor" id="editor-js">
        </div> 
     </div>
+    <script  type="module" src="js/localStorage.js"></script>
     <script src="js/editor.bundle.js"></script>
-    <script src="js/temas.js"></script>
+    <script  type="module" src="js/temas.js"></script>
     <!-- P I E -->
 
 </body>
 </html>
 <!-- Recursos Usados
+
+
+Storage 
+se usa LocalStorage por que no se va a realizar ninguna peticion a ningun servidor.
+Con guardar datos en el navegador nos sirve, aunque proporciona mas capacidad de almacenamiento lo que nos interesa es que los datos no se envian al servidor en cada solicitud
+https://es.javascript.info/localstorage
+https://developer.mozilla.org/es/docs/Web/API/Window/localStorage
+
+
 
 https://boxicons.com/ 
 https://morioh.com/p/6f26d21b74b5

@@ -25965,6 +25965,7 @@
      return fragment;
    }
 
+
    var select = document.getElementById("ejemplos");
    select.addEventListener("change", function() {
      var selectedOption = select.value; // Obtener el valor de la opción seleccionada

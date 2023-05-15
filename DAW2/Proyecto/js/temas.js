@@ -1,12 +1,20 @@
+import * as local from "./localStorage.js";
 let toggle = document.getElementById("theme");
 let label = document.getElementById("label");
 
-toggle.addEventListener("change", (event) => {
-  let estado = event.target.checked;
+
+if(local.cargarLocalStorage("tema") == "oscuro"){
   document.body.classList.toggle("oscuro");
-  if (estado == true) {
+}
+
+toggle.addEventListener("change", () => {
+  let estado = local.cargarLocalStorage("tema")
+  document.body.classList.toggle("oscuro");
+  if (estado == "claro" || estado == null) {
     label.innerHTML = "<i class='bx bxs-sun'></i>";
-} else {
+    local.guardarLocalStorage("tema", "oscuro")
+} else if(estado == "oscuro" ){
     label.innerHTML = "<i class='bx bxs-moon'></i>";
+    local.guardarLocalStorage("tema", "claro")
   }
 });

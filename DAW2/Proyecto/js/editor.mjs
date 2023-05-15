@@ -14,7 +14,7 @@ let updateListenerExtension = EditorView.updateListener.of((update) => {
   if (update.docChanged) {
     //almaceno entrada de datos eb String
     let StringHtml = editorHtml.contentDOM.innerText;
-
+    
     let texto = "let texto = \"Hello World\"";
     let nodos = convertElementsToObj(SerializeHtml(StringHtml));
 
@@ -114,16 +114,6 @@ function SerializeHtml(text) {
   return fragment;
 }
 
-
-
-{/* 
-<select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-  <option selected>Open this select menu</option>
-  <option value="1">One</option>
-  <option value="2">Two</option>
-  <option value="3">Three</option>
-</select> 
-*/}
 
 var select = document.getElementById("ejemplos");
 select.addEventListener("change", function() {
